@@ -13,7 +13,7 @@ form {
   box-shadow: 5px 10px 18px;
 }
 
-input[type="text"] {
+input[type="email"] {
   padding-top: 8px;
   font-size: 20px;
   width: 310px;
@@ -28,7 +28,7 @@ input[type="text"] {
 
 input[type="password"] {
   padding-top: 8px;
-  font-size: 20px;
+  font-size: 18px;
   width: 310px;
   border: none;
   background: transparent;
@@ -41,7 +41,7 @@ input[type="password"] {
 
 input[type="text"] {
   padding-top: 8px;
-  font-size: 20px;
+  font-size: 18px;
   width: 310px;
   border: none;
   background: transparent;
@@ -54,24 +54,24 @@ input[type="text"] {
 }
 
 /*.position {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-  }*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}*/
 
 /*body{
-
-    /*background-image: url("sea.jpeg");
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-  }*/
+  /*background-image: url("sea.jpeg");
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+}*/
 
 .size {
   max-width: 700px;
   margin-top: 50px;
+  margin-bottom: 10px;
   margin: auto;
   max-height: 430px;
 }
@@ -82,22 +82,22 @@ input[type="text"] {
 
 .email {
   padding-top: 28px;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .username {
-  padding-top: 24px;
-  font-size: 24px;
+  padding-top: 18px;
+  font-size: 18px;
 }
 
 .password {
-  padding-top: 24px;
-  font-size: 24px;
+  padding-top: 18px;
+  font-size: 18px;
 }
 
 .repeat-password {
-  padding-top: 24px;
-  font-size: 24px;
+  padding-top: 18px;
+  font-size: 18px;
 }
 
 .cancel:hover {
@@ -106,13 +106,14 @@ input[type="text"] {
 
 .sign-up:hover {
   opacity: 0.5;
+  background-color: green;
 }
 
 .sign-up {
   padding: 13px;
   float: center;
   width: 342px;
-  font-size: 19px;
+  font-size: 15px;
   /*border-radius: 25px;*/
   margin-right: 23px;
   margin-top: 15px;
@@ -123,11 +124,11 @@ input[type="text"] {
 
 .cancel {
   /*border-radius: 25px;
-    padding: 20px;
-    float: left;
-    width: 130px;
-    font-size: 25px;
-    background-color: lightgrey;*/
+  padding: 20px;
+  float: left;
+  width: 130px;
+  font-size: 25px;
+  background-color: lightgrey;*/
   padding: 13px;
   float: center;
   width: 342px;
