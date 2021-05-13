@@ -21,13 +21,13 @@
                 <p>Fill up the form to create an account</p>
                 <hr>
             </div>
-            <div class="email">
-                <label for="email"></label>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-            </div>
             <div class="username">
                 <label for="username"></label>
-                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="text" id="username" name="username" placeholder="Full Name" required>
+            </div>
+            <div class="email">
+                <label for="email"></label>
+                <input type="email" id="email" name="number" placeholder="Phone Number eg. 017xxxxxx98" required>
             </div>
             <div class="password">
                 <label for="password"></label>
@@ -35,7 +35,7 @@
             </div>
             <div class="repeat-password">
                 <label for="password-repeat"></label>
-                <input type="password" id="password" name="password" placeholder="Repeat Password" required>
+                <input type="password" id="password" name="confirm" placeholder="Repeat Password" required>
             </div>
             <div class="agreement">
                 <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a
