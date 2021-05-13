@@ -70,7 +70,7 @@ input[type="text"] {
 
 .size {
   max-width: 700px;
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 10px;
   margin: auto;
   max-height: 430px;
@@ -153,4 +153,10 @@ input[type="text"] {
 
 a {
   color: purple;
+}
+
+.alert-danger {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
 }

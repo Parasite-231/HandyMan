@@ -1,3 +1,59 @@
+<?php
+session_start();
+require("../Inc/server.config.php");
+
+$msg = '';
+$errClass = '';
+
+if (filter_has_var(INPUT_POST, 'submit')) {
+
+    $name = $_POST['username'];
+    $number = $_POST['number'];
+    $password = $_POST['password'];
+    $con_pass = $_POST['confirm'];
+
+
+    if (!empty($name) && !empty($number) && !empty($password) && !empty($con_pass)) {
+        if (preg_match("/(^(\+88|0088)?(01){1}[356789]{1}(\d){8})$/", $number)) {
+
+            if (strlen($password) == 8 || strlen($password) > 8) {
+
+                if ($password == $con_pass) {
+
+                    if (strlen($name) == 4 || strlen($name) > 4) {
+
+                        $password = password_hash($password, PASSWORD_DEFAULT);
+
+                        $query = "INSERT INTO user (name, number, password) VALUES ('$name', '$number', '$password') ";
+                        mysqli_query($connect, $query);
+                        header("location: user signin.php");
+                        die;
+                    } else {
+                        $msg = 'Please write your Full Name !';
+                        $errClass = 'alert-danger';
+                    }
+                } else {
+                    $msg = 'Passwords do not match !';
+                    $errClass = 'alert-danger';
+                }
+            } else {
+                $msg = 'Password is too short !';
+                $errClass = 'alert-danger';
+            }
+        } else {
+            $msg = 'Please enter a valid Phone Number !';
+            $errClass = 'alert-danger';
+        }
+    } else {
+        $msg = 'Please fill in all the fields !';
+        $errClass = 'alert-danger';
+    }
+}
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +68,12 @@
 
 <body>
     <div class="size">
-        <form>
+        <div>
+            <?php if ($msg != '') : ?>
+            <div class="<?php echo $errClass ?>"><?php echo $msg ?></div>
+            <?php endif; ?>
+        </div>
+        <form method="POST">
             <div class="header">
                 <h1>Sign Up</h1>
             </div>
@@ -26,15 +87,15 @@
             </div>
             <div class="username">
                 <label for="username"></label>
-                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="text" id="username" name="username" placeholder="Full Name" required>
             </div>
             <div class="password">
                 <label for="password"></label>
-                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Password" required>
             </div>
             <div class="repeat-password">
                 <label for="password-repeat"></label>
-                <input type="password" id="password" name="password" placeholder="Repeat Password" required>
+                <input type="password" name="confirm" placeholder="Repeat Password" required>
             </div>
             <div class="agreement">
                 <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a
