@@ -1,5 +1,5 @@
 <?php
-include_once(__DIR__ . "./server_config.php");
+include(__DIR__ . "./server_config.php");
 
 function check_user_login($connect)
 {

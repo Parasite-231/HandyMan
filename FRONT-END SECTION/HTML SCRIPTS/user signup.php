@@ -1,5 +1,4 @@
 <?php
-session_start();
 require("../Inc/server_config.php");
 
 $msg = '';
@@ -103,6 +102,9 @@ if (filter_has_var(INPUT_POST, 'submit')) {
             </div>
             <div style="padding-top: 16px;">
                 <button type="submit" name="submit" class="sign-up">Sign up</button>
+            </div>
+            <div>
+                <p class="no-account">Already have an account? <a href="./user login.php">Login</a>.</p>
             </div>
         </form>
     </div>

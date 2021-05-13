@@ -59,8 +59,7 @@ input[type="email"] {
   padding: 10px;
   float: center;
   width: 355px;
-  font-size: 20px;
-  height: 60px;
+  font-size: 15px;
   /*border-radius: 25px;*/
   background-color: purple;
   color: white;
@@ -69,8 +68,8 @@ input[type="email"] {
 }
 
 .size {
-  max-width: 700px;
-  margin-top: 50px;
+  max-width: 550px;
+  margin-top: 40px;
   margin: auto;
   max-height: 430px;
 }
@@ -87,6 +86,7 @@ input[type="email"] {
 
 .sign-in:hover {
   opacity: 0.5;
+  background-color: green;
 }
 
 .agreement {
@@ -98,19 +98,31 @@ input[type="email"] {
 
 .username {
   padding-top: 31px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .password {
   padding-top: 14px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .email {
-  font-size: 20px;
+  font-size: 18px;
   padding-top: 14px;
 }
 
 a {
   color: purple;
+}
+
+.alert-danger {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.no-account {
+  font-size: 17px;
+  float: left;
+  margin-left: 5px;
 }

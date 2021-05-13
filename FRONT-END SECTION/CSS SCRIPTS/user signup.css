@@ -15,7 +15,7 @@ form {
 
 input[type="email"] {
   padding-top: 8px;
-  font-size: 20px;
+  font-size: 18px;
   width: 310px;
   border: none;
   background: transparent;
@@ -148,7 +148,7 @@ input[type="text"] {
 .agreement {
   font-size: 18px;
   color: black;
-  padding-top: 32px;
+  padding-top: 30px;
 }
 
 a {
@@ -159,4 +159,9 @@ a {
   padding: 20px;
   background-color: #f44336;
   color: white;
+}
+.no-account {
+  font-size: 17px;
+  float: left;
+  margin-left: auto;
 }

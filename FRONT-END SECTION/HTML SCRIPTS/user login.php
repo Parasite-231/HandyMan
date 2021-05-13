@@ -20,14 +20,18 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                 if ($result && mysqli_num_rows($result) > 0) {
                     $user_data = mysqli_fetch_assoc($result);
                     if (password_verify($password, $user_data['password'])) {
-                        $_SESSION['ID'] = $user_data['ID'];
-                        header("location: index1.php");
+                        $_SESSION['ID'] = $user_data['id'];
+                        header("location: index.php");
                         die;
+                    } else {
+                        $msg = 'Invalid information !';
+                        $errClass = 'alert-danger';
                     }
+                } else {
+                    $msg = 'Invalid information !';
+                    $errClass = 'alert-danger';
                 }
             } else {
-                $msg = 'Invalid information';
-                $errClass = 'alert-danger';
             }
         } else {
             $msg = 'Please enter a valid number !';
@@ -60,6 +64,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
         <div class="<?php echo $errClass ?>"><?php echo $msg ?></div>
         <?php endif; ?>
     </div>
+
     <div class="size">
         <form method="POST">
             <div class="login">
@@ -77,7 +82,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                 <button type="submit" name="submit" class="sign-in">Sign in</button>
             </div>
             <div class="agreement">
-                <p>Don't have an account? <a href="./user signup.php">Sign up</a>.</p>
+                <p class="no-account">Don't have an account? <a href="./user signup.php">Sign up</a>.</p>
             </div>
         </form>
     </div>
