@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+include("../Inc/function.php");
+include("../Inc/server.config.php");
+
+$msg = '';
+$errClass = '';
+
+if (filter_has_var(INPUT_POST, 'submit')) {
+    echo 'sub';
+} else {
+    echo 'not sub';
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,23 +25,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Panel-Login</title>
     <link rel="stylesheet" href="../CSS SCRIPTS/user signin.css">
-    <link rel="stylesheet" href="../CSS SCRIPTS/bootstrapcosmo.css">
     <link rel="shortcut icon" type="image/x-icon" href="../ICONS/worker.png">
 </head>
 
 <body>
     <div class="size">
-        <form>
+        <form method="POST">
             <div class="login">
                 <img src="../ICONS/userlogin.png" alt="User Login" class="position">
             </div>
-            <div class="username">
-                <label for="username"></label>
-                <input type="text" id="username" name="username" placeholder="Username" required><br>
-            </div>
             <div class="email">
                 <label for="Email"></label>
-                <input type="email" id="email" name="email" placeholder="Email" required><br>
+                <input type="text" id="email" name="number" placeholder="Email" required><br>
             </div>
             <div class="password">
                 <label for="password"></label>
