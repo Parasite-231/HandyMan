@@ -1,0 +1,133 @@
+form {
+    width: 356px;
+    margin-left: 110px;
+    margin-top: 120px;
+    padding: 50px;
+    /*margin-top: 170px;
+    padding-top: 2px;*/
+    background-color: white;
+    /*border-radius: 25px;*/
+    height: 350px;
+    /*opacity: 55%;
+    border-color: black;
+    border-style: solid;*/
+    box-shadow: 5px 10px 18px;
+}
+
+input[type=text] {
+    padding-top: 19px;
+    font-size: 20px;
+    width: 320px;
+    height: 40px;
+    text-align: center;
+    /*border: solid;*/
+    /*border-color: unset;*/
+    background-color: lightgrey;
+    /*border-radius: 10px;*/
+    border-width: 1px;
+    /*background: transparent;*/
+    /*border-bottom: 2px solid;*/
+    padding-right: 28px;
+    margin-top: 7px;
+    color: black;
+    outline: none;
+}
+
+input[type=password] {
+    padding-top: 19px;
+    font-size: 20px;
+    width: 320px;
+    height: 40px;
+    text-align: center;
+    /*border: solid;*/
+    /*border-color: unset;*/
+    background-color: lightgrey;
+    /*border-radius: 10px;*/
+    border-width: 1px;
+    /*background: transparent;*/
+    /*border-bottom: 2px solid;*/
+    padding-right: 28px;
+    margin-top: 7px;
+    color: black;
+    outline: none;
+}
+
+.login {
+    padding: 10px;
+    float: center;
+    width: 350px;
+    font-size: 23px;
+    height: 70px;
+    /*border-radius: 25px;*/
+    background-color: orange;
+    color: white;
+    margin-left: 0px;
+    padding-top: 10px;
+    margin-top: 23px;
+}
+
+
+/*body{
+
+  
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+  }*/
+
+.position {
+    display: block;
+    /*margin-left: auto;
+  margin-right: auto;*/
+    margin-left: 106px;
+    margin-top: -135px;
+    width: 150px;
+    height: 140px;
+}
+
+.login:hover {
+    opacity: 0.5;
+}
+
+
+/*.sign-up:hover{
+
+    opacity: 0.5;
+ }*/
+
+.agreement {
+    font-size: 20px;
+    /*color: rgb(15, 15, 15);*/
+    /*float: center*/
+    padding-left: 43px;
+    padding-top: -7px;
+    "
+
+}
+
+body {
+    background-color: orange;
+}
+
+.size {
+    max-width: 700px;
+    margin-top: 50px;
+    margin: auto;
+    max-height: 430px;
+}
+
+.password {
+    padding-top: 7px;
+    font-size: 25px;
+}
+
+.username {
+    padding-top: 50px;
+    font-size: 25px;
+}
+
+a {
+    color: orange;
+}
+
