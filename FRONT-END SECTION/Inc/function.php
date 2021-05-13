@@ -1,5 +1,5 @@
 <?php
-include('./server.config.php');
+include_once(__DIR__ . "./server_config.php");
 
 function check_user_login($connect)
 {
@@ -13,7 +13,7 @@ function check_user_login($connect)
             return $user_data;
         }
     } else {
-        header("location:../HTML SCRIPTS/user signin.php");
+        header("");
         die;
     }
 }

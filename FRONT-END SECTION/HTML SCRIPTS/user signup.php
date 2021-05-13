@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("../Inc/server.config.php");
+require("../Inc/server_config.php");
 
 $msg = '';
 $errClass = '';
@@ -26,7 +26,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 
                         $query = "INSERT INTO user (name, number, password) VALUES ('$name', '$number', '$password') ";
                         mysqli_query($connect, $query);
-                        header("location: user signin.php");
+                        header("location: user login.php");
                         die;
                     } else {
                         $msg = 'Please write your Full Name !';
@@ -83,7 +83,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
             </div>
             <div class="email">
                 <label for="email"></label>
-                <input type="text" id="email" name="number" placeholder="Number eg. 017XXXXXXX97" required>
+                <input type="text" id="email" name="number" placeholder="Number eg. 017xxxxxx97" required>
             </div>
             <div class="username">
                 <label for="username"></label>
