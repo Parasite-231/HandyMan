@@ -6,7 +6,7 @@ form {
     margin-top: 90px;
     background-color: white;
     /*border-radius: 25px;*/
-    height: 560px;
+    height: 514px;
     /*opacity: 55%;
     border-color: black;
     border-style: solid;*/
@@ -14,14 +14,15 @@ form {
 }
 
 input[type=text] {
-    padding-top: 19px;
-    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 16px;
     width: 320px;
-    height: 23px;
+    height: 19px;
     text-align: center;
     /*border: solid;*/
     /*border-color: unset;*/
-    background-color: lightgrey;
+    background-color: whitesmoke;
     /*border-radius: 10px;*/
     border-width: 1px;
     /*background: transparent;*/
@@ -33,14 +34,15 @@ input[type=text] {
 }
 
 input[type=email] {
-    padding-top: 19px;
-    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 16px;
     width: 320px;
-    height: 23px;
+    height: 19px;
     text-align: center;
     /*border: solid;*/
     /*border-color: unset;*/
-    background-color: lightgrey;
+    background-color: whitesmoke;
     /*border-radius: 10px;*/
     border-width: 1px;
     /*background: transparent;*/
@@ -52,14 +54,15 @@ input[type=email] {
 }
 
 input[type=tel] {
-    padding-top: 19px;
-    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 16px;
     width: 320px;
-    height: 23px;
+    height: 19px;
     text-align: center;
     /*border: solid;*/
     /*border-color: unset;*/
-    background-color: lightgrey;
+    background-color: whitesmoke;
     /*border-radius: 10px;*/
     border-width: 1px;
     /*background: transparent;*/
@@ -71,14 +74,15 @@ input[type=tel] {
 }
 
 input[type=password] {
-    padding-top: 19px;
-    font-size: 18px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    font-size: 16px;
     width: 320px;
-    height: 23px;
+    height: 19px;
     text-align: center;
     /*border: solid;*/
     /*border-color: unset;*/
-    background-color: lightgrey;
+    background-color: whitesmoke;
     /*border-radius: 10px;*/
     border-width: 1px;
     /*background: transparent;*/
@@ -93,13 +97,13 @@ input[type=password] {
     padding: 10px;
     float: center;
     width: 350px;
-    font-size: 18px;
-    height: 50px;
+    font-size: 17px;
+    height: 46px;
     /*border-radius: 25px;*/
     background-color: orange;
     color: white;
     margin-left: 0px;
-    padding-top: 16px;
+    padding-top: 14px;
     margin-top: 15px;
 }
 
