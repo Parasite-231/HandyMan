@@ -74,7 +74,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
         </div>
         <form method="POST">
             <div class="header">
-                <h1>Sign Up</h1>
+                <h1>User Signup Form</h1>
             </div>
             <div>
                 <p>Fill up the form to create an account</p>
