@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require("../Inc/function.php");
+require("../../Inc/function.php");
 
 $msg = '';
 $errClass = '';
@@ -21,7 +21,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                     $user_data = mysqli_fetch_assoc($result);
                     if (password_verify($password, $user_data['password'])) {
                         $_SESSION['ID'] = $user_data['id'];
-                        header("location: index.php");
+                        header("location: ../index.php");
                         die;
                     } else {
                         $msg = 'Invalid information !';
@@ -54,8 +54,8 @@ if (filter_has_var(INPUT_POST, 'submit')) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Panel-Login</title>
-    <link rel="stylesheet" href="../CSS SCRIPTS/user login.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../ICONS/worker.png">
+    <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/user login.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
 </head>
 
 <body>
@@ -68,7 +68,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
     <div class="size">
         <form method="POST">
             <div class="login">
-                <img src="../ICONS/userlogin.png" alt="User Login" class="position">
+                <img src="../../ICONS/userlogin.png" alt="User Login" class="position">
             </div>
             <div class="email">
                 <label for="Email"></label>

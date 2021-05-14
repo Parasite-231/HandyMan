@@ -37,10 +37,10 @@
                     } else {
                         echo '  
                         <li class="nav-item">
-                        <a class="nav-link" href="./user login.php">Login</a>
+                        <a class="nav-link" href="./User_panel/user login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./user signup.php">Sign up</a>
+                        <a class="nav-link" href="./User_panel/user signup.php">Sign up</a>
                     </li>';
                     }
 
