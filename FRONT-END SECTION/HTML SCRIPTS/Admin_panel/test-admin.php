@@ -4,9 +4,9 @@ $manageTabClass = '';
 $profileTabClass = '';
 $keyTabClass = '';
 
-$random_key = mt_rand(100000, 999999);
+
 if (filter_has_var(INPUT_POST, 'submit')) {
-    //generate and show key
+    $random_key = mt_rand(100000, 999999);
 }
 if (isset($_GET['profile'])) {
     $profileTabClass = 'active show';
