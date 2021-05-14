@@ -6,7 +6,7 @@ form {
   margin-top: 90px;
   background-color: white;
   /*border-radius: 28px;*/
-  height: 570px;
+  height: 540px;
   /*opacity: 60%;*/
   border-color: black;
   border-style: solid;
@@ -162,6 +162,6 @@ a {
 }
 .no-account {
   font-size: 17px;
-  float: left;
-  margin-left: auto;
+  padding-left: 56px;
+  
 }
