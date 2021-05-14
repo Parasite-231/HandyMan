@@ -13,6 +13,7 @@ if (isset($_GET['profile'])) {
 } elseif (isset($_GET['manage'])) {
     $manageTabClass = 'active show';
 } elseif (isset($_GET['key'])) {
+    $keyTabClass = 'active show';
 }
 
 ?>
@@ -30,7 +31,7 @@ if (isset($_GET['profile'])) {
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Admin</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
                 aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -67,7 +68,7 @@ if (isset($_GET['profile'])) {
 
                     ?>
 
-                    <li class="nav-item">
+                    <!--      <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -82,29 +83,30 @@ if (isset($_GET['profile'])) {
                         </div>
                     </li>
                 </ul>
-                <form class="d-flex">
+                 <form class="d-flex">
                     <input class="form-control me-sm-2" type="text" placeholder="Search">
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                </form> !-->
             </div>
         </div>
     </nav>
 </head>
 
 <body>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link <?php echo $profileTabClass; ?>" data-bs-toggle="tab" href="?profile">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <?php echo $manageTabClass; ?>" data-bs-toggle="tab" href="?manage">Manage
+                    Employee</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <?php echo $keyTabClass; ?>" data-bs-toggle="tab" href="?key">Key ID</a>
+            </li>
 
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link <?php echo $profileTabClass; ?>" data-bs-toggle="tab" href="?profile">Profile</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link <?php echo $manageTabClass; ?>" data-bs-toggle="tab" href="?manage">Manage Employee</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link <?php echo $keyTabClass; ?>" data-bs-toggle="tab" href="?key">Key ID</a>
-        </li>
-
-        <!--  <li class="nav-item dropdown">
+            <!--  <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
                 aria-expanded="false">Dropdown</a>
             <div class="dropdown-menu">
@@ -115,20 +117,22 @@ if (isset($_GET['profile'])) {
                 <a class="dropdown-item" href="#">Separated link</a>
             </div> 
         </li> !-->
-    </ul>
-    <div id="myTabContent" class="tab-content">
-        <div class="tab-pane fade <?php echo $profileTabClass; ?>" id="profile">
-            <p>hello</p>
-        </div>
-        <div class="tab-pane fade <?php echo $manageTabClass; ?>" id="manage">
-            <p>world</p>
-        </div>
-        <div class="tab-pane fade <?php echo $keyTabClass; ?>" id="Key ID">
-            <form method="POST" action="">
-                <button class="btn btn-primary" type="submit" name="submit">submit</button>
-            </form>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade <?php echo $profileTabClass; ?>" id="profile">
+                <p>hello</p>
+            </div>
+            <div class="tab-pane fade <?php echo $manageTabClass; ?>" id="manage">
+                <p>world</p>
+            </div>
+            <div class="tab-pane fade <?php echo $keyTabClass; ?>" id="Key ID">
+                <form method="POST" action="">
+                    <button class="btn btn-primary" type="submit" name="submit">submit</button>
+                </form>
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>
