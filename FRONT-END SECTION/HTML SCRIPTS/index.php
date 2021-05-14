@@ -40,7 +40,7 @@
                         <a class="nav-link" href="./User_panel/user login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./User_panel/user signup.php">Sign up</a>
+                        <a class="nav-link" href="./user_or_employee.php">Sign up</a>
                     </li>';
                     }
 
