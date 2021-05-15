@@ -1,67 +1,66 @@
 form {
-    width: 360px;
-    text-align: left;
-    margin-left: 100px;
-    margin-top: 150px;
-    padding: 50px;
-    /*padding-left: 30px;
+  width: 360px;
+  text-align: left;
+  margin-left: 100px;
+  margin-top: 150px;
+  padding: 50px;
+  /*padding-left: 30px;
     margin-top: 120px;
     padding-top: 2px;
     background-color: white;
     /*border-radius: 25px;*/
-    /*opacity: 60%;*/
-    height: 308px;
-    border-color: black;
-    border-style: solid;
-    box-shadow: 5px 10px 18px;
+  /*opacity: 60%;*/
+  height: 308px;
+  border-color: black;
+  border-style: solid;
+  box-shadow: 5px 10px 18px;
 }
 
-input[type=password] {
-    padding-top: 19px;
-    font-size: 20px;
-    width: 325px;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid;
-    padding-right: 28px;
-    margin-top: 7px;
-    color: black;
-    outline: none;
+input[type="password"] {
+  padding-top: 19px;
+  font-size: 20px;
+  width: 325px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid;
+  padding-right: 28px;
+  margin-top: 7px;
+  color: black;
+  outline: none;
 }
 
-input[type=text] {
-    padding-top: 19px;
-    font-size: 20px;
-    width: 325px;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid;
-    padding-right: 28px;
-    margin-top: 7px;
-    color: black;
-    outline: none;
+input[type="text"] {
+  padding-top: 19px;
+  font-size: 20px;
+  width: 325px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid;
+  padding-right: 28px;
+  margin-top: 7px;
+  color: black;
+  outline: none;
 }
 
 .Login {
-    padding: 15px;
-    float: center;
-    margin-top: 24px;
-    width: 360px;
-    font-size: 23px;
-    height: 58px;
-    /*border-radius: 25px;*/
-    background-color: purple;
-    color: white;
-    margin-left: -3px;
+  padding: 15px;
+  float: center;
+  margin-top: 24px;
+  width: 360px;
+  font-size: 23px;
+  height: 58px;
+  /*border-radius: 25px;*/
+  background-color: purple;
+  color: white;
+  margin-left: -3px;
 }
 
 .size {
-    max-width: 700px;
-    margin-top: 50px;
-    margin: auto;
-    max-height: 430px;
+  max-width: 700px;
+  margin-top: 50px;
+  margin: auto;
+  max-height: 430px;
 }
-
 
 /*body{
 
@@ -74,47 +73,51 @@ input[type=text] {
     }*/
 
 .position {
-    display: block;
-    /*margin-left: auto;
+  display: block;
+  /*margin-left: auto;
         margin-right: auto;*/
-    margin-left: 105px;
-    margin-top: -152px;
-    width: 150px;
-    height: 130px;
+  margin-left: 105px;
+  margin-top: -152px;
+  width: 150px;
+  height: 130px;
 }
 
 .Login:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .agreement {
-    font-size: 20px;
-    color: rgb(15, 15, 15);
-    padding-right: 30px;
-    margin-left: 25px;
-    padding-top: -2px;
-    "
- align: "center";
+  font-size: 20px;
+  color: rgb(15, 15, 15);
+  padding-right: 30px;
+  margin-left: 25px;
+  padding-top: -2px;
+  box-align: "center";
 }
 
 .img {
-    padding-top: 45px;
+  padding-top: 45px;
 }
 
 .name {
-    padding-top: 18px;
-    font-size: 25px;
+  padding-top: 18px;
+  font-size: 25px;
 }
 
 .password {
-    padding-top: 30px;
-    font-size: 25px;
+  padding-top: 30px;
+  font-size: 25px;
 }
 
 .login {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
 a {
-    color: purple;
+  color: purple;
+}
+.alert-danger {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
 }

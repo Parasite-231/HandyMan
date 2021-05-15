@@ -1,18 +1,17 @@
 form {
-    width: 336px;
-    text-align: left;
-    margin-left: 60px;
-    padding: 50px;
-    margin-top: 90px;
-    background-color: white;
-    /*border-radius: 28px;*/
-    height: 540px;
-    /*opacity: 60%;*/
-    border-color: black;
-    border-style: solid;
-    box-shadow: 5px 10px 18px;
+  width: 336px;
+  text-align: left;
+  margin-left: 60px;
+  padding: 50px;
+  margin-top: 90px;
+  background-color: white;
+  /*border-radius: 28px;*/
+  height: 540px;
+  /*opacity: 60%;*/
+  border-color: black;
+  border-style: solid;
+  box-shadow: 5px 10px 18px;
 }
-
 
 /*input[type = email]{
     
@@ -28,46 +27,45 @@ form {
 
      }*/
 
-input[type=password] {
-    padding-top: 8px;
-    font-size: 20px;
-    width: 305px;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid;
-    padding-right: 28px;
-    margin-top: 7px;
-    color: black;
-    outline: none;
+input[type="password"] {
+  padding-top: 8px;
+  font-size: 20px;
+  width: 305px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid;
+  padding-right: 28px;
+  margin-top: 7px;
+  color: black;
+  outline: none;
 }
 
-input[type=tel] {
-    padding-top: 8px;
-    font-size: 20px;
-    width: 305px;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid;
-    padding-right: 28px;
-    margin-top: 7px;
-    color: black;
-    outline: none;
+input[type="tel"] {
+  padding-top: 8px;
+  font-size: 20px;
+  width: 305px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid;
+  padding-right: 28px;
+  margin-top: 7px;
+  color: black;
+  outline: none;
 }
 
-input[type=text] {
-    padding-top: 8px;
-    font-size: 20px;
-    width: 305px;
-    border: none;
-    background: transparent;
-    border-bottom: 1px solid;
-    padding-right: 28px;
-    /*font-size: 25px;*/
-    margin-top: 7px;
-    color: black;
-    outline: none;
+input[type="text"] {
+  padding-top: 8px;
+  font-size: 20px;
+  width: 305px;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid;
+  padding-right: 28px;
+  /*font-size: 25px;*/
+  margin-top: 7px;
+  color: black;
+  outline: none;
 }
-
 
 /*body{
 
@@ -79,76 +77,80 @@ input[type=text] {
   }*/
 
 .header {
-    padding-top: 0px;
-    font-size: 15px;
+  padding-top: 0px;
+  font-size: 15px;
 }
 
 .size {
-    max-width: 700px;
-    margin-top: 50px;
-    margin: auto;
-    max-height: 430px;
+  max-width: 700px;
+  margin-top: 50px;
+  margin: auto;
+  max-height: 430px;
 }
 
 .name {
-    padding-top: 18px;
-    font-size: 22px;
+  padding-top: 18px;
+  font-size: 22px;
 }
 
 .mobile-number {
-    padding-top: 22px;
-    font-size: 22px;
+  padding-top: 22px;
+  font-size: 22px;
 }
 
 .registration-id {
-    padding-top: 22px;
-    font-size: 22px;
+  padding-top: 22px;
+  font-size: 22px;
 }
 
 .password {
-    padding-top: 22px;
-    font-size: 22px;
+  padding-top: 22px;
+  font-size: 22px;
 }
 
 .repeat-password {
-    padding-top: 22px;
-    font-size: 22px;
+  padding-top: 22px;
+  font-size: 22px;
 }
 
 .cancel:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .register:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .register {
-    padding: 13px;
-    margin-top: 20px;
-    float: left;
-    width: 340px;
-    height: 50px;
-    font-size: 20px;
-    /*border-radius: 25px;*/
-    margin-right: 23px;
-    background: transparent;
-    background-color: purple;
-    color: white;
+  padding: 13px;
+  margin-top: 20px;
+  float: left;
+  width: 340px;
+  height: 50px;
+  font-size: 20px;
+  /*border-radius: 25px;*/
+  margin-right: 23px;
+  background: transparent;
+  background-color: purple;
+  color: white;
 }
 
 .checked {
-    margin-top: 12px;
-    font-size: 20px;
+  margin-top: 12px;
+  font-size: 20px;
 }
 
 .agreement {
-    font-size: 17px;
-    /*color: rgb(15, 15, 15);*/
-    padding-top: 28px
+  font-size: 17px;
+  /*color: rgb(15, 15, 15);*/
+  padding-top: 28px;
 }
 
 a {
-    color: purple;
+  color: purple;
 }
-
+.alert-danger {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}

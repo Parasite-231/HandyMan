@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$table = 'user';
+$table = 'employee';
 require("../../Inc/function.php");
 
 $msg = '';
@@ -15,7 +15,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
     if (!empty($number) && !empty($password)) {
         if (preg_match("/(^(\+88|0088)?(01){1}[356789]{1}(\d){8})$/", $number)) {
 
-            $query = "SELECT * FROM user WHERE number = '$number' LIMIT 1";
+            $query = "SELECT * FROM employee WHERE number = '$number' LIMIT 1";
             $result = mysqli_query($connect, $query);
             if ($result) {
                 if ($result && mysqli_num_rows($result) > 0) {
@@ -33,6 +33,8 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                     $errClass = 'alert-danger';
                 }
             } else {
+                $msg = 'Please enter a valid number !';
+                $errClass = 'alert-danger';
             }
         } else {
             $msg = 'Please enter a valid number !';
@@ -44,46 +46,48 @@ if (filter_has_var(INPUT_POST, 'submit')) {
     }
 }
 
+
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Panel-Login</title>
-    <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/user login.css">
+    <title> Employee Panel-Login</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS SCRIPTS/employee_panel/employee login.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
 </head>
 
 <body>
-    <div>
-        <?php if ($msg != '') : ?>
-        <div class="<?php echo $errClass ?>"><?php echo $msg ?></div>
-        <?php endif; ?>
-    </div>
-
     <div class="size">
+
+        <div>
+            <?php if ($msg != '') : ?>
+            <div style="  padding: 20px; background-color: #f44336; color: white;"><?php echo $msg ?></div>
+            <?php endif; ?>
+        </div>
+
         <form method="POST">
             <div class="login">
-                <img src="../../ICONS/userlogin.png" alt="User Login" class="position">
+                <img src="../../ICONS/employeelogin.png" alt="User Login" class="position">
             </div>
-            <div class="email">
-                <label for="Email"></label>
-                <input type="text" id="email" name="number" placeholder="Number eg. 017xxxxxx89" required><br>
+            <div class="name">
+                <label for="name"></label>
+                <input type="text" id="name" name="number" placeholder="Number" required><br>
             </div>
             <div class="password">
                 <label for="password"></label>
                 <input type="password" id="password" name="password" placeholder="Password" required><br>
             </div>
             <div>
-                <button type="submit" name="submit" class="sign-in">Sign in</button>
+                <button type="submit" name="submit" class="Login">Login</button>
             </div>
             <div class="agreement">
-                <p class="no-account">Don't have an account? <a href="./user signup.php">Sign up</a>.</p>
+                <p>Don't have an account? <a href="#">Register here</a>.</p>
             </div>
         </form>
     </div>

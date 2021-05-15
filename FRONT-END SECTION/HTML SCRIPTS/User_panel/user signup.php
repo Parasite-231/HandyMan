@@ -1,4 +1,5 @@
 <?php
+$table = 'user';
 require("../../Inc/server_config.php");
 
 $msg = '';
