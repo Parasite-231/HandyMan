@@ -3,11 +3,6 @@
 $manageTabClass = '';
 $profileTabClass = '';
 $keyTabClass = '';
-
-
-if (filter_has_var(INPUT_POST, 'submit')) {
-    $random_key = mt_rand(100000, 999999);
-}
 if (isset($_GET['profile'])) {
     $profileTabClass = 'active show';
 } elseif (isset($_GET['manage'])) {
@@ -15,6 +10,12 @@ if (isset($_GET['profile'])) {
 } elseif (isset($_GET['key'])) {
     $keyTabClass = 'active show';
 }
+
+$key = '';
+if (filter_has_var(INPUT_POST, 'submit')) {
+    $key = mt_rand(100000, 999999);
+}
+
 
 ?>
 
@@ -126,9 +127,14 @@ if (isset($_GET['profile'])) {
                 <p>world</p>
             </div>
             <div class="tab-pane fade <?php echo $keyTabClass; ?>" id="Key ID">
-                <form method="POST" action="">
-                    <button class="btn btn-primary" type="submit" name="submit">submit</button>
-                </form>
+                <div style="position: absolute; top: 110px;left: 10%;">
+                    <h4>Generated Key ID : <?php echo $key; ?></h4>
+                </div>
+                <div style="  position: absolute; top: 150px; right: 20%;">
+                    <form method="POST" action="">
+                        <button class="btn btn-primary" type="submit" name="submit">Generate Key ID</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
