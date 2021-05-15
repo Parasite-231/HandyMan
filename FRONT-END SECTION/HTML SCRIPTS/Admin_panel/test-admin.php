@@ -1,5 +1,7 @@
 <?php
 
+include('../../Inc/function.php');
+
 $manageTabClass = '';
 $profileTabClass = '';
 $keyTabClass = '';
@@ -10,10 +12,19 @@ if (isset($_GET['profile'])) {
 } elseif (isset($_GET['key'])) {
     $keyTabClass = 'active show';
 }
-
 $key = '';
 if (filter_has_var(INPUT_POST, 'submit')) {
+    loop:
     $key = mt_rand(100000, 999999);
+    $query = "SELECT TOP 1 key_id FROM employee WHERE key_id = '$key' ";
+    $result = mysqli_query($connect, $query);
+
+    if (!$result) {
+        $query = "INSERT into employee (key_id) VALUES ('$key') ";
+        mysqli_query($connect, $query);
+    } else {
+        goto loop;
+    }
 }
 
 
@@ -121,7 +132,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
         </ul>
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade <?php echo $profileTabClass; ?>" id="profile">
-                <p>hello</p>
+                <p>My Session Id : <?php echo $_SESSION['ID']; ?></p>
             </div>
             <div class="tab-pane fade <?php echo $manageTabClass; ?>" id="manage">
                 <p>world</p>

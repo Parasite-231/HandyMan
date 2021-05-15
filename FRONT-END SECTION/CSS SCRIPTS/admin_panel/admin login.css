@@ -27,7 +27,7 @@ input[type="text"] {
   border-width: 1px;
   /*background: transparent;*/
   /*border-bottom: 2px solid;*/
-  padding-right:20px;
+  padding-right: 20px;
   margin-top: 7px;
   color: black;
   outline: none;
@@ -46,25 +46,25 @@ input[type="password"] {
   border-width: 1px;
   /*background: transparent;*/
   /*border-bottom: 2px solid;*/
-  padding-right:20px;
+  padding-right: 20px;
   margin-top: 7px;
   color: black;
   outline: none;
 }
 
 .login {
-    padding: 10px;
-    float: center;
-    width: 343px;
-    font-size: 17px;
-    height: 46px;
-    /*border-radius: 25px;*/
-    background-color: orange;
-    color: white;
-    margin-left: -1px;
-    padding-top: 14px;
-    margin-top: 15px;
-    padding-left: 0px;
+  padding: 10px;
+  float: center;
+  width: 343px;
+  font-size: 17px;
+  height: 46px;
+  /*border-radius: 25px;*/
+  background-color: orange;
+  color: white;
+  margin-left: -1px;
+  padding-top: 14px;
+  margin-top: 15px;
+  padding-left: 0px;
 }
 
 /*body{
@@ -88,6 +88,7 @@ input[type="password"] {
 
 .login:hover {
   opacity: 0.5;
+  background-color: green;
 }
 
 /*.sign-up:hover{
