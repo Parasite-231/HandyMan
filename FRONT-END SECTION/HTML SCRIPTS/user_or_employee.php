@@ -3,7 +3,7 @@
 if (filter_has_var(INPUT_POST, 'customer')) {
     header("location: ./User_panel/user signup.php");
 } elseif (filter_has_var(INPUT_POST, 'employee')) {
-    header("location: ./Employee_panel/employee registration.html");
+    header("location: ./Employee_panel/employee registration.php");
 }
 
 

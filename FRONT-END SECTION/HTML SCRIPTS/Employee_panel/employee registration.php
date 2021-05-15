@@ -26,13 +26,12 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                         $query = "SELECT * FROM employee WHERE key_id = '$key' ";
                         $result = mysqli_query($connect, $query);
 
-                        if ($result) {
+                        if ($result && mysqli_num_rows($result) > 0) {
                             $password = password_hash($password, PASSWORD_DEFAULT);
                             $query = "UPDATE employee SET name = '$name', number = '$number',password = '$password' WHERE
                             key_id = '$key' ";
                             mysqli_query($connect, $query);
                             header("location: ./employee login.php");
-                            die;
                         } else {
                             $msg = 'Wrong Key ID given !';
                             $errClass = 'alert-danger';
