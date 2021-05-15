@@ -15,7 +15,7 @@ if (isset($_GET['profile'])) {
 $key = '';
 if (filter_has_var(INPUT_POST, 'submit')) {
     loop:
-    $key = mt_rand(100000, 999999);
+    $key = generateKey();
     $query = "SELECT TOP 1 key_id FROM employee WHERE key_id = '$key' ";
     $result = mysqli_query($connect, $query);
 
