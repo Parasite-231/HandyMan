@@ -1,5 +1,5 @@
 form {
-  width: 356px;
+  width: 346px;
   margin-left: 110px;
   margin-top: 120px;
   padding: 50px;
@@ -7,7 +7,7 @@ form {
     padding-top: 2px;*/
   background-color: white;
   /*border-radius: 25px;*/
-  height: 350px;
+  height: 240px;
   /*opacity: 55%;
     border-color: black;
     border-style: solid;*/
@@ -15,55 +15,56 @@ form {
 }
 
 input[type="text"] {
-  padding-top: 19px;
-  font-size: 20px;
+  padding-top: 10px;
+  font-size: 15px;
   width: 320px;
-  height: 40px;
+  height: 25px;
   text-align: center;
   /*border: solid;*/
   /*border-color: unset;*/
-  background-color: lightgrey;
+  background-color: whitesmoke;
   /*border-radius: 10px;*/
   border-width: 1px;
   /*background: transparent;*/
   /*border-bottom: 2px solid;*/
-  padding-right: 28px;
+  padding-right:20px;
   margin-top: 7px;
   color: black;
   outline: none;
 }
 
 input[type="password"] {
-  padding-top: 19px;
-  font-size: 20px;
+  padding-top: 10px;
+  font-size: 15px;
   width: 320px;
-  height: 40px;
+  height: 25px;
   text-align: center;
   /*border: solid;*/
   /*border-color: unset;*/
-  background-color: lightgrey;
+  background-color: whitesmoke;
   /*border-radius: 10px;*/
   border-width: 1px;
   /*background: transparent;*/
   /*border-bottom: 2px solid;*/
-  padding-right: 28px;
+  padding-right:20px;
   margin-top: 7px;
   color: black;
   outline: none;
 }
 
 .login {
-  padding: 10px;
-  float: center;
-  width: 350px;
-  font-size: 23px;
-  height: 70px;
-  /*border-radius: 25px;*/
-  background-color: orange;
-  color: white;
-  margin-left: 0px;
-  padding-top: 10px;
-  margin-top: 23px;
+    padding: 10px;
+    float: center;
+    width: 343px;
+    font-size: 17px;
+    height: 46px;
+    /*border-radius: 25px;*/
+    background-color: orange;
+    color: white;
+    margin-left: -1px;
+    padding-top: 14px;
+    margin-top: 15px;
+    padding-left: 0px;
 }
 
 /*body{
@@ -79,7 +80,7 @@ input[type="password"] {
   display: block;
   /*margin-left: auto;
   margin-right: auto;*/
-  margin-left: 106px;
+  margin-left: 94px;
   margin-top: -135px;
   width: 150px;
   height: 140px;
@@ -95,10 +96,10 @@ input[type="password"] {
  }*/
 
 .agreement {
-  font-size: 20px;
+  font-size: 17px;
   /*color: rgb(15, 15, 15);*/
   /*float: center*/
-  padding-left: 43px;
+  padding-left: 62px;
   padding-top: -7px;
 }
 
