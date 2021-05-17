@@ -2,7 +2,6 @@
 include("./reg_system.php");
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
