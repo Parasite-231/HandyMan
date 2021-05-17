@@ -87,7 +87,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                 <button type="submit" name="submit" class="Login">Login</button>
             </div>
             <div class="agreement">
-                <p>Don't have an account? <a href="#">Register here</a>.</p>
+                <p>Don't have an account? <a href="./employee registration.php">Register here</a>.</p>
             </div>
         </form>
     </div>
