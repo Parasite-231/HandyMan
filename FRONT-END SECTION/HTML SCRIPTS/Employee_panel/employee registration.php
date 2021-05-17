@@ -78,7 +78,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 </head>
 
 <body>
-    <div class="size">
+    <div class="resolution">
         <div>
             <?php if ($msg != '') : ?>
             <div style="  padding: 20px; background-color: #f44336; color: white;"><?php echo $msg ?></div>

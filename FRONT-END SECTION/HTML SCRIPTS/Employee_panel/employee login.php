@@ -63,7 +63,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 </head>
 
 <body>
-    <div class="size">
+    <div class="resolution">
 
         <div>
             <?php if ($msg != '') : ?>

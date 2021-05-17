@@ -66,7 +66,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
         <?php endif; ?>
     </div>
 
-    <div class="size">
+    <div class="resolution">
         <form method="POST">
             <div class="login">
                 <img src="../../ICONS/userlogin.png" alt="User Login" class="position">
