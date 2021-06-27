@@ -6,6 +6,7 @@ require("../../Inc/function.php");
 
 $msg = '';
 $errClass = '';
+$var = '';
 
 if (filter_has_var(INPUT_POST, 'submit')) {
 
@@ -15,53 +16,30 @@ if (filter_has_var(INPUT_POST, 'submit')) {
     if (!empty($field) && !empty($password)) {
 
         if (filter_var($field, FILTER_VALIDATE_EMAIL)) {
+            $var = 'email';
+        } else {
+            $var = 'number';
+        }
 
-            $query = "SELECT * FROM employee WHERE email = '$field' LIMIT 1";
-            $result = mysqli_query($connect, $query);
-            if ($result) {
-                if ($result && mysqli_num_rows($result) > 0) {
-                    $user_data = mysqli_fetch_assoc($result);
-                    if (password_verify($password, $user_data['password'])) {
-                        $_SESSION['ID'] = $user_data['id'];
-                        header("location: ../index.php");
-                        die;
-                    } else {
-                        $msg = 'Invalid information !';
-                        $errClass = 'alert-danger';
-                    }
+        $query = "SELECT * FROM employee WHERE $var = '$field' LIMIT 1";
+        $result = mysqli_query($connect, $query);
+        if ($result) {
+            if ($result && mysqli_num_rows($result) > 0) {
+                $user_data = mysqli_fetch_assoc($result);
+                if (password_verify($password, $user_data['password'])) {
+                    $_SESSION['ID'] = $user_data['id'];
+                    header("location: ../index.php");
+                    die;
                 } else {
-                    $msg = 'Invalid information !';
+                    $msg = 'Invalid information or Wrong Password !';
                     $errClass = 'alert-danger';
                 }
             } else {
-                $msg = 'Please enter a valid number or email !';
-                $errClass = 'alert-danger';
-            }
-        } else if (preg_match("/(^(\+88|0088)?(01){1}[356789]{1}(\d){8})$/", $field)) {
-
-            $query = "SELECT * FROM employee WHERE number = '$field' LIMIT 1";
-            $result = mysqli_query($connect, $query);
-            if ($result) {
-                if ($result && mysqli_num_rows($result) > 0) {
-                    $user_data = mysqli_fetch_assoc($result);
-                    if (password_verify($password, $user_data['password'])) {
-                        $_SESSION['ID'] = $user_data['id'];
-                        header("location: ../index.php");
-                        die;
-                    } else {
-                        $msg = 'Invalid information !';
-                        $errClass = 'alert-danger';
-                    }
-                } else {
-                    $msg = 'Invalid information !';
-                    $errClass = 'alert-danger';
-                }
-            } else {
-                $msg = 'Please enter a valid number !';
+                $msg = 'Please enter a valid Number or Email !';
                 $errClass = 'alert-danger';
             }
         } else {
-            $msg = 'Please enter a valid number or email !';
+            $msg = 'Please enter a valid Number or Email !';
             $errClass = 'alert-danger';
         }
     } else {
@@ -69,7 +47,6 @@ if (filter_has_var(INPUT_POST, 'submit')) {
         $errClass = 'alert-danger';
     }
 }
-
 
 ?>
 
