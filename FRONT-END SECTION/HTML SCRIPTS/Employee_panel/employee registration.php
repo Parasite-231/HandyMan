@@ -32,15 +32,18 @@ include("./reg_system.php");
             </div>
             <div class="name">
                 <label for="name"></label>
-                <input type="text" id="name" name="name" placeholder="Full Name" required>
+                <input type="text" id="name" name="name" placeholder="Full Name"
+                    value="<?php echo isset($_POST['name']) ? $name : ''; ?>" required>
             </div>
             <div class="mobile-number">
                 <label for="mobile-number"></label>
-                <input type="tel" id="mobile-number" name="number" placeholder="Mobile Number" required>
+                <input type="tel" id="mobile-number" name="number" placeholder="Mobile Number"
+                    value="<?php echo isset($_POST['number']) ? $number : ''; ?>" required>
             </div>
             <div class="registration-id">
                 <label for="registration-id"></label>
-                <input type="tel" id="registration-id" name="key_id" placeholder="Key ID" required>
+                <input type="tel" id="registration-id" name="email" placeholder="E-mail address"
+                    value="<?php echo isset($_POST['email']) ? $email : ''; ?>" required>
             </div>
             <div class="password">
                 <label for="password"></label>

@@ -10,6 +10,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
     $name = $_POST['username'];
     $number = $_POST['number'];
     $password = $_POST['password'];
+    $email = $_POST['email'];
     $con_pass = $_POST['confirm'];
 
 
@@ -22,12 +23,19 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 
                     if (strlen($name) == 4 || strlen($name) > 4) {
 
-                        $password = password_hash($password, PASSWORD_DEFAULT);
+                        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-                        $query = "INSERT INTO user (name, number, password) VALUES ('$name', '$number', '$password') ";
-                        mysqli_query($connect, $query);
-                        header("location: user login.php");
-                        die;
+                            $password = password_hash($password, PASSWORD_DEFAULT);
+
+                            $query = "INSERT INTO user (name, number, email, password) VALUES ('$name', '$number', '$email',
+                                                         '$password')";
+                            mysqli_query($connect, $query);
+                            header("location: user login.php");
+                            die;
+                        } else {
+                            $msg = 'Please Enter a Valid Email address !';
+                            $errClass = 'alert-danger';
+                        }
                     } else {
                         $msg = 'Please write your Full Name !';
                         $errClass = 'alert-danger';
@@ -83,11 +91,18 @@ if (filter_has_var(INPUT_POST, 'submit')) {
             </div>
             <div class="email">
                 <label for="email"></label>
-                <input type="text" id="email" name="number" placeholder="Number eg. 017xxxxxx97" required>
+                <input type="text" id="email" name="number" placeholder="Mobile Number"
+                    value="<?php echo isset($_POST['number']) ? $number : ''; ?>" required>
             </div>
             <div class="username">
                 <label for="username"></label>
-                <input type="text" id="username" name="username" placeholder="Full Name" required>
+                <input type="text" id="username" name="username" placeholder="Full Name"
+                    value="<?php echo isset($_POST['name']) ? $name : ''; ?>" required>
+            </div>
+            <div class="username">
+                <label for=""></label>
+                <input type="text" id="username" name="email" placeholder="E-mail address"
+                    value="<?php echo isset($_POST['email']) ? $email : ''; ?>" required>
             </div>
             <div class="password">
                 <label for="password"></label>

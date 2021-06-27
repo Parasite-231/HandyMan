@@ -9,13 +9,37 @@ $errClass = '';
 
 if (filter_has_var(INPUT_POST, 'submit')) {
 
-    $number = $_POST['number'];
+    $field = $_POST['number_or_email'];
     $password = $_POST['password'];
 
-    if (!empty($number) && !empty($password)) {
-        if (preg_match("/(^(\+88|0088)?(01){1}[356789]{1}(\d){8})$/", $number)) {
+    if (!empty($field) && !empty($password)) {
 
-            $query = "SELECT * FROM employee WHERE number = '$number' LIMIT 1";
+        if (filter_var($field, FILTER_VALIDATE_EMAIL)) {
+
+            $query = "SELECT * FROM employee WHERE email = '$field' LIMIT 1";
+            $result = mysqli_query($connect, $query);
+            if ($result) {
+                if ($result && mysqli_num_rows($result) > 0) {
+                    $user_data = mysqli_fetch_assoc($result);
+                    if (password_verify($password, $user_data['password'])) {
+                        $_SESSION['ID'] = $user_data['id'];
+                        header("location: ../index.php");
+                        die;
+                    } else {
+                        $msg = 'Invalid information !';
+                        $errClass = 'alert-danger';
+                    }
+                } else {
+                    $msg = 'Invalid information !';
+                    $errClass = 'alert-danger';
+                }
+            } else {
+                $msg = 'Please enter a valid number or email !';
+                $errClass = 'alert-danger';
+            }
+        } else if (preg_match("/(^(\+88|0088)?(01){1}[356789]{1}(\d){8})$/", $field)) {
+
+            $query = "SELECT * FROM employee WHERE number = '$field' LIMIT 1";
             $result = mysqli_query($connect, $query);
             if ($result) {
                 if ($result && mysqli_num_rows($result) > 0) {
@@ -37,7 +61,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                 $errClass = 'alert-danger';
             }
         } else {
-            $msg = 'Please enter a valid number !';
+            $msg = 'Please enter a valid number or email !';
             $errClass = 'alert-danger';
         }
     } else {
@@ -77,7 +101,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
             </div>
             <div class="name">
                 <label for="name"></label>
-                <input type="text" id="name" name="number" placeholder="Number" required><br>
+                <input type="text" id="name" name="number_or_email" placeholder="Number or Email" required><br>
             </div>
             <div class="password">
                 <label for="password"></label>
