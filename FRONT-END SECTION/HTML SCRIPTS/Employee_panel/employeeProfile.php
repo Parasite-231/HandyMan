@@ -1,4 +1,16 @@
 <?php
+session_start();
+if (!isset($_SESSION['eID'])) {
+   header("location:./employee login.php");
+}
+
+$se_id = $_SESSION['eID'];
+
+require("../../Inc/function.php");
+
+$query = "SELECT * FROM employee WHERE id = $se_id";
+$result = mysqli_query($connect, $query);
+
 
 ?>
 
@@ -68,7 +80,7 @@
         </div>
         <!--form-->
         <div class="profileform">
-            <form>
+            <form method="POST">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email Address</label>
@@ -92,7 +104,7 @@
                     <option value="5">Steel Bar Reinforcer</option>
                     <option value="6">Construction-site Garbage Cleaner</option>
                     <option value="7">Road-site Garbage Cleaner</option>
-                    <option value="8">Swerage-channel Cleaner</option>
+                    <option value="8">Sewerage-channel Cleaner</option>
                     <option value="9">Garage Cleaner</option>
                     <option value="10">Washroom Cleaner</option>
                 </select>
