@@ -97,7 +97,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
             <div class="username">
                 <label for="username"></label>
                 <input type="text" id="username" name="username" placeholder="Full Name"
-                    value="<?php echo isset($_POST['name']) ? $name : ''; ?>" required>
+                    value="<?php echo isset($_POST['username']) ? $name : ''; ?>" required>
             </div>
             <div class="username">
                 <label for=""></label>
