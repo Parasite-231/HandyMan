@@ -164,7 +164,10 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: orange;
+  background-color: white;
+  color: orange;
+  transition: 0.3s;
+
 }
 
 div.working-criteria-form--of-employee {
@@ -190,7 +193,7 @@ div.working-criteria-form--of-employee {
   width: 93.7%;
   margin-top: 81px;
   padding: 23px;
-  height: 700px;
+  height: 750px;
   margin-left: 24px;
   background-color: #f2f2f2;
   box-shadow: 2px 3px 16px 10px rgba(0, 0, 0, 0.2);
