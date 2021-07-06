@@ -28,7 +28,7 @@ if (!isset($_SESSION['eID'])) {
         </div>
         <ul>
             <li><a href="dashboard.php"><img src="../../ICONS/dashboard5.png" alt="dashboard"> &nbsp; Dashboard</a></li>
-            <li><a href="employeeProfile.html"><img src="../../ICONS/user.png" alt="profile">&nbsp; Profile</a></li>
+            <li><a href="employeeProfile.php"><img src="../../ICONS/user.png" alt="profile">&nbsp; Profile</a></li>
             <li><a href="employeeWorkNotifications.html"><img src="../../ICONS/bell.png" alt="notifications"> &nbsp;
                     Working
                     Notification</a></li>
