@@ -18,8 +18,13 @@ if (mysqli_num_rows($result) > 0) {
     $address = $data['address'];
 }
 
+if (isset($_POST['submit'])) {
 
+    $address = $_POST['address'];
 
+    $query = "UPDATE user SET address = '$address' WHERE id = $se_uid  ";
+    mysqli_query($connect, $query);
+}
 
 ?>
 
@@ -69,7 +74,7 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="content">
                     <!--profile-form-->
                     <div class="container-3">
-                        <form>
+                        <form method="POST">
                             <div class="heading-of-profile-card">
                                 <h2>Profile Card</h2>
                             </div>
