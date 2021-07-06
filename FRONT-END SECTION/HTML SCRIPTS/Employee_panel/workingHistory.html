@@ -71,7 +71,13 @@
       <!--record-table-->
       <div class="working-notebook" >
          <form>
-            <label for="Timeline">Choose Working Timeline:</label><img src="../../ICONS/calender.png" style="margin-left: 3px;">
+            <label for="Date">Choose a timeline:</label><img src="../../ICONS/calender.png" style="margin-left: 3px;">
+            <input type="date" id="start" name="trip-start"
+               value="yyyy-mm-dd"
+               min="2001-01-01" max="2021-12-31">
+
+
+            <!--<label for="Timeline">Choose Working Timeline:</label><img src="../../ICONS/calender.png" style="margin-left: 3px;">
             <select id="Timeline" name="Timeline">
                <option value="0">Last 24 hour</option>
                <option value="1">Last 1 month</option>
@@ -79,7 +85,7 @@
                <option value="3">Last 12 month</option>
                <option value="4">Last 1 year</option>
                <option value="4">Last 2 year</option>
-            </select>
+            </select>-->
 
             <input type="submit" value=" Search">
          </form>
