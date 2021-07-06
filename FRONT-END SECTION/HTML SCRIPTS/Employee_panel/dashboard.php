@@ -32,16 +32,16 @@ if (!isset($_SESSION['eID'])) {
             <li><a href="employeeWorkNotifications.html"><img src="../../ICONS/bell.png" alt="notifications"> &nbsp;
                     Working
                     Notification</a></li>
-            <li><a href="employeeWorkinprogress.html"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp; Work
-                    In-progress</a></li>
+            <!--<li><a href="employeeWorkinprogress.html"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp; Work
+                    In-progress</a></li>-->
             <li><a href="PaymentInformation.html"><img src="../../ICONS/paymentmethod.png" alt="notifications"> &nbsp;
                     Payment
                     Information</a></li>
-            <li><a href="workingHistory.html"><img src="../../ICONS/workhistorydocument.png" alt="notifications"> &nbsp;
+            <li><a href="workingHistory.html"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
                     History</a></li>
             <!--<li><a href="#" ><img src="messageIncome.png" alt="notifications" > &nbsp; Incoming-Messages</a></li>-->
-            <li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>
+            <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
             <li><a href="employeePrivacy&Policy.html"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
                     Privacy &
                     Policy</a></li>
@@ -60,7 +60,7 @@ if (!isset($_SESSION['eID'])) {
                     <!--<a href="#" class="btn">Log Out</a>-->
                     <!--<img src="notifications.png" alt="notifications">-->
                     <div class="img-case">
-                        <img src="../../ICONS/worker (1).png" alt="user">
+                        <!--<img src="../../ICONS/worker (1).png" alt="user">-->
                     </div>
                 </div>
             </div>
