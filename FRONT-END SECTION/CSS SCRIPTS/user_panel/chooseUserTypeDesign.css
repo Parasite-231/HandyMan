@@ -7,7 +7,7 @@
 
 header {
     /*to make the background a little bit dark and put transition effect*/
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("chooseplatform.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./chooseplatform.jpg");
     height: 100vh;
     background-size: cover;
     background-position: center;

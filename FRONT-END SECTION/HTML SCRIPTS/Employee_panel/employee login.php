@@ -27,8 +27,8 @@ if (filter_has_var(INPUT_POST, 'submit')) {
             if ($result && mysqli_num_rows($result) > 0) {
                 $user_data = mysqli_fetch_assoc($result);
                 if (password_verify($password, $user_data['password'])) {
-                    $_SESSION['ID'] = $user_data['id'];
-                    header("location: ../index.php");
+                    $_SESSION['eID'] = $user_data['id'];
+                    header("location:./dashboard.php");
                     die;
                 } else {
                     $msg = 'Invalid information or Wrong Password !';

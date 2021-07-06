@@ -1,11 +1,45 @@
 <?php
 include(__DIR__ . "./server_config.php");
 
-function check_user_login($connect, $table)
+function check_user_login($connect)
 {
-    if (isset($_SESSION['ID'])) {
-        $id = $_SESSION['ID'];
-        $query = "SELECT * FROM $table WHERE ID = '$id' LIMIT 1";
+    if (isset($_SESSION['uID'])) {
+        $id = $_SESSION['uID'];
+        $query = "SELECT * FROM user WHERE ID = '$id' LIMIT 1";
+
+        $result = mysqli_query($connect, $query);
+        if ($result && mysqli_num_rows($result) > 0) {
+            $user_data = mysqli_fetch_assoc($result);
+            return $user_data;
+        }
+    } else {
+        header("");
+        die;
+    }
+}
+
+function check_employee_login($connect)
+{
+    if (isset($_SESSION['eID'])) {
+        $id = $_SESSION['eID'];
+        $query = "SELECT * FROM employee WHERE ID = '$id' LIMIT 1";
+
+        $result = mysqli_query($connect, $query);
+        if ($result && mysqli_num_rows($result) > 0) {
+            $user_data = mysqli_fetch_assoc($result);
+            return $user_data;
+        }
+    } else {
+        header("");
+        die;
+    }
+}
+
+function check_admin_login($connect)
+{
+    if (isset($_SESSION['aID'])) {
+        $id = $_SESSION['aID'];
+        $query = "SELECT * FROM admin WHERE ID = '$id' LIMIT 1";
 
         $result = mysqli_query($connect, $query);
         if ($result && mysqli_num_rows($result) > 0) {
