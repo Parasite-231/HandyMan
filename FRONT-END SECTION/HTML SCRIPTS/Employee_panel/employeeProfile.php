@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['eID'])) {
-   header("location:./employee login.php");
+    header("location:./employee login.php");
 }
 
 $se_id = $_SESSION['eID'];
@@ -88,26 +88,44 @@ $result = mysqli_query($connect, $query);
                 <label for="phonenumber">Phone Number</label>
                 <input type="text" id="phonenumber" name="phonenumber" required>
                 <label for="company-name">Company-name</label>
-                <select id="company-name" name="company-name">
+                <textarea id="company-name" name="company-name" style="height:50px"></textarea>
+                <!--<select id="company-name" name="company-name">
                     <option value="50">None</option>
                     <option value="51">Stark Industries</option>
                     <option value="52">Pran</option>
                     <option value="53">RFL</option>
                     <option value="54">Wayne Enterprise</option>
-                </select>
+                    </select>-->
+                <!--employee-type selection-->
                 <label for="employee-type">Employee-Type</label>
                 <select id="employee-type" name="employee-type">
                     <option value="1">None</option>
-                    <option value="2">AC Repairer</option>
-                    <option value="3">Electrician</option>
+                    <option value="2">Electrician</option>
+                    <option value="3">AC Repairer</option>
                     <option value="4">Refrigerator Repairer</option>
-                    <option value="5">Steel Bar Reinforcer</option>
-                    <option value="6">Construction-site Garbage Cleaner</option>
-                    <option value="7">Road-site Garbage Cleaner</option>
-                    <option value="8">Sewerage-channel Cleaner</option>
-                    <option value="9">Garage Cleaner</option>
-                    <option value="10">Washroom Cleaner</option>
+                    <option value="5">Washing Machine repairer</option>
+                    <option value="6">Television Repairer</option>
+                    <option value="7">Oven Repairer</option>
+                    <option value="8">Carpenter</option>
+                    <option value="9">Painter</option>
+                    <option value="10">Plumber</option>
+                    <option value="11">Stove Repairer</option>
+                    <option value="12">Elevator Repairer</option>
+                    <option value="13">Glass cleaner</option>
+                    <option value="14">Steel Bar Reinforcers</option>
+                    <option value="15">Cement masons</option>
+                    <option value="16">Concrete finishers</option>
+                    <option value="17">Steel Bar Cutters</option>
+                    <option value="18">Drillers</option>
+                    <option value="19">Water Pipe-line Fixers</option>
+                    <option value="20">Piling Workers</option>
+                    <option value="21">Elevator Constructor</option>
+                    <option value="22">Construction-site Cleaner</option>
+                    <option value="23">Road-site Garbage Cleaner</option>
+                    <option value="24">Sewerage-channel Cleaner</option>
+                    <option value="25">Parking-Garage Cleaner</option>
                 </select>
+                <!--gender of employee-->
                 <label for="gender">Gender</label>
                 <select id="Gender" name="Gender">
                     <option value="10">None</option>
@@ -116,7 +134,9 @@ $result = mysqli_query($connect, $query);
                     <option value="14">None</option>
                 </select>
                 <label for="address">Your Address</label>
-                <textarea id="address" name="address" style="height:100px"></textarea>
+                <textarea id="address" name="address" style="height:50px"></textarea>
+                <!--submitted button-->
+                <input type="submit" value="Submit">
             </form>
         </div>
 </body>
