@@ -1,6 +1,12 @@
 <?php
 
 session_start();
+if (isset($_SESSION['eID'])) {
+    header("location:./index.php");
+}
+
+
+
 $table = 'employee';
 require("../../Inc/function.php");
 
