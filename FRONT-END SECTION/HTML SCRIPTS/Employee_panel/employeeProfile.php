@@ -10,7 +10,27 @@ require("../../Inc/function.php");
 
 $query = "SELECT * FROM employee WHERE id = $se_id";
 $result = mysqli_query($connect, $query);
+if (mysqli_num_rows($result) > 0) {
+    $data = mysqli_fetch_assoc($result);
+    $name = $data['name'];
+    $number = $data['number'];
+    $email = $data['email'];
+    $company = $data['company'];
+    $type = $data['type'];
+    $gender = $data['gender'];
+    $address = $data['address'];
+}
 
+if (isset($_POST['submit'])) {
+    $company = $_POST['company_name'];
+    $type = $_POST['type'];
+    $gender = $_POST['gender'];
+    $address = $_POST['address'];
+
+    $query = "UPDATE employee SET company = '$company', type = '$type', gender = '$gender', address = '$address'
+                WHERE id = $se_id  ";
+    mysqli_query($connect, $query);
+}
 
 ?>
 
@@ -82,14 +102,15 @@ $result = mysqli_query($connect, $query);
         <div class="profileform">
             <form method="POST">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" value="<?php echo $name; ?>">
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" value="<?php echo $email; ?>">
                 <label for="phonenumber">Phone Number</label>
-                <input type="text" id="phonenumber" name="phonenumber" required>
+                <input type="text" id="phonenumber" name="number" value="<?php echo $number; ?>">
                 <label for="company-name">Company-name</label>
-                <textarea id="company-name" name="company-name" style="height:50px"></textarea>
-                <!--<select id="company-name" name="company-name">
+                <input type="text" id="company-name" name="company_name" style="height:50px"
+                    value="<?php echo $company; ?>"></input>
+                <!--<select id=" company-name" name="company-name">
                     <option value="50">None</option>
                     <option value="51">Stark Industries</option>
                     <option value="52">Pran</option>
@@ -98,43 +119,43 @@ $result = mysqli_query($connect, $query);
                     </select>-->
                 <!--employee-type selection-->
                 <label for="employee-type">Employee-Type</label>
-                <select id="employee-type" name="employee-type">
-                    <option value="1">None</option>
-                    <option value="2">Electrician</option>
-                    <option value="3">AC Repairer</option>
-                    <option value="4">Refrigerator Repairer</option>
-                    <option value="5">Washing Machine repairer</option>
-                    <option value="6">Television Repairer</option>
-                    <option value="7">Oven Repairer</option>
-                    <option value="8">Carpenter</option>
-                    <option value="9">Painter</option>
-                    <option value="10">Plumber</option>
-                    <option value="11">Stove Repairer</option>
-                    <option value="12">Elevator Repairer</option>
-                    <option value="13">Glass cleaner</option>
-                    <option value="14">Steel Bar Reinforcers</option>
-                    <option value="15">Cement masons</option>
-                    <option value="16">Concrete finishers</option>
-                    <option value="17">Steel Bar Cutters</option>
-                    <option value="18">Drillers</option>
-                    <option value="19">Water Pipe-line Fixers</option>
-                    <option value="20">Piling Workers</option>
-                    <option value="21">Elevator Constructor</option>
-                    <option value="22">Construction-site Cleaner</option>
-                    <option value="23">Road-site Garbage Cleaner</option>
-                    <option value="24">Sewerage-channel Cleaner</option>
-                    <option value="25">Parking-Garage Cleaner</option>
+                <select id="employee-type" name="type" value="<?php echo $type; ?> required>
+                    <option value=" None">None</option>
+                    <option value="Electrician">Electrician</option>
+                    <option value="AC Repairer">AC Repairer</option>
+                    <option value="Refrigerator Repairer">Refrigerator Repairer</option>
+                    <option value="Washing Machine repairer">Washing Machine repairer</option>
+                    <option value="Television Repairer">Television Repairer</option>
+                    <option value="Oven Repairer">Oven Repairer</option>
+                    <option value="Carpenter">Carpenter</option>
+                    <option value="Painter">Painter</option>
+                    <option value="Plumber">Plumber</option>
+                    <option value="Stove Repairer">Stove Repairer</option>
+                    <option value="Elevator Repairer">Elevator Repairer</option>
+                    <option value="Glass cleaner">Glass cleaner</option>
+                    <option value="Steel Bar Reinforcers">Steel Bar Reinforcers</option>
+                    <option value="Cement Masons">Cement Masons</option>
+                    <option value="Concrete finishers">Concrete finishers</option>
+                    <option value="Steel Bar Cutters">Steel Bar Cutters</option>
+                    <option value="Drillers">Drillers</option>
+                    <option value="Water Pipe-line Fixers">Water Pipe-line Fixers</option>
+                    <option value="Piling Workers">Piling Workers</option>
+                    <option value="Elevator Constructor">Elevator Constructor</option>
+                    <option value="Construction-site Cleaner">Construction-site Cleaner</option>
+                    <option value="Road-site Garbage Cleaner">Road-site Garbage Cleaner</option>
+                    <option value="Sewerage Cleaner">Sewerage Cleaner</option>
+                    <option value="Parking-Garage Cleaner">Parking-Garage Cleaner</option>
                 </select>
                 <!--gender of employee-->
                 <label for="gender">Gender</label>
-                <select id="Gender" name="Gender">
-                    <option value="10">None</option>
-                    <option value="11">Male</option>
-                    <option value="13">Female</option>
-                    <option value="14">None</option>
+                <select id="Gender" name="gender" value="<?php echo $gender; ?> required>
+                    <option value=" None">None</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                 </select>
                 <label for="address">Your Address</label>
-                <textarea id="address" name="address" style="height:50px"></textarea>
+                <input type="text" id="address" name="address" style="height:50px"
+                    value="<?php echo $address; ?>"></input>
                 <!--submitted button-->
                 <input type="submit" value="Submit">
             </form>

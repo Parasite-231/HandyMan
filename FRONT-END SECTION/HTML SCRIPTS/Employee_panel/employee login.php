@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION['eID'])) {
-    header("location:./index.php");
+    header("location:./dashboard.php");
 }
 
 

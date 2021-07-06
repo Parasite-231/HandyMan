@@ -16,7 +16,7 @@
     <div class="bg-img">
         <div class="container">
             <div class="topnav">
-                <a href="userProfile.html"><i class="fa  fa-user"></i>Profile</a>
+                <a href="userProfile.php"><i class="fa  fa-user"></i>Profile</a>
                 <a href="userHomepage.html"><i class="fa  fa-house-user"></i>Home</a>
                 <a href="#"><i class="fa  fa-shopping-cart"></i>My Orders</a>
                 <a href="About us.html" class="constant"><i class="fa  fa-users"></i>About Us</a>

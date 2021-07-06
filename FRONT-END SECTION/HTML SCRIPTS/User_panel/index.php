@@ -16,13 +16,13 @@
     <div class="bg-img">
         <div class="container">
             <div class="topnav">
-                <a href="userProfile.html"><i class="fa  fa-user"></i>Profile</a>
-                <a href="userHomepage.html"><i class="fa  fa-house-user"></i>Home</a>
+                <a href="userProfile.php"><i class="fa  fa-user"></i>Profile</a>
+                <a href="index.php"><i class="fa  fa-house-user"></i>Home</a>
                 <a href="#"><i class="fa  fa-shopping-cart"></i>My Orders</a>
-                <a href="About us.html" class="constant"><i class="fa  fa-users"></i>About Us</a>
-                <a href="contactUs.html"><i class="fa fa-phone-square"></i>Contact Us</a>
-                <a href="userTerms&policy.html" class="constant"><i class="fa fa-file-signature"></i>Terms & Policy</a>
-                <a href="userhelp.html"><i class="fa fa-question-circle"></i>Help</a>
+                <a href="About us.php" class="constant"><i class="fa  fa-users"></i>About Us</a>
+                <a href="contactUs.php"><i class="fa fa-phone-square"></i>Contact Us</a>
+                <a href="userTerms&policy.php" class="constant"><i class="fa fa-file-signature"></i>Terms & Policy</a>
+                <a href="userhelp.php"><i class="fa fa-question-circle"></i>Help</a>
 
                 <?php
                 session_start();
