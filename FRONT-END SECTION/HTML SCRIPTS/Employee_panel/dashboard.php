@@ -27,7 +27,7 @@ if (!isset($_SESSION['eID'])) {
             <h1>HandyMan</h1>
         </div>
         <ul>
-            <li><a href="dasboard.html"><img src="../../ICONS/dashboard5.png" alt="dashboard"> &nbsp; Dashboard</a></li>
+            <li><a href="dashboard.php"><img src="../../ICONS/dashboard5.png" alt="dashboard"> &nbsp; Dashboard</a></li>
             <li><a href="employeeProfile.html"><img src="../../ICONS/user.png" alt="profile">&nbsp; Profile</a></li>
             <li><a href="employeeWorkNotifications.html"><img src="../../ICONS/bell.png" alt="notifications"> &nbsp;
                     Working
@@ -54,7 +54,7 @@ if (!isset($_SESSION['eID'])) {
             <div class="nav">
                 <div class="search">
                     <input type="text" placeholder="Search...">
-                    <button type="submit"><img src="search.png" alt="search"></button>
+                    <button type="submit"><img src="../../ICONS/search.png" alt="search"></button>
                 </div>
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->

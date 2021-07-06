@@ -34,9 +34,6 @@
                     echo "<a href='chooseUserType.html'><i class='fa fa-clipboard'></i>Register</a>";
                 }
 
-
-
-
                 ?>
 
             </div>
@@ -211,7 +208,6 @@
             <div class="description">
                 <p>Rating : 3.5 </p>
                 <p>Price: Per hour Tk 350</p>
-                >
                 <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
             </div>
         </div>
@@ -365,7 +361,7 @@
                 <img src="../../UI-UX Designs/swragechannelcleanerjpg.jpg">
             </div>
             <div class="bio-of-founder">
-                <h1>Swerage-channel Cleaner</h1>
+                <h1>Sewerage-channel Cleaner</h1>
             </div>
             <div class="description">
                 <p>Rating : 4.5 </p>
