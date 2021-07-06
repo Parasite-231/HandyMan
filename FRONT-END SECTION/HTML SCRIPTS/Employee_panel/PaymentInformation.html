@@ -59,7 +59,17 @@
       <!--working-criteria-for-employee-->
       <div class="working-criteria-form--of-employee" >
          <form >
-            <label for="Date">Choose working-date:</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;">
+            <label for="Date">From:</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;">
+            <input type="date" id="start" name="trip-start"
+               value="yyyy-mm-dd"
+               min="2001-01-01" max="2021-12-31">
+
+            <label for="Date">To:</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;">
+            <input type="date" id="start" name="trip-start"
+               value="yyyy-mm-dd"
+               min="2001-01-01" max="2021-12-31">
+
+            <!--<label for="Date">Choose working-date:</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;">
             <input type="date" id="start" name="trip-start"
                value="yyyy-mm-dd"
                min="2001-01-01" max="2021-12-31">
@@ -71,7 +81,7 @@
                <option value="63">Last 5 hour</option>
                <option value="64">Last 12 hour</option>
                <option value="65">Last 24 hour</option>
-            </select>
+            </select>-->
             <input type="submit" value=" Search">
          </form>
       </div>
