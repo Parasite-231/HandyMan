@@ -59,23 +59,23 @@ if (isset($_POST['submit'])) {
         <ul>
             <li><a href="dashboard.php"><img src="../../ICONS/dashboard5.png" alt="dashboard"> &nbsp; Dashboard</a></li>
             <li><a href="employeeProfile.php"><img src="../../ICONS/user.png" alt="profile">&nbsp; Profile</a></li>
-            <li><a href="employeeWorkNotifications.html"><img src="../../ICONS/bell.png" alt="notifications"> &nbsp;
+            <li><a href="employeeWorkNotifications.php"><img src="../../ICONS/bell.png" alt="notifications"> &nbsp;
                     Working
                     Notification</a></li>
-            <li><a href="employeeWorkinprogress.html"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp; Work
-                    In-progress</a></li>
-            <li><a href="PaymentInformation.html"><img src="../../ICONS/paymentmethod.png" alt="notifications"> &nbsp;
+            <!--<li><a href="employeeWorkinprogress.html"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp; Work
+                    In-progress</a></li>-->
+            <li><a href="PaymentInformation.php"><img src="../../ICONS/paymentmethod.png" alt="notifications"> &nbsp;
                     Payment
                     Information</a></li>
-            <li><a href="workingHistory.html"><img src="../../ICONS/workhistorydocument.png" alt="notifications"> &nbsp;
+            <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
                     History</a></li>
             <!--<li><a href="#" ><img src="messageIncome.png" alt="notifications" > &nbsp; Incoming-Messages</a></li>-->
-            <li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>
-            <li><a href="employeePrivacy&Policy.html"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
+            <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
+            <li><a href="employeePrivacy&Policy.php"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
                     Privacy &
                     Policy</a></li>
-            <li><a href="employeeHelp.html"><img src="../../ICONS/help.png" alt="helpme">&nbsp; Help</a></li>
+            <li><a href="employeeHelp.php"><img src="../../ICONS/help.png" alt="helpme">&nbsp; Help</a></li>
             <li><a href="../../Inc/e_logout.php"><img src="../../ICONS/logou.png" alt="logmeout">&nbsp; Log out</a></li>
         </ul>
     </div>
