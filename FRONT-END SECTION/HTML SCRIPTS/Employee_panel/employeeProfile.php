@@ -153,7 +153,7 @@ if (isset($_POST['submit'])) {
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
-                <label for="address">Your Address (District)</label>
+                <label for="address">Your Address</label>
                 <input type="text" id="address" name="address" style="height:50px"
                     value="<?php echo $address; ?>"></input>
                 <!--submitted button-->
