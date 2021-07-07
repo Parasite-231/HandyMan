@@ -106,7 +106,7 @@
                   </div>-->
             </div>
             <div class="img-section">
-                <img src="../../ICONS/policyposter4.png">
+                <img src="../../UI-UX Designs/policyposter4.png">
             </div>
         </div>
     </div>
