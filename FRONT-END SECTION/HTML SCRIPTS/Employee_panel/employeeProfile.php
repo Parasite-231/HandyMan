@@ -118,7 +118,7 @@ if (isset($_POST['submit'])) {
                     <option value="54">Wayne Enterprise</option>
                     </select>-->
                 <!--employee-type selection-->
-                <label for="employee-type">Employee-Type</label>
+                <label for="employee-type">Employee-Type -* </label>
                 <select id="employee-type" name="type" value="<?php echo $type; ?>" required>
                     <option value="<?php echo $type; ?>"><?php echo $type; ?></option>
                     <option value="Electrician">Electrician</option>
@@ -153,7 +153,7 @@ if (isset($_POST['submit'])) {
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
-                <label for="address">Your Address</label>
+                <label for="address">Your Address (District)</label>
                 <input type="text" id="address" name="address" style="height:50px"
                     value="<?php echo $address; ?>"></input>
                 <!--submitted button-->
