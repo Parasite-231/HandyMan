@@ -25,8 +25,8 @@
                 <a href="userhelp.html"><i class="fa fa-question-circle"></i>Help</a>
 
 
-                echo "<a href='./chooseusertype2.html'><i class='fa fa-lock'></i>Sign in</a>";
-                echo "<a href='chooseUserType.html'><i class='fa fa-clipboard'></i>Register</a>";
+                <a href='./chooseusertype2.php'><i class='fa fa-lock'></i>Sign in</a>
+                <a href='chooseUserType.php'><i class='fa fa-clipboard'></i>Register</a>
 
 
 

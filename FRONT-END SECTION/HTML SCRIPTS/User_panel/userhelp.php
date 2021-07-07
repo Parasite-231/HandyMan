@@ -25,16 +25,16 @@
                 <a href="userhelp.php"><i class="fa fa-question-circle"></i>Help</a>
 
                 <?php
-            session_start();
+                session_start();
 
-            if (isset($_SESSION['uID'])) {
-               echo "<a href='../../Inc/logout.php'><i class='fa fa-lock'></i>Sign out</a>";
-            } else {
-               echo "<a href='./chooseusertype2.html'><i class='fa fa-lock'></i>Sign in</a>";
-               echo "<a href='chooseUserType.html'><i class='fa fa-clipboard'></i>Register</a>";
-            }
+                if (isset($_SESSION['uID'])) {
+                    echo "<a href='../../Inc/logout.php'><i class='fa fa-lock'></i>Sign out</a>";
+                } else {
+                    echo "<a href='./chooseusertype2.php'><i class='fa fa-lock'></i>Sign in</a>";
+                    echo "<a href='chooseUserType.php'><i class='fa fa-clipboard'></i>Register</a>";
+                }
 
-            ?>
+                ?>
 
             </div>
         </div>
