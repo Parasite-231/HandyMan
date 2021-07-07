@@ -46,67 +46,48 @@
                     <h2>FAQ</h2>
                 </div>
                 <div class="content">
-                    <h3>Q. How does the site work?</h3>
-                    <p>
-                        You can browse the site or use our search engine to find your desired products. You can then add
-                        them to your shopping bag and click on place order. You let us know your address, select a
-                        delivery time – and voila, you are done. A Chaldal representative will then deliver your order
-                        right to your home or office.
-                    </p>
-                    <h3>Q.How much do deliveries cost? </h3>
-                    <p>There is a BDT 9 delivery fee if the order value is BDT 400 or more. If the order value is less
-                        than BDT 400, we charge BDT 19 delivery fee.</p>
-                    <h3>Q.How can I contact you?</h3>
-                    <p>You can always call +880-188-1234-567 or mail us at support@chaldal.com. </p>
-                    <h3>Q.How do I know when my order is here? </h3>
-                    <p> A Chaldal representative will call you as soon as they are at your house to let you know about
-                        your delivery. </p>
-                    <h3>Q.What are your delivery hours? </h3>
-                    <p>We deliver from 8 am to 10 pm every day. You can choose from available slots to find something
-                        that is convenient to you. </p>
-                    <h3>Q. How do I pay? </h3>
-                    <p>We accept cash on delivery and we also have Online Credit Card and Online bKash service. Don’t
-                        worry, our Chaldal representatives should always carry enough change. </p>
-                    <h3>Q. What if the item is out of stock? </h3>
-                    <p>
-                        We hold our own inventory in 9 of our warehouses, so we rarely run of out stock. However, we
-                        will try our best to source what you need. If we cannot find it, we will SMS/call you and let
-                        you know what substitutes are available.
-                    </p>
-                    <h3>Q. My order is wrong. What do I do? </h3>
-                    <p>Please Immediately call +880-188-1234-567 and let us know the problem.</p>
-                    <h3>Q. What happens during a hartal? </h3>
-                    <p>We work during hartals. That’s how dedicated we are. </p>
-                    <h3>Q. What is your policy on refunds?</h3>
-                    <p>
-                        You may get a refund within seven (7) days on unopened or spoilt packaged products. For diapers
-                        and perishable products, such as milk, fruits and fresh vegetables, we have a one (1) day return
-                        policy. We will not accept any diaper items as return if more than 20% of the pack has been
-                        used. We reserve the right to refuse a refund. Please contact us at +880-188-1234-567 if you
-                        want to return an item.
-                    </p>
-                    <h3>Q. Do you serve my area? </h3>
-                    <p>We are currently serving all of Dhaka city, except certain parts of Old town. </p>
-                    <h3>Q. Why should we buy from you when I have a store nearby? </h3>
-                    <p>Well, that is up to you but you can also be a couch potato like our founders and have your items
-                        delivered to your house for free. Our prices are sometimes lower than that of major superstores
-                        in the city. We also carry a larger variety than the average corner-store. So, there is really
-                        no reason to not buy from us. </p>
-                    <h3>Q. Can I get a refund via cash? </h3>
-                    <p>No, for any sort of issue, we will update the credit to your Chaldal account. </p>
-                    <h3>Q. Can I order over the phone? </h3>
-                    <p>Absolutely. Our hotline is +880-188-1234-567.</p>
-                    <h3>Q. I can’t find the product I am looking for. What do I do? </h3>
-                    <p>We are always open to new suggestions and will add an item to our inventory just for you. There
-                        is a "Product Request" feature that you can use to inform us of your requirement. You can also
-                        call +880-188-1234-567 or mail us at support@chaldal.com to add an item to our inventory.
-                    </p>
-                    <h3>Q. How are you sourcing your products? </h3>
-                    <p>We have deals with whole-sellers, manufacturers and importers. We only sell authentic products.
-                    </p>
-                    <h3>Q. Should I tip the delivery representative? </h3>
-                    <p>Tips are not required. But our delivery team members appreciate recognition for their hard work.
-                        Delivery representatives keep the entire tip amount.</p>
+                <h3>Q. How does this site work?</h3>
+                  <p> 
+                     You can browse the site or use our search engine to find your desired service. You can then add them to your my orders platform and click on confirm order. You have to let us know your address, select a service time – you are done. An worker for that particular service will 
+                     arrive at your place with his helping hand. 
+                  </p>
+                  <h3>Q. Can I login to this website using phone number?</h3>
+                  <p>Yes, you can login to these website by using both phone number and username after signing up</p>
+
+
+                  <h3>Q. How can I contact you?</h3>
+                  <p>You can always contact us through our contact numbers provided in our contact us page and can also mail us at <a href="mdmuktadirmazumder@gmail.com">reachus@handyman.com</a></a><br>
+                  Visit : <a href="contactUs.html">www.handyman.com</a><br>
+                  Contact: +8801306989578 </p>
+
+                  <h3>Q. How do I know when my order is here? </h3>
+                  <p> The employee you will select for your particular work will call you as soon as they are at your house. </p>
+
+                  <h3>Q. What are your servicing hours? </h3>
+                  <p>We deliever our services from 8 am to 10 pm every day. You can also make your reserve time for your work.</p>
+
+                  <h3>Q. Can I cancel my order?</h3>
+                  <p>No, you can't cancel your oder </p>
+
+                  <h3>Q. How do I pay? </h3>
+                  <p>We accept cash on delivery only. </p>
+                  
+                 
+                  <h3>Q. What happens during a hartal? </h3>
+                  <p>We work during hartals. That’s how dedicated we are. </p>
+                  
+                  <h3>Q. Do you serve my area? </h3>
+                  <p>We are currently serving all of Dhaka city, except certain parts of Old town. </p>
+                  
+                 
+                  <h3>Q.  Can I order over the phone? </h3>
+                  <p>No, You have to order your work from our website only</p>
+                 
+                  <h3>Q. How are you sourcing your employees? </h3>
+                  <p>Any worker who are experienced and well-skilled are only being choose from this company. </p>
+
+                  <h3>Q. Should I tip the worker ? </h3>
+                  <p>Tips are not required. But our employees appreciate recognition for their hard work.</p>
                     <!--<div class="button">
                      <a href="">Connect with us</a>
                      </div>-->
