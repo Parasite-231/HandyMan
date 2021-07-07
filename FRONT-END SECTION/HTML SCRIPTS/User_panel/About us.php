@@ -89,11 +89,11 @@
                 <img src="../../UI-UX Designs/elon3.jpg">
             </div>
             <div class="bio-of-founder">
-                <h1>Moshiur Rahman</h1>
+                <h1>Elon Musk</h1>
                 <p>CEO </p>
             </div>
             <div class="description">
-                <p>BSc in CSE, MSc in CSE, Former VC at Brac University,Bangladesh.</p>
+                <!--<p>BSc in CSE, MSc in CSE, Former VC at Brac University,Bangladesh.</p>-->
                 <button>Contact</button>
             </div>
         </div>
@@ -103,11 +103,11 @@
                 <img src="../../UI-UX Designs/jeff.jpg">
             </div>
             <div class="bio-of-founder">
-                <h1>Ajwad Abrar</h1>
+                <h1>Jeff Bezos</h1>
                 <p>Finance Director</p>
             </div>
             <div class="description">
-                <p>BSc in CSE, MBA in IBA, Former Manager at RFL Indusries, Bangladesh.</p>
+                <!--<p>BSc in CSE, MBA in IBA, Former Manager at RFL Indusries, Bangladesh.</p>-->
                 <button>Contact</button>
             </div>
         </div>
@@ -117,12 +117,12 @@
                 <img src="../../UI-UX Designs/staffboss.jpg">
             </div>
             <div class="bio-of-founder">
-                <h1>Abrar Chowdhury</h1>
+                <h1>Sam Hun</h1>
                 <p>Staff Manager
                 </p>
             </div>
             <div class="description">
-                <p>BSc in CSE , Former Astt.Teacher at IUT,Bangladesh.</p>
+                <!--<p>BSc in CSE , Former Astt.Teacher at IUT,Bangladesh.</p>-->
                 <button>Contact</button>
             </div>
         </div>
@@ -132,11 +132,11 @@
                 <img src="../../UI-UX Designs/sundarpichai.jpg">
             </div>
             <div class="bio-of-founder">
-                <h1>Ahsan Habib</h1>
+                <h1>Jim Cameroon</h1>
                 <p>Technical Director</p>
             </div>
             <div class="description">
-                <p>BSc in CSE, Former Manager at BAT, Bangladesh.</p>
+                <!--<p>BSc in CSE, Former Manager at BAT, Bangladesh.</p>-->
                 <button>Contact</button>
             </div>
         </div>
