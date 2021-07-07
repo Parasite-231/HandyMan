@@ -120,7 +120,7 @@ if (isset($_POST['submit'])) {
                 <!--employee-type selection-->
                 <label for="employee-type">Employee-Type</label>
                 <select id="employee-type" name="type" value="<?php echo $type; ?>" required>
-                    <option value=" None">None</option>
+                    <option value="<?php echo $type; ?>"><?php echo $type; ?></option>
                     <option value="Electrician">Electrician</option>
                     <option value="AC Repairer">AC Repairer</option>
                     <option value="Refrigerator Repairer">Refrigerator Repairer</option>
@@ -148,8 +148,8 @@ if (isset($_POST['submit'])) {
                 </select>
                 <!--gender of employee-->
                 <label for="gender">Gender</label>
-                <select id="Gender" name="gender" value="<?php echo $gender; ?> required>
-                    <option value=" None">None</option>
+                <select id="Gender" name="gender" value="<?php echo $gender; ?>" required>
+                    <option value="<?php echo $gender; ?>"><?php echo $gender; ?></option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
