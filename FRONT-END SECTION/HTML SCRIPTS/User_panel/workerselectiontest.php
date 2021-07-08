@@ -8,12 +8,25 @@ if (!isset($_SESSION['uID'])) {
 
 $u_id = $_SESSION['uID'];
 
+$query = "SELECT name, number, address FROM user WHERE id = $u_id";
+$result = mysqli_query($connect, $query);
+
+if (mysqli_num_rows($result) > 0) {
+    $userdata = mysqli_fetch_assoc($result);
+
+    $u_name = $userdata['name'];
+    $u_number = $userdata['number'];
+    $u_address = $userdata['address'];
+}
+
+
 if (isset($_POST['submit'])) {
     $emp_id = $_POST['id'];
     $o_id = $u_id . $emp_id;
     $date = date('Y-m-d');
 
-    $query = "INSERT INTO orderlist (id, e_id, u_id, date) VALUES ('$o_id', '$emp_id', '$u_id', '$date')";
+    $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, date) 
+                VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$date')";
     mysqli_query($connect, $query);
 }
 

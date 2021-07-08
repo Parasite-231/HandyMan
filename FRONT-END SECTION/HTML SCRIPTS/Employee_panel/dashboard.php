@@ -11,6 +11,8 @@ $result = mysqli_query($connect, $query);
 
 if (mysqli_num_rows($result) > 0) {
     $row = mysqli_num_rows($result);
+} else {
+    $row = 0;
 }
 
 ?>
