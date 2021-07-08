@@ -1,7 +1,16 @@
 <?php
+require("../../Inc/function.php");
 session_start();
 if (!isset($_SESSION['eID'])) {
     header("location:./employee login.php");
+}
+
+$e_id = $_SESSION['eID'];
+$query = "SELECT * FROM orderlist WHERE e_id = $e_id ";
+$result = mysqli_query($connect, $query);
+
+if (mysqli_num_rows($result) > 0) {
+    $row = mysqli_num_rows($result);
 }
 
 ?>
@@ -115,7 +124,7 @@ if (!isset($_SESSION['eID'])) {
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>0</h1>
+                        <h1><?php echo $row; ?></h1>
                         <h3>Work Notification</h3>
                     </div>
                     <div class="icon-case">
