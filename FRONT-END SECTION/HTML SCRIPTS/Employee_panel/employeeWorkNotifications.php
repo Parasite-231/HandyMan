@@ -1,8 +1,12 @@
 <?php
+require("../../Inc/function.php");
 session_start();
 if (!isset($_SESSION['eID'])) {
     header("location:./employee login.php");
 }
+
+$e_id = $_SESSION['eID'];
+
 
 ?>
 
@@ -111,7 +115,41 @@ if (!isset($_SESSION['eID'])) {
                         <th>Total Payment</th>
                         <th>Working State</th>
                     </tr>
-                    <tr>
+
+
+
+
+                    <?php
+
+                    $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
+                    $result = mysqli_query($connect, $query);
+
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($list = mysqli_fetch_assoc($result)) {
+                            $o_id = $list['id'];
+                            $u_name = $list['u_name'];
+                            $u_number = $list['u_number'];
+                            $u_address = $list['u_address'];
+                            $date = $list['date'];
+                            echo "
+                            <tr>
+                                <th>$u_name</th>
+                                <th>$u_number</th>
+                                <th>$u_address</th>
+                                <th>Anytime</th>
+                                <th>N/A</th>
+                                <th>800 BDT</th>
+                                <th>N/A</th>
+                            </tr>
+                            ";
+                        }
+                    } else {
+                        echo "NO Notifications to show";
+                    }
+
+                    ?>
+
+                    <!--<tr>
                         <td>Ahsan Habib</td>
                         <td>0189634766</td>
                         <td>120/22, Shahjanpur, Dhaka</td>
@@ -308,7 +346,7 @@ if (!isset($_SESSION['eID'])) {
                         <td>9 hour</td>
                         <td>7299</td>
                         <td>End</td>
-                    </tr>
+                    </tr>-->
                 </table>
             </div>
 </body>
