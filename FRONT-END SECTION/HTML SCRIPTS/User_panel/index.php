@@ -3,8 +3,6 @@
 require('../../Inc/function.php');
 session_start();
 
-
-
 ?>
 
 
@@ -87,7 +85,7 @@ session_start();
                 </div>
                 <div class="bio-of-founder">
                     <h1>AC Repairer</h1>
-                    <input type="hidden" name="ac_repairer" value="Electrician">
+                    <input type="hidden" name="ac_repairer" value="AC Repairer">
                 </div>
                 <div class="description">
                     <p>Rating : 3.0 </p>
@@ -105,11 +103,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Refrigerator Repairer</h1>
+                        <input type="hidden" name="fridge_repairer" value="Refrigerator Repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 3.5 </p>
                         <p>Price: Per hour Tk 350</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -121,11 +121,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Washing Machine repairer</h1>
+                        <input type="hidden" name="washing_machine_repairer" value="Washing Machine repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 2.5 </p>
                         <p>Price: Per hour Tk 350</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -136,11 +138,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Television Repairer</h1>
+                        <input type="hidden" name="television_repairer" value="Television Repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 3.5 </p>
                         <p>Price: Per hour Tk 350</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -151,11 +155,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Oven Repairer</h1>
+                        <input type="hidden" name="oven_repairer" value="Oven Repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
                         <p>Price: Per hour Tk 350</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -167,11 +173,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Carpenter</h1>
+                        <input type="hidden" name="carpenter" value="Carpenter">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
                         <p>Price: Per hour Tk 350</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -183,11 +191,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Painter</h1>
+                        <input type="hidden" name="painter" value="Painter">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
                         <p>Price: Per hour Tk 350</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -199,11 +209,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Plumber</h1>
+                        <input type="hidden" name="plumber" value="Plumber">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
                         <p>Price: Per hour Tk 350</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -215,11 +227,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Stove Repairer</h1>
+                        <input type="hidden" name="stove_repairer" value="Stove Repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
                         <p>Price: Per hour Tk 350</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -231,11 +245,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Elevator Repairer</h1>
+                        <input type="hidden" name="elevator_repairer" value="Elevator Repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
                         <p>Price: Per hour Tk 350</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -246,11 +262,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Glass cleaner</h1>
+                        <input type="hidden" name="glass_cleaner" value="Glass Cleaner">
                     </div>
                     <div class="description">
                         <p>Rating : 3.5 </p>
                         <p>Price: Per hour Tk 350</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -264,13 +282,14 @@ session_start();
                         <img src="../../UI-UX Designs/sbarworker.jpg">
                     </div>
                     <div class="bio-of-founder">
-                        <h1>Steel Bar Reinforcers
-                        </h1>
+                        <h1>Steel Bar Reinforcers</h1>
+                        <input type="hidden" name="steel_bar_reinforcers" value="Steel Bar Reinforcers">
                     </div>
                     <div class="description">
                         <p>Rating : 2.5 </p>
                         <p>Price: Per hour Tk 670</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -282,11 +301,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Cement masons</h1>
+                        <input type="hidden" name="cement_masons" value="Cement masons">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
                         <p>Price: Per hour Tk 670</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -298,11 +319,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Concrete finishers</h1>
+                        <input type="hidden" name="concrete_finishers" value="Concrete finishers">
                     </div>
                     <div class="description">
                         <p>Rating : 4.1 </p>
                         <p>Price: Per hour Tk 670</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -313,11 +336,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Steel Bar Cutters</h1>
+                        <input type="hidden" name="steel_bar_cutters" value="Steel Bar Cutters">
                     </div>
                     <div class="description">
                         <p>Rating : 4.2 </p>
                         <p>Price: Per hour Tk 670</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -328,11 +353,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Drillers</h1>
+                        <input type="hidden" name="drillers" value="Drillers">
                     </div>
                     <div class="description">
                         <p>Rating : 4.7 </p>
                         <p>Price: Per hour Tk 670</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -343,11 +370,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Water Pipe-line Fixers</h1>
+                        <input type="hidden" name="water_pipe_line_fixers" value="Water Pipe-line Fixers">
                     </div>
                     <div class="description">
                         <p>Rating : 2.0 </p>
                         <p>Price: Per hour Tk 670</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -358,11 +387,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Piling Workers</h1>
+                        <input type="hidden" name="piling_workers" value="Piling Workers">
                     </div>
                     <div class="description">
                         <p>Rating : 3.5 </p>
                         <p>Price: Per hour Tk 670</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -374,11 +405,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Elevator Constructor</h1>
+                        <input type="hidden" name="elevator_constructor" value="Elevator Constructor">
                     </div>
                     <div class="description">
                         <p>Rating : 3.5 </p>
                         <p>Price: Per hour Tk 670</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -394,11 +427,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Construction-site Cleaner</h1>
+                        <input type="hidden" name="construction_site_cleaner" value="Construction-site Cleaner">
                     </div>
                     <div class="description">
                         <p>Rating : 4.1 </p>
                         <p>Price: Per hour Tk 500</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -410,11 +445,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Road-site Garbage Cleaner</h1>
+                        <input type="hidden" name="garbage_cleaner" value="Road-site Garbage Cleaner">
                     </div>
                     <div class="description">
                         <p>Rating : 4.2 </p>
                         <p>Price: Per hour Tk 500</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -426,11 +463,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Sewerage-channel Cleaner</h1>
+                        <input type="hidden" name="sewerage_cleaner" value="Sewerage Cleaner">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
                         <p>Price: Per hour Tk 500</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
@@ -442,11 +481,13 @@ session_start();
                     </div>
                     <div class="bio-of-founder">
                         <h1>Parking-Garage Cleaner</h1>
+                        <input type="hidden" name="parking_garage_cleaner" value="Parking Garage Cleaner">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
                         <p>Price: Per hour Tk 500</p>
-                        <button><i class="fas fa-plus" style="margin-right: 5px;"></i>Select</button>
+                        <button type="submit" name="select"><i class="fas fa-plus"
+                                style="margin-right: 5px;"></i>Select</button>
                     </div>
                 </form>
             </div>
