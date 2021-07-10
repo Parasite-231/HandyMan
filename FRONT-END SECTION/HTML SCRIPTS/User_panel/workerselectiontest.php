@@ -6,6 +6,7 @@ if (!isset($_SESSION['uID'])) {
     header("location:userLogin.php");
 }
 
+//later submission part
 $u_id = $_SESSION['uID'];
 
 $query = "SELECT name, number, address FROM user WHERE id = $u_id";
