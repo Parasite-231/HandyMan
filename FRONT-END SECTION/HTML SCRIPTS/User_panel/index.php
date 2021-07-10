@@ -59,13 +59,21 @@ session_start();
         </div>
 
         <div class="card">
-            <form action="" method="POST">
+            <?php
+
+
+            if (isset($_POST['select'])) {
+                $type = $_POST['type'];
+            }
+
+            ?>
+            <form action="workerSelection.php" method="POST">
                 <div class="image">
                     <img src="../../UI-UX Designs/electricians.jpg">
                 </div>
                 <div class="bio-of-founder">
                     <h1>Electrician</h1>
-                    <input type="hidden" name="electrician" value="Electrician">
+                    <input type="hidden" name="type" value="Electrician">
                 </div>
                 <div class="description">
                     <p>Rating : 4.1 </p>
@@ -79,13 +87,21 @@ session_start();
         <!--2nd card -->
 
         <div class="card">
-            <form action="" method="POST">
+            <?php
+
+
+            if (isset($_POST['select'])) {
+                $type = $_POST['type'];
+            }
+
+            ?>
+            <form action="workerSelection.php" method="POST">
                 <div class="image">
                     <img src="../../UI-UX Designs/ac-repairer.jpg">
                 </div>
                 <div class="bio-of-founder">
                     <h1>AC Repairer</h1>
-                    <input type="hidden" name="ac_repairer" value="AC Repairer">
+                    <input type="hidden" name="type" value="AC Repairer">
                 </div>
                 <div class="description">
                     <p>Rating : 3.0 </p>

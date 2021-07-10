@@ -96,37 +96,45 @@ if (isset($_POST['submit'])) {
     <div class="container-01">
         <!--chocolate bar--1-->
         <?php
+      $type = $_POST['type'];
 
-      $query = "SELECT * FROM employee";
+      $query = "SELECT * FROM employee WHERE type = '$type' ";
       $result = mysqli_query($connect, $query);
 
-      if (mysqli_num_rows($result) > 0) {
+      if ($result && mysqli_num_rows($result) > 0) {
 
          while ($row = mysqli_fetch_assoc($result)) {
             echo "
-         <div class='row'>
-            <div class='image'><img src='../../ICONS/account.png'></div>
-            <div class='info'>
-                <p> <b style='font-size: 22px;'>" . $row['name'] . "</b> <br>
+            <div class='row'>
+               <div class='image'><img src='../../ICONS/account.png'></div>
+               <div class='info'>
+                  <p> <b style='font-size: 22px;'>" . $row['name'] . "</b> <br>
                     <t style='font-size: 17px;'>" . $row['company'] . "</t></t><br>
                     " . $row['type'] . "<br>
-                </p>
-            </div>
-            <div class='rating'>
-            <form method='POST'>
-                <p> <b style='font-size: 18px;'>Rating:" . $row['rating'] . "</b>
-                    <img src='../../ICONS/rating1.png' style='margin-left: 6px; margin-top: 14px;'>
-                    
-                    <input type='hidden' name='id' value='" . $row['id'] . "'>
-                    <button type='submit' name='submit' style='margin-top: -8px;'>Hire</button>
-                    
-                </p>
-                </form><br>
-            </div>
-        </div>";
+                  </p>
+               </div>
+               <div class='rating'>
+                  <form method='POST'>
+                     <p> <b style='font-size: 18px;'>Rating:" . $row['rating'] . "</b>
+                     <img src='../../ICONS/rating1.png' style='margin-left: 6px; margin-top: 14px;'>
+                     <input type='hidden' name='id' value='" . $row['id'] . "'>
+                     <button type='submit' name='submit' style='margin-top: -8px;'>Hire</button>
+                     </p>
+                  </form><br>
+               </div>
+            </div>";
          }
+      } else {
+         echo "
+         <div class='row'>
+            <p> <b style='font-size: 30px;'>No worker found at this moment</b> </p>
+         </div>
+         ";
       }
 
+
       ?>
+
+
 
 </html>
