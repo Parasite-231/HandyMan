@@ -113,13 +113,21 @@ session_start();
         </div>
         < <!--3rd card -->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/fridgerepairer.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Refrigerator Repairer</h1>
-                        <input type="hidden" name="fridge_repairer" value="Refrigerator Repairer">
+                        <input type="hidden" name="type" value="Refrigerator Repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 3.5 </p>
@@ -131,13 +139,21 @@ session_start();
             </div>
             <!--4th card -->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/washingmachinerepairer.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Washing Machine repairer</h1>
-                        <input type="hidden" name="washing_machine_repairer" value="Washing Machine repairer">
+                        <input type="hidden" name="type" value="Washing Machine repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 2.5 </p>
@@ -148,13 +164,21 @@ session_start();
                 </form>
             </div>
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/tvrepairer.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Television Repairer</h1>
-                        <input type="hidden" name="television_repairer" value="Television Repairer">
+                        <input type="hidden" name="type" value="Television Repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 3.5 </p>
@@ -165,13 +189,21 @@ session_start();
                 </form>
             </div>
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/ovenrepairer.png">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Oven Repairer</h1>
-                        <input type="hidden" name="oven_repairer" value="Oven Repairer">
+                        <input type="hidden" name="type" value="Oven Repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
@@ -183,13 +215,21 @@ session_start();
             </div>
             <!--5th card -->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/3.png">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Carpenter</h1>
-                        <input type="hidden" name="carpenter" value="Carpenter">
+                        <input type="hidden" name="type" value="Carpenter">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
@@ -201,13 +241,21 @@ session_start();
             </div>
             <!--6th card-->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/painters.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Painter</h1>
-                        <input type="hidden" name="painter" value="Painter">
+                        <input type="hidden" name="type" value="Painter">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
@@ -219,13 +267,21 @@ session_start();
             </div>
             <!--7th card-->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/officeplumbers.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Plumber</h1>
-                        <input type="hidden" name="plumber" value="Plumber">
+                        <input type="hidden" name="type" value="Plumber">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
@@ -237,13 +293,21 @@ session_start();
             </div>
             <!--8th card-->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/stoverepairer.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Stove Repairer</h1>
-                        <input type="hidden" name="stove_repairer" value="Stove Repairer">
+                        <input type="hidden" name="type" value="Stove Repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
@@ -255,13 +319,21 @@ session_start();
             </div>
             <!--9th card -->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/elevatorrepairer.png">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Elevator Repairer</h1>
-                        <input type="hidden" name="elevator_repairer" value="Elevator Repairer">
+                        <input type="hidden" name="type" value="Elevator Repairer">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
@@ -272,13 +344,21 @@ session_start();
                 </form>
             </div>
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/flasscleaners.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Glass cleaner</h1>
-                        <input type="hidden" name="glass_cleaner" value="Glass Cleaner">
+                        <input type="hidden" name="type" value="Glass Cleaner">
                     </div>
                     <div class="description">
                         <p>Rating : 3.5 </p>
@@ -293,13 +373,21 @@ session_start();
             </div>
             <!--Construction worker cards-->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/sbarworker.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Steel Bar Reinforcers</h1>
-                        <input type="hidden" name="steel_bar_reinforcers" value="Steel Bar Reinforcers">
+                        <input type="hidden" name="type" value="Steel Bar Reinforcers">
                     </div>
                     <div class="description">
                         <p>Rating : 2.5 </p>
@@ -311,13 +399,21 @@ session_start();
             </div>
             <!--10th card -->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/cementmasons.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Cement masons</h1>
-                        <input type="hidden" name="cement_masons" value="Cement masons">
+                        <input type="hidden" name="type" value="Cement Masons">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
@@ -329,13 +425,21 @@ session_start();
             </div>
             <!--10th card -->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/concretefinishers.png">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Concrete finishers</h1>
-                        <input type="hidden" name="concrete_finishers" value="Concrete finishers">
+                        <input type="hidden" name="type" value="Concrete finishers">
                     </div>
                     <div class="description">
                         <p>Rating : 4.1 </p>
@@ -346,13 +450,21 @@ session_start();
                 </form>
             </div>
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/steelbarcutterworker.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Steel Bar Cutters</h1>
-                        <input type="hidden" name="steel_bar_cutters" value="Steel Bar Cutters">
+                        <input type="hidden" name="type" value="Steel Bar Cutters">
                     </div>
                     <div class="description">
                         <p>Rating : 4.2 </p>
@@ -363,13 +475,21 @@ session_start();
                 </form>
             </div>
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/drillerworkers.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Drillers</h1>
-                        <input type="hidden" name="drillers" value="Drillers">
+                        <input type="hidden" name="type" value="Drillers">
                     </div>
                     <div class="description">
                         <p>Rating : 4.7 </p>
@@ -380,13 +500,21 @@ session_start();
                 </form>
             </div>
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/waterpipelinefixers.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Water Pipe-line Fixers</h1>
-                        <input type="hidden" name="water_pipe_line_fixers" value="Water Pipe-line Fixers">
+                        <input type="hidden" name="type" value="Water Pipe-line Fixers">
                     </div>
                     <div class="description">
                         <p>Rating : 2.0 </p>
@@ -397,13 +525,21 @@ session_start();
                 </form>
             </div>
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/pilingworkers.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Piling Workers</h1>
-                        <input type="hidden" name="piling_workers" value="Piling Workers">
+                        <input type="hidden" name="type" value="Piling Workers">
                     </div>
                     <div class="description">
                         <p>Rating : 3.5 </p>
@@ -415,13 +551,21 @@ session_start();
             </div>
             <!--11th card -->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/elevatorconstructors.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Elevator Constructor</h1>
-                        <input type="hidden" name="elevator_constructor" value="Elevator Constructor">
+                        <input type="hidden" name="type" value="Elevator Constructor">
                     </div>
                     <div class="description">
                         <p>Rating : 3.5 </p>
@@ -437,13 +581,21 @@ session_start();
             </div>
             <!--Cards for cleaning workers-->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/constructionsiteworkers.png">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Construction-site Cleaner</h1>
-                        <input type="hidden" name="construction_site_cleaner" value="Construction-site Cleaner">
+                        <input type="hidden" name="type" value="Construction-site Cleaner">
                     </div>
                     <div class="description">
                         <p>Rating : 4.1 </p>
@@ -455,13 +607,21 @@ session_start();
             </div>
             <!--13th card -->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/roadsitecleaner.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Road-site Garbage Cleaner</h1>
-                        <input type="hidden" name="garbage_cleaner" value="Road-site Garbage Cleaner">
+                        <input type="hidden" name="type" value="Road-site Garbage Cleaner">
                     </div>
                     <div class="description">
                         <p>Rating : 4.2 </p>
@@ -473,13 +633,21 @@ session_start();
             </div>
             <!--14th card -->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/swragechannelcleanerjpg.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Sewerage-channel Cleaner</h1>
-                        <input type="hidden" name="sewerage_cleaner" value="Sewerage Cleaner">
+                        <input type="hidden" name="type" value="Sewerage Cleaner">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
@@ -491,13 +659,21 @@ session_start();
             </div>
             <!--15th card -->
             <div class="card">
-                <form action="">
+                <?php
+
+
+                if (isset($_POST['select'])) {
+                    $type = $_POST['type'];
+                }
+
+                ?>
+                <form action="workerSelection.php" method="POST">
                     <div class="image">
                         <img src="../../UI-UX Designs/parkinggaragecleaners.jpg">
                     </div>
                     <div class="bio-of-founder">
                         <h1>Parking-Garage Cleaner</h1>
-                        <input type="hidden" name="parking_garage_cleaner" value="Parking Garage Cleaner">
+                        <input type="hidden" name="type" value="Parking-Garage Cleaner">
                     </div>
                     <div class="description">
                         <p>Rating : 4.5 </p>
@@ -516,8 +692,8 @@ session_start();
                     href="https://www.facebook.com/HandyMan-102425665250086/?notif_id=1625469943998749&notif_t=page_name_change_admin&ref=notif"><i
                         class="fab fa-facebook"></i></a>
                 <a href="https://www.linkedin.com/in/handy-man-536a23216/"><i class="fab fa-linkedin"></i></a>
-                <a href=""><i class="fab fa-instagram-square"></i></a>
-                <a href=""><i class="fab fa-twitter-square"></i></a>
+                <a href="#"><i class="fab fa-instagram-square"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
             </div>
 </body>
 
