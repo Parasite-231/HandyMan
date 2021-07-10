@@ -104,7 +104,7 @@ if (isset($_POST['submit'])) {
 
          while ($row = mysqli_fetch_assoc($result)) {
             echo "
-            <div class='row'>
+         <div class='row'>
             <div class='image'><img src='../../ICONS/account.png'></div>
             <div class='info'>
                 <p> <b style='font-size: 22px;'>" . $row['name'] . "</b> <br>
@@ -113,11 +113,15 @@ if (isset($_POST['submit'])) {
                 </p>
             </div>
             <div class='rating'>
+            <form method='POST'>
                 <p> <b style='font-size: 18px;'>Rating:" . $row['rating'] . "</b>
                     <img src='../../ICONS/rating1.png' style='margin-left: 6px; margin-top: 14px;'>
+                    
+                    <input type='hidden' name='id' value='" . $row['id'] . "'>
                     <button type='submit' name='submit' style='margin-top: -8px;'>Hire</button>
+                    
                 </p>
-
+                </form><br>
             </div>
         </div>";
          }
