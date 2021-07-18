@@ -4,27 +4,23 @@ include('../../Inc/function.php');
 
 $manageTabClass = '';
 $profileTabClass = '';
-$keyTabClass = '';
+$addTabClass = '';
 if (isset($_GET['profile'])) {
     $profileTabClass = 'active show';
 } elseif (isset($_GET['manage'])) {
     $manageTabClass = 'active show';
-} elseif (isset($_GET['key'])) {
-    $keyTabClass = 'active show';
+} elseif (isset($_GET['add'])) {
+    $addTabClass = 'active show';
 }
-$key = '';
-if (filter_has_var(INPUT_POST, 'submit')) {
-    loop:
-    $key = generateKey();
-    $query = "SELECT TOP 1 key_id FROM employee WHERE key_id = '$key' ";
-    $result = mysqli_query($connect, $query);
 
-    if (!$result) {
-        $query = "INSERT into employee (key_id) VALUES ('$key') ";
-        mysqli_query($connect, $query);
-    } else {
-        goto loop;
-    }
+if (isset($_POST['submit'])) {
+    $target = '../../service_img/' . basename($_FILES['image']['name']);
+    $image = $_FILES['image']['name'];
+    $name = $_POST['name'];
+    move_uploaded_file($_FILES['image']['tmp_name'], $target);
+
+    $query = "UPDATE services SET image = '$target' WHERE name = '$name'";
+    mysqli_query($connect, $query);
 }
 
 
@@ -115,7 +111,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                     Employee</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link <?php echo $keyTabClass; ?>" data-bs-toggle="tab" href="?key">Key ID</a>
+                <a class="nav-link <?php echo $addTabClass; ?>" data-bs-toggle="tab" href="?add">Add new Service</a>
             </li>
 
             <!--  <li class="nav-item dropdown">
@@ -137,15 +133,12 @@ if (filter_has_var(INPUT_POST, 'submit')) {
             <div class="tab-pane fade <?php echo $manageTabClass; ?>" id="manage">
                 <p>world</p>
             </div>
-            <div class="tab-pane fade <?php echo $keyTabClass; ?>" id="Key ID">
-                <div style="position: absolute; top: 110px;left: 10%;">
-                    <h4>Generated Key ID : <?php echo $key; ?></h4>
-                </div>
-                <div style="  position: absolute; top: 150px; right: 20%;">
-                    <form method="POST" action="">
-                        <button class="btn btn-primary" type="submit" name="submit">Generate Key ID</button>
-                    </form>
-                </div>
+            <div class="tab-pane fade <?php echo $addTabClass; ?>" id="add">
+                <form method="POST" enctype="multipart/form-data">
+                    <input type="file" name="image">
+                    <input type="text" name="name" required>
+                    <button type="submit" name="submit" class="btn btn-primary">Upload</button>
+                </form>
             </div>
         </div>
     </div>

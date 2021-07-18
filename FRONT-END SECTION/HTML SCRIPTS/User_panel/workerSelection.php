@@ -3,8 +3,9 @@
 require("../../Inc/function.php");
 session_start();
 if (!isset($_SESSION['uID'])) {
-   header("location:userLogin.php");
+    header("location:userLogin.php");
 }
+
 
 //later submission part
 $u_id = $_SESSION['uID'];
@@ -13,22 +14,22 @@ $query = "SELECT name, number, address FROM user WHERE id = $u_id";
 $result = mysqli_query($connect, $query);
 
 if (mysqli_num_rows($result) > 0) {
-   $userdata = mysqli_fetch_assoc($result);
+    $userdata = mysqli_fetch_assoc($result);
 
-   $u_name = $userdata['name'];
-   $u_number = $userdata['number'];
-   $u_address = $userdata['address'];
+    $u_name = $userdata['name'];
+    $u_number = $userdata['number'];
+    $u_address = $userdata['address'];
 }
 
 
 if (isset($_POST['submit'])) {
-   $emp_id = $_POST['id'];
-   $o_id = $u_id . $emp_id;
-   $date = date('Y-m-d');
+    $emp_id = $_POST['id'];
+    $o_id = $u_id . $emp_id;
+    $date = date('Y-m-d');
 
-   $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, date) 
+    $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, date) 
                 VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$date')";
-   mysqli_query($connect, $query);
+    mysqli_query($connect, $query);
 }
 
 ?>
@@ -96,15 +97,18 @@ if (isset($_POST['submit'])) {
     <div class="container-01">
         <!--chocolate bar--1-->
         <?php
-      $type = $_POST['type'];
 
-      $query = "SELECT * FROM employee WHERE type = '$type' ";
-      $result = mysqli_query($connect, $query);
+        if (isset($_POST['select'])) {
+            $type = $_POST['type'];
 
-      if ($result && mysqli_num_rows($result) > 0) {
 
-         while ($row = mysqli_fetch_assoc($result)) {
-            echo "
+            $query = "SELECT * FROM employee WHERE type = '$type' ";
+            $result = mysqli_query($connect, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "
             <div class='row'>
                <div class='image'><img src='../../ICONS/account.png'></div>
                <div class='info'>
@@ -123,17 +127,18 @@ if (isset($_POST['submit'])) {
                   </form><br>
                </div>
             </div>";
-         }
-      } else {
-         echo "
+                }
+            } else {
+                echo "
          <div class='row'>
             <p> <b style='font-size: 30px;'>No worker found at this moment</b> </p>
          </div>
          ";
-      }
+            }
+        }
 
 
-      ?>
+        ?>
 
 
 

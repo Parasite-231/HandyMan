@@ -62,9 +62,7 @@ session_start();
             <?php
 
 
-            if (isset($_POST['select'])) {
-                $type = $_POST['type'];
-            }
+
 
             ?>
             <form action="workerSelection.php" method="POST">
