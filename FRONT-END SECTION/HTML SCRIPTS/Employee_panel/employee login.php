@@ -80,7 +80,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 
         <form method="POST">
             <div class="login">
-                <img src="../../ICONS/employeelogin.png" alt="User Login" class="position">
+                <img src="../../ICONS/employeeLoginLogo.png" alt="User Login" class="position">
             </div>
             <div class="name">
                 <label for="name"></label>
