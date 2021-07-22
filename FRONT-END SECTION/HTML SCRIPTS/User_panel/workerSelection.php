@@ -32,6 +32,12 @@ if (isset($_POST['submit'])) {
     mysqli_query($connect, $query);
 }
 
+
+
+
+
+
+
 ?>
 
 
@@ -98,9 +104,10 @@ if (isset($_POST['submit'])) {
         <!--chocolate bar--1-->
         <?php
 
-        if (isset($_POST['select'])) {
+        if (isset($_POST['hire'])) {
+            $date = $_POST['date'];
+            $shift = $_POST['shift'];
             $type = $_POST['type'];
-
 
             $query = "SELECT * FROM employee WHERE type = '$type' ";
             $result = mysqli_query($connect, $query);
@@ -118,7 +125,7 @@ if (isset($_POST['submit'])) {
                   </p>
                </div>
                <div class='rating'>
-                  <form method='POST'>
+                  <form action='confirmHire.php' method='POST'>
                      <p> <b style='font-size: 18px;'>Rating:" . $row['rating'] . "</b>
                      <img src='../../ICONS/rating1.png' style='margin-left: 6px; margin-top: 14px;'>
                      <input type='hidden' name='id' value='" . $row['id'] . "'>
@@ -135,6 +142,10 @@ if (isset($_POST['submit'])) {
          </div>
          ";
             }
+        }
+
+        if (isset($_POST['back'])) {
+            header("location:index.php");
         }
 
 
