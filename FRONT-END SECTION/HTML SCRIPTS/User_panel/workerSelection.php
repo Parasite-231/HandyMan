@@ -6,38 +6,6 @@ if (!isset($_SESSION['uID'])) {
     header("location:userLogin.php");
 }
 
-
-//later submission part
-$u_id = $_SESSION['uID'];
-
-$query = "SELECT name, number, address FROM user WHERE id = $u_id";
-$result = mysqli_query($connect, $query);
-
-if (mysqli_num_rows($result) > 0) {
-    $userdata = mysqli_fetch_assoc($result);
-
-    $u_name = $userdata['name'];
-    $u_number = $userdata['number'];
-    $u_address = $userdata['address'];
-}
-
-
-if (isset($_POST['submit'])) {
-    $emp_id = $_POST['id'];
-    $o_id = $u_id . $emp_id;
-    $date = date('Y-m-d');
-
-    $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, date) 
-                VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$date')";
-    mysqli_query($connect, $query);
-}
-
-
-
-
-
-
-
 ?>
 
 
@@ -99,6 +67,7 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </div>
+
     <!--chocolate bars of employee profile-->
     <div class="container-01">
         <!--chocolate bar--1-->
@@ -119,16 +88,20 @@ if (isset($_POST['submit'])) {
             <div class='row'>
                <div class='image'><img src='../../ICONS/account.png'></div>
                <div class='info'>
-                  <p> <b style='font-size: 22px;'>" . $row['name'] . "</b> <br>
-                    <t style='font-size: 17px;'>" . $row['company'] . "</t></t><br>
-                    " . $row['type'] . "<br>
-                  </p>
-               </div>
-               <div class='rating'>
-                  <form action='confirmHire.php' method='POST'>
-                     <p> <b style='font-size: 18px;'>Rating:" . $row['rating'] . "</b>
-                     <img src='../../ICONS/rating1.png' style='margin-left: 6px; margin-top: 14px;'>
-                     <input type='hidden' name='id' value='" . $row['id'] . "'>
+
+        <p> <b style='font-size: 22px;'>" . $row['name'] . "</b> <br>
+            <t style='font-size: 17px;'>" . $row['company'] . "</t>
+            </t><br>
+            " . $row['type'] . "<br>
+        </p>
+    </div>
+    <div class='rating'>
+        <form action='confirmHire.php' method='POST'>
+            <p> <b style='font-size: 18px;'>Rating:" . $row['rating'] . "</b>
+                <img src='../../ICONS/rating1.png' style='margin-left: 6px; margin-top: 14px;'>
+                <input type='hidden' name='id' value='" . $row['id'] . "'>
+                <input type='hidden' name='date' value='" . $date . "'>
+                <input type='hidden' name='shift' value='" . $shift . "'>
                      <button type='submit' name='submit' style='margin-top: -8px;'>Hire</button>
                      </p>
                   </form><br>
@@ -143,13 +116,9 @@ if (isset($_POST['submit'])) {
          ";
             }
         }
-
         if (isset($_POST['back'])) {
             header("location:index.php");
-        }
-
-
-        ?>
+        } ?>
 
 
 
