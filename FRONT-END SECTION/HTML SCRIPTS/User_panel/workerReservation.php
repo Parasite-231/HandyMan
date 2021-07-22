@@ -48,8 +48,8 @@ $type = $_POST['type'];
                     <label for="Timeline">Reserve a Time</label><img src="../../ICONS/showclock.png"
                         style="float: right;">
                     <select id="Timeline" name="shift">
-                        <option value="1">9AM - 12PM</option>
-                        <option value="2">3PM - 6PM</option>
+                        <option value="9AM - 12PM">9AM - 12PM</option>
+                        <option value="3PM - 6PM">3PM - 6PM</option>
                     </select>
                     <input type='hidden' name='type' value='<?php echo $type ?>'>
                     <input type="submit" name="hire" value="Hire">

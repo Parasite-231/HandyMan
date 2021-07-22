@@ -74,6 +74,8 @@ if (!isset($_SESSION['uID'])) {
         <?php
 
         if (isset($_POST['hire'])) {
+            $_SESSION['hire'] = '1';
+
             $date = $_POST['date'];
             $shift = $_POST['shift'];
             $type = $_POST['type'];

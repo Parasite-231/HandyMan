@@ -6,6 +6,11 @@ if (!isset($_SESSION['uID'])) {
    header("location:userLogin.php");
 }
 
+if (!isset($_SESSION['hire'])) {
+   header("location:index.php");
+}
+
+
 //later submission part
 $u_id = $_SESSION['uID'];
 
@@ -17,8 +22,8 @@ if (mysqli_num_rows($result) > 0) {
 
    $u_name = $userdata['name'];
    $u_number = $userdata['number'];
-   $u_address = $userdata['address'];
 }
+
 
 
 if (isset($_POST['submit'])) {
@@ -27,6 +32,7 @@ if (isset($_POST['submit'])) {
    $date = $_POST['date'];
    $shift = $_POST['shift'];
 
+
    $query = "SELECT * FROM employee WHERE id = $emp_id";
    $result = mysqli_query($connect, $query);
    if ($result && mysqli_num_rows($result) > 0) {
@@ -34,12 +40,30 @@ if (isset($_POST['submit'])) {
    }
    $e_name = $e_data['name'];
    $e_number = $e_data['number'];
-
-
-   // $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, date) 
-   //                VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$date')";
-   //    mysqli_query($connect, $query);
 }
+
+
+
+if (isset($_POST['confirm'])) {
+   $u_thana = $_POST['thana'];
+   $u_address = $_POST['address'];
+   $date = $_POST['date'];
+   $shift = $_POST['shift'];
+   $emp_id = $_POST['e_id'];
+   $o_id = $_POST['o_id'];
+
+
+   $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, u_thana, date, shift) 
+   VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$u_thana', '$date', '$shift')";
+   mysqli_query($connect, $query);
+
+   if (isset($_SESSION['hire'])) {
+      unset($_SESSION['hire']);
+   }
+   header("location:index.php");
+}
+
+
 
 ?>
 
@@ -74,7 +98,7 @@ if (isset($_POST['submit'])) {
         <div class="Confirm-section">
             <!--<h2>Platform Selection</h2>-->
             <div class="Confirming-form">
-                <form>
+                <form method="POST">
                     <label for="name">Worker Name</label>
                     <img src="../../ICONS/workerprofile.png" style="float: right;">
                     <input disabled type="text" id="name" name="name" value="<?php echo $e_name ?>">
@@ -89,13 +113,12 @@ if (isset($_POST['submit'])) {
 
                     <label for="upazilla">Your Upazilla</label><span class="required">*</span>
                     <img src="../../ICONS/askmap.png" style="float: right;">
-                    <select id="upazilla" name="upazilla">
-                        <option value="1">None</option>
-                        <option value="2">Dohar Upazila </option>
-                        <option value="3">Keraniganj Upazila</option>
-                        <option value="4">Dhamrai Upazila </option>
-                        <option value="5">Nawabganj Upazila</option>
-                        <option value="6">Savar Upazila</option>
+                    <select id="upazilla" name="thana">
+                        <option value="Dohar Upazila">Dohar Upazila </option>
+                        <option value="Keraniganj Upazila">Keraniganj Upazila</option>
+                        <option value="Dhamrai Upazila ">Dhamrai Upazila </option>
+                        <option value="Nawabganj Upazila">Nawabganj Upazila</option>
+                        <option value="Savar Upazila">Savar Upazila</option>
                     </select>
 
                     <label for="address">Your Address</label><span class="required">*</span>
@@ -107,9 +130,13 @@ if (isset($_POST['submit'])) {
                     <img src="../../ICONS/paymecash.png" style="float: right;">
                     <input disabled type="text" id="payment" name="payment">
 
+                    <input type='hidden' name='date' value='<?php echo $date ?>'>
+                    <input type='hidden' name='shift' value='<?php echo $shift ?>'>
+                    <input type='hidden' name='e_id' value='<?php echo $emp_id ?>'>
+                    <input type='hidden' name='o_id' value='<?php echo $o_id ?>'>
 
-                    <input type="submit" value=" Confirm Hire">
-                    <input type="submit" value=" Cancel">
+                    <input type="submit" name="confirm" value=" Confirm Hire">
+                    <input type="submit" name="cancel" value=" Cancel">
                 </form>
             </div>
         </div>
