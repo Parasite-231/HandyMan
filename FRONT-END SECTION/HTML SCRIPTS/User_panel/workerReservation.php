@@ -4,9 +4,9 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="shortcut icon" type="image/x-icon" href="worker.png">
+      <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="workerReservation.css">
+      <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/workerReservation.css">
       <title>Hire Worker</title>
    </head>
    <body>
@@ -27,11 +27,11 @@
             <!--<h2>Platform Selection</h2>-->
             <div class="Hiring-form" >
                <form>
-                  <label for="Date">Select a Date</label><img src="showcalender.png" style="float: right;">
+                  <label for="Date">Select a Date</label><img src="../../ICONS/showcalender.png" style="float: right;">
                   <input type="date" id="start" name="trip-start"
                      value="yyyy-mm-dd"
                      min="2001-01-01" max="2050-12-31" >
-                  <label for="Timeline">Reserve a Time</label><img src="showclock.png" style="float: right;">
+                  <label for="Timeline">Reserve a Time</label><img src="../../ICONS/showclock.png" style="float: right;">
                   <select id="Timeline" name="Timeline">
                      <option value="0">None</option>
                      <option value="1">9AM - 12PM</option>

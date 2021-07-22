@@ -4,9 +4,9 @@
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="shortcut icon" type="image/x-icon" href="worker.png">
+      <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="confirmHire.css">
+      <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/confirmHire.css">
       <title>Confirm Hire</title>
    </head>
    <body>
@@ -28,19 +28,19 @@
             <div class="Confirming-form" >
                <form>
                   <label for="name">Worker Name</label>
-                  <img src="workerprofile.png" style="float: right;">
-                  <input type="text" id="name" name="name" >
+                  <img src="../../ICONS/workerprofile.png" style="float: right;">
+                  <input disabled type="text" id="name" name="name" >
                   <!-- <label for="name">Worker Category:</label>
                   <img src="worker88.png" style="margin-left: 3px;">
                   <input type="text" id="name" name="name" > -->
              
             
                   <label for="phonenumber" >Worker Contact</label>
-                  <img src="callme.png" style="float: right;">
-                  <input type="text" id = "phonenumber" name="phonenumber" >
+                  <img src="../../ICONS/callme.png" style="float: right;">
+                  <input disabled type="text" id = "phonenumber" name="phonenumber" >
 
                   <label for="upazilla">Your Upazilla</label><span class="required">*</span>
-                  <img src="askmap.png" style="float: right;">
+                  <img src="../../ICONS/askmap.png" style="float: right;">
                   <select id="upazilla" name="upazilla" >
                     <option value="1">None</option>
                     <option value="2">Dohar Upazila </option>
@@ -51,12 +51,12 @@
                   </select>
         
                   <label for="address">Your Address</label><span class="required">*</span>
-                  <img src="asklocation.png" style="float: right;">
+                  <img src="../../ICONS/asklocation.png" style="float: right;">
                   <textarea id="address" name="address"  style="height:70px" placeholder="Write your address..."></textarea>
 
                   <label for="payment">Total Payment</label>
-                  <img src="paymecash.png" style="float: right;">
-                  <input type="text" id="payment" name="payment" >
+                  <img src="../../ICONS/paymecash.png" style="float: right;">
+                  <input disabled type="text" id="payment" name="payment" >
                 
                  
                   <input type="submit" value=" Confirm Hire">
