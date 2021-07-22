@@ -53,6 +53,40 @@ if (isset($_SESSION['eID'])) {
                 <input type="tel" id="registration-id" name="email" placeholder="E-mail address"
                     value="<?php echo isset($_POST['email']) ? $email : ''; ?>" required>
             </div>
+
+            <!--EMPLOYE TYPE-->
+            <div class="employe-type" >
+                <label for="employee-type"></label>
+                <select id="employee-type" name="employee-type" required>
+                    <option value="1">Select working field</option>
+                    <option value="2">Electrician</option>
+                    <option value="3">AC Repairer</option>
+                    <option value="4">Refrigerator Repairer</option>
+                    <option value="5">Washing Machine repairer</option>
+                    <option value="6">Television Repairer</option>
+                    <option value="7">Oven Repairer</option>
+                    <option value="8">Carpenter</option>
+                    <option value="9">Painter</option>
+                    <option value="10">Plumber</option>
+                    <option value="11">Stove Repairer</option>
+                    <option value="12">Elevator Repairer</option>
+                    <option value="13">Glass cleaner</option>
+                    <option value="14">Steel Bar Reinforcers</option>
+                    <option value="15">Cement masons</option>
+                    <option value="16">Concrete finishers</option>
+                    <option value="17">Steel Bar Cutters</option>
+                    <option value="18">Drillers</option>
+                    <option value="19">Water Pipe-line Fixers</option>
+                    <option value="20">Piling Workers</option>
+                    <option value="21">Elevator Constructor</option>
+                    <option value="22">Construction-site Cleaner</option>
+                    <option value="23">Road-site Garbage Cleaner</option>
+                    <option value="24">Swerage-channel Cleaner</option>
+                    <option value="25">Parking-Garage Cleaner</option>
+                </select>
+            </div>
+            <!--EMPLOYE TYPE-->
+            
             <div class="password">
                 <label for="password"></label>
                 <input type="password" id="password" name="password" placeholder="Password" required>
