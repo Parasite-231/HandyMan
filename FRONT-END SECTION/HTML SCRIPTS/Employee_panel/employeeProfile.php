@@ -95,11 +95,8 @@ if (isset($_POST['submit'])) {
                 </div>
             </div>
         </div>
-        <div class="description">
-            <h2>Worker Profile</h2>
-        </div>
         <!--form-->
-        <div class="profileform">
+        <div class="profileform" style="margin-top: 150px;">
             <form method="POST">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" value="<?php echo $name; ?>">
@@ -159,7 +156,7 @@ if (isset($_POST['submit'])) {
 
                 <!--asking-price-->
                 <label for="price">Asking Price</label>
-                <input type="text" id="price" name="price" value="<?php echo $name; ?>">
+                <input type="text" id="price" name="price" value="">
                 <!--asking-price-->
 
                 <!--submitted button-->
@@ -167,10 +164,9 @@ if (isset($_POST['submit'])) {
 
                 <!--Date box-->
                 <label for="Date">Day off:</label>
-                <input type="date" id="break-day" name="break-day"
-                value="yyyy-mm-dd"
-                min="2000-01-01" max="2033-12-31"><input type="submit" class="add" value="add">
-               <!--Date box-->
+                <input type="date" id="break-day" name="break-day" value="yyyy-mm-dd" min="2000-01-01"
+                    max="2033-12-31"><input type="submit" class="add" value="add">
+                <!--Date box-->
 
             </form>
         </div>
