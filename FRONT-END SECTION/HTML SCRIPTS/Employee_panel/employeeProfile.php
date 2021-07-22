@@ -156,8 +156,22 @@ if (isset($_POST['submit'])) {
                 <label for="address">Your Address</label>
                 <input type="text" id="address" name="address" style="height:50px"
                     value="<?php echo $address; ?>"></input>
+
+                <!--asking-price-->
+                <label for="price">Asking Price</label>
+                <input type="text" id="price" name="price" value="<?php echo $name; ?>">
+                <!--asking-price-->
+
                 <!--submitted button-->
                 <input type="submit" name="submit" value="Submit">
+
+                <!--Date box-->
+                <label for="Date">Day off:</label>
+                <input type="date" id="break-day" name="break-day"
+                value="yyyy-mm-dd"
+                min="2000-01-01" max="2033-12-31"><input type="submit" class="add" value="add">
+               <!--Date box-->
+
             </form>
         </div>
 </body>
