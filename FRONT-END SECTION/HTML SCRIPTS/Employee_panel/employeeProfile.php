@@ -4,11 +4,11 @@ if (!isset($_SESSION['eID'])) {
     header("location:./employee login.php");
 }
 
-$se_id = $_SESSION['eID'];
+$e_id = $_SESSION['eID'];
 
 require("../../Inc/function.php");
 
-$query = "SELECT * FROM employee WHERE id = $se_id";
+$query = "SELECT * FROM employee WHERE id = $e_id";
 $result = mysqli_query($connect, $query);
 if (mysqli_num_rows($result) > 0) {
     $data = mysqli_fetch_assoc($result);
@@ -19,6 +19,7 @@ if (mysqli_num_rows($result) > 0) {
     $type = $data['type'];
     $gender = $data['gender'];
     $address = $data['address'];
+    $price = $data['price'];
 }
 
 if (isset($_POST['submit'])) {
@@ -26,9 +27,22 @@ if (isset($_POST['submit'])) {
     $type = $_POST['type'];
     $gender = $_POST['gender'];
     $address = $_POST['address'];
+    $price = $_POST['price'];
 
-    $query = "UPDATE employee SET company = '$company', type = '$type', gender = '$gender', address = '$address'
-                WHERE id = $se_id  ";
+    $query = "UPDATE employee SET company = '$company', type = '$type', gender = '$gender', address = '$address', price = '$price'
+                WHERE id = $e_id  ";
+    mysqli_query($connect, $query);
+}
+
+if (isset($_POST['add'])) {
+    $holiday = $_POST['holiday'];
+    $query = "INSERT INTO emp_holiday (e_id, date) VALUES ('$e_id', '$holiday')";
+    mysqli_query($connect, $query);
+}
+
+if (isset($_POST['delete'])) {
+    $holiday = $_POST['cancel_holiday'];
+    $query = "DELETE FROM emp_holiday WHERE e_id = '$e_id' AND date = '$holiday'";
     mysqli_query($connect, $query);
 }
 
@@ -168,17 +182,31 @@ if (isset($_POST['submit'])) {
 
                 <!--asking-price-->
                 <label for="price">Asking Price</label>
-                <input type="text" id="price" name="price" value="">
+                <input type="text" id="price" name="price" value="<?php echo $price ?>">
                 <!--asking-price-->
 
                 <!--submitted button-->
                 <input type="submit" name="submit" value="Submit">
 
                 <!--Date box-->
-                <label for="Date">Day off:</label>
-                <input type="date" id="break-day" name="break-day" value="yyyy-mm-dd" min="2000-01-01"
-                    max="2033-12-31"><input type="submit" class="add" value="add">
+                <label for="Date">Day off: </label>
+                <input type="date" id="break-day" name="holiday" value="yyyy-mm-dd" min="2000-01-01"
+                    max="2033-12-31"><input type="submit" name="add" class="add" value="add"><br>
                 <!--Date box-->
+
+                <label for="Date" style="display: inline;">Cancel Day off:</label>
+                <select id="cancel-holiday" name="cancel_holiday" value="" style="width: 20%; display: inline;">
+                    <option value="">Select a Date</option>
+                    <?php
+                    $query = "SELECT date FROM emp_holiday WHERE e_id = '$e_id'";
+                    $result = mysqli_query($connect, $query);
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . $row['date'] . "'>" . $row['date'] . "</option>";
+                        }
+                    }
+                    ?>
+                </select><input type="submit" name="delete" class="add" value="Delete" style="display: inline;">
 
             </form>
         </div>
