@@ -11,6 +11,9 @@ if (!isset($_SESSION['hire'])) {
 }
 
 
+$msg = '';
+$css = '';
+
 //later submission part
 $u_id = $_SESSION['uID'];
 
@@ -45,7 +48,23 @@ if (isset($_POST['submit'])) {
 
 
 
+
 if (isset($_POST['confirm'])) {
+    $emp_id = $_GET['afdaeqeqeasfdewrt3eradr234rwefsdgreyerhrgrsgsrfwer'];
+    $o_id = $u_id . $emp_id;
+    $date = $_POST['date'];
+    $shift = $_POST['shift'];
+
+
+    $query = "SELECT * FROM employee WHERE id = $emp_id";
+    $result = mysqli_query($connect, $query);
+    if ($result && mysqli_num_rows($result) > 0) {
+        $e_data = mysqli_fetch_assoc($result);
+    }
+    $e_name = $e_data['name'];
+    $e_number = $e_data['number'];
+    $e_fee = $e_data['price'];
+
     $u_thana = $_POST['thana'];
     $u_address = $_POST['address'];
     $date = $_POST['date'];
@@ -54,17 +73,25 @@ if (isset($_POST['confirm'])) {
     $o_id = $_POST['o_id'];
     $payment = $_POST['payment'];
 
-    $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, u_thana, date, shift, payment) 
-                VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$u_thana', '$date', '$shift', '$payment')";
-    mysqli_query($connect, $query);
+    if (!empty($u_address)) {
 
-    if (isset($_SESSION['hire'])) {
-        unset($_SESSION['hire']);
+        $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, u_thana, date, shift, payment) 
+                VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$u_thana', '$date', '$shift', '$payment')";
+        mysqli_query($connect, $query);
+        if (isset($_SESSION['hire'])) {
+            unset($_SESSION['hire']);
+        }
+        $msg = 'Order Placed Successfully';
+        $css = "style='padding: 10px; margin-bottom: 10px; background-color: green; color: white; width: 436px;'";
+    } else {
+        $msg = 'Please Enter your address !';
+        $css = "style='padding: 10px; margin-bottom: 10px; background-color: #f44336; color: white; width: 436px;'";
     }
-    header("location:index.php");
 }
 
-
+if (isset($_POST['cancel'])) {
+    header("location:workerSelection.php");
+}
 
 ?>
 
@@ -98,6 +125,9 @@ if (isset($_POST['confirm'])) {
         </div>
         <div class="Confirm-section">
             <!--<h2>Platform Selection</h2>-->
+            <div <?php echo $css ?>>
+                <p><?php echo $msg ?></p>
+            </div>
             <div class="Confirming-form">
                 <form method="POST">
                     <label for="name">Worker Name</label>
@@ -112,20 +142,46 @@ if (isset($_POST['confirm'])) {
                     <img src="../../ICONS/callme.png" style="float: right;">
                     <input disabled type="text" id="phonenumber" name="phonenumber" value="<?php echo $e_number ?>">
 
-                    <label for="upazilla">Your Upazilla</label><span class="required">*</span>
+                    <label for="upazilla">Thana</label><span class="required">*</span>
                     <img src="../../ICONS/askmap.png" style="float: right;">
                     <select id="upazilla" name="thana">
-                        <option value="Dohar Upazila">Dohar Upazila </option>
-                        <option value="Keraniganj Upazila">Keraniganj Upazila</option>
-                        <option value="Dhamrai Upazila ">Dhamrai Upazila </option>
-                        <option value="Nawabganj Upazila">Nawabganj Upazila</option>
-                        <option value="Savar Upazila">Savar Upazila</option>
+                        <option value="Azimpur">Azimpur</option>
+                        <option value="Badda">Badda</option>
+                        <option value="Banani">Banani</option>
+                        <option value="Bashundhara">Bashundhara</option>
+                        <option value="Cantonment">Cantonment</option>
+                        <option value="ChaowkBazar">ChaowkBazar</option>
+                        <option value="Demra">Demra</option>
+                        <option value="Dhanmondi">Dhanmondi</option>
+                        <option value="Gulshan">Gulshan</option>
+                        <option value="Hazaribagh">Hazaribagh</option>
+                        <option value="Jatrabari">Jatrabari</option>
+                        <option value="Kadamtali">Kadamtali</option>
+                        <option value="Kafrul">Kafrul</option>
+                        <option value="Kalabagan">Kalabagan</option>
+                        <option value="Khilgaon">Khilgaon</option>
+                        <option value="Khilkhet">Khilkhet</option>
+                        <option value="Lalbagh">Lalbagh</option>
+                        <option value="Mirpur">Mirpur</option>
+                        <option value="Mohammadpur">Mohammadpur</option>
+                        <option value="Motijheel">Motijheel</option>
+                        <option value="Mughda">Mughda</option>
+                        <option value="Paltan">Paltan</option>
+                        <option value="Panthapath">Panthapath</option>
+                        <option value="Ramna">Ramna</option>
+                        <option value="Rampura">Rampura</option>
+                        <option value="Shabujbagh">Shabujbagh</option>
+                        <option value="Shahjahanpur">Shahjahanpur</option>
+                        <option value="Shahbagh">Shahbagh</option>
+                        <option value="Tejgaon">Tejgaon</option>
+                        <option value="Uttara">Uttara</option>
+                        <option value="Wari">Wari</option>
                     </select>
 
                     <label for="address">Your Address</label><span class="required">*</span>
                     <img src="../../ICONS/asklocation.png" style="float: right;">
-                    <textarea id="address" name="address" style="height:70px" placeholder="Write your address..."
-                        required></textarea>
+                    <textarea id="address" name="address" style="height:70px"
+                        placeholder="Write your address..."></textarea>
 
                     <label for="payment">Total Payment</label>
                     <img src="../../ICONS/paymecash.png" style="float: right;">
@@ -139,7 +195,7 @@ if (isset($_POST['confirm'])) {
 
                     <input type="submit" name="confirm" value=" Confirm Hire">
                     <input type="submit" name="cancel" value=" Cancel">
-                </form>
+
             </div>
         </div>
     </header>

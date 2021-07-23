@@ -101,7 +101,7 @@ if (!isset($_SESSION['uID'])) {
         </p>
     </div>
     <div class='rating'>
-        <form action='confirmHire.php' method='POST'>
+        <form action='confirmHire.php?afdaeqeqeasfdewrt3eradr234rwefsdgreyerhrgrsgsrfwer=" . $row['id'] . "' method='POST'>
             <p>
                 <b style='font-size: 18px;'>Rating:" . $row['rating'] . "</b>
                 <img src='../../ICONS/rating1.png' style='margin-left: 6px; margin-top: 14px;'>
