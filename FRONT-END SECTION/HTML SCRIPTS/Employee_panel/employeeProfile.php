@@ -118,7 +118,19 @@ if (isset($_POST['submit'])) {
                 <label for="employee-type">Employee-Type -* </label>
                 <select id="employee-type" name="type" value="<?php echo $type; ?>" required>
                     <option value="<?php echo $type; ?>"><?php echo $type; ?></option>
-                    <option value="Electrician">Electrician</option>
+                    <?php
+
+                    $query = "SELECT name FROM services";
+                    $result = mysqli_query($connect, $query);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
+                        }
+                    }
+
+                    ?>
+                    <!-- <option value="Electrician">Electrician</option>
                     <option value="AC Repairer">AC Repairer</option>
                     <option value="Refrigerator Repairer">Refrigerator Repairer</option>
                     <option value="Washing Machine repairer">Washing Machine repairer</option>
@@ -141,7 +153,7 @@ if (isset($_POST['submit'])) {
                     <option value="Construction-site Cleaner">Construction-site Cleaner</option>
                     <option value="Road-site Garbage Cleaner">Road-site Garbage Cleaner</option>
                     <option value="Sewerage Cleaner">Sewerage Cleaner</option>
-                    <option value="Parking-Garage Cleaner">Parking-Garage Cleaner</option>
+                    <option value="Parking-Garage Cleaner">Parking-Garage Cleaner</option> -->
                 </select>
                 <!--gender of employee-->
                 <label for="gender">Gender</label>

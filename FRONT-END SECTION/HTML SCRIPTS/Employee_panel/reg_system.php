@@ -40,8 +40,8 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 
                                         $password = password_hash($password, PASSWORD_DEFAULT);
 
-                                        $query = "INSERT into $table (name, number, email, password) VALUES ('$name', '$number', '$email',
-                                                             '$password')";
+                                        $query = "INSERT into $table (name, number, email, type, password) VALUES ('$name',
+                                                    '$number', '$email', '$type', '$password')";
 
                                         mysqli_query($connect, $query);
 
