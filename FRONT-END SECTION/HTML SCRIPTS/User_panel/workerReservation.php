@@ -3,7 +3,7 @@
 require("../../Inc/function.php");
 session_start();
 if (!isset($_SESSION['uID'])) {
-   header("location:userLogin.php");
+    header("location:userLogin.php");
 }
 
 $type = $_POST['type'];
@@ -38,6 +38,9 @@ $type = $_POST['type'];
         </div>
         <div class="Hiring-selection">
             <!--<h2>Platform Selection</h2>-->
+            <div style="padding: 10px; margin-bottom: 10px; background-color: #f44336; color: white; width: 436px;">
+                <p>Hello</p>
+            </div>
 
             <div class="Hiring-form">
                 <form action="workerSelection.php" method="POST">

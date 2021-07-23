@@ -1,7 +1,5 @@
 <?php
 
-
-
 include("./reg_system.php");
 session_start();
 if (isset($_SESSION['eID'])) {
@@ -55,11 +53,25 @@ if (isset($_SESSION['eID'])) {
             </div>
 
             <!--EMPLOYE TYPE-->
-            <div class="employe-type" >
+            <div class="employe-type">
+
                 <label for="employee-type"></label>
-                <select id="employee-type" name="employee-type" required>
+                <select id="employee-type" name="employee_type" required>
                     <option value="1">Select working field</option>
-                    <option value="2">Electrician</option>
+                    <?php
+
+                    $query = "SELECT name FROM services";
+                    $result = mysqli_query($connect, $query);
+
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
+                        }
+                    }
+
+                    ?>
+
+                    <!--<option value="2">Electrician</option>
                     <option value="3">AC Repairer</option>
                     <option value="4">Refrigerator Repairer</option>
                     <option value="5">Washing Machine repairer</option>
@@ -82,11 +94,11 @@ if (isset($_SESSION['eID'])) {
                     <option value="22">Construction-site Cleaner</option>
                     <option value="23">Road-site Garbage Cleaner</option>
                     <option value="24">Swerage-channel Cleaner</option>
-                    <option value="25">Parking-Garage Cleaner</option>
+                    <option value="25">Parking-Garage Cleaner</option>-->
                 </select>
             </div>
             <!--EMPLOYE TYPE-->
-            
+
             <div class="password">
                 <label for="password"></label>
                 <input type="password" id="password" name="password" placeholder="Password" required>

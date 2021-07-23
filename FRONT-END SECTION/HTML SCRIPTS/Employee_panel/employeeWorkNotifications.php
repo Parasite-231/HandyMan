@@ -18,7 +18,7 @@ $e_id = $_SESSION['eID'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS SCRIPTS/employee_panel/employeeWorkNotificationDesign.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/orkers.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/workers.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <title>Employee Working Notifications</title>
