@@ -6,7 +6,8 @@ if (!isset($_SESSION['eID'])) {
 }
 
 $e_id = $_SESSION['eID'];
-
+$shift = '';
+$u_area = '';
 if (isset($_POST['search'])) {
     $shift = $_POST['shift'];
     $u_area = $_POST['working_area'];
