@@ -37,10 +37,10 @@ $type = $_POST['type'];
                </ul>-->
         </div>
         <div class="Hiring-selection">
-            <!--<h2>Platform Selection</h2>-->
-            <div style="padding: 10px; margin-bottom: 10px; background-color: #f44336; color: white; width: 436px;">
+            <!-- <h2>Platform Selection</h2>-->
+            <!-- <div style="padding: 10px; margin-bottom: 10px; background-color: #f44336; color: white; width: 436px;">
                 <p>Hello</p>
-            </div>
+            </div> -->
 
             <div class="Hiring-form">
                 <form action="workerSelection.php" method="POST">

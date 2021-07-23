@@ -73,6 +73,7 @@ if (!isset($_SESSION['uID'])) {
         <!--chocolate bar--1-->
         <?php
 
+
         if (isset($_POST['hire'])) {
             $_SESSION['hire'] = '1';
 
@@ -80,7 +81,8 @@ if (!isset($_SESSION['uID'])) {
             $shift = $_POST['shift'];
             $type = $_POST['type'];
 
-            $query = "SELECT * FROM employee WHERE type = '$type' ";
+            $query = "SELECT * FROM employee WHERE id NOT IN (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
+                        shift='$shift' UNION SELECT e_id AS id FROM emp_holiday WHERE date = '$date') AND type = '$type'";
             $result = mysqli_query($connect, $query);
 
             if ($result && mysqli_num_rows($result) > 0) {
