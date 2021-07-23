@@ -13,62 +13,69 @@ if (filter_has_var(INPUT_POST, 'submit')) {
     $password = $_POST['password'];
     $con_pass = $_POST['confirm'];
     $email = $_POST['email'];
+    $type = $_POST['employee_type'];
+
 
     if (!empty($name) && !empty($number) && !empty($password) && !empty($con_pass) && !empty($email)) {
-        if (preg_match("/(^(\+88|0088)?(01){1}[356789]{1}(\d){8})$/", $number)) {
+        if ($type != 1) {
+            if (preg_match("/(^(\+88|0088)?(01){1}[356789]{1}(\d){8})$/", $number)) {
 
-            $query = "SELECT * FROM employee WHERE number = '$number' LIMIT 1";
-            $result = mysqli_query($connect, $query);
-
-            if ($result && mysqli_num_rows($result) == 0) {
-
-                $query = "SELECT * FROM employee WHERE email = '$email' LIMIT 1";
+                $query = "SELECT * FROM employee WHERE number = '$number' LIMIT 1";
                 $result = mysqli_query($connect, $query);
 
                 if ($result && mysqli_num_rows($result) == 0) {
 
-                    if (strlen($password) == 8 || strlen($password) > 8) {
+                    $query = "SELECT * FROM employee WHERE email = '$email' LIMIT 1";
+                    $result = mysqli_query($connect, $query);
 
-                        if ($password == $con_pass) {
+                    if ($result && mysqli_num_rows($result) == 0) {
 
-                            if (strlen($name) == 4 || strlen($name) > 4) {
+                        if (strlen($password) == 8 || strlen($password) > 8) {
 
-                                if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                            if ($password == $con_pass) {
 
-                                    $password = password_hash($password, PASSWORD_DEFAULT);
+                                if (strlen($name) == 4 || strlen($name) > 4) {
 
-                                    $query = "INSERT into $table (name, number, email, password) VALUES ('$name', '$number', '$email',
-                                                         '$password')";
+                                    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-                                    mysqli_query($connect, $query);
+                                        $password = password_hash($password, PASSWORD_DEFAULT);
 
-                                    header("location:employee login.php");
+                                        $query = "INSERT into $table (name, number, email, password) VALUES ('$name', '$number', '$email',
+                                                             '$password')";
+
+                                        mysqli_query($connect, $query);
+
+                                        header("location:employee login.php");
+                                    } else {
+                                        $msg = 'Email is not Valid !';
+                                        $errClass = 'alert-danger';
+                                    }
                                 } else {
-                                    $msg = 'Email is not Valid !';
+                                    $msg = 'Please write your Full Name !';
                                     $errClass = 'alert-danger';
                                 }
                             } else {
-                                $msg = 'Please write your Full Name !';
+                                $msg = 'Passwords do not match !';
                                 $errClass = 'alert-danger';
                             }
                         } else {
-                            $msg = 'Passwords do not match !';
+                            $msg = 'Password is too short !';
                             $errClass = 'alert-danger';
                         }
                     } else {
-                        $msg = 'Password is too short !';
+                        $msg = 'Email address ALready Exists !';
                         $errClass = 'alert-danger';
                     }
                 } else {
-                    $msg = 'Email address ALready Exists !';
+                    $msg = 'Phone Number ALready Exists !';
                     $errClass = 'alert-danger';
                 }
             } else {
-                $msg = 'Phone Number ALready Exists !';
+                $msg = 'Please enter a valid Phone Number !';
                 $errClass = 'alert-danger';
             }
         } else {
-            $msg = 'Please enter a valid Phone Number !';
+            $msg = 'Please select your Working field !';
             $errClass = 'alert-danger';
         }
     } else {
