@@ -3,11 +3,11 @@
 require("../../Inc/function.php");
 session_start();
 if (!isset($_SESSION['uID'])) {
-   header("location:userLogin.php");
+    header("location:userLogin.php");
 }
 
 if (!isset($_SESSION['hire'])) {
-   header("location:index.php");
+    header("location:index.php");
 }
 
 
@@ -18,49 +18,50 @@ $query = "SELECT name, number, address FROM user WHERE id = $u_id";
 $result = mysqli_query($connect, $query);
 
 if (mysqli_num_rows($result) > 0) {
-   $userdata = mysqli_fetch_assoc($result);
+    $userdata = mysqli_fetch_assoc($result);
 
-   $u_name = $userdata['name'];
-   $u_number = $userdata['number'];
+    $u_name = $userdata['name'];
+    $u_number = $userdata['number'];
 }
 
 
 
 if (isset($_POST['submit'])) {
-   $emp_id = $_POST['id'];
-   $o_id = $u_id . $emp_id;
-   $date = $_POST['date'];
-   $shift = $_POST['shift'];
+    $emp_id = $_POST['id'];
+    $o_id = $u_id . $emp_id;
+    $date = $_POST['date'];
+    $shift = $_POST['shift'];
 
 
-   $query = "SELECT * FROM employee WHERE id = $emp_id";
-   $result = mysqli_query($connect, $query);
-   if ($result && mysqli_num_rows($result) > 0) {
-      $e_data = mysqli_fetch_assoc($result);
-   }
-   $e_name = $e_data['name'];
-   $e_number = $e_data['number'];
+    $query = "SELECT * FROM employee WHERE id = $emp_id";
+    $result = mysqli_query($connect, $query);
+    if ($result && mysqli_num_rows($result) > 0) {
+        $e_data = mysqli_fetch_assoc($result);
+    }
+    $e_name = $e_data['name'];
+    $e_number = $e_data['number'];
+    $e_fee = $e_data['price'];
 }
 
 
 
 if (isset($_POST['confirm'])) {
-   $u_thana = $_POST['thana'];
-   $u_address = $_POST['address'];
-   $date = $_POST['date'];
-   $shift = $_POST['shift'];
-   $emp_id = $_POST['e_id'];
-   $o_id = $_POST['o_id'];
+    $u_thana = $_POST['thana'];
+    $u_address = $_POST['address'];
+    $date = $_POST['date'];
+    $shift = $_POST['shift'];
+    $emp_id = $_POST['e_id'];
+    $o_id = $_POST['o_id'];
+    $payment = $_POST['payment'];
 
+    $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, u_thana, date, shift, payment) 
+                VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$u_thana', '$date', '$shift', '$payment')";
+    mysqli_query($connect, $query);
 
-   $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, u_thana, date, shift) 
-   VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$u_thana', '$date', '$shift')";
-   mysqli_query($connect, $query);
-
-   if (isset($_SESSION['hire'])) {
-      unset($_SESSION['hire']);
-   }
-   header("location:index.php");
+    if (isset($_SESSION['hire'])) {
+        unset($_SESSION['hire']);
+    }
+    header("location:index.php");
 }
 
 
@@ -123,17 +124,18 @@ if (isset($_POST['confirm'])) {
 
                     <label for="address">Your Address</label><span class="required">*</span>
                     <img src="../../ICONS/asklocation.png" style="float: right;">
-                    <textarea id="address" name="address" style="height:70px"
-                        placeholder="Write your address..."></textarea>
+                    <textarea id="address" name="address" style="height:70px" placeholder="Write your address..."
+                        required></textarea>
 
                     <label for="payment">Total Payment</label>
                     <img src="../../ICONS/paymecash.png" style="float: right;">
-                    <input disabled type="text" id="payment" name="payment">
+                    <input disabled type="text" id="payment" name="payment" value="৳ <?php echo $e_fee ?>">
 
                     <input type='hidden' name='date' value='<?php echo $date ?>'>
                     <input type='hidden' name='shift' value='<?php echo $shift ?>'>
                     <input type='hidden' name='e_id' value='<?php echo $emp_id ?>'>
                     <input type='hidden' name='o_id' value='<?php echo $o_id ?>'>
+                    <input type='hidden' name='payment' value='<?php echo $e_fee ?>'>
 
                     <input type="submit" name="confirm" value=" Confirm Hire">
                     <input type="submit" name="cancel" value=" Cancel">

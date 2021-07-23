@@ -57,7 +57,7 @@ if (!isset($_SESSION['uID'])) {
             <div class="dropdown">
                 <form>
                     <select id="drop-down" name="drop-down">
-                        <option value="100">Select Worker Rating</option>
+                        <option value="">Filter</option>
                         <option value="101">4.7</option>
                         <option value="102">4.5</option>
                         <option value="103">5.0</option>
@@ -89,7 +89,7 @@ if (!isset($_SESSION['uID'])) {
 
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "
-            <div class='row'>
+    <div class='row'>
                <div class='image'><img src='../../ICONS/account.png'></div>
                <div class='info'>
 
@@ -97,17 +97,19 @@ if (!isset($_SESSION['uID'])) {
             <t style='font-size: 17px;'>" . $row['company'] . "</t>
             </t><br>
             " . $row['type'] . "<br>
+            <t style='font-size: 18px;'>Fee: <b>" . $row['price'] . " BDT</b></t>
         </p>
     </div>
     <div class='rating'>
         <form action='confirmHire.php' method='POST'>
-            <p> <b style='font-size: 18px;'>Rating:" . $row['rating'] . "</b>
+            <p>
+                <b style='font-size: 18px;'>Rating:" . $row['rating'] . "</b>
                 <img src='../../ICONS/rating1.png' style='margin-left: 6px; margin-top: 14px;'>
                 <input type='hidden' name='id' value='" . $row['id'] . "'>
                 <input type='hidden' name='date' value='" . $date . "'>
                 <input type='hidden' name='shift' value='" . $shift . "'>
-                     <button type='submit' name='submit' style='margin-top: -8px;'>Hire</button>
-                     </p>
+                <button type='submit' name='submit' style='margin-top: -8px;'>Hire</button>
+            </p>
                   </form><br>
                </div>
             </div>";
@@ -116,7 +118,7 @@ if (!isset($_SESSION['uID'])) {
                 echo "
          <div class='row'>
             <p> <b style='font-size: 30px;'>No worker found at this moment</b> </p>
-         </div>
+    </div>
          ";
             }
         }
