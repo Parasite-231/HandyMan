@@ -7,6 +7,17 @@ if (!isset($_SESSION['eID'])) {
 
 $e_id = $_SESSION['eID'];
 
+if (isset($_POST['search'])) {
+    $shift = $_POST['shift'];
+    $u_area = $_POST['working_area'];
+    $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND shift = '$shift' AND u_thana = '$u_area' ";
+    $result = mysqli_query($connect, $query);
+} else {
+
+    $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
+    $result = mysqli_query($connect, $query);
+}
+
 
 ?>
 
@@ -76,27 +87,51 @@ $e_id = $_SESSION['eID'];
         <div class="Description">
             <!--working-criteria-for-employee-->
             <div class="working-criteria-form--of-employee">
-                <form>
-                    <label for="working-hour">Choose working-hour:</label><img src="../../ICONS/clock1.png"
+                <form method="POST">
+                    <label for="working-hour">Choose shift:</label><img src="../../ICONS/clock1.png"
                         style="margin-left: 3px;">
-                    <select id="working-hour" name="working-hour">
-                        <option value="60">None</option>
-                        <option value="61">Last 30 minutes</option>
-                        <option value="62">Last 1 hour</option>
-                        <option value="63">Last 5 hour</option>
-                        <option value="64">Last 12 hour</option>
-                        <option value="65">Last 24 hour</option>
+                    <select id="working-hour" name="shift">
+                        <option value='<?php echo $shift ?>'><?php echo $shift ?></option>
+                        <option value="9AM - 12PM">9AM - 12PM</option>
+                        <option value="3PM - 6PM">3PM - 6PM</option>
                     </select>
                     <label for="working-area">Choose working-area:</label><img src="../../ICONS/location4.png"
                         style="margin-left: 5px;">
-                    <select id="working-aarea" name="working-area">
-                        <option value="90">None</option>
-                        <option value="91">Banani</option>
-                        <option value="92">Mohakhali</option>
-                        <option value="93">Uttara</option>
-                        <option value="94">Khilgaon</option>
-                        <option value="95">Moghbazar</option>
-                        <input type="submit" value=" Search">
+                    <select id="working-aarea" name="working_area">
+                        <option value='<?php echo $u_area ?>'><?php echo $u_area ?></option>
+                        <option value="Azimpur">Azimpur</option>
+                        <option value="Badda">Badda</option>
+                        <option value="Banani">Banani</option>
+                        <option value="Bashundhara">Bashundhara</option>
+                        <option value="Cantonment">Cantonment</option>
+                        <option value="ChaowkBazar">ChaowkBazar</option>
+                        <option value="Demra">Demra</option>
+                        <option value="Dhanmondi">Dhanmondi</option>
+                        <option value="Gulshan">Gulshan</option>
+                        <option value="Hazaribagh">Hazaribagh</option>
+                        <option value="Jatrabari">Jatrabari</option>
+                        <option value="Kadamtali">Kadamtali</option>
+                        <option value="Kafrul">Kafrul</option>
+                        <option value="Kalabagan">Kalabagan</option>
+                        <option value="Khilgaon">Khilgaon</option>
+                        <option value="Khilkhet">Khilkhet</option>
+                        <option value="Lalbagh">Lalbagh</option>
+                        <option value="Malibagh">Malibagh</option>
+                        <option value="Mirpur">Mirpur</option>
+                        <option value="Mohammadpur">Mohammadpur</option>
+                        <option value="Motijheel">Motijheel</option>
+                        <option value="Mughda">Mughda</option>
+                        <option value="Paltan">Paltan</option>
+                        <option value="Panthapath">Panthapath</option>
+                        <option value="Ramna">Ramna</option>
+                        <option value="Rampura">Rampura</option>
+                        <option value="Shabujbagh">Shabujbagh</option>
+                        <option value="Shahjahanpur">Shahjahanpur</option>
+                        <option value="Shahbagh">Shahbagh</option>
+                        <option value="Tejgaon">Tejgaon</option>
+                        <option value="Uttara">Uttara</option>
+                        <option value="Wari">Wari</option>
+                        <input type="submit" name="search" value=" Search">
                     </select>
                 </form>
             </div>
@@ -109,9 +144,9 @@ $e_id = $_SESSION['eID'];
                     <tr>
                         <th>Customer name</th>
                         <th>Contact</th>
+                        <th>Area</th>
                         <th>Address</th>
-                        <th>Starting Time</th>
-                        <th>Working Duration</th>
+                        <th>Shift</th>
                         <th>Total Payment</th>
                         <th>Working State</th>
                     </tr>
@@ -121,30 +156,31 @@ $e_id = $_SESSION['eID'];
 
                     <?php
 
-                    $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
-                    $result = mysqli_query($connect, $query);
 
                     if (mysqli_num_rows($result) > 0) {
                         while ($list = mysqli_fetch_assoc($result)) {
                             $o_id = $list['id'];
                             $u_name = $list['u_name'];
                             $u_number = $list['u_number'];
+                            $u_area = $list['u_thana'];
                             $u_address = $list['u_address'];
                             $date = $list['date'];
+                            $payment = $list['payment'];
+                            $shift = $list['shift'];
                             echo "
                             <tr>
-                                <th>$u_name</th>
-                                <th>$u_number</th>
-                                <th>$u_address</th>
-                                <th>Anytime</th>
-                                <th>N/A</th>
-                                <th>800 BDT</th>
-                                <th>N/A</th>
+                                <td>$u_name</td>
+                                <td>$u_number</td>
+                                <td>$u_area</td>
+                                <td>$u_address</td>
+                                <td>$shift</td>
+                                <td>$payment</td>
+                                <td>N/A</td>
                             </tr>
                             ";
                         }
                     } else {
-                        echo "NO Notifications to show";
+                        echo "No Notifications to show";
                     }
 
                     ?>

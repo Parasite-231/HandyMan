@@ -162,6 +162,7 @@ if (isset($_POST['cancel'])) {
                         <option value="Khilgaon">Khilgaon</option>
                         <option value="Khilkhet">Khilkhet</option>
                         <option value="Lalbagh">Lalbagh</option>
+                        <option value="Malibagh">Malibagh</option>
                         <option value="Mirpur">Mirpur</option>
                         <option value="Mohammadpur">Mohammadpur</option>
                         <option value="Motijheel">Motijheel</option>
