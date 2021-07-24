@@ -3,7 +3,6 @@ session_start();
 if (!isset($_SESSION['eID'])) {
     header("location:./employee login.php");
 }
-
 $e_id = $_SESSION['eID'];
 
 require("../../Inc/function.php");
@@ -190,8 +189,8 @@ if (isset($_POST['delete'])) {
 
                 <!--Date box-->
                 <label for="Date">Day off: </label>
-                <input type="date" id="break-day" name="holiday" value="yyyy-mm-dd" min="2000-01-01"
-                    max="2033-12-31"><input type="submit" name="add" class="add" value="add"><br>
+                <input type="date" id="break-day" name="holiday" value="yyyy-mm-dd" min="<?php echo newDate('1') ?>"
+                    max="<?php echo newDate('30') ?>"><input type="submit" name="add" class="add" value="add"><br>
                 <!--Date box-->
 
                 <label for="Date" style="display: inline;">Cancel Day off:</label>

@@ -46,8 +46,8 @@ $type = $_POST['type'];
                 <form action="workerSelection.php" method="POST">
                     <label for="Date">Select a Date</label><img src="../../ICONS/showcalender.png"
                         style="float: right;">
-                    <input type="date" id="start" name="date" value="yyyy-mm-dd" min="2021-07-21" max="2050-12-31"
-                        required>
+                    <input type="date" id="start" name="date" value="yyyy-mm-dd" min="<?php echo date('Y-m-d') ?>"
+                        max="<?php echo newDate('30') ?>" required>
                     <label for="Timeline">Reserve a Time</label><img src="../../ICONS/showclock.png"
                         style="float: right;">
                     <select id="Timeline" name="shift">
