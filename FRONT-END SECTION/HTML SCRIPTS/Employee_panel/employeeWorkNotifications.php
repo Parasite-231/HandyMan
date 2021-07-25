@@ -8,13 +8,45 @@ if (!isset($_SESSION['eID'])) {
 $e_id = $_SESSION['eID'];
 $shift = '';
 $u_area = '';
+
+function updateStatus($result, $connect)
+{
+    if ($result && mysqli_num_rows($result) > 0) {
+        while ($list = mysqli_fetch_assoc($result)) {
+            $o_id = $list['id'];
+            $date = $list['date'];
+            $shift = $list['shift'];
+            $status = orderStatus($date, $shift);
+            $sql = "UPDATE orderlist set status = '$status' WHERE id = '$o_id'";
+            mysqli_query($connect, $sql);
+        }
+    }
+}
+
+
+
+
 if (isset($_POST['search'])) {
     $shift = $_POST['shift'];
     $u_area = $_POST['working_area'];
-    $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND shift = '$shift' AND u_thana = '$u_area' ";
-    $result = mysqli_query($connect, $query);
-} else {
 
+    if ($shift == '' && $u_area == '') {
+        $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
+        $result = mysqli_query($connect, $query);
+        updateStatus($result, $connect);
+        $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
+        $result = mysqli_query($connect, $query);
+    } else {
+        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND shift = '$shift' AND u_thana = '$u_area' ";
+        $result = mysqli_query($connect, $query);
+        updateStatus($result, $connect);
+        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND shift = '$shift' AND u_thana = '$u_area' ";
+        $result = mysqli_query($connect, $query);
+    }
+} else {
+    $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
+    $result = mysqli_query($connect, $query);
+    updateStatus($result, $connect);
     $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
     $result = mysqli_query($connect, $query);
 }
@@ -147,6 +179,7 @@ if (isset($_POST['search'])) {
                         <th>Contact</th>
                         <th>Area</th>
                         <th>Address</th>
+                        <th>Date</th>
                         <th>Shift</th>
                         <th>Total Payment</th>
                         <th>Working State</th>
@@ -158,7 +191,7 @@ if (isset($_POST['search'])) {
                     <?php
 
 
-                    if (mysqli_num_rows($result) > 0) {
+                    if ($result && mysqli_num_rows($result) > 0) {
                         while ($list = mysqli_fetch_assoc($result)) {
                             $o_id = $list['id'];
                             $u_name = $list['u_name'];
@@ -168,15 +201,17 @@ if (isset($_POST['search'])) {
                             $date = $list['date'];
                             $payment = $list['payment'];
                             $shift = $list['shift'];
+                            $status = $list['status'];
                             echo "
                             <tr>
                                 <td>$u_name</td>
                                 <td>$u_number</td>
                                 <td>$u_area</td>
                                 <td>$u_address</td>
+                                <td>$date</td>
                                 <td>$shift</td>
                                 <td>$payment</td>
-                                <td>N/A</td>
+                                <td>$status</td>
                             </tr>
                             ";
                         }

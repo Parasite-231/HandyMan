@@ -72,11 +72,13 @@ if (isset($_POST['confirm'])) {
     $emp_id = $_POST['e_id'];
     $o_id = $_POST['o_id'];
     $payment = $_POST['payment'];
+    $status = 'Not started';
 
     if (!empty($u_address)) {
 
-        $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, u_thana, date, shift, payment) 
-                VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$u_thana', '$date', '$shift', '$payment')";
+        $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, u_thana, date, shift, payment, status) 
+                VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$u_thana',
+                        '$date', '$shift', '$payment', '$status')";
         mysqli_query($connect, $query);
         if (isset($_SESSION['hire'])) {
             unset($_SESSION['hire']);
