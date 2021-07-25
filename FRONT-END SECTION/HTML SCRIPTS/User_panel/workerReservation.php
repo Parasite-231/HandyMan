@@ -5,7 +5,8 @@ session_start();
 if (!isset($_SESSION['uID'])) {
     header("location:userLogin.php");
 }
-
+$msg = '';
+$css = '';
 $type = $_POST['type'];
 ?>
 
@@ -41,18 +42,21 @@ $type = $_POST['type'];
             <!-- <div style="padding: 10px; margin-bottom: 10px; background-color: #f44336; color: white; width: 436px;">
                 <p>Hello</p>
             </div> -->
-
+            <div <?php echo $css ?>>
+                <p><?php echo $msg ?></p>
+            </div>
             <div class="Hiring-form">
-                <form action="workerSelection.php" method="POST">
+                <form action="workerSelection.php?type='<?php echo $type ?>'" method="POST">
                     <label for="Date">Select a Date</label><img src="../../ICONS/showcalender.png"
                         style="float: right;">
-                    <input type="date" id="start" name="date" value="yyyy-mm-dd" min="<?php echo date('Y-m-d') ?>"
+                    <input type="date" id="start" name="date" value="yyyy-mm-dd" min="<?php echo newDate('1') ?>"
                         max="<?php echo newDate('30') ?>" required>
                     <label for="Timeline">Reserve a Time</label><img src="../../ICONS/showclock.png"
                         style="float: right;">
                     <select id="Timeline" name="shift">
-                        <option value="9AM - 12PM">9AM - 12PM</option>
-                        <option value="3PM - 6PM">3PM - 6PM</option>
+                        <option value='9AM - 12PM'>9AM - 12PM</option>
+                        <option value='3PM - 6PM'>3PM - 6PM</option>
+
                     </select>
                     <input type='hidden' name='type' value='<?php echo $type ?>'>
                     <input type="submit" name="hire" value="Hire">

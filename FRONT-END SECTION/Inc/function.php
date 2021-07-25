@@ -72,6 +72,7 @@ function newDate($day)
     echo date('Y-m-d', strtotime($date . ' + ' . $day . 'days'));
 }
 
+
 function shiftStatus($shift)
 {
     $flag = '';

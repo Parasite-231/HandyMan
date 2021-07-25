@@ -92,7 +92,7 @@ if (isset($_POST['confirm'])) {
 }
 
 if (isset($_POST['cancel'])) {
-    header("location:workerSelection.php");
+    header("location:index.php");
 }
 
 ?>

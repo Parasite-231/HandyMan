@@ -73,6 +73,7 @@ if (!isset($_SESSION['uID'])) {
         <!--chocolate bar--1-->
         <?php
 
+        $c_date = date('Y-m-d', time() + 4 * 3600);
 
         if (isset($_POST['hire'])) {
             $_SESSION['hire'] = '1';

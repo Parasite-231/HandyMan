@@ -125,9 +125,6 @@ session_start();
                 </form>
                 </div>
                 ";
-                if (isset($_POST['select'])) {
-                    $type = $_POST['type'];
-                }
             }
         }
 
@@ -165,9 +162,6 @@ session_start();
         </form>
         </div>
         ";
-                if (isset($_POST['select'])) {
-                    $type = $_POST['type'];
-                }
             }
         }
 
