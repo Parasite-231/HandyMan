@@ -26,12 +26,27 @@ if (isset($_POST['submit'])) {
     $type = $_POST['type'];
     $gender = $_POST['gender'];
     $address = $_POST['address'];
-    $price = $_POST['price'];
 
-    $query = "UPDATE employee SET company = '$company', type = '$type', gender = '$gender', address = '$address', price = '$price'
+    $query = "UPDATE employee SET company = '$company', type = '$type', gender = '$gender', address = '$address'
                 WHERE id = $e_id  ";
     mysqli_query($connect, $query);
 }
+
+if (isset($_POST['change'])) {
+    $price = $_POST['fee'];
+    $query = "UPDATE employee SET price = '$price' WHERE id = $e_id";
+    mysqli_query($connect, $query);
+
+    $query = "SELECT AVG(price) AS price FROM employee WHERE type= '$type'";
+    $avg_price = mysqli_query($connect, $query);
+    if ($avg_price && mysqli_num_rows($avg_price) > 0) {
+        $data = mysqli_fetch_assoc($avg_price);
+        $av_price = $data['price'];
+    }
+    $query = "UPDATE services SET price = $av_price WHERE name = '$type'";
+    mysqli_query($connect, $query);
+}
+
 
 if (isset($_POST['add'])) {
     $holiday = $_POST['holiday'];
@@ -180,12 +195,19 @@ if (isset($_POST['delete'])) {
                     value="<?php echo $address; ?>"></input>
 
                 <!--asking-price-->
-                <label for="price">Asking Price</label>
-                <input type="text" id="price" name="price" value="<?php echo $price ?>">
+                <!-- <label for="price">Asking Price</label>
+                <input type="text" id="price" name="price" value="<?php //echo $price 
+                                                                    ?>"> -->
                 <!--asking-price-->
 
                 <!--submitted button-->
                 <input type="submit" name="submit" value="Submit">
+
+                <!-- asking price -->
+                <label for="Price" style="display: inline;">Asking Price:</label>
+                <input type="text" name="fee" style="width: 15%; display: inline;" value="<?php echo $price ?>">
+                </input><input type="submit" name="change" class="add" value="change"
+                    style="display: inline; width:7%;"><br>
 
                 <!--Date box-->
                 <label for="Date">Day off: </label>

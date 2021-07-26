@@ -67,6 +67,11 @@ session_start();
         $result = mysqli_query($connect, $query);
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
+                if ($row['rating'] == 0) {
+                    $rating = 'Not Rated';
+                } else {
+                    $rating = $row['rating'];
+                }
                 echo "
                 <div class='card'>
 
@@ -80,8 +85,8 @@ session_start();
                     <input type='hidden' name='type' value='" . $row['name'] . "'>
                 </div>
                 <div class='description'>
-                    <p>Rating: " . $row['rating'] . "</p>
-                    <p>Price: Per hour Tk 350</p>
+                    <p>Rating: " . $rating . "</p>
+                    <p>Price: " . $row['price'] . "</p>
                     <button type='submit' name='select'><i class='fas fa-plus'
                         style='margin-right: 5px;'></i>Select</button>
                 </div>
