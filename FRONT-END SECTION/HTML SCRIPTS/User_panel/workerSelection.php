@@ -82,50 +82,85 @@ if (!isset($_SESSION['uID'])) {
             $shift = $_POST['shift'];
             $type = $_POST['type'];
 
-            $query = "SELECT * FROM employee WHERE id NOT IN (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
-                        shift='$shift' UNION SELECT e_id AS id FROM emp_holiday WHERE date = '$date') AND type = '$type'";
-            $result = mysqli_query($connect, $query);
+            $status = shiftStatus($shift);
 
-            if ($result && mysqli_num_rows($result) > 0) {
-
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "
-    <div class='row'>
-               <div class='image'><img src='../../ICONS/account.png'></div>
-               <div class='info'>
-
-        <p> <b style='font-size: 22px;'>" . $row['name'] . "</b> <br>
-            <t style='font-size: 17px;'>" . $row['company'] . "</t>
-            </t><br>
-            " . $row['type'] . "<br>
-            <t style='font-size: 18px;'>Fee: <b>" . $row['price'] . " BDT</b></t>
-        </p>
-    </div>
-    <div class='rating'>
-        <form action='confirmHire.php?afdaeqeqeasfdewrt3eradr234rwefsdgreyerhrgrsgsrfwer=" . $row['id'] . "' method='POST'>
-            <p>
-                <b style='font-size: 18px;'>Rating:" . $row['rating'] . "</b>
-                <img src='../../ICONS/rating1.png' style='margin-left: 6px; margin-top: 14px;'>
-                <input type='hidden' name='id' value='" . $row['id'] . "'>
-                <input type='hidden' name='date' value='" . $date . "'>
-                <input type='hidden' name='shift' value='" . $shift . "'>
-                <button type='submit' name='submit' style='margin-top: -8px;'>Hire</button>
-            </p>
-                  </form><br>
-               </div>
-            </div>";
-                }
-            } else {
+            if ($date == $c_date && ($status == 'In Progress' || $status == 'Done')) {
                 echo "
-         <div class='row'>
-            <p> <b style='font-size: 30px;'>No worker found at this moment</b> </p>
-    </div>
-         ";
+                <div class='row'>
+                   <p> <b style='font-size: 30px; display: inline;'>Shift is not valid now</b>
+                   <div>
+                        <form action='workerReservation.php?type=" . $type . "' method='POST'>
+                            <button type='submit' name='submit' style='display: inline;'>Back</button>
+                        </form>
+                    </div>
+                   </p>
+
+                </div>
+                ";
+            } else {
+
+                $query = "SELECT * FROM employee WHERE id NOT IN (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
+            shift='$shift' UNION SELECT e_id AS id FROM emp_holiday WHERE date = '$date') AND type = '$type'";
+                $result = mysqli_query($connect, $query);
+
+                if ($result && mysqli_num_rows($result) > 0) {
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "
+                    <div class='row'>
+                        <div class='image'><img src='../../ICONS/account.png'></div>
+                    <div class='info'>
+
+                    <p>
+                        <b style='font-size: 22px;'>" . $row['name'] . "</b> <br>
+                        <t style='font-size: 17px;'>" . $row['company'] . "</t>
+                        <br>" . $row['type'] . "<br>
+                        <t style='font-size: 18px;'>Fee: <b>" . $row['price'] . " BDT</b></t>
+                    </p>
+                    </div>
+                    <div class='rating'>
+                        <form action='confirmHire.php?afdaeqeqeasfdewrt3eradr234rwefsdgreyerhrgrsgsrfwer=" . $row['id'] . "' method='POST'>
+                        <p>
+                        <b style='font-size: 18px;'>Rating:" . $row['rating'] . "</b>
+                        <img src='../../ICONS/rating1.png' style='margin-left: 6px; margin-top: 14px;'>
+                        <input type='hidden' name='id' value='" . $row['id'] . "'>
+                        <input type='hidden' name='date' value='" . $date . "'>
+                        <input type='hidden' name='shift' value='" . $shift . "'>
+                        <button type='submit' name='submit' style='margin-top: -8px;'>Hire</button>
+                        </p>
+                        </form><br>
+                    </div>
+                    </div>";
+                    }
+                } else {
+                    echo "
+                    <div class='row'>
+                        <p> <b style='font-size: 30px;'>No worker found at this moment</b> </p>
+                    </div>
+                    ";
+                }
             }
+            // } else {
+            //     echo "
+            //     <div class='row'>
+            //         <p> <b style='font-size: 30px;'>Shift is not valid now</b> </p>
+            //         <div class='rating' style='position: relative;'>
+            //             <form action='workerReservation.php?type=" . $type . "' method='POST'>
+            //             <p>
+            //                 <button type='submit' name='submit' style='margin-right: 20px; position: absolute;'>Go back</button>
+            //             </p>
+            //             </form><br>
+            //         </div>
+            //     </div>
+            // ";
+            // }
         }
         if (isset($_POST['back'])) {
             header("location:index.php");
-        } ?>
+        }
+
+
+        ?>
 
 
 

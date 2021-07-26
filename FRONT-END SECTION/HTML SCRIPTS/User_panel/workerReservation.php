@@ -7,7 +7,7 @@ if (!isset($_SESSION['uID'])) {
 }
 $msg = '';
 $css = '';
-$type = $_POST['type'];
+$type = $_GET['type'];
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +49,7 @@ $type = $_POST['type'];
                 <form action="workerSelection.php?type='<?php echo $type ?>'" method="POST">
                     <label for="Date">Select a Date</label><img src="../../ICONS/showcalender.png"
                         style="float: right;">
-                    <input type="date" id="start" name="date" value="yyyy-mm-dd" min="<?php echo newDate('1') ?>"
+                    <input type="date" id="start" name="date" value="yyyy-mm-dd" min="<?php echo newDate('0') ?>"
                         max="<?php echo newDate('30') ?>" required>
                     <label for="Timeline">Reserve a Time</label><img src="../../ICONS/showclock.png"
                         style="float: right;">
