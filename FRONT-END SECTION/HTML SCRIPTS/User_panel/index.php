@@ -67,11 +67,25 @@ session_start();
         $result = mysqli_query($connect, $query);
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                if ($row['rating'] == 0) {
-                    $rating = 'Not Rated';
+                $e_type = $row['name'];
+                $sql = "SELECT AVG(price) AS price, AVG(rating) AS rating FROM employee WHERE type = '$e_type'";
+                $res = mysqli_query($connect, $sql);
+                if ($res) {
+                    $data = mysqli_fetch_assoc($res);
                 } else {
-                    $rating = $row['rating'];
+                    echo "Internal Issue";
                 }
+
+                $e_price = number_format((float)$data['price'], 2, '.', '');
+                $e_rating = number_format((float)$data['rating'], 2, '.', '');
+
+                if ($e_price == 0) {
+                    $e_price = 500.00;
+                }
+                if ($e_rating == 0) {
+                    $e_rating = 'Not rated yet';
+                }
+
                 echo "
                 <div class='card'>
 
@@ -85,8 +99,8 @@ session_start();
                     <input type='hidden' name='type' value='" . $row['name'] . "'>
                 </div>
                 <div class='description'>
-                    <p>Rating: " . $rating . "</p>
-                    <p>Price: " . $row['price'] . "</p>
+                    <p>Rating: " . $e_rating . "</p>
+                    <p>Price: " . $e_price . "</p>
                     <button type='submit' name='select'><i class='fas fa-plus'
                         style='margin-right: 5px;'></i>Select</button>
                 </div>
@@ -110,15 +124,30 @@ session_start();
         $result = mysqli_query($connect, $query);
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                if ($row['rating'] == 0) {
-                    $rating = 'Not Rated';
+                $e_type = $row['name'];
+                $sql = "SELECT AVG(price) AS price, AVG(rating) AS rating FROM employee WHERE type = '$e_type'";
+                $res = mysqli_query($connect, $sql);
+                if ($res) {
+                    $data = mysqli_fetch_assoc($res);
                 } else {
-                    $rating = $row['rating'];
+                    echo "Internal Issue";
                 }
+
+                $e_price = number_format((float)$data['price'], 2, '.', '');
+                $e_rating = number_format((float)$data['rating'], 2, '.', '');
+
+                if ($e_price == 0) {
+                    $e_price = 500.00;
+                }
+                if ($e_rating == 0) {
+                    $e_rating = 'Not rated yet';
+                }
+
                 echo "
                 <div class='card'>
-                
-                <form action='workerReservation.php' method='POST'>
+
+                <form action='workerReservation.php?type=" . $row['name'] . "' method='POST'>
+
                 <div class='image'>
                     <img src='" . $row['image'] . "'>
                 </div>
@@ -127,8 +156,8 @@ session_start();
                     <input type='hidden' name='type' value='" . $row['name'] . "'>
                 </div>
                 <div class='description'>
-                    <p>Rating: " . $rating . "</p>
-                    <p>Price: " . $row['price'] . "</p>
+                    <p>Rating: " . $e_rating . "</p>
+                    <p>Price: " . $e_price . "</p>
                     <button type='submit' name='select'><i class='fas fa-plus'
                         style='margin-right: 5px;'></i>Select</button>
                 </div>
@@ -152,31 +181,46 @@ session_start();
         $result = mysqli_query($connect, $query);
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                if ($row['rating'] == 0) {
-                    $rating = 'Not Rated';
+                $e_type = $row['name'];
+                $sql = "SELECT AVG(price) AS price, AVG(rating) AS rating FROM employee WHERE type = '$e_type'";
+                $res = mysqli_query($connect, $sql);
+                if ($res) {
+                    $data = mysqli_fetch_assoc($res);
                 } else {
-                    $rating = $row['rating'];
+                    echo "Internal Issue";
                 }
+
+                $e_price = number_format((float)$data['price'], 2, '.', '');
+                $e_rating = number_format((float)$data['rating'], 2, '.', '');
+
+                if ($e_price == 0) {
+                    $e_price = 500.00;
+                }
+                if ($e_rating == 0) {
+                    $e_rating = 'Not rated yet';
+                }
+
                 echo "
-        <div class='card'>
-        
-        <form action='workerReservation.php' method='POST'>
-        <div class='image'>
-            <img src='" . $row['image'] . "'>
-        </div>
-        <div class='bio-of-founder'>
-            <h1>" . $row['name'] . "</h1>
-            <input type='hidden' name='type' value='" . $row['name'] . "'>
-        </div>
-        <div class='description'>
-            <p>Rating: " . $rating . "</p>
-            <p>Price: " . $row['price'] . "</p>
-            <button type='submit' name='select'><i class='fas fa-plus'
-                style='margin-right: 5px;'></i>Select</button>
-        </div>
-        </form>
-        </div>
-        ";
+                <div class='card'>
+
+                <form action='workerReservation.php?type=" . $row['name'] . "' method='POST'>
+
+                <div class='image'>
+                    <img src='" . $row['image'] . "'>
+                </div>
+                <div class='bio-of-founder'>
+                    <h1>" . $row['name'] . "</h1>
+                    <input type='hidden' name='type' value='" . $row['name'] . "'>
+                </div>
+                <div class='description'>
+                    <p>Rating: " . $e_rating . "</p>
+                    <p>Price: " . $e_price . "</p>
+                    <button type='submit' name='select'><i class='fas fa-plus'
+                        style='margin-right: 5px;'></i>Select</button>
+                </div>
+                </form>
+                </div>
+                ";
             }
         }
 
