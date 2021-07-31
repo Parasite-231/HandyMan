@@ -88,13 +88,11 @@ $u_id = $_SESSION['uID'];
     <div class="container-01">
         <?php
 
-        $css = 'display:  none;';
-
         $query = "SELECT * FROM orderlist WHERE u_id = $u_id ORDER BY date";
         $result = mysqli_query($connect, $query);
         updateStatus($result, $connect);
 
-        $query = "SELECT * FROM orderlist WHERE u_id = $u_id ORDER BY date";
+        $query = "SELECT * FROM orderlist WHERE u_id = $u_id ORDER BY date DESC";
         $result = mysqli_query($connect, $query);
 
         if ($result && mysqli_num_rows($result) > 0) {
@@ -106,23 +104,27 @@ $u_id = $_SESSION['uID'];
                 $date = $row['date'];
                 $shift = $row['shift'];
                 $status = $row['status'];
-                if ($status == 'DONE') {
+                $rating = $row['rating'];
+                $fee = $row['payment'];
+                $css = 'display:  none;';
+
+                if ($status == 'Done' && $rating == null) {
                     $css = '';
                 }
-
                 echo "
                 <div class='row'>
                 <div class='image'><img src='../../ICONS/account.png'></div>
                 <div class='info'>
-                    <p>" . $e_name . "<br>" . $e_type . "<br>
-                    " . $e_number . "" . ' ' . "" . $date . "" . ' ' . "" . $shift . "
+                    <p><B>" . $e_name . "</B>" . ' ' . "" . $e_type . "<br>
+                    <t>Contact: </t>" . $e_number . "<br><t>Date: </t>" . $date . "" . '   |' . "<t>Shift:</t>" . $shift . "
+                    " . '    |' . "<t>Fee: </t> " . $fee . "." . 'BDT' . "
                     </p>
                 </div>
                 <div class='rating'>
                 <form action='RateByUser.php' method='POST'>
                     <p>
                         <input type='hidden' name='e_id' value='" . $e_id . "'>
-                        <button type='submit' name='rate' style='margin-top: -8px;" . $css . "'>Rate</button>
+                        <button type='submit' name='submit' style='margin-top: -8px;" . $css . "'>Rate</button>
                     </p>
                 </form>
                 </div>

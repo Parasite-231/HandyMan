@@ -9,6 +9,21 @@ if (!isset($_SESSION['uID'])) {
 
 $u_id = $_SESSION['uID'];
 
+
+if (isset($_POST['submit'])) {
+   $e_id = $_POST['e_id'];
+}
+
+if (isset($_POST['final'])) {
+   $rating = $_POST['rate'];
+   $e_id = $_POST['e_id'];
+
+   $query = "UPDATE orderlist SET rating = $rating WHERE e_id = $e_id";
+   mysqli_query($connect, $query);
+   header("location:./userOrderHistoryPage.php");
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -28,30 +43,34 @@ $u_id = $_SESSION['uID'];
 <body>
     <header>
         <div class="container">
+
             <div class="card">
                 <div class="image">
                     <img src="../../UI-UX Designs/star.webp">
                 </div>
-                <div class="position" style="margin-top: 25px;">
-                    <div class="star-widget">
-                        <input type="radio" name="rate" id="rate-1" value="1">
-                        <label for="rate-1" class="fas fa-star"></label>
-                        <input type="radio" name="rate" id="rate-2" value="2">
-                        <label for="rate-2" class="fas fa-star"></label>
-                        <input type="radio" name="rate" id="rate-3" value="3">
-                        <label for="rate-3" class="fas fa-star"></label>
-                        <input type="radio" name="rate" id="rate-4" value="4">
-                        <label for="rate-4" class="fas fa-star"></label>
-                        <input type="radio" name="rate" id="rate-5" value="5">
-                        <label for="rate-5" class="fas fa-star"></label>
+                <form action="" method="POST">
+                    <div class="position" style="margin-top: 25px;">
+                        <div class="star-widget">
+                            <input type="hidden" name="e_id" value="<?php echo $e_id ?>">
+                            <input type="radio" name="rate" id="rate-1" value="5">
+                            <label for="rate-1" class="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rate-2" value="4">
+                            <label for="rate-2" class="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rate-3" value="3">
+                            <label for="rate-3" class="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rate-4" value="2">
+                            <label for="rate-4" class="fas fa-star"></label>
+                            <input type="radio" name="rate" id="rate-5" value="1">
+                            <label for="rate-5" class="fas fa-star"></label>
+                        </div>
                     </div>
-                </div>
-                <div class="description">
-                    <p>Please provide us your honest opinion as it helps us to improve our service.</p>
-                    <h3>👷</h3>
-                    <button onclick="gratitudeMessage()">Rate</button>
-                    <button style="margin-top: 3px;">Cancel</button>
-                </div>
+                    <div class="description">
+                        <p>Please provide us your honest opinion as it helps us to improve our service.</p>
+                        <h3>👷</h3>
+                        <button type="submit" name="final" onclick="gratitudeMessage()">Rate</button>
+                        <a href="./userOrderHistoryPage.php"><button style="margin-top: 3px;">Cancel</button></a>
+                    </div>
+                </form>
             </div>
         </div>
         <script src="PostRateByUser.js"></script>
