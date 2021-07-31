@@ -1,7 +1,27 @@
 <?php
+require("../../Inc/function.php");
 session_start();
 if (!isset($_SESSION['eID'])) {
     header("location:./employee login.php");
+}
+
+$e_id = $_SESSION['eID'];
+
+$query = "SELECT * FROM orderlist WHERE e_id = $e_id";
+$result = mysqli_query($connect, $query);
+updateStatus($result, $connect);
+
+if (isset($_POST['search'])) {
+    $start_date = $_POST['start_date'];
+    $end_date = $_POST['end_date'];
+
+    $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Done' AND (date BETWEEN '$start_date' AND '$end_date')
+    ORDER BY date";
+    $result = mysqli_query($connect, $query);
+} else {
+    $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Done'
+    ORDER BY date";
+    $result = mysqli_query($connect, $query);
 }
 
 ?>
@@ -67,12 +87,14 @@ if (!isset($_SESSION['eID'])) {
         </div>
         <!--working-criteria-for-employee-->
         <div class="working-criteria-form--of-employee">
-            <form>
+            <form method="POST">
                 <label for="Date">From:</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;">
-                <input type="date" id="start" name="trip-start" value="yyyy-mm-dd" min="2001-01-01" max="2021-12-31">
+                <input type="date" id="start" name="start_date" value="<?php echo $start_date ?>" min="2020-01-01"
+                    max="<?php echo newDate(0) ?>">
 
                 <label for="Date">To:</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;">
-                <input type="date" id="start" name="trip-start" value="yyyy-mm-dd" min="2001-01-01" max="2021-12-31">
+                <input type="date" id="start" name="end_date" value="<?php echo $end_date ?>" min="2020-01-01"
+                    max="<?php echo newDate(0) ?>">
 
                 <!--<label for="Date">Choose working-date:</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;">
             <input type="date" id="start" name="trip-start"
@@ -87,8 +109,10 @@ if (!isset($_SESSION['eID'])) {
                <option value="64">Last 12 hour</option>
                <option value="65">Last 24 hour</option>
             </select>-->
-                <input type="submit" value=" Search">
+                <input type="submit" name="search" value="Search">
             </form>
+
+
         </div>
         <div class="headlineofrecords">
             <h2>Searched Records</h2>
@@ -101,11 +125,40 @@ if (!isset($_SESSION['eID'])) {
                     <th style="font-size: 22px;">Contact</th>
                     <th style="font-size: 22px;"> Address</th>
                     <th style="font-size: 22px;"> Date</th>
-                    <th style="font-size: 22px;">Starting Time</th>
-                    <th style="font-size: 22px;">Working Duration</th>
+                    <th style="font-size: 22px;">Shift</th>
+                    <th style="font-size: 22px;">Rating</th>
                     <th style="font-size: 22px;">Total Payment</th>
                 </tr>
-                <tr>
+                <?php
+
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($list = mysqli_fetch_assoc($result)) {
+                        $o_id = $list['id'];
+                        $u_name = $list['u_name'];
+                        $u_number = $list['u_number'];
+                        $u_area = $list['u_thana'];
+                        $u_address = $list['u_address'];
+                        $date = $list['date'];
+                        $payment = $list['payment'];
+                        $shift = $list['shift'];
+                        $status = $list['status'];
+                        $e_rating = $list['rating'];
+
+                        echo "
+                        <tr>
+                            <td>$u_name</td>
+                            <td>$u_number</td>
+                            <td>$u_area</td>
+                            <td>$date</td>
+                            <td>$shift</td>
+                            <td>$e_rating</td>
+                            <td>$payment</td>
+                        </tr>
+                        ";
+                    }
+                }
+                ?>
+                <!-- <tr>
                     <td>Shahbuddin</td>
                     <td>0189634766</td>
                     <td>120/22, Shahjanpur, Dhaka</td>
@@ -122,106 +175,7 @@ if (!isset($_SESSION['eID'])) {
                     <td>3:00pm</td>
                     <td>5 hour</td>
                     <td>1299</td>
-                </tr>
-                <tr>
-                    <td>Shafiqul Islam</td>
-                    <td>0189634766</td>
-                    <td>120/22, Shahjanpur, Dhaka</td>
-                    <td>12-23-2021</td>
-                    <td>3:00pm</td>
-                    <td>5 hour</td>
-                    <td>1299</td>
-                </tr>
-                <tr>
-                    <td>Rafiqul Islam</td>
-                    <td>0189634766</td>
-                    <td>120/22, Shahjanpur, Dhaka</td>
-                    <td>12-23-2021</td>
-                    <td>3:00pm</td>
-                    <td>5 hour</td>
-                    <td>1299</td>
-                </tr>
-                <tr>
-                    <td>Shahnur Chowdhury</td>
-                    <td>0189634766</td>
-                    <td>120/22, Shahjanpur, Dhaka</td>
-                    <td>12-23-2021</td>
-                    <td>3:00pm</td>
-                    <td>5 hour</td>
-                    <td>1299</td>
-                </tr>
-                <tr>
-                    <td>Aman Haque</td>
-                    <td>0189634766</td>
-                    <td>120/22, Shahjanpur, Dhaka</td>
-                    <td>12-23-2021</td>
-                    <td>3:00pm</td>
-                    <td>5 hour</td>
-                    <td>1299</td>
-                </tr>
-                <tr>
-                    <td>Ahsan Manjil</td>
-                    <td>0189634766</td>
-                    <td>120/22, Shahjanpur, Dhaka</td>
-                    <td>12-23-2021</td>
-                    <td>3:00pm</td>
-                    <td>5 hour</td>
-                    <td>1299</td>
-                </tr>
-                <tr>
-                    <td>Shantanu Deb</td>
-                    <td>0189634766</td>
-                    <td>120/22, Shahjanpur, Dhaka</td>
-                    <td>12-23-2021</td>
-                    <td>3:00pm</td>
-                    <td>5 hour</td>
-                    <td>1299</td>
-                </tr>
-                <tr>
-                    <td>Chanchal ahmed</td>
-                    <td>0189634766</td>
-                    <td>120/22, Shahjanpur, Dhaka</td>
-                    <td>12-23-2021</td>
-                    <td>3:00pm</td>
-                    <td>5 hour</td>
-                    <td>1299</td>
-                </tr>
-                <tr>
-                    <td>Prangon Mollah</td>
-                    <td>0189634766</td>
-                    <td>120/22, Shahjanpur, Dhaka</td>
-                    <td>12-23-2021</td>
-                    <td>3:00pm</td>
-                    <td>5 hour</td>
-                    <td>1299</td>
-                </tr>
-                <tr>
-                    <td>Abir Chowdhury</td>
-                    <td>0189634766</td>
-                    <td>120/22, Shahjanpur, Dhaka</td>
-                    <td>12-23-2021</td>
-                    <td>3:00pm</td>
-                    <td>5 hour</td>
-                    <td>1299</td>
-                </tr>
-                <tr>
-                    <td>Arafat Karim Khan</td>
-                    <td>0189634766</td>
-                    <td>120/22, Shahjanpur, Dhaka</td>
-                    <td>12-23-2021</td>
-                    <td>3:00pm</td>
-                    <td>5 hour</td>
-                    <td>1299</td>
-                </tr>
-                <tr>
-                    <td>Shimul Chowdhury</td>
-                    <td>0189634766</td>
-                    <td>120/22, Shahjanpur, Dhaka</td>
-                    <td>12-23-2021</td>
-                    <td>3:00pm</td>
-                    <td>5 hour</td>
-                    <td>1299</td>
-                </tr>
+                </tr> -->
             </table>
         </div>
 </body>
