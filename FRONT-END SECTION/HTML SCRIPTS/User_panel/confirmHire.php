@@ -64,7 +64,7 @@ if (isset($_POST['confirm'])) {
     $e_name = $e_data['name'];
     $e_number = $e_data['number'];
     $e_fee = $e_data['price'];
-
+    $e_type = $e_data['type'];
     $u_thana = $_POST['thana'];
     $u_address = $_POST['address'];
     $date = $_POST['date'];
@@ -76,18 +76,20 @@ if (isset($_POST['confirm'])) {
 
     if (!empty($u_address)) {
 
-        $query = "INSERT INTO orderlist (id, e_id, u_id, u_name, u_number, u_address, u_thana, date, shift, payment, status) 
-                VALUES ('$o_id', '$emp_id', '$u_id', '$u_name', '$u_number', '$u_address', '$u_thana',
-                        '$date', '$shift', '$payment', '$status')";
+        $query = "INSERT INTO orderlist (id, e_id, e_name, e_number, e_type, u_id, u_name, u_number, u_address, u_thana,
+                 date, shift, payment, status) 
+                VALUES ('$o_id', '$emp_id', '$e_name', '$e_number', '$e_type', '$u_id', '$u_name', '$u_number',
+                         '$u_address', '$u_thana', '$date', '$shift', '$payment', '$status')";
         mysqli_query($connect, $query);
         if (isset($_SESSION['hire'])) {
             unset($_SESSION['hire']);
         }
         $msg = 'Order Placed Successfully';
-        $css = "style='padding: 10px; margin-bottom: 10px; background-color: green; color: white; width: 436px;'";
+        $css = "style='padding: 10px; margin-bottom: 10px; background-color: yellowgreen; color: white; width: 427px;'";
+        header("location:./userOrderHistoryPage.php");
     } else {
         $msg = 'Please Enter your address !';
-        $css = "style='padding: 10px; margin-bottom: 10px; background-color: #f44336; color: white; width: 436px;'";
+        $css = "style='padding: 10px; margin-bottom: 10px; background-color: #f44336; color: white; width: 427px;'";
     }
 }
 

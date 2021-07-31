@@ -99,8 +99,10 @@ if (!isset($_SESSION['uID'])) {
                 ";
             } else {
 
-                $query = "SELECT * FROM employee WHERE id NOT IN (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
-            shift='$shift' UNION SELECT e_id AS id FROM emp_holiday WHERE date = '$date') AND type = '$type'";
+                $query = "SELECT * FROM employee WHERE id NOT IN 
+                        (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
+                        shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
+                        WHERE date = '$date') AND type = '$type' AND price > 0";
                 $result = mysqli_query($connect, $query);
 
                 if ($result && mysqli_num_rows($result) > 0) {

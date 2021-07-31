@@ -9,21 +9,8 @@ $e_id = $_SESSION['eID'];
 $shift = '';
 $u_area = '';
 
-function updateStatus($result, $connect)
-{
-    if ($result && mysqli_num_rows($result) > 0) {
-        while ($list = mysqli_fetch_assoc($result)) {
-            $o_id = $list['id'];
-            $date = $list['date'];
-            $shift = $list['shift'];
-            $status = orderStatus($date, $shift);
-            $sql = "UPDATE orderlist set status = '$status' WHERE id = '$o_id'";
-            mysqli_query($connect, $sql);
-        }
-    }
-}
 
-
+//updatestatus func
 
 
 if (isset($_POST['search'])) {
