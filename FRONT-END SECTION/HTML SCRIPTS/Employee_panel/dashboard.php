@@ -6,13 +6,21 @@ if (!isset($_SESSION['eID'])) {
 }
 
 $e_id = $_SESSION['eID'];
-$query = "SELECT * FROM orderlist WHERE e_id = $e_id ";
+
+$query = "SELECT * FROM orderlist WHERE e_id = $e_id";
+$result = mysqli_query($connect, $query);
+updateStatus($result, $connect);
+
+$query = "SELECT COUNT(*) AS completed, SUM(payment) AS total_payment, AVG(rating) AS rating FROM orderlist
+            WHERE e_id = $e_id AND status = 'Done'";
 $result = mysqli_query($connect, $query);
 
-if (mysqli_num_rows($result) > 0) {
-    $row = mysqli_num_rows($result);
-} else {
-    $row = 0;
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $data = mysqli_fetch_assoc($result);
+    $completed = $data['completed'];
+    $total_payment = $data['total_payment'];
+    $rating = number_format((float)$data['rating'], 2, '.', '');
 }
 
 ?>
@@ -81,7 +89,7 @@ if (mysqli_num_rows($result) > 0) {
             <div class="cards">
                 <div class="card">
                     <div class="box">
-                        <h1>102</h1>
+                        <h1><?php echo $completed ?></h1>
                         <h3>Work Completed</h3>
                     </div>
                     <div class="icon-case">
@@ -90,7 +98,7 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>TK 10,082</h1>
+                        <h1>TK <?php echo $total_payment ?></h1>
                         <h3>Payments Received</h3>
                     </div>
                     <div class="icon-case">
@@ -99,7 +107,17 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>0</h1>
+                        <?php
+                        $sql = "SELECT COUNT(*) AS progress FROM orderlist WHERE e_id = $e_id AND status='In Progress'";
+                        $prog_result = mysqli_query($connect, $sql);
+
+                        if ($prog_result && mysqli_num_rows($prog_result) > 0) {
+                            $prog_data = mysqli_fetch_assoc($prog_result);
+                            $progress = $prog_data['progress'];
+                        }
+
+                        ?>
+                        <h1><?php echo $progress ?></h1>
                         <h3>Work In-progress</h3>
                     </div>
                     <div class="icon-case">
@@ -117,8 +135,8 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>4.5</h1>
-                        <h3>Highest Rating</h3>
+                        <h1><?php echo $rating ?></h1>
+                        <h3>Average Rating</h3>
                     </div>
                     <div class="icon-case">
                         <img src="../../ICONS/rating.png" alt="work">
@@ -126,7 +144,17 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1><?php echo $row; ?></h1>
+                        <?php
+                        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Not started' ";
+                        $result = mysqli_query($connect, $query);
+
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            $notification = mysqli_num_rows($result);
+                        } else {
+                            $notification = 0;
+                        }
+                        ?>
+                        <h1><?php echo $notification; ?></h1>
                         <h3>Work Notification</h3>
                     </div>
                     <div class="icon-case">
@@ -138,21 +166,55 @@ if (mysqli_num_rows($result) > 0) {
                 <div class="recent-payments">
                     <div class="title">
                         <h2>Recent Payments</h2>
-                        <a href="PaymentInformation.html" class="btn">View All</a>
+                        <a href="PaymentInformation.php" class="btn">View All</a>
                     </div>
+
                     <table>
                         <tr>
                             <th>Customer Name</th>
                             <th>Contact</th>
                             <th>Address</th>
                             <th>Date</th>
-                            <th>Starting Time</th>
-                            <th>Working Duration</th>
+                            <th>Shift</th>
                             <th>Rating</th>
                             <th>Total Payment</th>
                             <!--<th>Description</th>-->
                         </tr>
-                        <tr>
+                        <?php
+                        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Done'
+                                 ORDER BY date DESC LIMIT 10";
+                        $result = mysqli_query($connect, $query);
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            while ($list = mysqli_fetch_assoc($result)) {
+                                $o_id = $list['id'];
+                                $u_name = $list['u_name'];
+                                $u_number = $list['u_number'];
+                                $u_area = $list['u_thana'];
+                                $u_address = $list['u_address'];
+                                $date = $list['date'];
+                                $payment = $list['payment'];
+                                $shift = $list['shift'];
+                                $status = $list['status'];
+                                $e_rating = $list['rating'];
+                                echo "
+                            <tr>
+                                <td>$u_name</td>
+                                <td>$u_number</td>
+                                <td>$u_area</td>
+                                <td>$date</td>
+                                <td>$shift</td>
+                                <td>$rating</td>
+                                <td>$payment</td>
+                            </tr>
+                            ";
+                            }
+                        } else {
+                            echo "No Notifications to show";
+                        }
+
+
+                        ?>
+                        <!-- <tr>
                             <td>Md Bari</td>
                             <td>01706989578</td>
                             <td>Khilgaon</td>
@@ -161,98 +223,8 @@ if (mysqli_num_rows($result) > 0) {
                             <td>6 hour</td>
                             <td>2.49</td>
                             <td>Tk 4200</td>
-                            <!--<td><a href="#" class="btn">View</a> </td>-->
-                        </tr>
-                        <tr>
-                            <td>Md Saiful</td>
-                            <td>01706989578</td>
-                            <td>Banani</td>
-                            <td>2020-12-23</td>
-                            <td>12.00pm</td>
-                            <td>3 hour</td>
-                            <td>4.49</td>
-                            <td>Tk 1200</td>
-                        </tr>
-                        <tr>
-                            <td>Jafar Islam</td>
-                            <td>01406989578</td>
-                            <td>Mohakhali</td>
-                            <td>2020-12-23</td>
-                            <td>7.00pm</td>
-                            <td>6 hour</td>
-                            <td>5.00</td>
-                            <td>Tk 3200</td>
-                        </tr>
-                        <tr>
-                            <td>Shaikat Ali</td>
-                            <td>01306989578</td>
-                            <td>Khilgaon</td>
-                            <td>2020-12-23</td>
-                            <td>4.00pm</td>
-                            <td>6 hour</td>
-                            <td>2.49</td>
-                            <td>Tk 5200</td>
-                        </tr>
-                        <tr>
-                            <td>Jamal Bhuyian</td>
-                            <td>01306989579</td>
-                            <td>Uttara</td>
-                            <td>2020-12-23</td>
-                            <td>9.00am</td>
-                            <td>2 hour</td>
-                            <td>1.49</td>
-                            <td>Tk 500</td>
-                        </tr>
-                        <tr>
-                            <td>Shafiqul Islam</td>
-                            <td>01806989578</td>
-                            <td>Banani</td>
-                            <td>2020-12-23</td>
-                            <td>4.00pm</td>
-                            <td>6 hour</td>
-                            <td>3.49</td>
-                            <td>Tk 1200</td>
-                        </tr>
-                        <tr>
-                            <td>Rafiqul Islam</td>
-                            <td>01406989578</td>
-                            <td>Khilgaon</td>
-                            <td>2020-12-23</td>
-                            <td>4.00pm</td>
-                            <td>6 hour</td>
-                            <td>2.49</td>
-                            <td>Tk 2200</td>
-                        </tr>
-                        <tr>
-                            <td>Iftekhar Ali</td>
-                            <td>01506989578</td>
-                            <td>Khilgaon</td>
-                            <td>2020-12-23</td>
-                            <td>4.00pm</td>
-                            <td>3 hour</td>
-                            <td>5.00</td>
-                            <td>Tk 3200</td>
-                        </tr>
-                        <tr>
-                            <td>Shadman Mehdi</td>
-                            <td>01406989578</td>
-                            <td>Khilgaon</td>
-                            <td>2020-12-22</td>
-                            <td>10.00pm</td>
-                            <td>6 hour</td>
-                            <td>4.49</td>
-                            <td>Tk 1200</td>
-                        </tr>
-                        <tr>
-                            <td>Md Moshiur Islam</td>
-                            <td>01706989578</td>
-                            <td>Khilgaon</td>
-                            <td>2020-12-23</td>
-                            <td>8.00pm</td>
-                            <td>7 hour</td>
-                            <td>3.49</td>
-                            <td>Tk 6200</td>
-                        </tr>
+                            <td><a href="#" class="btn">View</a> </td>
+                        </tr> -->
                     </table>
                 </div>
             </div>
