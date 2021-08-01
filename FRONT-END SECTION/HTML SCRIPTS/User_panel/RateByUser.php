@@ -3,7 +3,7 @@
 require("../../Inc/function.php");
 session_start();
 if (!isset($_SESSION['uID'])) {
-   header("location:userLogin.php");
+    header("location:userLogin.php");
 }
 
 
@@ -11,16 +11,16 @@ $u_id = $_SESSION['uID'];
 
 
 if (isset($_POST['submit'])) {
-   $e_id = $_POST['e_id'];
+    $o_id = $_POST['o_id'];
 }
 
 if (isset($_POST['final'])) {
-   $rating = $_POST['rate'];
-   $e_id = $_POST['e_id'];
+    $rating = $_POST['rate'];
+    $o_id = $_POST['o_id'];
 
-   $query = "UPDATE orderlist SET rating = $rating WHERE e_id = $e_id";
-   mysqli_query($connect, $query);
-   header("location:./userOrderHistoryPage.php");
+    $query = "UPDATE orderlist SET rating = $rating WHERE id = $o_id";
+    mysqli_query($connect, $query);
+    header("location:./userOrderHistoryPage.php");
 }
 
 

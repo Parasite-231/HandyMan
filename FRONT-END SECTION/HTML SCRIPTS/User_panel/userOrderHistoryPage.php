@@ -97,6 +97,7 @@ $u_id = $_SESSION['uID'];
 
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
+                $o_id = $row['id'];
                 $e_id = $row['e_id'];
                 $e_name = $row['e_name'];
                 $e_number = $row['e_number'];
@@ -117,6 +118,7 @@ $u_id = $_SESSION['uID'];
                 <div class='row'>
                 <div class='image'><img src='../../ICONS/account.png'></div>
                 <div class='info'>
+                <b>Order ID: " . $o_id . "</b>
                     <p><B>" . $e_name . "</B>" . ' ' . "" . $e_type . "<br>
                     <t>Contact: </t>" . $e_number . "<br><t>Date: </t>" . $date . "" . '   |' . "<t>Shift:</t>" . $shift . "
                     " . '    |' . "<t>Fee: </t> " . $fee . "." . 'BDT' . "
@@ -125,7 +127,7 @@ $u_id = $_SESSION['uID'];
                 <div class='rating'>
                 <form action='RateByUser.php' method='POST'>
                     <p>
-                        <input type='hidden' name='e_id' value='" . $e_id . "'>
+                        <input type='hidden' name='o_id' value='" . $o_id . "'>
                         <button type='submit' name='submit' style='margin-top: -8px;" . $css . "'>Rate</button>
                     </p>
                 </form>
