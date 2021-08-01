@@ -88,11 +88,11 @@ if (isset($_POST['search'])) {
         <!--working-criteria-for-employee-->
         <div class="working-criteria-form--of-employee">
             <form method="POST">
-                <label for="Date">From:</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;">
+                <label for="Date">From</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;float: right;">
                 <input type="date" id="start" name="start_date" value="<?php echo $start_date ?>" min="2020-01-01"
                     max="<?php echo newDate(0) ?>">
 
-                <label for="Date">To:</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;">
+                <label for="Date">To</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;float: right;">
                 <input type="date" id="start" name="end_date" value="<?php echo $end_date ?>" min="2020-01-01"
                     max="<?php echo newDate(0) ?>">
 

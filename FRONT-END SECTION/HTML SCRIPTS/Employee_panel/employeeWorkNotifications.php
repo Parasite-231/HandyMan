@@ -108,15 +108,15 @@ if (isset($_POST['search'])) {
             <!--working-criteria-for-employee-->
             <div class="working-criteria-form--of-employee">
                 <form method="POST">
-                    <label for="working-hour">Choose shift:</label><img src="../../ICONS/clock1.png"
-                        style="margin-left: 3px;">
+                    <label for="working-hour">Choose shift</label><img src="../../ICONS/clock1.png"
+                        style="margin-left: 3px;float: right;">
                     <select id="working-hour" name="shift">
                         <option value='<?php echo $shift ?>'><?php echo $shift ?></option>
                         <option value="9AM - 12PM">9AM - 12PM</option>
                         <option value="3PM - 6PM">3PM - 6PM</option>
                     </select>
-                    <label for="working-area">Choose working-area:</label><img src="../../ICONS/location4.png"
-                        style="margin-left: 5px;">
+                    <label for="working-area">Choose working-area</label><img src="../../ICONS/location4.png"
+                        style="margin-left: 5px;float: right;">
                     <select id="working-aarea" name="working_area">
                         <option value='<?php echo $u_area ?>'><?php echo $u_area ?></option>
                         <option value="Azimpur">Azimpur</option>
