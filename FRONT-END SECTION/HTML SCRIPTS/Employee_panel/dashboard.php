@@ -56,9 +56,9 @@ if ($result && mysqli_num_rows($result) > 0) {
             <li><a href="PaymentInformation.php"><img src="../../ICONS/paymentmethod.png" alt="notifications"> &nbsp;
                     Payment
                     Information</a></li>
-            <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
+            <!-- <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
-                    History</a></li>
+                    History</a></li> -->
             <!--<li><a href="#" ><img src="messageIncome.png" alt="notifications" > &nbsp; Incoming-Messages</a></li>-->
             <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
             <li><a href="employeePrivacy&Policy.php"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
@@ -155,7 +155,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         }
                         ?>
                         <h1><?php echo $notification; ?></h1>
-                        <h3>Work Notification</h3>
+                        <h3>Due Work</h3>
                     </div>
                     <div class="icon-case">
                         <img src="../../ICONS/notifications.png" alt="work">
