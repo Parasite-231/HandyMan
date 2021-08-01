@@ -51,7 +51,6 @@ if (isset($_POST['submit'])) {
 
 if (isset($_POST['confirm'])) {
     $emp_id = $_GET['afdaeqeqeasfdewrt3eradr234rwefsdgreyerhrgrsgsrfwer'];
-    $o_id = $u_id . $emp_id;
     $date = $_POST['date'];
     $shift = $_POST['shift'];
 
@@ -76,9 +75,9 @@ if (isset($_POST['confirm'])) {
 
     if (!empty($u_address)) {
 
-        $query = "INSERT INTO orderlist (id, e_id, e_name, e_number, e_type, u_id, u_name, u_number, u_address, u_thana,
+        $query = "INSERT INTO orderlist (e_id, e_name, e_number, e_type, u_id, u_name, u_number, u_address, u_thana,
                  date, shift, payment, status) 
-                VALUES ('$o_id', '$emp_id', '$e_name', '$e_number', '$e_type', '$u_id', '$u_name', '$u_number',
+                VALUES ('$emp_id', '$e_name', '$e_number', '$e_type', '$u_id', '$u_name', '$u_number',
                          '$u_address', '$u_thana', '$date', '$shift', '$payment', '$status')";
         mysqli_query($connect, $query);
         if (isset($_SESSION['hire'])) {

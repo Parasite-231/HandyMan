@@ -108,9 +108,11 @@ $u_id = $_SESSION['uID'];
                 $fee = $row['payment'];
                 $css = 'display:  none;';
 
+
                 if ($status == 'Done' && $rating == null) {
                     $css = '';
                 }
+
                 echo "
                 <div class='row'>
                 <div class='image'><img src='../../ICONS/account.png'></div>
