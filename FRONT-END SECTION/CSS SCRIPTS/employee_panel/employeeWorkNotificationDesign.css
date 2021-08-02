@@ -215,6 +215,46 @@ tr:nth-child(odd) {
   font-weight: lighter;
 }
 
+            
+/*done-button*/
+.btn-0:nth-child(odd){
+
+  margin: 9%;
+  width: 60px;
+  height: 30px;
+  font-size: 16.5px;
+  justify-content: center;
+  border: 1px solid white;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 3px 32px 0 rgba(0, 0, 0, 0.247);
+  
+}
+
+
+.btn-0:nth-child(even){
+
+  margin: 9%;
+  width: 60px;
+  height: 30px;
+  font-size: 16.5px;
+  justify-content: center;
+  border: 1px solid white;
+  background-color: gray;
+  cursor: pointer;
+  box-shadow: 0 3px 32px 0 rgba(0, 0, 0, 0.247);
+  
+}
+
+.btn-0:hover{
+
+  transition: 0.2s;
+  background-color: orange;
+  color: white;
+}
+
+/*done-button*/
+
 .records-Of-Working-Notifications {
   margin-top: 35px;
 }

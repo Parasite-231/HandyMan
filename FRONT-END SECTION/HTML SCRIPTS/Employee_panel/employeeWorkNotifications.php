@@ -170,7 +170,43 @@ if (isset($_POST['search'])) {
                         <th>Shift</th>
                         <th>Total Payment</th>
                         <th>Working State</th>
+                        <!--"done" button headline-->
+                        <th>End Work</th>
                     </tr>
+                    <!--here is the 3 demo data including the "done" button-->
+                <!--<tr>
+                       <td>Ahsan Habib</td>
+                       <td>0189634766</td>
+                       <td> Dhaka</td>
+                       <td>120/22, Shahjanpur</td>
+                       <td>3:00pm</td>
+                       <td>1299</td>
+                       <td>Not started</td>
+                       <td><button class="btn-0" style="text-align: center;">Done</button></td>
+                    </tr>
+                    <tr>
+                       <td>Ahsan Habib</td>
+                       <td>0189634766</td>
+                       <td> Dhaka</td>
+                       <td>120/22, Shahjanpur</td>
+                       <td>3:00pm</td>
+                       <td>1299</td>
+                       <td>Not started</td>
+                       <td><button class="btn-0" style="text-align: center;">Done</button></td>
+                   </tr>
+                   <tr>
+                        <td>Ahsan Habib</td>
+                       <td>0189634766</td>
+                       <td> Dhaka</td>
+                       <td>120/22, Shahjanpur</td>
+                       <td>3:00pm</td>
+                       <td>1299</td>
+                       <td>Not started</td>
+                       <td><button class="btn-0" style="text-align: center;">Done</button></td>
+                   </tr> -->
+                   <!--End of demo data with "done" button-->
+                    
+
 
 
 
@@ -208,204 +244,7 @@ if (isset($_POST['search'])) {
 
                     ?>
 
-                    <!--<tr>
-                        <td>Ahsan Habib</td>
-                        <td>0189634766</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>Not started</td>
-                    </tr>
-                    <tr>
-                        <td>Md Karim</td>
-                        <td>0189634700</td>
-                        <td>10/22, Mirpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>Not started</td>
-                    </tr>
-                    <tr>
-                        <td>Md Rahim</td>
-                        <td>0189634733</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>In-progress</td>
-                    </tr>
-                    <tr>
-                        <td>Shahbudddin</td>
-                        <td>0189634755</td>
-                        <td>120/2, Mohakhali, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>In-progress</td>
-                    </tr>
-                    <tr>
-                        <td>Mondol Chowdhury</td>
-                        <td>0189634727</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>In-progress</td>
-                    </tr>
-                    <tr>
-                        <td>Sakibul Esraq</td>
-                        <td>0159634724</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>10:00am</td>
-                        <td>5 hour</td>
-                        <td>1099</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Muhammed Abir</td>
-                        <td>0189634720</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>7:00pm</td>
-                        <td>7 hour</td>
-                        <td>1999</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Md Alam Haque</td>
-                        <td>0189634721</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Md Karimullah</td>
-                        <td>0189634722</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Md Rafiqul Islam</td>
-                        <td>0189634725</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Mantu Sarkar</td>
-                        <td>0189634726</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Samuel Gomez</td>
-                        <td>0189634720</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Md Ahsanullah</td>
-                        <td>0189634728</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Md Safayet Haque</td>
-                        <td>0189634729</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Prangon Mollah</td>
-                        <td>0189634729</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Md Shahbuddin</td>
-                        <td>0189634729</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Md Shadman Karim</td>
-                        <td>0189634729</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Sohel Bhuyian</td>
-                        <td>0189634729</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Sakibul Alam</td>
-                        <td>0189634729</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Talimul Bari </td>
-                        <td>0189634729</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Kowshik Chakraborty</td>
-                        <td>0189634729</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>5 hour</td>
-                        <td>1299</td>
-                        <td>End</td>
-                    </tr>
-                    <tr>
-                        <td>Raghav Pal</td>
-                        <td>0189634729</td>
-                        <td>120/22, Shahjanpur, Dhaka</td>
-                        <td>3:00pm</td>
-                        <td>9 hour</td>
-                        <td>7299</td>
-                        <td>End</td>
-                    </tr>-->
+                  
                 </table>
             </div>
 </body>
