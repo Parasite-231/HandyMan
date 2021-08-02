@@ -41,32 +41,18 @@ if (!isset($_SESSION['uID'])) {
     <div class="title">
         <h1>Worker Selection </h1>
     </div>
-    <!--search bar-->
-    <div class="container-00">
-        <div class="row-0">
-            <!-- <div class="search_wrap search_wrap_6"> -->
-            <div class="search-option search-bar">
-                <div class="search-box">
-                    <input type="text" class="input" placeholder="search...">
-                    <div class="btn">
-                        <p>Search</p>
-                    </div>
-                </div>
-            </div>
-            <!--form-dropdown-->
-            <div class="dropdown">
-                <form>
-                    <select id="drop-down" name="drop-down">
-                        <option value="">Filter</option>
-                        <option value="101">4.7</option>
-                        <option value="102">4.5</option>
-                        <option value="103">5.0</option>
-                        <option value="104">3.5</option>
-                    </select>
-                </form>
-            </div>
-        </div>
-    </div>
+     <!--drop-down-menu-->
+     <form class="choose-priority">
+            <select id="drop-down" name="drop-down">
+                <option value="">Choose your priority </option>
+                <option value="101">Price(Hight to Low)</option>
+                <option value="102">Price(Low to High)</option>
+                <option value="103">Rating(High to Low)</option>
+                <option value="104">Rating(Low to High)</option>
+            </select>
+            <button type="submit">Search<i class="fas fa-search" style="margin-left: 5px;" ></i></button>
+    </form>
+
 
     <!--chocolate bars of employee profile-->
     <div class="container-01">
