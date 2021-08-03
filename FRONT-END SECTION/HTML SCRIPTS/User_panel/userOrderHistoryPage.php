@@ -9,6 +9,12 @@ if (!isset($_SESSION['uID'])) {
 
 $u_id = $_SESSION['uID'];
 
+if (isset($_POST['done'])) {
+    $o_id = $_POST['o_id'];
+    $query = "UPDATE orderlist SET status = 'Completed' WHERE id = $o_id";
+    mysqli_query($connect, $query);
+}
+
 ?>
 
 
@@ -108,10 +114,16 @@ $u_id = $_SESSION['uID'];
                 $rating = $row['rating'];
                 $fee = $row['payment'];
                 $css = 'display:  none;';
+                $css2 = 'display:  none;';
+                $css3 = '';
 
-
-                if ($status == 'Done' && $rating == null) {
+                if ($status == 'Completed' && $rating == null) {
                     $css = '';
+                    $css3 = 'display:  none;';
+                }
+                if ($status == 'Pending-C-Approval') {
+                    $css2 = '';
+                    $css3 = 'display:  none;';
                 }
 
                 echo "
@@ -125,13 +137,21 @@ $u_id = $_SESSION['uID'];
                     </p>
                 </div>
                 <div class='rating'>
-                <form action='RateByUser.php' method='POST'>
-                    <p>
+                    <form action='RateByUser.php' method='POST'>
+                        <p>
+                            <input type='hidden' name='o_id' value='" . $o_id . "'>
+                            <input type='hidden' name='e_id' value='" . $e_id . "'>
+
+                            <div $css3>
+                                <p> $status </p>
+                            </div>
+                            <button type='submit' name='submit' class='btn2' style='margin-top: -8px;" . $css . "'>Rate</button>
+                        </p>
+                    </form>
+                    <form method='POST'>
                         <input type='hidden' name='o_id' value='" . $o_id . "'>
-                        <input type='hidden' name='e_id' value='" . $e_id . "'>
-                        <button type='submit' name='submit' style='margin-top: -8px;" . $css . "'>Rate</button>
-                    </p>
-                </form>
+                        <button class='btn1' name='done' style='margin-top: -8px;margin-right: -1px;" . $css2 . "'>Done</button>
+                    </form>
                 </div>
                 </div>
                 ";
@@ -147,10 +167,8 @@ $u_id = $_SESSION['uID'];
             </div>
             <div class="rating">
                 <p>
-                    <button class="btn1" style="margin-top: -8px;margin-right: -1px;">Done</button>
-                    <button class="btn2" style="margin-top: -8px;">Rate</button>
-
-
+                    <button class='btn1' style='margin-top: -8px;margin-right: -1px;'>Done</button>
+                    <button class='btn2' style='margin-top: -8px;'>Rate</button>
                 </p>
             </div>
         </div> -->

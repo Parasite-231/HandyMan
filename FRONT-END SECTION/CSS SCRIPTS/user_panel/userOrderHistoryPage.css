@@ -1,71 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 * {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
 }
 
 .bg-img {
-    /*background image*/
-    background-image: url("hire.jpg");
-    min-height: 450px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+  /*background image*/
+  background-image: url("hire.jpg");
+  min-height: 450px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
-
 
 /*navbar positioning*/
 
 .container {
-    position: absolute;
-    margin: 20px;
-    width: auto;
-    padding: 12px;
+  position: absolute;
+  margin: 20px;
+  width: auto;
+  padding: 12px;
 }
-
 
 /*navbar fixing*/
 
 .topnav {
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.719);
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.719);
 }
 
 .topnav .fa {
-    margin-right: 10px;
-    font-weight: bold;
+  margin-right: 10px;
+  font-weight: bold;
 }
-
 
 /*links for navbar*/
 
 .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    text-decoration: none;
-    font-size: 15px;
-    padding: 12px 14px;
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 12px 14px;
 }
 
 .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+  background-color: #ddd;
+  color: black;
 }
 
 .title {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 .title h1 {
-    font-size: 39px;
-    margin-bottom: 20px;
-    text-align: center;
+  font-size: 39px;
+  margin-bottom: 20px;
+  text-align: center;
 }
-
 
 /*.founders-headline {
     margin-top: 9px;
@@ -77,9 +73,7 @@
     text-align: center;
 }*/
 
-
 /*worker's card section*/
-
 
 /** {
     margin: 0px;
@@ -124,9 +118,8 @@ body {
 }*/
 
 h1 {
-    font-size: 20px;
+  font-size: 20px;
 }
-
 
 /*.description {
     padding: 3px;
@@ -155,9 +148,7 @@ button:hover {
     cursor: pointer;
 }*/
 
-
 /*card*/
-
 
 /*.img-section {
     float: right;
@@ -217,9 +208,7 @@ button:hover {
     color: #f2f2f2;
 }*/
 
-
 /*button-3*/
-
 
 /*.button3 a {
     margin-top: 76px;
@@ -243,9 +232,7 @@ button:hover {
     color: gold;
 }*/
 
-
 /*button-3*/
-
 
 /*.social-media {
     margin-top: 35px;
@@ -262,7 +249,6 @@ button:hover {
 .social-media i:hover {
     color: black;
 }*/
-
 
 /* .search-bar {
     text-align: center;
@@ -309,232 +295,234 @@ button:hover {
     background: #ccc;
   } */
 
-
 /*new-code*/
 
 .container-01 {
-    width: 85%;
-    height: auto;
-    margin: 8.7%;
+  width: 85%;
+  height: auto;
+  margin: 8.7%;
 }
 
 .container-01 {
-    margin-top: 10px;
-    resize: none;
+  margin-top: 10px;
+  resize: none;
 }
 
 .row {
-    white-space: nowrap;
-    width: auto;
-    padding: 25px;
-    margin: 15%;
-    margin-bottom: 5px;
-    margin-top: 45px;
-    border: 1px solid black;
-    box-shadow: 1px 2px 3px black;
-    border-radius: 9.5px;
-    text-align: justify;
-    background-color: antiquewhite;
+  white-space: nowrap;
+  width: auto;
+  padding: 25px;
+  margin: 15%;
+  margin-bottom: 5px;
+  margin-top: 45px;
+  border: 1px solid black;
+  box-shadow: 1px 2px 3px black;
+  border-radius: 9.5px;
+  text-align: justify;
+  background-color: antiquewhite;
 }
-
 
 /*for making all elements on the same line*/
 
-.row>div {
-    width: auto;
-    display: inline-block;
+.row > div {
+  width: auto;
+  display: inline-block;
 }
 
 .row:hover {
-    box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.575);
+  box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.575);
 }
 
 .image {
-    margin-left: 35px;
+  margin-left: 35px;
 }
 
 .info {
-    margin-left: 22px;
+  margin-left: 22px;
 }
 
 .rating {
-    float: right;
-    margin-right: 35px;
-    margin-top: 17px;
+  float: right;
+  margin-right: 35px;
+  margin-top: 17px;
 }
 
-
-.btn1{
-    
-    margin-left: 19px;
-    background-color: red;
-    border: 1px solid;
-    color: white;
-    border-radius: 8px;
-    width: 75px;
-    font-size: 16px;
-    padding: auto;
-    height: 35px;
-
+.btn1 {
+  margin-left: 19px;
+  background-color: red;
+  border: 1px solid;
+  color: white;
+  border-radius: 8px;
+  width: 75px;
+  font-size: 16px;
+  padding: auto;
+  height: 35px;
 }
-
 
 .btn1:hover {
-    background-color: white;
-    color: black;
-    transition: 0.5s;
-    cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
-
 button {
-    margin-left: 19px;
-    background-color: black;
-    border: 1px solid;
-    color: white;
-    border-radius: 8px;
-    width: 75px;
-    font-size: 16px;
-    padding: auto;
-    height: 35px;
+  margin-left: 19px;
+  background-color: black;
+  border: 1px solid;
+  color: white;
+  border-radius: 8px;
+  width: 75px;
+  font-size: 16px;
+  padding: auto;
+  height: 35px;
 }
 
 button:hover {
-    background-color: white;
-    color: black;
-    transition: 0.5s;
-    cursor: pointer;
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .p {
-    font-size: medium;
-    text-decoration: solid;
-    font-weight: bold;
+  font-size: medium;
+  text-decoration: solid;
+  font-weight: bold;
 }
-
 
 /*search and select bar*/
 
 .row-0 {
-    white-space: nowrap;
-    width: auto;
-    padding: 25px;
-    margin: 2.4%;
-    margin-bottom: 5px;
+  white-space: nowrap;
+  width: auto;
+  padding: 25px;
+  margin: 2.4%;
+  margin-bottom: 5px;
 }
-
 
 /*for making all the elements on the same line*/
 
-.row-0>div {
-    width: auto;
-    display: inline-block;
+.row-0 > div {
+  width: auto;
+  display: inline-block;
 }
 
 .row-0 .input {
-    border: 0;
-    outline: none;
-    color: black;
+  border: 0;
+  outline: none;
+  color: black;
 }
 
 .search-option {
-    width: 600px;
-    margin: 38px auto;
-    box-shadow: 1px 9px 13px black;
-    border-radius: 17px;
-    margin-left: 85px;
+  width: 600px;
+  margin: 38px auto;
+  box-shadow: 1px 9px 13px black;
+  border-radius: 17px;
+  margin-left: 85px;
 }
 
 .search-option .search-box {
-    position: relative;
-    width: 500px;
-    height: 60px;
+  position: relative;
+  width: 500px;
+  height: 60px;
 }
 
 .search-option .search-box .input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 10px 20px;
-    border-radius: 3px;
-    font-size: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  border-radius: 3px;
+  font-size: 18px;
 }
 
 .search-option .search-box .btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 70px;
-    height: 100%;
-    background-color: black;
-    color: black;
-    z-index: 1;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 100%;
+  background-color: black;
+  color: black;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .search-option .search-box .btn:hover {
-    background-color: rgb(216, 186, 15);
+  background-color: rgb(216, 186, 15);
 }
 
 .search-option .search-box .btn.btn_common .fas {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 20px;
 }
 
 .search-bar .search-box .input {
-    border-radius: 17px;
-    border: 1px solid black;
+  border-radius: 17px;
+  border: 1px solid black;
 }
 
 .search-bar .search-box .btn {
-    width: 125px;
-    height: 45px;
-    top: 8px;
-    right: 5px;
-    border-radius: 3px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 125px;
+  height: 45px;
+  top: 8px;
+  right: 5px;
+  border-radius: 3px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-bar .search-box .btn {
-    border-radius: 14px;
+  border-radius: 14px;
 }
 
 .search-bar .search-box .input {
-    padding-right: 145px;
+  padding-right: 145px;
 }
-
 
 /*dropdown*/
 
 select {
-    width: auto;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: block;
-    margin-right: 90px;
-    box-sizing: border-box;
-    border: 1px solid black;
-    box-shadow: 1px 9px 13px black;
-    border-radius: 9.5px;
-    text-align: center;
-    font-size: 17px;
+  width: auto;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  margin-right: 90px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  box-shadow: 1px 9px 13px black;
+  border-radius: 9.5px;
+  text-align: center;
+  font-size: 17px;
 }
 
 .dropdown {
-    float: right;
-    margin: 1.7%;
-    margin-top: 35.5px;
+  float: right;
+  margin: 1.7%;
+  margin-top: 35.5px;
 }
 
 .container-00 {
-    width: auto;
+  width: auto;
+}
+
+.status {
+  margin-left: 19px;
+  background-color: red;
+  border: 1px solid;
+  color: white;
+  border-radius: 8px;
+  width: 100px;
+  font-size: 16px;
+  padding: auto;
+  height: 35px;
 }
