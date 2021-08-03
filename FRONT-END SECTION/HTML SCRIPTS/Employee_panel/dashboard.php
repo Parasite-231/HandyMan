@@ -12,7 +12,7 @@ $result = mysqli_query($connect, $query);
 updateStatus($result, $connect);
 
 $query = "SELECT COUNT(*) AS completed, SUM(payment) AS total_payment, AVG(rating) AS rating FROM orderlist
-            WHERE e_id = $e_id AND status = 'Done'";
+            WHERE e_id = $e_id AND status = 'Completed'";
 $result = mysqli_query($connect, $query);
 
 

@@ -151,6 +151,9 @@ function updateStatus($result, $connect)
             if ($status != 'In Progress') {
                 $sql = "UPDATE orderlist set status = '$status' WHERE id = '$o_id'";
                 mysqli_query($connect, $sql);
+            } elseif ($status == 'Not started') {
+                $sql = "UPDATE orderlist set status = '$status' WHERE id = '$o_id'";
+                mysqli_query($connect, $sql);
             }
         }
     }

@@ -142,7 +142,7 @@ if (isset($_POST['done'])) {
                             <input type='hidden' name='o_id' value='" . $o_id . "'>
                             <input type='hidden' name='e_id' value='" . $e_id . "'>
 
-                            <div $css3>
+                            <div style='$css3'>
                                 <p> $status </p>
                             </div>
                             <button type='submit' name='submit' class='btn2' style='margin-top: -8px;" . $css . "'>Rate</button>
