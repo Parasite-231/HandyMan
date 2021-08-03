@@ -147,7 +147,10 @@ $u_id = $_SESSION['uID'];
             </div>
             <div class="rating">
                 <p>
-                    <button style="margin-top: -8px;">Rate</button>
+                    <button class="btn1" style="margin-top: -8px;margin-right: -1px;">Done</button>
+                    <button class="btn2" style="margin-top: -8px;">Rate</button>
+
+
                 </p>
             </div>
         </div> -->
