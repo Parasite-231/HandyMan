@@ -21,6 +21,9 @@ if ($result && mysqli_num_rows($result) > 0) {
     $completed = $data['completed'];
     $total_payment = $data['total_payment'];
     $rating = number_format((float)$data['rating'], 2, '.', '');
+
+    $query = "UPDATE employee SET rating = $rating WHERE id = $e_id";
+    mysqli_query($connect, $query);
 }
 
 ?>
