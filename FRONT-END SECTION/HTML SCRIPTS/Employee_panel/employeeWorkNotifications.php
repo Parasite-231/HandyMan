@@ -174,7 +174,7 @@ if (isset($_POST['search'])) {
                         <th>End Work</th>
                     </tr>
                     <!--here is the 3 demo data including the "done" button-->
-                <!--<tr>
+                    <!--<tr>
                        <td>Ahsan Habib</td>
                        <td>0189634766</td>
                        <td> Dhaka</td>
@@ -183,29 +183,30 @@ if (isset($_POST['search'])) {
                        <td>1299</td>
                        <td>Not started</td>
                        <td><button class="btn-0" style="text-align: center;">Done</button></td>
+                    </tr> -->
+                    <tr>
+                        <td>Ahsan Habib</td>
+                        <td>0189634766</td>
+                        <td> Dhaka</td>
+                        <td>120/22, Shahjanpur</td>
+                        <td>12-5-21</td>
+                        <td>3:00pm</td>
+                        <td>1299</td>
+                        <td>Not started</td>
+                        <td><button class="btn-0" style="text-align: center;">Done</button></td>
                     </tr>
                     <tr>
-                       <td>Ahsan Habib</td>
-                       <td>0189634766</td>
-                       <td> Dhaka</td>
-                       <td>120/22, Shahjanpur</td>
-                       <td>3:00pm</td>
-                       <td>1299</td>
-                       <td>Not started</td>
-                       <td><button class="btn-0" style="text-align: center;">Done</button></td>
-                   </tr>
-                   <tr>
                         <td>Ahsan Habib</td>
-                       <td>0189634766</td>
-                       <td> Dhaka</td>
-                       <td>120/22, Shahjanpur</td>
-                       <td>3:00pm</td>
-                       <td>1299</td>
-                       <td>Not started</td>
-                       <td><button class="btn-0" style="text-align: center;">Done</button></td>
-                   </tr> -->
-                   <!--End of demo data with "done" button-->
-                    
+                        <td>0189634766</td>
+                        <td> Dhaka</td>
+                        <td>120/22, Shahjanpur</td>
+                        <td>3:00pm</td>
+                        <td>1299</td>
+                        <td>Not started</td>
+                        <td><button class="btn-0" style="text-align: center;">Done</button></td>
+                    </tr> -->
+                    <!--End of demo data with "done" button-->
+
 
 
 
@@ -214,37 +215,37 @@ if (isset($_POST['search'])) {
                     <?php
 
 
-                    if ($result && mysqli_num_rows($result) > 0) {
-                        while ($list = mysqli_fetch_assoc($result)) {
-                            $o_id = $list['id'];
-                            $u_name = $list['u_name'];
-                            $u_number = $list['u_number'];
-                            $u_area = $list['u_thana'];
-                            $u_address = $list['u_address'];
-                            $date = $list['date'];
-                            $payment = $list['payment'];
-                            $shift = $list['shift'];
-                            $status = $list['status'];
-                            echo "
-                            <tr>
-                                <td>$u_name</td>
-                                <td>$u_number</td>
-                                <td>$u_area</td>
-                                <td>$u_address</td>
-                                <td>$date</td>
-                                <td>$shift</td>
-                                <td>$payment</td>
-                                <td>$status</td>
-                            </tr>
-                            ";
-                        }
-                    } else {
-                        echo "No Notifications to show";
-                    }
+                    // if ($result && mysqli_num_rows($result) > 0) {
+                    //     while ($list = mysqli_fetch_assoc($result)) {
+                    //         $o_id = $list['id'];
+                    //         $u_name = $list['u_name'];
+                    //         $u_number = $list['u_number'];
+                    //         $u_area = $list['u_thana'];
+                    //         $u_address = $list['u_address'];
+                    //         $date = $list['date'];
+                    //         $payment = $list['payment'];
+                    //         $shift = $list['shift'];
+                    //         $status = $list['status'];
+                    //         echo "
+                    //         <tr>
+                    //             <td>$u_name</td>
+                    //             <td>$u_number</td>
+                    //             <td>$u_area</td>
+                    //             <td>$u_address</td>
+                    //             <td>$date</td>
+                    //             <td>$shift</td>
+                    //             <td>$payment</td>
+                    //             <td>$status</td>
+                    //         </tr>
+                    //         ";
+                    //     }
+                    // } else {
+                    //     echo "No Notifications to show";
+                    // }
 
                     ?>
 
-                  
+
                 </table>
             </div>
 </body>
