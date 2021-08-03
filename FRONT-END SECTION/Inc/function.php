@@ -126,13 +126,13 @@ function orderStatus($date, $shift)
                 if ($c_day < $day) {
                     $flag = 'Not started';
                 } elseif ($c_day > $day) {
-                    $flag = 'Done';
+                    $flag = 'Pending';
                 }
             } else {
-                $flag = 'Done';
+                $flag = 'Pending';
             }
         } elseif ($c_year > $year) {
-            $flag = 'Done';
+            $flag = 'Pending';
         }
     }
 
