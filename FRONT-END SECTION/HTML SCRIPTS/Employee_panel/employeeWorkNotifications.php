@@ -184,7 +184,10 @@ if (isset($_POST['search'])) {
                         <td>3:00pm</td>
                         <td>1299</td>
                         <td>Not started</td>
-                        <td><button class="btn-0" style="text-align: center;">Done</button></td>
+                        <form method='POST'>
+                            <input type='hidden' name='o_id' value='".$o_id."'>
+                            <td><button class='btn-0' style='text-align: center;'>Done</button></td>
+                        </form>
                     </tr>
                     <tr>
                         <td>Ahsan Habib</td>
@@ -195,12 +198,19 @@ if (isset($_POST['search'])) {
                         <td>1299</td>
                         <td>Not started</td>
                         <td><button class="btn-0" style="text-align: center;">Done</button></td>
-                    </tr>  -->
+                    </tr> -->
 
                     <?php
 
                     if ($result && mysqli_num_rows($result) > 0) {
                         while ($list = mysqli_fetch_assoc($result)) {
+
+                            if (isset($_POST['done'])) {
+                                $o_id = $_POST['o_id'];
+                                $sql = "UPDATE orderlist SET status = 'Pending-C-Approval' WHERE id = $o_id";
+                                mysqli_query($connect, $sql);
+                            }
+
                             $o_id = $list['id'];
                             $u_name = $list['u_name'];
                             $u_number = $list['u_number'];
@@ -220,7 +230,10 @@ if (isset($_POST['search'])) {
                                 <td>$shift</td>
                                 <td>$payment</td>
                                 <td>$status</td>
-                                <td><button class='btn-0' style='text-align: center;'>Done</button></td>
+                                <form method='POST'>
+                                    <input type='hidden' name='o_id' value='" . $o_id . "'>
+                                    <td><button name='done' class='btn-0' style='text-align: center;'>Done</button></td>
+                                </form>
                             </tr>
                             ";
                         }

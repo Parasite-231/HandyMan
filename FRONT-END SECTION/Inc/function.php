@@ -147,8 +147,11 @@ function updateStatus($result, $connect)
             $date = $list['date'];
             $shift = $list['shift'];
             $status = orderStatus($date, $shift);
-            $sql = "UPDATE orderlist set status = '$status' WHERE id = '$o_id'";
-            mysqli_query($connect, $sql);
+
+            if ($status != 'Pending') {
+                $sql = "UPDATE orderlist set status = '$status' WHERE id = '$o_id'";
+                mysqli_query($connect, $sql);
+            }
         }
     }
 }
