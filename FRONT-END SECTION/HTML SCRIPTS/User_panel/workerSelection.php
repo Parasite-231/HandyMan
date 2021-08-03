@@ -42,15 +42,15 @@ if (!isset($_SESSION['uID'])) {
         <h1>Worker Selection </h1>
     </div>
     <!--drop-down-menu-->
-    <form class="choose-priority">
-        <select id="drop-down" name="drop-down">
+    <form class="choose-priority" method="POST">
+        <select id="drop-down" name="case">
             <option value="">Choose your priority </option>
             <option value="101">Price(Hight to Low)</option>
             <option value="102">Price(Low to High)</option>
             <option value="103">Rating(High to Low)</option>
             <option value="104">Rating(Low to High)</option>
         </select>
-        <button type="submit">Search<i class="fas fa-search" style="margin-left: 5px;"></i></button>
+        <button name="filter" type="submit">Filter<i class="fas fa-search" style="margin-left: 5px;"></i></button>
     </form>
 
 
@@ -71,6 +71,8 @@ if (!isset($_SESSION['uID'])) {
 
             $status = shiftStatus($shift);
 
+
+
             if ($date == $c_date && ($status == 'In Progress' || $status == 'Done')) {
                 echo "
                 <div class='row'>
@@ -86,10 +88,47 @@ if (!isset($_SESSION['uID'])) {
                 ";
             } else {
 
-                $query = "SELECT * FROM employee WHERE id NOT IN 
-                        (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
-                        shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
-                        WHERE date = '$date') AND type = '$type' AND price > 0";
+                if (isset($_POST['filter'])) {
+                    $case = $_POST['case'];
+
+                    switch ($case) {
+                        case 101:
+                            $query = "SELECT * FROM employee WHERE id NOT IN 
+                                (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
+                                shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
+                                WHERE date = '$date') AND type = '$type' AND price > 0 ORDER BY price DESC";
+
+                        case 102:
+                            $query = "SELECT * FROM employee WHERE id NOT IN 
+                                (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
+                                shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
+                                WHERE date = '$date') AND type = '$type' AND price > 0 ORDER BY price";
+
+                        case 103:
+                            $query = "SELECT * FROM employee WHERE id NOT IN 
+                                (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
+                                shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
+                                WHERE date = '$date') AND type = '$type' AND price > 0 ORDER BY rating DESC";
+                        case 104:
+                            $query = "SELECT * FROM employee WHERE id NOT IN 
+                                    (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
+                                    shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
+                                    WHERE date = '$date') AND type = '$type' AND price > 0 ORDER BY rating";
+
+                        default:
+                            $query = "SELECT * FROM employee WHERE id NOT IN 
+                                    (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
+                                    shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
+                                    WHERE date = '$date') AND type = '$type' AND price > 0";
+                    }
+                } else {
+                    $query = "SELECT * FROM employee WHERE id NOT IN 
+                            (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
+                            shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
+                            WHERE date = '$date') AND type = '$type' AND price > 0";
+                }
+
+
                 $result = mysqli_query($connect, $query);
 
                 if ($result && mysqli_num_rows($result) > 0) {
