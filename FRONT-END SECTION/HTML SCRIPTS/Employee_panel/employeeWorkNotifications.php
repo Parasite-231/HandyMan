@@ -220,6 +220,17 @@ if (isset($_POST['search'])) {
                             $payment = $list['payment'];
                             $shift = $list['shift'];
                             $status = $list['status'];
+
+                            $css = '';
+                            $css2 = '';
+                            $css3 = 'display:none;';
+                            if ($status == 'Not started') {
+                                $css = 'disabled';
+                            } elseif ($status == 'Pending-C-Approval') {
+                                $css2 = 'display:none;';
+                                $css3 = '';
+                            }
+
                             echo "
                             <tr>
                                 <td>$u_name</td>
@@ -232,7 +243,9 @@ if (isset($_POST['search'])) {
                                 <td>$status</td>
                                 <form method='POST'>
                                     <input type='hidden' name='o_id' value='" . $o_id . "'>
-                                    <td><button name='done' class='btn-0' style='text-align: center;'>Done</button></td>
+                                    <td><button name='done' class='btn-0' style='margin-left:30%;text-align: center; $css2' $css>Done</button>
+                                    <span style='color:green;margin-left:40%;$css3'>&#10003;</span>
+                                    </td>
                                 </form>
                             </tr>
                             ";

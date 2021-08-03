@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 body {
@@ -95,7 +95,7 @@ h1 {
   border-bottom: 2px solid orange;
 }
 
-input[type=text],
+input[type="text"],
 select {
   width: 100%;
   padding: 12px 20px;
@@ -107,7 +107,7 @@ select {
   font-size: 17px;
 }
 
-input[type=email],
+input[type="email"],
 select {
   width: 100%;
   padding: 12px 20px;
@@ -119,7 +119,7 @@ select {
   font-size: 17px;
 }
 
-input[type=number],
+input[type="number"],
 select {
   width: 100%;
   padding: 12px 20px;
@@ -131,7 +131,7 @@ select {
   font-size: 17px;
 }
 
-input[type=text],
+input[type="text"],
 select,
 textarea {
   width: 100%;
@@ -145,7 +145,7 @@ textarea {
   font-size: 17px;
 }
 
-input[type=submit] {
+input[type="submit"] {
   width: 100%;
   background-color: orange;
   color: white;
@@ -157,7 +157,7 @@ input[type=submit] {
   font-size: 17px;
 }
 
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: white;
   color: orange;
 }
@@ -177,7 +177,6 @@ div.working-criteria-form--of-employee {
 
 /* new-one--> */
 
-
 div.working-criteria-form--of-employee {
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -189,7 +188,6 @@ div.working-criteria-form--of-employee {
   font-weight: bold;
   box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.2);
 }
-
 
 table {
   font-family: arial, sans-serif;
@@ -215,10 +213,8 @@ tr:nth-child(odd) {
   font-weight: lighter;
 }
 
-            
 /*done-button*/
-.btn-0:nth-child(odd){
-
+.btn-0:nth-child(odd) {
   margin: 9%;
   width: 60px;
   height: 30px;
@@ -228,12 +224,9 @@ tr:nth-child(odd) {
   background-color: white;
   cursor: pointer;
   box-shadow: 0 3px 32px 0 rgba(0, 0, 0, 0.247);
-  
 }
 
-
-.btn-0:nth-child(even){
-
+.btn-0:nth-child(even) {
   margin: 9%;
   width: 60px;
   height: 30px;
@@ -243,11 +236,9 @@ tr:nth-child(odd) {
   background-color: gray;
   cursor: pointer;
   box-shadow: 0 3px 32px 0 rgba(0, 0, 0, 0.247);
-  
 }
 
-.btn-0:hover{
-
+.btn-0:hover:not(:disabled) {
   transition: 0.2s;
   background-color: orange;
   color: white;
@@ -279,7 +270,6 @@ tr:nth-child(odd) {
   margin-bottom: 20px;
 }
 
-
 /*upper bar*/
 
 .container .header .nav {
@@ -295,7 +285,7 @@ tr:nth-child(odd) {
   height: 52px;
 }
 
-.container .header .nav .search input[type=text] {
+.container .header .nav .search input[type="text"] {
   border: none;
   background: cornsilk;
   padding: 10px;
@@ -389,9 +379,7 @@ h3 {
   flex-direction: column;
 }
 
-
 /*end of upper bar*/
-
 
 /** {
   padding: 0;

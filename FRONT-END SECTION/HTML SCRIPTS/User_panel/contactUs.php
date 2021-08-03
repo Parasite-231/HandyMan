@@ -4,8 +4,14 @@ require('../../Inc/function.php');
 session_start();
 
 $msg = '';
-$css = '';
-$u_id = $_SESSION['uID'];
+$css = 'disabled';
+
+
+if (isset($_SESSION['uID'])) {
+    $css = '';
+    $u_id = $_SESSION['uID'];
+}
+
 
 if (isset($_POST['submit'])) {
     $u_name = $_POST['name'];
@@ -201,14 +207,6 @@ if (isset($_POST['submit'])) {
                             <!-- <label for="address">Your Address</label><span class="required">*</span>
                             <textarea id="address" name="address" style="height:60px"></textarea> -->
 
-                            <?php
-
-                            $css = '';
-                            if (!isset($_SESSION['uID'])) {
-                                $css = 'disabled';
-                            }
-
-                            ?>
                             <button class="btn_sub" type="submit" name="submit" <?php echo $css ?>>Submit</button>
                         </form>
                     </div>

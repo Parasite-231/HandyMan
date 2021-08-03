@@ -296,7 +296,7 @@ div.complaint-form {
   background-color: red;
   color: white;
 }
-.btn_sub:hover {
+.btn_sub:hover:not(:disabled) {
   background-color: yellowgreen;
 }
 

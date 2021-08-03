@@ -84,7 +84,7 @@ function shiftStatus($shift)
         } elseif ($time < 9) {
             $flag = 'Not Started';
         } elseif ($time >= 12) {
-            $flag = 'Done';
+            $flag = 'In Progress';
         }
     } else if ($shift == '3PM - 6PM') {
         if ($time >= 15 && $time < 18) {
@@ -92,7 +92,7 @@ function shiftStatus($shift)
         } elseif ($time < 15) {
             $flag = 'Not started';
         } elseif ($time >= 18) {
-            $flag = 'Done';
+            $flag = 'In Progress';
         }
     }
     return $flag;
@@ -126,13 +126,13 @@ function orderStatus($date, $shift)
                 if ($c_day < $day) {
                     $flag = 'Not started';
                 } elseif ($c_day > $day) {
-                    $flag = 'Pending';
+                    $flag = 'In Progress';
                 }
             } else {
-                $flag = 'Pending';
+                $flag = 'In Progress';
             }
         } elseif ($c_year > $year) {
-            $flag = 'Pending';
+            $flag = 'In Progress';
         }
     }
 
@@ -148,7 +148,7 @@ function updateStatus($result, $connect)
             $shift = $list['shift'];
             $status = orderStatus($date, $shift);
 
-            if ($status != 'Pending') {
+            if ($status != 'In Progress') {
                 $sql = "UPDATE orderlist set status = '$status' WHERE id = '$o_id'";
                 mysqli_query($connect, $sql);
             }
