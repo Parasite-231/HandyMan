@@ -128,6 +128,7 @@ $u_id = $_SESSION['uID'];
                 <form action='RateByUser.php' method='POST'>
                     <p>
                         <input type='hidden' name='o_id' value='" . $o_id . "'>
+                        <input type='hidden' name='e_id' value='" . $e_id . "'>
                         <button type='submit' name='submit' style='margin-top: -8px;" . $css . "'>Rate</button>
                     </p>
                 </form>

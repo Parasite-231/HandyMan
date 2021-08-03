@@ -12,14 +12,28 @@ $u_id = $_SESSION['uID'];
 
 if (isset($_POST['submit'])) {
     $o_id = $_POST['o_id'];
+    $e_id = $_POST['e_id'];
 }
 
 if (isset($_POST['final'])) {
     $rating = $_POST['rate'];
     $o_id = $_POST['o_id'];
+    $e_id = $_POST['e_id'];
 
     $query = "UPDATE orderlist SET rating = $rating WHERE id = $o_id";
     mysqli_query($connect, $query);
+
+    $query = "SELECT AVG(rating) AS rating FROM orderlist WHERE e_id =  $e_id";
+    $result = mysqli_query($connect, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $data = mysqli_fetch_assoc($result);
+        $rating = $data['rating'];
+
+        $sql = "UPDATE employee SET rating = $rating WHERE id = $e_id";
+        mysqli_query($connect, $sql);
+    }
+
     header("location:./userOrderHistoryPage.php");
 }
 
@@ -52,6 +66,7 @@ if (isset($_POST['final'])) {
                     <div class="position" style="margin-top: 25px;">
                         <div class="star-widget">
                             <input type="hidden" name="e_id" value="<?php echo $e_id ?>">
+                            <input type="hidden" name="o_id" value="<?php echo $o_id ?>">
                             <input type="radio" name="rate" id="rate-1" value="5">
                             <label for="rate-1" class="fas fa-star"></label>
                             <input type="radio" name="rate" id="rate-2" value="4">
