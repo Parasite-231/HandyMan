@@ -58,11 +58,12 @@ if (!isset($_SESSION['uID'])) {
                 <form>
                     <select id="drop-down" name="drop-down">
                         <option value="">Filter</option>
-                        <option value="101">4.7</option>
-                        <option value="102">4.5</option>
-                        <option value="103">5.0</option>
-                        <option value="104">3.5</option>
+                        <option value="101">Price(Low->High)</option>
+                        <option value="102">Price(High->Low)</option>
+                        <option value="103">Rating(Low->High)</option>
+                        <option value="104">Rating(High->Low)</option>
                     </select>
+                    <BUTTon type="SUBMIT" style="display: inline-block;">Filter</BUTTon>
                 </form>
             </div>
         </div>
