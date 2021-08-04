@@ -43,7 +43,7 @@ if (isset($_POST['change'])) {
         $data = mysqli_fetch_assoc($avg_price);
         $av_price = $data['price'];
     }
-    $query = "UPDATE services SET price = $av_price WHERE name = '$type'";
+    $query = "UPDATE services SET price = '$av_price' WHERE name = '$type'";
     mysqli_query($connect, $query);
 }
 

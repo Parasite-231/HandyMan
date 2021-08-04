@@ -32,6 +32,27 @@ if (isset($_POST['final'])) {
 
         $sql = "UPDATE employee SET rating = $rating WHERE id = $e_id";
         mysqli_query($connect, $sql);
+
+        $query = "SELECT * FROM services";
+        $result = mysqli_query($connect, $query);
+        if ($result && mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+                $e_type = $row['name'];
+                $sql = "SELECT AVG(rating) AS rating FROM employee WHERE type = '$e_type'";
+                $res = mysqli_query($connect, $sql);
+
+                if ($res) {
+                    $data = mysqli_fetch_assoc($res);
+                } else {
+                    echo "Internal Issue";
+                }
+
+                $e_rating = number_format((float)$data['rating'], 2, '.', '');
+
+                $query = "UPDATE services SET rating = '$e_rating' WHERE name = '$e_type'";
+                mysqli_query($connect, $query);
+            }
+        }
     }
 
     header("location:./userOrderHistoryPage.php");
@@ -83,7 +104,9 @@ if (isset($_POST['final'])) {
                         <p>Please provide us your honest opinion as it helps us to improve our service.</p>
                         <h3>👷</h3>
                         <button type="submit" name="final" onclick="gratitudeMessage()">Rate</button>
-                        <a href="./userOrderHistoryPage.php"><button style="margin-top: 3px;">Cancel</button></a>
+                        <form action="./userOrderHistoryPage.php">
+                            <button style="margin-top: 3px;">Cancel</button>
+                        </form>
                     </div>
                 </form>
             </div>

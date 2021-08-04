@@ -68,7 +68,7 @@ session_start();
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $e_type = $row['name'];
-                $sql = "SELECT AVG(price) AS price, AVG(rating) AS rating FROM employee WHERE type = '$e_type'";
+                $sql = "SELECT AVG(price) AS price FROM employee WHERE type = '$e_type'";
                 $res = mysqli_query($connect, $sql);
                 if ($res) {
                     $data = mysqli_fetch_assoc($res);
@@ -77,7 +77,7 @@ session_start();
                 }
 
                 $e_price = number_format((float)$data['price'], 2, '.', '');
-                $e_rating = number_format((float)$data['rating'], 2, '.', '');
+                $e_rating = number_format((float)$row['rating'], 2, '.', '');
 
                 if ($e_price == 0) {
                     $e_price = 500.00;
