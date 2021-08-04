@@ -207,8 +207,12 @@ if (isset($_POST['search'])) {
 
                             if (isset($_POST['done'])) {
                                 $o_id = $_POST['o_id'];
-                                $sql = "UPDATE orderlist SET status = 'Pending-C-Approval' WHERE id = $o_id";
-                                mysqli_query($connect, $sql);
+                                $status = $list['status'];
+
+                                if ($status != 'Completed') {
+                                    $sql = "UPDATE orderlist SET status = 'Pending-C-Approval' WHERE id = $o_id";
+                                    mysqli_query($connect, $sql);
+                                }
                             }
 
                             $o_id = $list['id'];
