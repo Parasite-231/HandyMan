@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
 
     if (preg_match("/(^(\+88|0088)?(01){1}[356789]{1}(\d){8})$/", $u_number)) {
         if (filter_var($u_email, FILTER_VALIDATE_EMAIL)) {
-            $query = "SELECT * FROM orderlist WHERE u_id = $u_id AND id = $o_id AND status = 'Done'";
+            $query = "SELECT * FROM orderlist WHERE u_id = $u_id AND id = $o_id AND status = 'Completed'";
             $result = mysqli_query($connect, $query);
             if ($result && mysqli_num_rows($result) > 0) {
                 $query = "INSERT INTO complain(o_id, u_name, u_email, u_number, problem, description) 

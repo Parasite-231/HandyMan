@@ -146,13 +146,11 @@ function updateStatus($result, $connect)
             $o_id = $list['id'];
             $date = $list['date'];
             $shift = $list['shift'];
-            $status = orderStatus($date, $shift);
+            $status = $list['status'];
+            $c_status = orderStatus($date, $shift);
 
-            if ($status != 'In Progress') {
-                $sql = "UPDATE orderlist set status = '$status' WHERE id = '$o_id'";
-                mysqli_query($connect, $sql);
-            } elseif ($status == 'Not started') {
-                $sql = "UPDATE orderlist set status = '$status' WHERE id = '$o_id'";
+            if ($status == 'Not started') {
+                $sql = "UPDATE orderlist set status = '$c_status' WHERE id = '$o_id'";
                 mysqli_query($connect, $sql);
             }
         }

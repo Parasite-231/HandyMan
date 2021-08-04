@@ -11,8 +11,32 @@ $u_id = $_SESSION['uID'];
 
 if (isset($_POST['done'])) {
     $o_id = $_POST['o_id'];
+    $e_id = $_POST['e_id'];
+
     $query = "UPDATE orderlist SET status = 'Completed' WHERE id = $o_id";
     mysqli_query($connect, $query);
+
+    $query = "SELECT payment FROM orderlist WHERE id = $o_id AND status = 'Completed'";
+    $result = mysqli_query($connect, $query);
+
+    if ($result && mysqli_num_rows($result)) {
+        $data = mysqli_fetch_assoc($result);
+        $order_payment = $data['payment'];
+
+        $query = "SELECT  price, total_payment, completed_services FROM employee WHERE id = $e_id";
+        $result = mysqli_query($connect, $query);
+        if ($result && mysqli_num_rows($result)) {
+            $data = mysqli_fetch_assoc($result);
+
+            $completed_services = $data['completed_services'] + 1;
+            $price = $data['price'];
+            $total_payment = $data['total_payment'] + $price;
+
+            $query = "UPDATE employee SET total_payment = '$total_payment', completed_services = '$completed_services'
+                        WHERE id = $e_id";
+            mysqli_query($connect, $query);
+        }
+    }
 }
 
 ?>
@@ -150,6 +174,7 @@ if (isset($_POST['done'])) {
                     </form>
                     <form method='POST'>
                         <input type='hidden' name='o_id' value='" . $o_id . "'>
+                        <input type='hidden' name='e_id' value='" . $e_id . "'>
                         <button class='btn1' name='done' style='margin-top: -8px;margin-right: -1px;" . $css2 . "'>Done</button>
                     </form>
                 </div>

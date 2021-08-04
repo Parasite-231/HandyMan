@@ -11,19 +11,20 @@ $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
 $result = mysqli_query($connect, $query);
 updateStatus($result, $connect);
 
-$query = "SELECT COUNT(*) AS completed, SUM(payment) AS total_payment, AVG(rating) AS rating FROM orderlist
-            WHERE e_id = $e_id AND status = 'Completed'";
+$query = "SELECT * FROM employee WHERE id = $e_id";
 $result = mysqli_query($connect, $query);
 
 
 if ($result && mysqli_num_rows($result) > 0) {
     $data = mysqli_fetch_assoc($result);
-    $completed = $data['completed'];
+    $completed = $data['completed_services'];
     $total_payment = $data['total_payment'];
     $rating = number_format((float)$data['rating'], 2, '.', '');
 
-    $query = "UPDATE employee SET rating = $rating WHERE id = $e_id";
-    mysqli_query($connect, $query);
+    //update rating in employee table
+    // $query = "UPDATE employee SET rating = $rating WHERE id = $e_id";
+    // mysqli_query($connect, $query);
+
 }
 
 ?>
