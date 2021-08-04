@@ -18,23 +18,23 @@ if (isset($_POST['search'])) {
     $u_area = $_POST['working_area'];
 
     if ($shift == '' && $u_area == '') {
-        $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
+        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND NOT status = 'Completed'";
         $result = mysqli_query($connect, $query);
         updateStatus($result, $connect);
-        $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
+        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND NOT status = 'Completed'";
         $result = mysqli_query($connect, $query);
     } else {
-        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND shift = '$shift' AND u_thana = '$u_area' ";
+        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND shift = '$shift' AND u_thana = '$u_area' AND NOT status = 'Completed' ";
         $result = mysqli_query($connect, $query);
         updateStatus($result, $connect);
-        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND shift = '$shift' AND u_thana = '$u_area' ";
+        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND shift = '$shift' AND u_thana = '$u_area' AND NOT status = 'Completed'";
         $result = mysqli_query($connect, $query);
     }
 } else {
-    $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
+    $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND NOT status = 'Completed'";
     $result = mysqli_query($connect, $query);
     updateStatus($result, $connect);
-    $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
+    $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND NOT status = 'Completed'";
     $result = mysqli_query($connect, $query);
 }
 

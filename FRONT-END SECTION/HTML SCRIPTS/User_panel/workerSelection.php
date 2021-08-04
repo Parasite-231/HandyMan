@@ -42,15 +42,15 @@ if (!isset($_SESSION['uID'])) {
         <h1>Worker Selection </h1>
     </div>
     <!--drop-down-menu-->
-    <form class="choose-priority" method="POST">
-        <select id="drop-down" name="case">
-            <option value="">Choose your priority </option>
-            <option value="101">Price(Hight to Low)</option>
-            <option value="102">Price(Low to High)</option>
-            <option value="103">Rating(High to Low)</option>
-            <option value="104">Rating(Low to High)</option>
+    <form class='choose-priority' method='POST'>
+        <select id='drop-down' name='case'>
+            <option value=''>Choose your priority </option>
+            <option value='101'>Price(Hight to Low)</option>
+            <option value='102'>Price(Low to High)</option>
+            <option value='103'>Rating(High to Low)</option>
+            <option value='104'>Rating(Low to High)</option>
         </select>
-        <button name="filter" type="submit">Filter<i class="fas fa-search" style="margin-left: 5px;"></i></button>
+        <button name='filter' type='submit'>Filter<i class='fas fa-search' style='margin-left: 5px;'></i></button>
     </form>
 
 

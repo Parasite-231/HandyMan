@@ -15,11 +15,11 @@ if (isset($_POST['search'])) {
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
 
-    $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Done' AND (date BETWEEN '$start_date' AND '$end_date')
+    $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Completed' AND (date BETWEEN '$start_date' AND '$end_date')
     ORDER BY date";
     $result = mysqli_query($connect, $query);
 } else {
-    $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Done'
+    $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Completed'
     ORDER BY date";
     $result = mysqli_query($connect, $query);
 }
@@ -88,7 +88,8 @@ if (isset($_POST['search'])) {
         <!--working-criteria-for-employee-->
         <div class="working-criteria-form--of-employee">
             <form method="POST">
-                <label for="Date">From</label><img src="../../ICONS/calender2.png" style="margin-left: 3px;float: right;">
+                <label for="Date">From</label><img src="../../ICONS/calender2.png"
+                    style="margin-left: 3px;float: right;">
                 <input type="date" id="start" name="start_date" value="<?php echo $start_date ?>" min="2020-01-01"
                     max="<?php echo newDate(0) ?>">
 
