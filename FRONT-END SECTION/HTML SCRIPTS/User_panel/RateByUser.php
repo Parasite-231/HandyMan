@@ -38,7 +38,7 @@ if (isset($_POST['final'])) {
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $e_type = $row['name'];
-                $sql = "SELECT AVG(rating) AS rating FROM employee WHERE type = '$e_type'";
+                $sql = "SELECT AVG(rating) AS rating FROM employee WHERE type = '$e_type' AND NOT rating = 0";
                 $res = mysqli_query($connect, $sql);
 
                 if ($res) {

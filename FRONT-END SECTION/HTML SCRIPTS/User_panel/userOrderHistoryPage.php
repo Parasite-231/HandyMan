@@ -115,7 +115,7 @@ if (isset($_POST['done'])) {
     </div>
     </div>
     <!--chocolate bars for rating specific worker -->
-    <div class="container-01">
+    <div id='jump' class="container-01">
         <?php
 
         $query = "SELECT * FROM orderlist WHERE u_id = $u_id ORDER BY date";
@@ -172,7 +172,7 @@ if (isset($_POST['done'])) {
                             <button type='submit' name='submit' class='btn2' style='margin-top: -8px;" . $css . "'>Rate</button>
                         </p>
                     </form>
-                    <form method='POST'>
+                    <form action='userOrderHistoryPage.php#jump' method='POST'>
                         <input type='hidden' name='o_id' value='" . $o_id . "'>
                         <input type='hidden' name='e_id' value='" . $e_id . "'>
                         <button class='btn1' name='done' style='margin-top: -8px;margin-right: -1px;" . $css2 . "'>Done</button>
