@@ -42,16 +42,7 @@ if (!isset($_SESSION['uID'])) {
         <h1>Worker Selection </h1>
     </div>
     <!--drop-down-menu-->
-    <form class='choose-priority' method='POST'>
-        <select id='drop-down' name='case'>
-            <option value=''>Choose your priority </option>
-            <option value='101'>Price(Hight to Low)</option>
-            <option value='102'>Price(Low to High)</option>
-            <option value='103'>Rating(High to Low)</option>
-            <option value='104'>Rating(Low to High)</option>
-        </select>
-        <button name='filter' type='submit'>Filter<i class='fas fa-search' style='margin-left: 5px;'></i></button>
-    </form>
+
 
 
 
@@ -62,7 +53,7 @@ if (!isset($_SESSION['uID'])) {
 
         $c_date = date('Y-m-d', time() + 4 * 3600);
 
-        if (isset($_POST['hire'])) {
+        if (isset($_POST['hire']) || isset($_POST['filter'])) {
             $_SESSION['hire'] = '1';
 
             $date = $_POST['date'];
@@ -70,6 +61,21 @@ if (!isset($_SESSION['uID'])) {
             $type = $_POST['type'];
 
             $status = shiftStatus($shift);
+            echo "
+            <form action='workerSelection.php#jump' class='choose-priority' id='jump' method='POST'>
+            <select id='drop-down' name='case'>
+                <option value=''>Choose your priority </option>
+                <option value='101'>Price(Hight to Low)</option>
+                <option value='102'>Price(Low to High)</option>
+                <option value='103'>Rating(High to Low)</option>
+                <option value='104'>Rating(Low to High)</option>
+            </select>
+            <input type='hidden' name='date' value='" . $date . "'>
+            <input type='hidden' name='shift' value='" . $shift . "'>
+            <input type='hidden' name='type' value='" . $type . "'>
+            <button name='filter' type='submit'>Filter<i class='fas fa-search' style='margin-left: 5px;'></i></button>
+            </form>
+            ";
 
 
 
@@ -90,6 +96,12 @@ if (!isset($_SESSION['uID'])) {
 
                 if (isset($_POST['filter'])) {
                     $case = $_POST['case'];
+                    $date = $_POST['date'];
+                    $shift = $_POST['shift'];
+                    $type = $_POST['type'];
+
+
+
 
                     switch ($case) {
                         case 101:
@@ -97,39 +109,50 @@ if (!isset($_SESSION['uID'])) {
                                 (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
                                 shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
                                 WHERE date = '$date') AND type = '$type' AND price > 0 ORDER BY price DESC";
+                            $result = mysqli_query($connect, $query);
+                            break;
 
                         case 102:
                             $query = "SELECT * FROM employee WHERE id NOT IN 
                                 (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
                                 shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
                                 WHERE date = '$date') AND type = '$type' AND price > 0 ORDER BY price";
+                            $result = mysqli_query($connect, $query);
+                            break;
 
                         case 103:
                             $query = "SELECT * FROM employee WHERE id NOT IN 
                                 (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
                                 shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
                                 WHERE date = '$date') AND type = '$type' AND price > 0 ORDER BY rating DESC";
+                            $result = mysqli_query($connect, $query);
+                            break;
                         case 104:
                             $query = "SELECT * FROM employee WHERE id NOT IN 
                                     (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
                                     shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
                                     WHERE date = '$date') AND type = '$type' AND price > 0 ORDER BY rating";
+                            $result = mysqli_query($connect, $query);
+                            break;
 
                         default:
                             $query = "SELECT * FROM employee WHERE id NOT IN 
-                                    (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
-                                    shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
-                                    WHERE date = '$date') AND type = '$type' AND price > 0";
+                                        (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
+                                        shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
+                                        WHERE date = '$date') AND type = '$type' AND price > 0";
+                            $result = mysqli_query($connect, $query);
+                            break;
                     }
                 } else {
                     $query = "SELECT * FROM employee WHERE id NOT IN 
                             (SELECT e_id AS id FROM orderlist WHERE date = '$date' AND
                             shift='$shift' UNION SELECT e_id AS id FROM emp_holiday
                             WHERE date = '$date') AND type = '$type' AND price > 0";
+                    $result = mysqli_query($connect, $query);
                 }
 
 
-                $result = mysqli_query($connect, $query);
+
 
                 if ($result && mysqli_num_rows($result) > 0) {
 
