@@ -23,13 +23,14 @@ $css = '';
 <body>
     <div class="container" style="<?php echo $css ?>">
         <form action="" method="POST">
-            <h2>Admin Login</h2>
-            <input type="text" id="username" name="username" placeholder="Your username" required>
-            <input type="text" id="key-id" name="key-id" placeholder="Your key-id" required>
+        <h2>Admin Login</h2>
+            <input type="text" id="username" style="margin-top: 15px" name="username" placeholder="Your username" required>
+          <!--   <input type="text" id="key-id" name="key-id" placeholder="Your key-id" required> -->
             <input type="password" id="password" name="password" placeholder="Your password" required>
             <!-- <div class="btn"> -->
             <button class="btn" type="submit" name="login">Login</button>
-        </form>
+         <!-- </div> -->
+         </form>
         <!-- </div> -->
     </div>
 </body>
