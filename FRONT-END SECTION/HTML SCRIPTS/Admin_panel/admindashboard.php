@@ -30,19 +30,19 @@
                 </a>
             </li>
             <li>
-                <a href="order.html" target="_blank">
+                <a href="orderlist.php" target="_blank">
                     <i class='bx bx-list-ul'></i>
                     <span class="links_name">Order list</span>
                 </a>
             </li>
             <li>
-                <a href="customer.html" target="_blank">
+                <a href="customerlist.php" target="_blank">
                     <i class='bx bx-pie-chart-alt-2'></i>
                     <span class="links_name">Customer List</span>
                 </a>
             </li>
             <li>
-                <a href="worker.html" target="_blank">
+                <a href="workerlist.php" target="_blank">
                     <i class='bx bx-coin-stack'></i>
                     <span class="links_name">Worker List</span>
                 </a>

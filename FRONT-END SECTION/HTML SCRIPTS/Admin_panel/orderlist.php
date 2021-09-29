@@ -19,7 +19,7 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="admindashboard.html" target="_blank">
+                <a href="admindashboard.php" target="_blank">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Admin Dashboard</span>
                 </a>
@@ -37,13 +37,13 @@
                 </a>
             </li>
             <li>
-                <a href="customer.html">
+                <a href="customerlist.php">
                     <i class='bx bx-pie-chart-alt-2'></i>
                     <span class="links_name">Customer List</span>
                 </a>
             </li>
             <li>
-                <a href="worker.html" target="_blank">
+                <a href="workerlist.php" target="_blank">
                     <i class='bx bx-coin-stack'></i>
                     <span class="links_name">Worker List</span>
                 </a>
