@@ -1,3 +1,11 @@
+<?php
+require("../../Inc/function.php");
+session_start();
+if (!isset($_SESSION['aID'])) {
+    header("location:./adminlogin.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -19,7 +27,7 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="admindashboard.php" target="_blank">
+                <a href="admindashboard.php">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Admin Dashboard</span>
                 </a>
@@ -43,13 +51,13 @@
                 </a>
             </li>
             <li>
-                <a href="workerlist.php" target="_blank">
+                <a href="workerlist.php">
                     <i class='bx bx-coin-stack'></i>
                     <span class="links_name">Worker List</span>
                 </a>
             </li>
             <li class="log_out">
-                <a href="#">
+                <a href="../../Inc/admin_logout.php">
                     <i class='bx bx-log-out'></i>
                     <span class="links_name">Log out</span>
                 </a>

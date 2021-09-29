@@ -1,5 +1,44 @@
 <?php
-$css = '';
+
+session_start();
+if (isset($_SESSION['aID'])) {
+    header("location:./admindashboard.php");
+}
+
+require("../../Inc/function.php");
+
+$msg = '';
+
+if (filter_has_var(INPUT_POST, 'submit')) {
+
+    echo "hello";
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if (!empty($username) && !empty($password)) {
+
+        $query = "SELECT * FROM admin WHERE username = '$username' LIMIT 1";
+        $result = mysqli_query($connect, $query);
+        if ($result) {
+            if ($result && mysqli_num_rows($result) > 0) {
+                $user_data = mysqli_fetch_assoc($result);
+                if ($password === $user_data['password'] || password_verify($password, $user_data['password'])) {
+                    $_SESSION['aID'] = $user_data['id'];
+                    header("location: ./admindashboard.php");
+                    die;
+                } else {
+                    $msg = 'Invalid information or wrong Password !';
+                }
+            } else {
+                $msg = 'Please Enter a Valid Username !';
+            }
+        } else {
+            $msg = 'Please Enter a Valid Username !';
+        }
+    } else {
+        $msg = 'Please fill in all the fields !';
+    }
+}
 
 
 ?>
@@ -21,16 +60,23 @@ $css = '';
 </head>
 
 <body>
+
+    <div>
+        <?php if ($msg != '') : ?>
+        <div style="  padding: 20px; background-color: #f44336; color: white;"><?php echo $msg ?></div>
+        <?php endif; ?>
+    </div>
+
     <div class="container" style="<?php echo $css ?>">
         <form action="" method="POST">
-        <h2>Admin Login</h2>
-            <input type="text" id="username" style="margin-top: 15px" name="username" placeholder="Your username" required>
-          <!--   <input type="text" id="key-id" name="key-id" placeholder="Your key-id" required> -->
-            <input type="password" id="password" name="password" placeholder="Your password" required>
+            <h2>Admin Login</h2>
+            <input type="text" id="username" style="margin-top: 15px" name="username" placeholder="Username" required>
+            <!--   <input type="text" id="key-id" name="key-id" placeholder="Your key-id" required> -->
+            <input type="password" id="password" name="password" placeholder="Password" required>
             <!-- <div class="btn"> -->
-            <button class="btn" type="submit" name="login">Login</button>
-         <!-- </div> -->
-         </form>
+            <button class="btn" type="submit" name="submit">Login</button>
+            <!-- </div> -->
+        </form>
         <!-- </div> -->
     </div>
 </body>
