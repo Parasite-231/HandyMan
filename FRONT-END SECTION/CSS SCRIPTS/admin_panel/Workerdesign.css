@@ -150,8 +150,8 @@ nav .search-box .bx-search{
 
 nav .search-box .bx-search:hover{
 
-  background-color: #fff;
-  color: #2697FF;
+    background-color: #fff;
+    color: #2697FF;
 }
 
 .home-section nav .profile-details{
@@ -276,9 +276,8 @@ th {
 
 .sales-boxes .box .button a:hover{
 
-  background-color: #fff;
-  color: #0A2558;
-}
-
-
+    background-color: #fff;
+    color: #0A2558;
+  }
+  
 
