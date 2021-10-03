@@ -12,11 +12,12 @@ if (!isset($_SESSION['aID'])) {
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../CSS SCRIPTS/admin_panel/style.css">
-    <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DASHBOARD</title>
+        <link rel="stylesheet" href="../../CSS SCRIPTS/admin_panel/DashboardDesign.css">
+        <!-- Boxicons CDN Link -->
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="shortcut icon" type="image/x-icon" href="adminbro3.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
 </head>
 
 <body>
@@ -116,142 +117,169 @@ if (!isset($_SESSION['aID'])) {
             <div class="sales-boxes">
                 <div class="recent-sales box">
                     <div class="title">Recent Services</div>
-                    <div class="sales-details">
-                        <ul class="details">
-                            <li class="topic">Date</li>
-                            <li><a href="#">08 Aug 2021</a></li>
-                            <li><a href="#">08 Aug 2021</a></li>
-                            <li><a href="#">08 Aug 2021</a></li>
-                            <li><a href="#">08 Aug 2021</a></li>
-                            <li><a href="#">08 Aug 2021</a></li>
-                            <li><a href="#">08 Aug 2021</a></li>
-                            <li><a href="#">08 Aug 2021</a></li>
-                            <li><a href="#">08 Aug 2021</a></li>
-                            <li><a href="#">08 Aug 2021</a></li>
-                        </ul>
-
-                        <ul class="details">
-                            <li class="topic">Customer</li>
-                            <li><a href="#">Fayeez Abrar Taha</a></li>
-                            <li><a href="#">Abrar Chowdhury</a></li>
-                            <li><a href="#">MD Maheen Hoque</a></li>
-                            <li><a href="#">MD Mehessum Rahman</a></li>
-                            <li><a href="#">Serjatul Yeaken Pragon</a></li>
-                            <li><a href="#">MD Nihan Anam</a></li>
-                            <li><a href="#">Asif Mosaddek Khan</a></li>
-                            <li><a href="#">MD Sadman Sakib</a></li>
-                            <li><a href="#">Samin Yeasir Islam</a></li>
-                        </ul>
-                        <ul class="details">
-                            <li class="topic">Worker</li>
-                            <li><a href="#">Muntasir Mahmud</a></li>
-                            <li><a href="#">Sadat Tonmoy</a></li>
-                            <li><a href="#">Junayed Zoha</a></li>
-                            <li><a href="#">Thamidur Toha</a></li>
-                            <li><a href="#">Rohan Hossain</a></li>
-                            <li><a href="#">Akash Chowdhury</a></li>
-                            <li><a href="#">Arif Akanto</a></li>
-                            <li><a href="#">Hasib Dhrubo</a></li>
-                            <li><a href="#">Maruf Hossain</a></li>
-                        </ul>
-                        <ul class="details">
-                            <li class="topic">Status</li>
-                            <li><a href="#">Ongoing</a></li>
-                            <li><a href="#">Pending</a></li>
-                            <li><a href="#">Completed</a></li>
-                            <li><a href="#">Completed</a></li>
-                            <li><a href="#">Pending</a></li>
-                            <li><a href="#">Ongoing</a></li>
-                            <li><a href="#">Completed</a></li>
-                            <li><a href="#">Pending</a></li>
-                            <li><a href="#">Completed</a></li>
-                        </ul>
-                        <ul class="details">
-                            <li class="topic">Payment</li>
-                            <li><a href="#"> ৳720.00</a></li>
-                            <li><a href="#"> ৳2000.00</a></li>
-                            <li><a href="#"> ৳2255.00</a></li>
-                            <li><a href="#"> ৳1700.00</a></li>
-                            <li><a href="#"> ৳560.00</a></li>
-                            <li><a href="#"> ৳250.95</a></li>
-                            <li><a href="#"> ৳673.33</a></li>
-                            <li><a href="#"> ৳230.53</a></li>
-                            <li><a href="#"> ৳460.52</a></li>
-                        </ul>
+                    
+                    <!--changed part-->
+                     <div class="sales-details" style="margin-top: 23px;">
+                            <table>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Customer Name</th>
+                                    <th>Worker Name</th>
+                                    <th>Work Status</th>
+                                    <th>Payment</th>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                                <tr>
+                                    <td>08 Aug 2021</td>
+                                    <td>Ahsan Habib</td>
+                                    <td>MD Maheen Hoque</td>
+                                    <td>Completed</td>
+                                    <td>720.00</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="button" style = "margin-top: 12px;">
+                            <a href="#">See All</a>
+                        </div>
                     </div>
-                    <div class="button">
-                        <a href="#">See All</a>
+                    <div class="top-sales box" >
+                        <div class="title">Top Rated Workers</div>
+                        <table style="margin-top: 23px;">
+                        <tr>
+                            <th>Worker Name</th>
+                            <th>Highest Rating</th>
+                        </tr>
+                        <tr>
+                            <td>Ahsan Habib</td>
+                            <td>4.75</td>
+                        </tr>
+                        <tr>
+                            <td>Tahaa Bro</td>
+                            <td>4.75</td>
+                        </tr>
+                        <tr>
+                            <td>Ifty Khan</td>
+                            <td>4.75</td>
+                        </tr>
+                        <tr>
+                            <td>Dio Brando</td>
+                            <td>4.75</td>
+                        </tr>
+                        <tr>
+                            <td>Faisal Sanu</td>
+                            <td>4.75</td>
+                        </tr>
+                        <tr>
+                            <td>Mr.Absar</td>
+                            <td>4.75</td>
+                        </tr>
+                        <tr>
+                            <td>Ahsan Habib</td>
+                            <td>4.75</td>
+                        </tr>
+                        <tr>
+                            <td>Tommy</td>
+                            <td>4.75</td>
+                        </tr>
+                        <tr>
+                            <td>Ahsan Habib</td>
+                            <td>4.75</td>
+                        </tr>
                     </div>
-                </div>
-
-
-                <div class="top-sales box">
-                    <div class="title">Top Rated Workers</div>
-                    <ul class="top-sales-details">
-                        <li>
-                            <a href="#">
-                                <span class="product">Farhan Ishraq</span>
-                            </a>
-                            <span class="price">4.93</span>
-                        </li>
-                        <li>
-                            <a href="#">
-
-                                <span class="product">Meherab Muhurta</span>
-                            </a>
-                            <span class="price">4.91</span>
-                        </li>
-                        <li>
-                            <a href="#">
-
-                                <span class="product">Anan Shahriar</span>
-                            </a>
-                            <span class="price">4.90</span>
-                        </li>
-                        <li>
-                            <a href="#">
-
-                                <span class="product">Almas Adnan</span>
-                            </a>
-                            <span class="price">4.88</span>
-                        </li>
-                        <li>
-                            <a href="#">
-
-                                <span class="product">Shoumik Hossain</span>
-                            </a>
-                            <span class="price">4.88</span>
-                        </li>
-                        <li>
-                            <a href="#">
-
-                                <span class="product">Rezaul Noyon</span>
-                            </a>
-                            <span class="price">4.87</span>
-                        <li>
-                            <a href="#">
-
-                                <span class="product">Zoha Hossain</span>
-                            </a>
-                            <span class="price">4.83</span>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="product">Golam Rabbani</span>
-                            </a>
-                            <span class="price">4.81</span>
-                        </li>
-
-
-
-                    </ul>
                 </div>
             </div>
-        </div>
+                    <!--changed part-->
     </section>
-
-
-
 </body>
 
 </html>
