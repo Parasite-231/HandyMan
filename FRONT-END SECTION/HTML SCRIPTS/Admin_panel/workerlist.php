@@ -101,245 +101,55 @@ if (!isset($_SESSION['aID'])) {
                                         <th>Worker ID</th>
                                         <th>Worker Name</th>
                                         <th>Worker Type</th>
-                                        <th>Address</th>
-                                        <th>Rating</th>
+                                        <th>Company</th>
                                         <th>Email</th>
                                         <th>Mobile Number</th>
+                                        <th>Address</th>
+                                        <th>Price</th>
+                                        <th>Services completed</th>
+                                        <th>Earned</th>
+                                        <th>Rating</th>
                                     </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
-                                    <tr>
-                                        <td>343245</td>
-                                        <td>Ahsan Habib</td>
-                                        <td>Plumber</td>
-                                        <td>120/22, Shahjanpur, Dhaka</td>
-                                        <td>4.88</td>
-                                        <td>ahsan@gmail.com</td>
-                                        <td>0189634766</td>
-                                    </tr>
+
+                                    <?php
+
+                                    $query = "SELECT id, name, type, company, email, number, address, rating,price,completed_services,
+                                            total_payment FROM employee";
+                                    $result = mysqli_query($connect, $query);
+
+                                    if ($result && mysqli_num_rows($result) > 0) {
+                                        while ($data = mysqli_fetch_assoc($result)) {
+                                            $id = $data['id'];
+                                            $name = $data['name'];
+                                            $type = $data['type'];
+                                            $number = $data['number'];
+                                            $email = $data['email'];
+                                            $address = $data['address'];
+                                            $company = $data['company'];
+                                            $rating = $data['rating'];
+                                            $price = $data['price'];
+                                            $completed = $data['completed_services'];
+                                            $earned = $data['total_payment'];
+                                            echo "
+                                            <tr>
+                                                <td>$id</td>
+                                                <td>$name</td>
+                                                <td>$type</td>
+                                                <td>$company</td>
+                                                <td>$email</td>
+                                                <td>$number</td>
+                                                <td>$address</td>
+                                                <td>$price</td>
+                                                <td>$completed</td>
+                                                <td>$earned</td>
+                                                <td>$rating</td>
+                                            </tr>
+                                            ";
+                                        }
+                                    }
+
+                                    ?>
+
                                 </table>
                         </div>
                         <div class="button" style="margin-top: 12px;">

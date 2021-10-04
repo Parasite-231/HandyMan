@@ -95,191 +95,43 @@ if (!isset($_SESSION['aID'])) {
 
                     <!--changed part-->
                     <div class="sales-details" style="margin-top: 23px;">
+
                         <table>
                             <tr>
                                 <th>Customer ID</th>
                                 <th>Customer Name</th>
                                 <th>Address</th>
-                                <th>Rating</th>
                                 <th>Email</th>
                                 <th>Mobile Number</th>
                             </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Sivan</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ifty</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>313245</td>
-                                <td>Koman</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343445</td>
-                                <td>Noman</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343045</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Moshiur</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td>Ahsan Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
-                            <tr>
-                                <td>343245</td>
-                                <td> Habib</td>
-                                <td>120/22, Shahjanpur, Dhaka</td>
-                                <td>4.88</td>
-                                <td>ahsan@gmail.com</td>
-                                <td>0189634766</td>
-                            </tr>
+
+                            <?php
+
+                            $query = "SELECT id, name, email, number, address FROM user";
+                            $result = mysqli_query($connect, $query);
+
+                            if ($result && mysqli_num_rows($result) > 0) {
+                                while ($data = mysqli_fetch_assoc($result)) {
+                                    $id = $data['id'];
+                                    $name = $data['name'];
+                                    $number = $data['number'];
+                                    $email = $data['email'];
+                                    $address = $data['address'];
+                                    echo "
+                                    <tr>
+                                        <td>$id</td>
+                                        <td>$name</td>
+                                        <td>$address</td>
+                                        <td>$email</td>
+                                        <td>$number</td>
+                                    </tr>
+                                    ";
+                                }
+                            }
+
+                            ?>
+
+
                         </table>
                     </div>
                     <div class="button" style="margin-top: 12px;">
