@@ -101,246 +101,54 @@ if (!isset($_SESSION['aID'])) {
                                 <tr>
                                     <th>Order ID</th>
                                     <th>Customer Name</th>
+                                    <th>Customer Address</th>
                                     <th>Worker Name</th>
+                                    <th>Worker ID</th>
                                     <th>Worker Type</th>
                                     <th>Working Date</th>
-                                    <th>Working Time</th>
+                                    <th>Working Shift</th>
                                     <th>Worker Payment</th>
+                                    <th>Status</th>
+                                    <th>Rating</th>
                                 </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
-                                <tr>
-                                    <td>343245</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Plumber</td>
-                                    <td>08 Aug 2021</td>
-                                    <td>2:00pm</td>
-                                    <td>230.53</td>
-                                </tr>
+                                <?php
+
+                                $query = "SELECT * FROM orderlist";
+                                $result = mysqli_query($connect, $query);
+
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    while ($data = mysqli_fetch_assoc($result)) {
+                                        $id = $data['id'];
+                                        $e_name = $data['e_name'];
+                                        $e_id = $data['e_id'];
+                                        $u_name = $data['u_name'];
+                                        $u_address = $data['u_address'];
+                                        $date = $data['date'];
+                                        $shift = $data['shift'];
+                                        $type = $data['e_type'];
+                                        $payment = $data['payment'];
+                                        $status = $data['status'];
+                                        $rating = $data['rating'];
+
+                                        echo "
+                                        <tr>
+                                            <td>$id</td>
+                                            <td>$u_name</td>
+                                            <td>$u_address</td>
+                                            <td>$e_name</td>
+                                            <td>$e_id</td>
+                                            <td>$type</td>
+                                            <td>$date</td>
+                                            <td>$shift</td>
+                                            <td>$payment</td>
+                                            <td>$status</td>
+                                            <td>$rating</td>
+                                        </tr>
+                                        ";
+                                    }
+                                }
+
+                                ?>
                             </table>
                         </div>
                         <div class="button" style="margin-top: 12px;">
