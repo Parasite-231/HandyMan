@@ -30,6 +30,7 @@ if (isset($_POST['done'])) {
 
             $completed_services = $data['completed_services'] + 1;
             $price = $data['price'];
+            $price = $price - $price * (15 / 100);
             $total_payment = $data['total_payment'] + $price;
 
             $query = "UPDATE employee SET total_payment = '$total_payment', completed_services = '$completed_services'

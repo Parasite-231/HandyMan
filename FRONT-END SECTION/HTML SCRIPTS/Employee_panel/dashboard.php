@@ -185,7 +185,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                             <!--<th>Description</th>-->
                         </tr>
                         <?php
-                        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Done'
+                        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Completed'
                                  ORDER BY date DESC LIMIT 10";
                         $result = mysqli_query($connect, $query);
                         if ($result && mysqli_num_rows($result) > 0) {

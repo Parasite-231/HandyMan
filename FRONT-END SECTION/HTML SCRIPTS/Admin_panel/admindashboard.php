@@ -4,6 +4,34 @@ session_start();
 if (!isset($_SESSION['aID'])) {
     header("location:./adminlogin.php");
 }
+
+
+$sql = "SELECT COUNT(id) AS count, SUM(payment) AS payment FROM orderlist WHERE status = 'Completed' ";
+$result = mysqli_query($connect, $sql);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $data = mysqli_fetch_assoc($result);
+    $completed_services = $data['count'];
+    $revenue = $data['payment'];
+    $revenue = $revenue * (15 / 100);
+}
+
+$sql = "SELECT COUNT(id) AS count, SUM(payment) AS payment FROM orderlist WHERE status = 'In Progress' ";
+$result = mysqli_query($connect, $sql);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $data = mysqli_fetch_assoc($result);
+    $ongoing_services = $data['count'];
+}
+
+$sql = "SELECT COUNT(id) AS count, SUM(payment) AS payment FROM orderlist WHERE status = 'Not started' ";
+$result = mysqli_query($connect, $sql);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $data = mysqli_fetch_assoc($result);
+    $pending_services = $data['count'];
+}
+
 ?>
 
 
@@ -90,34 +118,34 @@ if (!isset($_SESSION['aID'])) {
             <div class="overview-boxes">
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Complete Services</div>
-                        <div class="number">12,876</div>
+                        <div class="box-topic">Completed Services</div>
+                        <div class="number"><?php echo $completed_services ?></div>
 
                     </div>
                     <i class='bx bx-cart-alt cart'></i>
                 </div>
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Service Ongoing</div>
-                        <div class="number">722</div>
+                        <div class="box-topic">Ongoing services</div>
+                        <div class="number"><?php echo $ongoing_services ?></div>
                     </div>
                     <i class='bx bxs-cart-add cart two'></i>
                 </div>
-
                 <div class="box">
                     <div class="right-side">
-                        <div class="box-topic">Total Revenue</div>
-                        <div class="number">৳ 8,221,235</div>
-                    </div>
-                    <i class='bx bxs-cart-download cart four'></i>
-                </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Profit</div>
-                        <div class="number">৳ 453,876</div>
+                        <div class="box-topic">Pending Services</div>
+                        <div class="number"><?php echo $pending_services ?></div>
                     </div>
                     <i class='bx bx-cart cart three'></i>
                 </div>
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Revenue</div>
+                        <div class="number">৳ <?php echo $revenue ?></div>
+                    </div>
+                    <i class='bx bxs-cart-download cart four'></i>
+                </div>
+
             </div>
 
             <div class="sales-boxes">
@@ -138,7 +166,7 @@ if (!isset($_SESSION['aID'])) {
                             </tr>
                             <?php
 
-                            $query = "SELECT * FROM orderlist ORDER BY date DESC LIMIT 15";
+                            $query = "SELECT * FROM orderlist WHERE status= 'Completed' ORDER BY date DESC LIMIT 15";
                             $result = mysqli_query($connect, $query);
 
                             if ($result && mysqli_num_rows($result) > 0) {
