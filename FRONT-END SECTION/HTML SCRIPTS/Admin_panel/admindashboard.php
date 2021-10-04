@@ -12,11 +12,11 @@ if (!isset($_SESSION['aID'])) {
 
 <head>
     <meta charset="UTF-8">
-        <link rel="stylesheet" href="../../CSS SCRIPTS/admin_panel/DashboardDesign.css">
-        <!-- Boxicons CDN Link -->
-        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/adminbro3.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../CSS SCRIPTS/admin_panel/DashboardDesign.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/adminbro3.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
 </head>
 
@@ -34,7 +34,7 @@ if (!isset($_SESSION['aID'])) {
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="AdminProfile.php">
                     <i class='bx bx-box'></i>
                     <span class="links_name">Profile</span>
                 </a>
@@ -55,6 +55,12 @@ if (!isset($_SESSION['aID'])) {
                 <a href="workerlist.php">
                     <i class='bx bx-coin-stack'></i>
                     <span class="links_name">Worker List</span>
+                </a>
+            </li>
+            <li>
+                <a href="ComplaintList.php">
+                    <i class='bx bx-coin-stack'></i>
+                    <span class="links_name">Complaint List</span>
                 </a>
             </li>
             <li class="log_out">
@@ -117,124 +123,124 @@ if (!isset($_SESSION['aID'])) {
             <div class="sales-boxes">
                 <div class="recent-sales box">
                     <div class="title">Recent Services</div>
-                    
+
                     <!--changed part-->
-                     <div class="sales-details" style="margin-top: 23px;">
-                            <table>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Customer Name</th>
-                                    <th>Worker Name</th>
-                                    <th>Work Status</th>
-                                    <th>Payment</th>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                                <tr>
-                                    <td>08 Aug 2021</td>
-                                    <td>Ahsan Habib</td>
-                                    <td>MD Maheen Hoque</td>
-                                    <td>Completed</td>
-                                    <td>720.00</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="button" style = "margin-top: 12px;">
-                            <a href="#">See All</a>
-                        </div>
+                    <div class="sales-details" style="margin-top: 23px;">
+                        <table>
+                            <tr>
+                                <th>Date</th>
+                                <th>Customer Name</th>
+                                <th>Worker Name</th>
+                                <th>Work Status</th>
+                                <th>Payment</th>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                            <tr>
+                                <td>08 Aug 2021</td>
+                                <td>Ahsan Habib</td>
+                                <td>MD Maheen Hoque</td>
+                                <td>Completed</td>
+                                <td>720.00</td>
+                            </tr>
+                        </table>
                     </div>
-                    <div class="top-sales box" >
-                        <div class="title">Top Rated Workers</div>
-                        <table style="margin-top: 23px;">
+                    <div class="button" style="margin-top: 12px;">
+                        <a href="#">See All</a>
+                    </div>
+                </div>
+                <div class="top-sales box">
+                    <div class="title">Top Rated Workers</div>
+                    <table style="margin-top: 23px;">
                         <tr>
                             <th>Worker Name</th>
                             <th>Highest Rating</th>
@@ -275,10 +281,10 @@ if (!isset($_SESSION['aID'])) {
                             <td>Ahsan Habib</td>
                             <td>4.75</td>
                         </tr>
-                    </div>
                 </div>
             </div>
-                    <!--changed part-->
+        </div>
+        <!--changed part-->
     </section>
 </body>
 

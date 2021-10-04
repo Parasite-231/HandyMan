@@ -34,7 +34,7 @@ if (!isset($_SESSION['aID'])) {
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="AdminProfile.php">
                     <i class='bx bx-box'></i>
                     <span class="links_name">Profile</span>
                 </a>
@@ -55,6 +55,12 @@ if (!isset($_SESSION['aID'])) {
                 <a href="workerlist.php">
                     <i class='bx bx-coin-stack'></i>
                     <span class="links_name">Worker List</span>
+                </a>
+            </li>
+            <li>
+                <a href="ComplaintList.php">
+                    <i class='bx bx-coin-stack'></i>
+                    <span class="links_name">Complaint List</span>
                 </a>
             </li>
             <li class="log_out">
@@ -276,13 +282,13 @@ if (!isset($_SESSION['aID'])) {
                             </tr>
                         </table>
                     </div>
-                    <div class="button" style = "margin-top: 12px;">
+                    <div class="button" style="margin-top: 12px;">
                         <a href="#">See All</a>
                     </div>
                 </div>
             </div>
-                    <!--changed part-->
-                    
+            <!--changed part-->
+
     </section>
 </body>
 
