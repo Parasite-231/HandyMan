@@ -96,41 +96,41 @@ if (!isset($_SESSION['aID'])) {
                         <!--changed part-->
                         <div class="sales-details" style="margin-top: 23px;">
                             <table>
-                                <table>
-                                    <tr>
-                                        <th>Worker ID</th>
-                                        <th>Worker Name</th>
-                                        <th>Worker Type</th>
-                                        <th>Company</th>
-                                        <th>Email</th>
-                                        <th>Mobile Number</th>
-                                        <th>Address</th>
-                                        <th>Price</th>
-                                        <th>Services completed</th>
-                                        <th>Earned</th>
-                                        <th>Rating</th>
-                                    </tr>
 
-                                    <?php
+                                <tr>
+                                    <th>Worker ID</th>
+                                    <th>Worker Name</th>
+                                    <th>Worker Type</th>
+                                    <th>Company</th>
+                                    <th>Email</th>
+                                    <th>Mobile Number</th>
+                                    <th>Address</th>
+                                    <th>Price</th>
+                                    <th>Services completed</th>
+                                    <th>Earned</th>
+                                    <th>Rating</th>
+                                </tr>
 
-                                    $query = "SELECT id, name, type, company, email, number, address, rating,price,completed_services,
+                                <?php
+
+                                $query = "SELECT id, name, type, company, email, number, address, rating,price,completed_services,
                                             total_payment FROM employee";
-                                    $result = mysqli_query($connect, $query);
+                                $result = mysqli_query($connect, $query);
 
-                                    if ($result && mysqli_num_rows($result) > 0) {
-                                        while ($data = mysqli_fetch_assoc($result)) {
-                                            $id = $data['id'];
-                                            $name = $data['name'];
-                                            $type = $data['type'];
-                                            $number = $data['number'];
-                                            $email = $data['email'];
-                                            $address = $data['address'];
-                                            $company = $data['company'];
-                                            $rating = $data['rating'];
-                                            $price = $data['price'];
-                                            $completed = $data['completed_services'];
-                                            $earned = $data['total_payment'];
-                                            echo "
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    while ($data = mysqli_fetch_assoc($result)) {
+                                        $id = $data['id'];
+                                        $name = $data['name'];
+                                        $type = $data['type'];
+                                        $number = $data['number'];
+                                        $email = $data['email'];
+                                        $address = $data['address'];
+                                        $company = $data['company'];
+                                        $rating = $data['rating'];
+                                        $price = $data['price'];
+                                        $completed = $data['completed_services'];
+                                        $earned = $data['total_payment'];
+                                        echo "
                                             <tr>
                                                 <td>$id</td>
                                                 <td>$name</td>
@@ -145,12 +145,12 @@ if (!isset($_SESSION['aID'])) {
                                                 <td>$rating</td>
                                             </tr>
                                             ";
-                                        }
                                     }
+                                }
 
-                                    ?>
+                                ?>
 
-                                </table>
+                            </table>
                         </div>
                         <div class="button" style="margin-top: 12px;">
                             <a href="#">See All</a>

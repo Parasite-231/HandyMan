@@ -76,10 +76,7 @@ if (!isset($_SESSION['aID'])) {
                 <i class='bx bx-menu sidebarBtn'></i>
                 <span class="dashboard">Complaint Lists</span>
             </div>
-            <div class="search-box">
-                <input type="text" placeholder="Search...">
-                <i class='bx bx-search'></i>
-            </div>
+
             <div class="profile-details">
                 <span class="admin_name">Muktadir Mazumder</span>
             </div>

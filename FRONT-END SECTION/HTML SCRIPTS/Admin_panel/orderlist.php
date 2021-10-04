@@ -151,9 +151,9 @@ if (!isset($_SESSION['aID'])) {
                                 ?>
                             </table>
                         </div>
-                        <div class="button" style="margin-top: 12px;">
+                        <!-- <div class="button" style="margin-top: 12px;">
                             <a href="#">See All</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <!--changed part-->

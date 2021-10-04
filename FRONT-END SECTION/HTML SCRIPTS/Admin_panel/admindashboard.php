@@ -128,114 +128,52 @@ if (!isset($_SESSION['aID'])) {
                     <div class="sales-details" style="margin-top: 23px;">
                         <table>
                             <tr>
-                                <th>Date</th>
+                                <th>Order ID</th>
                                 <th>Customer Name</th>
                                 <th>Worker Name</th>
-                                <th>Work Status</th>
-                                <th>Payment</th>
+                                <th>Worker Type</th>
+                                <th>Working Date</th>
+                                <th>Working Shift</th>
+                                <th>Worker Payment</th>
                             </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
-                            <tr>
-                                <td>08 Aug 2021</td>
-                                <td>Ahsan Habib</td>
-                                <td>MD Maheen Hoque</td>
-                                <td>Completed</td>
-                                <td>720.00</td>
-                            </tr>
+                            <?php
+
+                            $query = "SELECT * FROM orderlist ORDER BY date DESC LIMIT 15";
+                            $result = mysqli_query($connect, $query);
+
+                            if ($result && mysqli_num_rows($result) > 0) {
+                                while ($data = mysqli_fetch_assoc($result)) {
+                                    $id = $data['id'];
+                                    $e_name = $data['e_name'];
+                                    $e_id = $data['e_id'];
+                                    $u_name = $data['u_name'];
+                                    $u_address = $data['u_address'];
+                                    $date = $data['date'];
+                                    $shift = $data['shift'];
+                                    $type = $data['e_type'];
+                                    $payment = $data['payment'];
+                                    $status = $data['status'];
+                                    $rating = $data['rating'];
+
+                                    echo "
+                                        <tr>
+                                            <td>$id</td>
+                                            <td>$u_name</td>
+                                            <td>$e_name</td>
+                                            <td>$type</td>
+                                            <td>$date</td>
+                                            <td>$shift</td>
+                                            <td>$payment</td>
+                                        </tr>
+                                        ";
+                                }
+                            }
+
+                            ?>
                         </table>
                     </div>
                     <div class="button" style="margin-top: 12px;">
-                        <a href="#">See All</a>
+                        <a href="orderlist.php">See All</a>
                     </div>
                 </div>
                 <div class="top-sales box">
@@ -245,42 +183,28 @@ if (!isset($_SESSION['aID'])) {
                             <th>Worker Name</th>
                             <th>Highest Rating</th>
                         </tr>
-                        <tr>
-                            <td>Ahsan Habib</td>
-                            <td>4.75</td>
-                        </tr>
-                        <tr>
-                            <td>Tahaa Bro</td>
-                            <td>4.75</td>
-                        </tr>
-                        <tr>
-                            <td>Ifty Khan</td>
-                            <td>4.75</td>
-                        </tr>
-                        <tr>
-                            <td>Dio Brando</td>
-                            <td>4.75</td>
-                        </tr>
-                        <tr>
-                            <td>Faisal Sanu</td>
-                            <td>4.75</td>
-                        </tr>
-                        <tr>
-                            <td>Mr.Absar</td>
-                            <td>4.75</td>
-                        </tr>
-                        <tr>
-                            <td>Ahsan Habib</td>
-                            <td>4.75</td>
-                        </tr>
-                        <tr>
-                            <td>Tommy</td>
-                            <td>4.75</td>
-                        </tr>
-                        <tr>
-                            <td>Ahsan Habib</td>
-                            <td>4.75</td>
-                        </tr>
+                        <?php
+
+                        $query = "SELECT id, name, rating FROM employee ORDER BY rating DESC LIMIT 10";
+                        $result = mysqli_query($connect, $query);
+
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            while ($data = mysqli_fetch_assoc($result)) {
+                                $id = $data['id'];
+                                $name = $data['name'];
+                                $rating = $data['rating'];
+
+                                echo "
+                                    <tr>
+                                        <td>$name</td>
+                                        <td>$rating</td>
+                                    </tr>
+                                    ";
+                            }
+                        }
+
+                        ?>
+                    </table>
                 </div>
             </div>
         </div>
