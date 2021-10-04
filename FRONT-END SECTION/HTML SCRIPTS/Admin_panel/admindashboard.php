@@ -15,7 +15,7 @@ if (!isset($_SESSION['aID'])) {
         <link rel="stylesheet" href="../../CSS SCRIPTS/admin_panel/DashboardDesign.css">
         <!-- Boxicons CDN Link -->
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="shortcut icon" type="image/x-icon" href="adminbro3.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/adminbro3.png">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
 </head>
