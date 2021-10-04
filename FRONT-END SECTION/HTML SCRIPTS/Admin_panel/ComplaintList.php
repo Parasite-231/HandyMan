@@ -111,7 +111,7 @@ if (!isset($_SESSION['aID'])) {
     
                                             <form>
                                                 <h1>$id
-                                                    <img src='complaint.png' style='float: right;'>
+                                                    <img src='../../ICONS/complaint.png' style='float: right;'>
                                                 </h1>
                                                 <hr>
                                                 <label for='name'>
