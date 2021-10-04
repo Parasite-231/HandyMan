@@ -92,19 +92,61 @@ if (!isset($_SESSION['aID'])) {
                         <div class="sales-details" style="margin-top: 23px;">
                             <div class="Description">
                                 <!--new code-->
-                                <div class="card">
+
+
+                                <?php
+
+                                $query = "SELECT * FROM complain";
+                                $result = mysqli_query($connect, $query);
+
+                                if ($result && mysqli_num_rows($result) > 0) {
+                                    while ($data = mysqli_fetch_assoc($result)) {
+                                        $id = $data['o_id'];
+                                        $name = $data['u_name'];
+                                        $problem = $data['problem'];
+                                        $description = $data['description'];
+                                        echo "
+                                        <div class='card'>
+                                        <div class='bio-of-founder'>
+    
+                                            <form>
+                                                <h1>$id
+                                                    <img src='complaint.png' style='float: right;'>
+                                                </h1>
+                                                <hr>
+                                                <label for='name'>
+                                                    <h3 style='margin-top: 20px;'>Customer Name</h3>
+                                                </label>
+                                                <input type='text' id='name' value='$name' disabled>
+                                                <h3>Reason for complaining</h3>
+                                                <input type='text' id='name' value='$problem' disabled>
+                                                <label for='address'>
+                                                    <h3 style='margin-top: 12px;'>Description</h3>
+                                                </label>
+                                                <textarea disabled id='address'
+                                                    style='height:60px'>$description</textarea>
+                                            </form>
+                                        </div>
+
+                                        ";
+                                    }
+                                }
+
+                                ?>
+
+
+                                <!-- <div class="card" style="margin-top: 9px;">
                                     <div class="bio-of-founder">
                                         <form action="">
                                             <h1>Order ID
                                                 <img src="complaint.png" style="float: right;">
                                             </h1>
                                             <hr>
-                                            <!-- <img src="complaint.png"> -->
+        
                                             <label for="name">
                                                 <h3 style="margin-top: 20px;">Worker ID </h3>
                                             </label>
                                             <input type="text" id="name" name="name" required>
-                                            <!-- <h3>Cutomer Name :</h3> -->
                                             <label for="name">
                                                 <h3 style="margin-top: 20px;">Customer Name</h3>
                                             </label>
@@ -121,37 +163,7 @@ if (!isset($_SESSION['aID'])) {
                                             <textarea id="address" name="address" style="height:60px"></textarea>
                                         </form>
                                     </div>
-                                </div>
-                                <!--new card-->
-                                <div class="card" style="margin-top: 9px;">
-                                    <div class="bio-of-founder">
-                                        <form action="">
-                                            <h1>Order ID
-                                                <img src="complaint.png" style="float: right;">
-                                            </h1>
-                                            <hr>
-                                            <!-- <img src="complaint.png"> -->
-                                            <label for="name">
-                                                <h3 style="margin-top: 20px;">Worker ID </h3>
-                                            </label>
-                                            <input type="text" id="name" name="name" required>
-                                            <label for="name">
-                                                <h3 style="margin-top: 20px;">Customer Name</h3>
-                                            </label>
-                                            <input type="text" id="name" name="name" required>
-                                            <h3>Reason for complaining</h3>
-                                            <select id="working-aarea" name="working-area">
-                                                <option value="1">Bad behaviour of Worker</option>
-                                                <option value="2">Bad Service</option>
-                                                <option value="3">Worker did not arrive on time</option>
-                                            </select>
-                                            <label for="address">
-                                                <h3 style="margin-top: 12px;">Description</h3>
-                                            </label>
-                                            <textarea id="address" name="address" style="height:60px"></textarea>
-                                        </form>
-                                    </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
