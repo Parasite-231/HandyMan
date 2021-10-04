@@ -39,19 +39,19 @@ if (!isset($_SESSION['aID'])) {
                 </a>
             </li>
             <li>
-                <a href="order.php">
+                <a href="orderlist.php">
                     <i class='bx bx-list-ul'></i>
                     <span class="links_name">Order list</span>
                 </a>
             </li>
             <li>
-                <a href="customer.php">
+                <a href="customerlist.php">
                     <i class='bx bx-pie-chart-alt-2'></i>
                     <span class="links_name">Customer List</span>
                 </a>
             </li>
             <li>
-                <a href="worker.php">
+                <a href="workerlist.php">
                     <i class='bx bx-coin-stack'></i>
                     <span class="links_name">Worker List</span>
                 </a>

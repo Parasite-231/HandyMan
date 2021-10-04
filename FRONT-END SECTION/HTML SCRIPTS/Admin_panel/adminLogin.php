@@ -71,7 +71,6 @@ if (filter_has_var(INPUT_POST, 'submit')) {
         <form action="" method="POST">
             <h2>Admin Login</h2>
             <input type="text" id="username" style="margin-top: 15px" name="username" placeholder="Username" required>
-            <!--   <input type="text" id="key-id" name="key-id" placeholder="Your key-id" required> -->
             <input type="password" id="password" name="password" placeholder="Password" required>
             <!-- <div class="btn"> -->
             <button class="btn" type="submit" name="submit">Login</button>

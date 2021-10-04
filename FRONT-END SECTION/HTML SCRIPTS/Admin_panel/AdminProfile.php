@@ -4,6 +4,9 @@ session_start();
 if (!isset($_SESSION['aID'])) {
     header("location:./adminlogin.php");
 }
+
+$a_id = $_SESSION['aID'];
+
 ?>
 
 <!DOCTYPE html>
@@ -33,25 +36,25 @@ if (!isset($_SESSION['aID'])) {
                 </a>
             </li>
             <li>
-                <a href="AdminProfile.php">
+                <a href="AdminProfile.php" class="active">
                     <i class='bx bx-box'></i>
                     <span class="links_name">Profile</span>
                 </a>
             </li>
             <li>
-                <a href="order.php">
+                <a href="orderlist.php">
                     <i class='bx bx-list-ul'></i>
                     <span class="links_name">Order list</span>
                 </a>
             </li>
             <li>
-                <a href="customer.php" class="active">
+                <a href="customerlist.php">
                     <i class='bx bx-pie-chart-alt-2'></i>
                     <span class="links_name">Customer List</span>
                 </a>
             </li>
             <li>
-                <a href="worker.php">
+                <a href="workerlist.php">
                     <i class='bx bx-coin-stack'></i>
                     <span class="links_name">Worker List</span>
                 </a>
@@ -76,12 +79,12 @@ if (!isset($_SESSION['aID'])) {
                 <i class='bx bx-menu sidebarBtn'></i>
                 <span class="dashboard">Admin Profile</span>
             </div>
-            <div class="search-box">
+            <!-- <div class="search-box">
                 <input type="text" placeholder="Search...">
                 <i class='bx bx-search'></i>
-            </div>
+            </div> -->
             <div class="profile-details">
-                <span class="admin_name">Muktadir Mazumder</span>
+                <span class="admin_name">Admin</span>
             </div>
         </nav>
         <div class="home-content">
@@ -92,21 +95,61 @@ if (!isset($_SESSION['aID'])) {
 
                         <!--Profile-->
 
-                        <div class="profileform">
-                            <form>
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" required>
-                                <label for="phonenumber">Phone Number</label>
-                                <input type="text" id="phonenumber" name="phonenumber" required>
-                                <button>Edit Password</button>
-                                <label for="password">New Password</label>
-                                <input type="password" id="password" name="password" required>
-                                <label for="password">Re-type Password</label>
-                                <input type="password" id="password" name="password" required>
 
-                                <input type="save" value="Save" style="text-align: center;">
+                        <?php
+
+                        $hide = 'hidden';
+
+
+                        $query = "SELECT * FROM admin WHERE id = $a_id";
+                        $result = mysqli_query($connect, $query);
+
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            $data = mysqli_fetch_assoc($result);
+
+                            $name = $data['name'];
+                            $email = $data['email'];
+                            $phone = $data['phone'];
+                        }
+
+
+                        if (isset($_POST['editPass'])) {
+                            $hide = 'password';
+                        }
+
+                        if (isset($_POST['save'])) {
+
+                            $password = $_POST['password'];
+                            $con_pass = $_POST['confirm_password'];
+
+                            if ($password === $con_pass) {
+                                $password = password_hash($password, PASSWORD_DEFAULT);
+
+                                $query = "UPDATE admin SET password = '$password' WHERE id = $a_id ";
+                                mysqli_query($connect, $query);
+                            }
+                        }
+
+
+                        ?>
+
+                        <div class="profileform">
+                            <form method="POST">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" value="<?php echo $name ?>" disabled>
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" value="<?php echo $email ?>" disabled>
+                                <label for="phonenumber">Phone Number</label>
+                                <input type="text" id="phonenumber" name="phone" value="<?php echo $phone ?>" disabled>
+
+
+                                <Button name="editPass">Edit Password</Button>
+                                <input type="<?php echo $hide ?>" id="password" placeholder="Password" name="password"
+                                    required>
+                                <input type="<?php echo $hide ?>" id="password" placeholder="Confirm Password"
+                                    name="confirm_password" required>
+
+                                <Button name="save">Save</Button>
                             </form>
                         </div>
 
