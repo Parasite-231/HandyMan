@@ -16,6 +16,7 @@ if (isset($_SESSION['eID'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Panel-Register</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="../../CSS SCRIPTS/employee_panel/employee registration.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
 </head>
