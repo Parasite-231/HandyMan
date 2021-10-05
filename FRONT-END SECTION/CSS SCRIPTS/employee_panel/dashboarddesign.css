@@ -26,7 +26,7 @@
   .side-menu {
     position: fixed;
     background: #f17777;
-    width: 20vw;
+    width: 18vw;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -63,7 +63,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 80vw;
+    width: 81vw;
     height: 10vh;
     background: white;
     display: flex;
@@ -72,7 +72,7 @@
     box-shadow: 0 4px 8px 0 black;
   }
   
-  .btn {
+ /* .btn {
     background-color: #e67c7c;
     color: brown;
     padding: 5px 10px;
@@ -85,6 +85,22 @@
     background: #e67c7c;
     padding: 3px 8px;
     border: 2px solid #e67c7c;
+  }*/
+
+   .btn {
+    background-color: #f17777;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    width: 80px;
+    height: 32px;
+  }
+  
+  .btn:hover {
+    color: brown;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #f17777;
   }
   
   .title {
@@ -92,7 +108,7 @@
     align-items: center;
     justify-content: space-around;
     padding: 15px 10px;
-    border-bottom: 2px solid #e67c7c;
+    border-bottom: 2px solid #f17777;
   }
   
   /*table section*/
@@ -121,13 +137,13 @@
     height: 35.4px;
   }
   
-  .container .header .nav .search input[type="text"] {
+/*  .container .header .nav .search input[type="text"] {
     border: none;
     background: cornsilk;
     padding: 10px;
     width: 50%;
     font-size: 19px;
-  }
+  }*/
   
   .container .header .nav .search button {
     width: 40px;
@@ -174,27 +190,30 @@
   }
   
   .container .content .cards {
-    padding: 20px 15px;
+   padding: 20px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    border-color: #f17777;
+    border-width: 8px;
+    border-radius: 8px;
   }
   
   .container .content .cards .card {
-    width: 220px;
+    width: 290px;
     height: 150px;
-    background: wheat;
+    background:  #fff;
     margin: 20px 10px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    box-shadow: 0 4px 8px black, 0 6px 17px 0px black;
+    box-shadow: 0 4px 8px #f57171, 0 6px 17px 0px #f36e6e;;
+    border-color: #f17777;
+    border-width: 8px;
+    border-radius: 8px;
   }
   
-  h3 {
-    color: gray;
-  }
   
   .container .content .content-2 {
     margin-top: 29px;
@@ -206,13 +225,18 @@
   }
   
   .container .content .content-2 .recent-payments {
+   .container .content .content-2 .recent-payments {
     min-height: 50vh;
     flex: 5;
-    background: wheat;
+    background:  #fff;
     margin: 0 25px 25px 25px;
     box-shadow: 0 4px 8px black, 0 6px 17px 0px black;
     display: flex;
     flex-direction: column;
+    box-shadow: 0 4px 8px #f57171, 0 6px 17px 0px #f36e6e;;
+    border-color: #f17777;
+    border-width: 8px;
+    border-radius: 8px;
   }
   
 

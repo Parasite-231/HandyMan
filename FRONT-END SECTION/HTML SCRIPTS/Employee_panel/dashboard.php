@@ -39,6 +39,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS SCRIPTS/employee_panel/dashboarddesign.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/workers.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Employee Dashboard</title>
 </head>
@@ -112,7 +113,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Work Completed</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/work.png" alt="work">
+                        <img src="../../ICONS/donework.png" alt="work">
                     </div>
                 </div>
                 <div class="card">
@@ -121,7 +122,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Payments Received</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/money.png" alt="work">
+                        <img src="../../ICONS/payme12.png" alt="work">
                     </div>
                 </div>
                 <div class="card">
@@ -140,7 +141,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Work In-progress</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/progresspng.png" alt="work">
+                        <img src="../../ICONS/workinpro.png" alt="work">
                     </div>
                 </div>
                 <div class="card">
@@ -149,7 +150,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Message Received</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/message.png" alt="work">
+                        <img src="../../ICONS/messagein.png" alt="work">
                     </div>
                 </div>
                 <div class="card">
@@ -158,7 +159,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Average Rating</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/rating.png" alt="work">
+                        <img src="../../ICONS/like2.png" alt="work">
                     </div>
                 </div>
                 <div class="card">
@@ -177,7 +178,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Due Work</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/notifications.png" alt="work">
+                        <img src="../../ICONS/duework.png" alt="work">
                     </div>
                 </div>
             </div>
