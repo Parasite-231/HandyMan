@@ -1,9 +1,7 @@
 <?php
 require("../../Inc/function.php");
 session_start();
-if (isset($_SESSION['eID'])) {
-    header("location:./dashboard.php");
-}
+
 ?>
 
 

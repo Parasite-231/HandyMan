@@ -42,7 +42,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                         $_SESSION['eID'] = $user_data['id'];
                         header("location:./dashboard.php");
                         die;
-                    } else {
+                    } elseif ($status == 1) {
                         header("location:./ban.php?id=" . $id . "");
                     }
                 } else {

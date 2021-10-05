@@ -45,9 +45,8 @@ if (isset($_POST['final'])) {
 
             if ($rating < 2.5 && $completed > 3) {
 
-                echo "ban man";
-                $ban_removal_date = ban(7);
-                $query = "UPDATE employee SET ban_status = '1', ban_removal_date = '$ban_removal_date' WHERE id = $e_id";
+
+                $query = "UPDATE employee SET ban_status = '1', ban_removal_date = '2021-10-12 21:53:58' WHERE id = $e_id";
                 mysqli_query($connect, $query);
             }
         }
