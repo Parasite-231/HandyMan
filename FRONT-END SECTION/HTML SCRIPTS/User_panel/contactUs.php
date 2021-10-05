@@ -200,12 +200,27 @@ if (isset($_POST['submit'])) {
                             </select>
                             <label for="orderId">Order number</label><span class="required">*</span>
                             <input type="text" id="orderId" name="orderid"></input>
-                            <label for="message">Describe your complain elaborately</label><span
+
+                            <!--changed part-->
+
+                            <!--Rate Worker-->
+                            <div class="rating-section">
+                                <label for="rate-worker">Give a rating</label><span class="required">*</span>
+                                <input type="range" min="1" max="5" value="1" class="rate-bot" id="customer_rating">
+                                <p style="margin-bottom: 13px;color: red;font-weight: 700;">You Rated : <span id="rated"></span></p>
+                            </div>
+                            <!--Rate Worker-->
+
+                            <label for="message" >Describe your complain elaborately</label><span
                                 class="required">*</span>
                             <textarea maxlength="200" id="address" name="describe" style="height:80px"
                                 placeholder="Please describe in between 200 characters"></textarea>
                             <!-- <label for="address">Your Address</label><span class="required">*</span>
                             <textarea id="address" name="address" style="height:60px"></textarea> -->
+
+                            <!--changed part-->
+
+                            
 
                             <button class="btn_sub" style="resize:none;" type="submit" name="submit"
                                 <?php echo $css ?>>Submit</button>
@@ -229,6 +244,10 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </div>
+
+    <!--add file-->
+    <script src="ComplaintRating.js"></script>
+
 </body>
 
 </html>
