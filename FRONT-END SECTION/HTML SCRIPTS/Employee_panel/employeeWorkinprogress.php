@@ -58,10 +58,18 @@ if (!isset($_SESSION['eID'])) {
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="search">
+
+             <!--minor change-->
+             <div class="upperbar-symbol">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard" style="color: brown; " >Progress Work</span>
+             </div>
+                <!--minor change-->
+
+                <!-- <div class="search">
                     <input type="text" placeholder="Search...">
                     <button type="submit"><img src="../../ICONS/search.png" alt=""></button>
-                </div>
+                </div> -->
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->
                     <div class="img-case">
