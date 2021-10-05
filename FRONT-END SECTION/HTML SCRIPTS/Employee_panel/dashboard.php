@@ -75,10 +75,17 @@ if ($result && mysqli_num_rows($result) > 0) {
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="search">
-                    <!-- <input type="text" placeholder="Search...">
-                    <button type="submit"><img src="../../ICONS/search.png" alt="search"></button> -->
+                <!--minor change-->
+                <div class="upperbar-symbol">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard" style="color: brown; " >Dashboard</span>
                 </div>
+                <!--minor change-->
+
+                <!--<div class="search">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit"><img src="../../ICONS/search.png" alt="search"></button> 
+                </div>-->
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->
                     <!--<img src="notifications.png" alt="notifications">-->

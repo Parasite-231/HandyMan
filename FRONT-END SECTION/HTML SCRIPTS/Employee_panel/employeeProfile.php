@@ -111,6 +111,12 @@ if (isset($_POST['delete'])) {
     <div class="container">
         <div class="header">
             <div class="nav">
+                <!--minor change-->
+                <div class="upperbar-symbol">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard" style="color: brown; " >Profile</span>
+                </div>
+                <!--minor change-->
                 <div class="search">
                     <input type="text" placeholder="Search...">
                     <button type="submit"><img src="../../ICONS/search.png" alt=""></button>

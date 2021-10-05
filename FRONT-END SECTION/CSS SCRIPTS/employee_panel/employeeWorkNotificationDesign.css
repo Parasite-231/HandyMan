@@ -378,6 +378,21 @@
     display: flex;
     flex-direction: column;
   }
+
+  
+/*minor change*/
+.upperbar-symbol{
+  display: flex;
+  align-items: center;
+  font-size: 27px;
+  font-weight: 500;
+  margin-left: 0px;
+}
+.upperbar-symbol i{
+  font-size: 30px;
+  margin-right: 10px;
+  color: brown;
+}
   
   /*end of upper bar*/
   
