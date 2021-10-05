@@ -15,6 +15,7 @@ if (!isset($_SESSION['eID'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS SCRIPTS/employee_panel/employeeWorkinprogressdesign.css">
     <link rel="shortcut icon" type="image/x-icon" href="workers.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <title>Employee Work In-progress Details</title>
@@ -40,7 +41,11 @@ if (!isset($_SESSION['eID'])) {
             <!-- <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
                     History</a></li> -->
-            <!--<li><a href="#" ><img src="messageIncome.png" alt="notifications" > &nbsp; Incoming-Messages</a></li>-->
+            
+             <!--message html file-->
+             <li><a href="EmployeeMessageBoard.html" ><img src="../../ICONS/messageIncome.png" alt="notifications" > &nbsp; Message Board</a></li>
+            <!--message html file-->
+
             <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
             <li><a href="employeePrivacy&Policy.php"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
                     Privacy &
@@ -63,6 +68,14 @@ if (!isset($_SESSION['eID'])) {
                         <img src="../../ICONS/ongoingwork.png" alt="workinprogress">
                     </div>
                 </div>
+
+                   <!--minor change to show account name-->
+                <div class="profile-details">
+                    <img src="../../ICONS/workerprofile.png" alt="account">
+                    <span class="admin_name">Shamsu Mazumder</span>
+                </div>
+                 <!--end of minor change to show account name-->
+                 
             </div>
         </div>
         <!--headline-->

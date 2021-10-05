@@ -39,6 +39,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS SCRIPTS/employee_panel/dashboarddesign.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/workers.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Employee Dashboard</title>
 </head>
@@ -63,7 +64,11 @@ if ($result && mysqli_num_rows($result) > 0) {
             <!-- <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
                     History</a></li> -->
-            <!--<li><a href="#" ><img src="messageIncome.png" alt="notifications" > &nbsp; Incoming-Messages</a></li>-->
+
+             <!--message html file-->
+             <li><a href="EmployeeMessageBoard.html" ><img src="messageIncome.png" alt="notifications" > &nbsp; Message Board</a></li>
+             <!--message html file-->
+            
             <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
             <li><a href="employeePrivacy&Policy.php"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
                     Privacy &
@@ -75,10 +80,17 @@ if ($result && mysqli_num_rows($result) > 0) {
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="search">
-                    <input type="text" placeholder="Search...">
-                    <button type="submit"><img src="../../ICONS/search.png" alt="search"></button>
+                <!--minor change-->
+                <div class="upperbar-symbol">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard" style="color: brown; " >Dashboard</span>
                 </div>
+                <!--minor change-->
+
+                <!--<div class="search">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit"><img src="../../ICONS/search.png" alt="search"></button> 
+                </div>-->
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->
                     <!--<img src="notifications.png" alt="notifications">-->
@@ -86,6 +98,14 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <!--<img src="../../ICONS/worker (1).png" alt="user">-->
                     </div>
                 </div>
+
+                   <!--minor change to show account name-->
+                <div class="profile-details">
+                    <img src="../../ICONS/workerprofile.png" alt="account">
+                    <span class="admin_name">Shamsu Mazumder</span>
+                </div>
+                 <!--end of minor change to show account name-->
+                 
             </div>
         </div>
         <!--upper-bar, serachbar and headline containing boxes/cards-->
@@ -97,7 +117,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Work Completed</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/work.png" alt="work">
+                        <img src="../../ICONS/donework.png" alt="work">
                     </div>
                 </div>
                 <div class="card">
@@ -106,7 +126,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Payments Received</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/money.png" alt="work">
+                        <img src="../../ICONS/payme12.png" alt="work">
                     </div>
                 </div>
                 <div class="card">
@@ -125,7 +145,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Work In-progress</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/progresspng.png" alt="work">
+                        <img src="../../ICONS/workinpro.png" alt="work">
                     </div>
                 </div>
                 <div class="card">
@@ -134,7 +154,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Message Received</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/message.png" alt="work">
+                        <img src="../../ICONS/messagein.png" alt="work">
                     </div>
                 </div>
                 <div class="card">
@@ -143,7 +163,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Average Rating</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/rating.png" alt="work">
+                        <img src="../../ICONS/like2.png" alt="work">
                     </div>
                 </div>
                 <div class="card">
@@ -162,7 +182,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <h3>Due Work</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/notifications.png" alt="work">
+                        <img src="../../ICONS/duework.png" alt="work">
                     </div>
                 </div>
             </div>

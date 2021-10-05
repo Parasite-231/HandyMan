@@ -1,8 +1,10 @@
-* {
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
+    font-family: "Poppins", sans-serif;
   }
   
   body {
@@ -22,6 +24,13 @@
     color: brown;
     font-size: 29px;
   }
+
+  .message{
+
+    font-size: 27px;
+  }
+  
+  /*side-nav bar*/
   
   .side-menu {
     position: fixed;
@@ -92,8 +101,10 @@
     align-items: center;
     justify-content: space-around;
     padding: 15px 10px;
-    border-bottom: 2px solid #e67c7c;
+    border-bottom: 2px solid #f17777;
   }
+  
+  /*form section*/
   
   input[type="text"],
   select {
@@ -101,6 +112,18 @@
     padding: 12px 20px;
     margin: 8px 0;
     display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 17px;
+  }
+  
+  input[type="date"] {
+    width: 245px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    margin-top: 23px;
+    /* display: block; */
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -147,7 +170,7 @@
   
   input[type="submit"] {
     width: 100%;
-    background-color: #e67c7c;
+    background-color: wheat;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -160,103 +183,50 @@
   input[type="submit"]:hover {
     background-color: white;
     color: #e67c7c;
+    transition: 0.3s;
   }
-  /* 
-  old-one-->
+  
   div.working-criteria-form--of-employee {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
     margin-top: 90px;
-    width: 96%;
+    width: 90%;
+    height: 750px;
     font-size: 17.5px;
     font-weight: bold;
     margin-left: 23px;
     box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.2);
-  } */
-  
-  /* new-one--> */
-  
-  div.working-criteria-form--of-employee {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    margin: auto;
-    margin-top: 90px;
-    width: 30%;
-    font-size: 17.5px;
-    font-weight: bold;
-    box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.2);
   }
   
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 99%;
-    box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.2);
+  .profileform {
+    margin-top: 60px;
   }
   
-  td,
-  th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-    font-size: 17.5px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-    font-weight: lighter;
-  }
-  
-  tr:nth-child(odd) {
-    font-weight: lighter;
-  }
-  
-  /*done-button*/
-  .btn-0:nth-child(odd) {
-    margin: 9%;
-    width: 60px;
-    height: 30px;
-    font-size: 16.5px;
-    justify-content: center;
-    border: 1px solid white;
-    background-color: white;
-    cursor: pointer;
-    box-shadow: 0 3px 32px 0 rgba(0, 0, 0, 0.247);
-  }
-  
-  .btn-0:nth-child(even) {
-    margin: 9%;
-    width: 60px;
-    height: 30px;
-    font-size: 16.5px;
-    justify-content: center;
-    border: 1px solid white;
-    background-color: gray;
-    cursor: pointer;
-    box-shadow: 0 3px 32px 0 rgba(0, 0, 0, 0.247);
-  }
-  
-  .btn-0:hover:not(:disabled) {
-    transition: 0.2s;
-    background-color: #e67c7c;
-    color: white;
-  }
-  
-  /*done-button*/
-  
-  .records-Of-Working-Notifications {
-    margin-top: 35px;
-  }
-  
-  .records-Of-Working-Notifications {
+  .profileform {
     font-size: 19px;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 42px;
-    padding: 19px;
-    height: 250px;
+    font-weight: lighter;
+    border-radius: 7px;
+    width: 93.7%;
+    margin-top: 90px;
+    padding: 23px;
+    height: 1100px;
+    /* height: 960px; */
+    margin-left: 24px;
+    background-color: #f2f2f2;
+    box-shadow: 2px 3px 16px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 42px;
+    border-radius: 2px;
+  }
+  
+  .profileform .add {
+    display: inline-block;
+    /* float: right; */
+    margin: 0 0 0 10px;
+    width: 95px;
+    /* again, whatever width you want it */
   }
   
   .description {
@@ -264,16 +234,10 @@
     text-align: center;
   }
   
-  .headlineofrecords {
-    margin-top: 50px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /*upper bar*/
+  /*upper nav bar*/
   
   .container .header .nav {
-    width: 90.6%;
+    width: 90%;
     display: flex;
     align-items: center;
   }
@@ -378,13 +342,13 @@
     display: flex;
     flex-direction: column;
   }
-
+  
 
 /*minor change*/
 .upperbar-symbol{
   display: flex;
   align-items: center;
-  font-size: 27px;
+  font-size: 25px;
   font-weight: 500;
   margin-left: 0px;
 }
@@ -405,7 +369,7 @@
   height: 50px;
   min-width: 190px;
   padding: 0 15px 0 2px;
-  background-color: #f17777;;
+  background-color: #f17777;
   /* margin-left: 1060px; */
   cursor: pointer;
   
@@ -433,177 +397,30 @@
   font-size: 25px;
   /* color: #333; */
 }
-  
-  /*end of upper bar*/
-  
-  /** {
-    padding: 0;
-    margin: 0;
+
+
+.card {
+    margin-top: 70px;
+    width: 85%;
+    display: inline-block;
+    box-shadow: 0px 2px 14px black;
+    /* border-top-right-radius: 25px;
+    border-top-left-radius: 25px; */
+    margin-bottom: 90px;
+    /*border-radius: 5px; 
+    /* margin: 2%;*/
+    margin-left: 87px;
+    cursor: pointer;
+    padding: 33px;
+    height: 360px;
+    
+  }
+
+  .card:hover {
+    /*background-color: brown;*/
+    box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.582);
   }
   
-  body {
-    background-color: white;
-    box-sizing: border-box;
-    max-width: 100%;
-  }
   
-  .menu-bar {
-    background-color: orange;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-align: left;
-    height: 56px;
-  }
   
-  .menu-bar ul {
-    display: inline-flex;
-    list-style: none;
-    color: white;
-  }
-  
-  .menu-bar ul li {
-    padding: 15px;
-    margin: 15px;
-    width: 120px;
-    font-size: 13px;
-  }
-  
-  .menu-bar ul li:hover {
-    background-color: coral;
-    border-radius: 5px;
-  }
-  
-  .menu-bar .fa {
-    margin-right: 8px;
-    font-weight: bold;
-  }
-  
-  .constant,
-  .menu-bar ul li:hover {
-    background-color: white;
-    border-radius: 5px;
-    height: 4px;
-  }
-  
-  .menu-bar ul li a {
-    text-decoration: none;
-  }
-  
-  .submenu-about {
-    display: none;
-  }
-  
-  .menu-bar ul li:hover .submenu-about {
-    display: block;
-    position: absolute;
-    background-color: purple;
-    margin-top: 15px;
-    margin-left: -15px;
-    color: white;
-  }
-  
-  img {
-    margin-top: 12px;
-  }
-  
-  input[type=text],
-  select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  }
-  
-  input[type=email],
-  select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  }
-  
-  input[type=number],
-  select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  }
-  
-  input[type=text],
-  select,
-  textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-  }
-  
-  input[type=submit] {
-  width: 100%;
-  background-color: orange;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  }
-  
-  input[type=submit]:hover {
-  background-color: orange;
-  }
-  
-  div.working-criteria-form--of-employee {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  margin-top: 25px;
-  }
-  
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td,
-  th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-  
-  .records-Of-Working-Notifications {
-    margin-top: 25px;
-  
-  }
-  
-  .working-criteria-form--of-employee{
-  
-   font-size: 19px;
-   font-weight: bold;
-   border-radius: 5px;
-   margin-top: 4px;
-   padding: 15px;
-   height: 250px;
-  }
-  
-  old code*/
-  
+

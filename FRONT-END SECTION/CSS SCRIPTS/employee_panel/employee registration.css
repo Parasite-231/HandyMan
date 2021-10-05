@@ -13,7 +13,7 @@
 }
 
 body {
-    background-color: #fdb736;
+    background-color: #f17777;
 }
 
 form {
@@ -184,7 +184,7 @@ select {
     font-size: 18px;
     /* border-radius: 10px; */
     margin-right: 23px;
-    background-color: #FFA500;
+    background-color: #e76363;
     color: white;
     transition: 0.5s;
     cursor: pointer;
@@ -206,7 +206,7 @@ hr {
 }
 
 a {
-    color: #FFA500;
+    color: #d43a3a;
 }
 
 .alert-danger {

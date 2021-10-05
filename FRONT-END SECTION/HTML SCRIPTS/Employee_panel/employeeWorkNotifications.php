@@ -50,6 +50,7 @@ if (isset($_POST['search'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS SCRIPTS/employee_panel/employeeWorkNotificationDesign.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/workers.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <title>Employee Working Notifications</title>
@@ -75,7 +76,13 @@ if (isset($_POST['search'])) {
             <!-- <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
                     History</a></li> -->
-            <!--<li><a href="#" ><img src="messageIncome.png" alt="notifications" > &nbsp; Incoming-Messages</a></li>-->
+           
+
+             <!--message html file-->
+             <li><a href="EmployeeMessageBoard.html" ><img src="../../ICONS/messageIncome.png" alt="notifications" > &nbsp; Message Board</a></li>
+            <!--message html file-->
+
+
             <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
             <li><a href="employeePrivacy&Policy.php"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
                     Privacy &
@@ -88,6 +95,12 @@ if (isset($_POST['search'])) {
     <div class="container">
         <div class="header">
             <div class="nav">
+                <!--minor change-->
+                <div class="upperbar-symbol">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard" style="color: brown; " >Working Notification</span>
+                </div>
+                <!--minor change-->
                 <!-- <div class="search">
                     <input type="text" placeholder="Search...">
                     <button type="submit"><img src="../../ICONS/search.png" alt=""></button>
@@ -98,6 +111,14 @@ if (isset($_POST['search'])) {
                         <!--<img src="../../ICONS/worknotifications.png" alt="worknotifications">-->
                     </div>
                 </div>
+
+                   <!--minor change to show account name-->
+                <div class="profile-details">
+                    <img src="../../ICONS/workerprofile.png" alt="account">
+                    <span class="admin_name">Shamsu Mazumder</span>
+                </div>
+                 <!--end of minor change to show account name-->
+                 
             </div>
         </div>
         <div class="description">
