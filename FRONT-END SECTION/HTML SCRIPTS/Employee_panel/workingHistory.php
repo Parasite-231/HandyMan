@@ -56,8 +56,8 @@ if (!isset($_SESSION['eID'])) {
         <div class="header">
             <div class="nav">
                 <div class="search">
-                    <input type="text" placeholder="Search...">
-                    <button type="submit"><img src="../../ICONS/search.png" alt=""></button>
+                   <!--  <input type="text" placeholder="Search...">
+                    <button type="submit"><img src="../../ICONS/search.png" alt=""></button> -->
                 </div>
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->

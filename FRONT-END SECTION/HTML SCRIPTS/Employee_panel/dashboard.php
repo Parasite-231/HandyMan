@@ -76,8 +76,8 @@ if ($result && mysqli_num_rows($result) > 0) {
         <div class="header">
             <div class="nav">
                 <div class="search">
-                    <input type="text" placeholder="Search...">
-                    <button type="submit"><img src="../../ICONS/search.png" alt="search"></button>
+                    <!-- <input type="text" placeholder="Search...">
+                    <button type="submit"><img src="../../ICONS/search.png" alt="search"></button> -->
                 </div>
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->
