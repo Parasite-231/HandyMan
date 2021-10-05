@@ -101,7 +101,7 @@ if (isset($_POST['delete'])) {
                     History</a></li> -->
 
              <!--message html file-->
-             <li><a href="EmployeeMessageBoard.html" ><img src="messageIncome.png" alt="notifications" > &nbsp; Message Board</a></li>
+             <li><a href="EmployeeMessageBoard.html" ><img src="../../ICONS/messageIncome.png" alt="notifications" > &nbsp; Message Board</a></li>
             <!--message html file-->
             
             <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->

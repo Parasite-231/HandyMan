@@ -43,7 +43,7 @@ if (!isset($_SESSION['eID'])) {
                     History</a></li> -->
 
              <!--message html file-->
-             <li><a href="EmployeeMessageBoard.html" ><img src="messageIncome.png" alt="notifications" > &nbsp; Message Board</a></li>
+             <li><a href="EmployeeMessageBoard.html" ><img src="../../ICONS/messageIncome.png" alt="notifications" > &nbsp; Message Board</a></li>
             <!--message html file-->
             
            
