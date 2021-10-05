@@ -69,6 +69,7 @@ if (!isset($_SESSION['eID'])) {
             <h2>FAQ</h2>
             <div class="informations">
                 <!--paragraph on "how we help our employees"-->
+               <!--changed parts-->
                 <div class="info">
                     <h3>Q. How does this site work?</h3>
                     <p>
@@ -84,7 +85,7 @@ if (!isset($_SESSION['eID'])) {
                     <h3>Q. How can I contact you?</h3>
                     <p>You can always contact us through our contact numbers provided in our contact us page and can
                         also mail us at <a href="mdmuktadirmazumder@gmail.com">reachus@handyman.com</a></a><br>
-                        Visit : <a href="contactUs.html" style="color: orange;">www.contacthandyman.com</a><br>
+                        Visit : <a href="contactUs.html" style="color: #f17777;">www.contacthandyman.com</a><br>
                         Contact: +8801306989579 </p>
 
 
@@ -96,13 +97,13 @@ if (!isset($_SESSION['eID'])) {
                     <p> You can get notifications about work from your customers by visiting the working notifications
                         page in your dashboard.<br>
                         Visit : <a href="employeeWorkNotifications.html"
-                            style="color: orange;">www.employeenotifications.com</a><br>
+                            style="color: #f17777;">www.employeenotifications.com</a><br>
                     </p>
 
                     <h3>Q. How can I get informations about my past works?</h3>
                     <p>You can only get necessary informations from your past works by visiting the working history site
                         from your dashboard<br>
-                        Visit:<a href="workingHistory.html" style="color: orange;">www.workinghistory.com</a> to know
+                        Visit:<a href="workingHistory.html" style="color:#f17777;">www.workinghistory.com</a> to know
                         your working history</p>
 
                     <h3>Q. How will you notify me about my bad actions?</h3>

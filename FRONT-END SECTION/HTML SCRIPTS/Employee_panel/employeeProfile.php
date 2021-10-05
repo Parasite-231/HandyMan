@@ -118,7 +118,7 @@ if (isset($_POST['delete'])) {
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->
                     <div class="img-case">
-                        <img src="../../ICONS/workerp.png" alt="worker">
+                        <!-- <img src="../../ICONS/workerp.png" alt="worker"> -->
                     </div>
                 </div>
             </div>
