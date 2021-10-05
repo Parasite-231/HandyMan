@@ -188,54 +188,56 @@ if (isset($_POST['search'])) {
                         <td><button class="btn-0" style="text-align: center;">Done</button></td>
                     </tr> -->
 
-                <?php
+                <table>
+                    <tr>
+                        <th>Customer name</th>
+                        <th>Contact</th>
+                        <th>Area</th>
+                        <th>Address</th>
+                        <th>Date</th>
+                        <th>Shift</th>
+                        <th>Total Payment</th>
+                        <th>Working State</th>
+                        <th>End Work</th>
+                    </tr>
 
-                if ($result && mysqli_num_rows($result) > 0) {
-                    while ($list = mysqli_fetch_assoc($result)) {
+                    <?php
 
-                        if (isset($_POST['done'])) {
-                            $o_id = $_POST['o_id'];
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($list = mysqli_fetch_assoc($result)) {
+
+                            if (isset($_POST['done'])) {
+                                $o_id = $_POST['o_id'];
+                                $status = $list['status'];
+
+                                if ($status != 'Completed') {
+                                    $sql = "UPDATE orderlist SET status = 'Pending-C-Approval' WHERE id = $o_id";
+                                    mysqli_query($connect, $sql);
+                                }
+                            }
+
+                            $o_id = $list['id'];
+                            $u_name = $list['u_name'];
+                            $u_number = $list['u_number'];
+                            $u_area = $list['u_thana'];
+                            $u_address = $list['u_address'];
+                            $date = $list['date'];
+                            $payment = $list['payment'];
+                            $shift = $list['shift'];
                             $status = $list['status'];
 
-                            if ($status != 'Completed') {
-                                $sql = "UPDATE orderlist SET status = 'Pending-C-Approval' WHERE id = $o_id";
-                                mysqli_query($connect, $sql);
+                            $css = '';
+                            $css2 = '';
+                            $css3 = 'display:none;';
+                            if ($status == 'Not started') {
+                                $css = 'disabled';
+                            } elseif ($status == 'Pending-C-Approval') {
+                                $css2 = 'display:none;';
+                                $css3 = '';
                             }
-                        }
 
-                        $o_id = $list['id'];
-                        $u_name = $list['u_name'];
-                        $u_number = $list['u_number'];
-                        $u_area = $list['u_thana'];
-                        $u_address = $list['u_address'];
-                        $date = $list['date'];
-                        $payment = $list['payment'];
-                        $shift = $list['shift'];
-                        $status = $list['status'];
+                            echo "
 
-                        $css = '';
-                        $css2 = '';
-                        $css3 = 'display:none;';
-                        if ($status == 'Not started') {
-                            $css = 'disabled';
-                        } elseif ($status == 'Pending-C-Approval') {
-                            $css2 = 'display:none;';
-                            $css3 = '';
-                        }
-
-                        echo "
-                            <table>
-                                <tr>
-                                    <th>Customer name</th>
-                                    <th>Contact</th>
-                                    <th>Area</th>
-                                    <th>Address</th>
-                                    <th>Date</th>
-                                    <th>Shift</th>
-                                    <th>Total Payment</th>
-                                    <th>Working State</th>
-                                    <th>End Work</th>
-                                </tr>
 
                                 <tr>
                                     <td>$u_name</td>
@@ -254,15 +256,15 @@ if (isset($_POST['search'])) {
                                     </form>
                                 </tr>
                             
-                            </table>
+                            
                             ";
+                        }
+                    } else {
+                        echo "<center style='color: red'>No Notifications to show</center>";
                     }
-                } else {
-                    echo "<center style='color: red'>No Notifications to show</center>";
-                }
 
-                ?>
-
+                    ?>
+                </table>
 
             </div>
 </body>

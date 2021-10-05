@@ -33,9 +33,18 @@ if (filter_has_var(INPUT_POST, 'submit')) {
             if ($result && mysqli_num_rows($result) > 0) {
                 $user_data = mysqli_fetch_assoc($result);
                 if (password_verify($password, $user_data['password'])) {
-                    $_SESSION['eID'] = $user_data['id'];
-                    header("location:./dashboard.php");
-                    die;
+                    $_SESSION['ebID'] = $user_data['id'];
+
+                    $status = $user_data['ban_status'];
+                    $id = $user_data['id'];
+
+                    if ($status == 0) {
+                        $_SESSION['eID'] = $user_data['id'];
+                        header("location:./dashboard.php");
+                        die;
+                    } else {
+                        header("location:./ban.php?id=" . $id . "");
+                    }
                 } else {
                     $msg = 'Invalid information or Wrong Password !';
                     $errClass = 'alert-danger';

@@ -33,6 +33,26 @@ if (isset($_POST['final'])) {
         $sql = "UPDATE employee SET rating = $rating WHERE id = $e_id";
         mysqli_query($connect, $sql);
 
+        $sql = "SELECT completed_services,rating FROM employee WHERE id = $e_id";
+        $res = mysqli_query($connect, $sql);
+
+        if ($res && mysqli_num_rows($res) > 0) {
+
+            $data = mysqli_fetch_assoc($res);
+
+            $completed = $data['completed_services'];
+            $rating = $data['rating'];
+
+            if ($rating < 2.5 && $completed > 3) {
+
+                echo "ban man";
+                $ban_removal_date = ban(7);
+                $query = "UPDATE employee SET ban_status = '1', ban_removal_date = '$ban_removal_date' WHERE id = $e_id";
+                mysqli_query($connect, $query);
+            }
+        }
+
+
         $query = "SELECT * FROM services";
         $result = mysqli_query($connect, $query);
         if ($result && mysqli_num_rows($result) > 0) {
@@ -55,7 +75,7 @@ if (isset($_POST['final'])) {
         }
     }
 
-    header("location:./userOrderHistoryPage.php");
+    //header("location:./userOrderHistoryPage.php");
 }
 
 
