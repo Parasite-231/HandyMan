@@ -63,6 +63,14 @@ if (!isset($_SESSION['eID'])) {
                         <img src="../../ICONS/ongoingwork.png" alt="workinprogress">
                     </div>
                 </div>
+
+                   <!--minor change to show account name-->
+                <div class="profile-details">
+                    <img src="workerprofile.png" alt="account">
+                    <span class="admin_name">Shamsu Mazumder</span>
+                </div>
+                 <!--end of minor change to show account name-->
+                 
             </div>
         </div>
         <!--headline-->

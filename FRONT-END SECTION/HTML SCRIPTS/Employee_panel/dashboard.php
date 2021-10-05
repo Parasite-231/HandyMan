@@ -93,6 +93,14 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <!--<img src="../../ICONS/worker (1).png" alt="user">-->
                     </div>
                 </div>
+
+                   <!--minor change to show account name-->
+                <div class="profile-details">
+                    <img src="workerprofile.png" alt="account">
+                    <span class="admin_name">Shamsu Mazumder</span>
+                </div>
+                 <!--end of minor change to show account name-->
+                 
             </div>
         </div>
         <!--upper-bar, serachbar and headline containing boxes/cards-->
