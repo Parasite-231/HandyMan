@@ -124,7 +124,7 @@ if (!isset($_SESSION['aID'])) {
                                                     style='height:60px'>$description</textarea>
                                             </form>
                                         </div>
-
+                                        </div>
                                         ";
                                     }
                                 }

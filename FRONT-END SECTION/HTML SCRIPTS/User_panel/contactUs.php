@@ -207,7 +207,8 @@ if (isset($_POST['submit'])) {
                             <!-- <label for="address">Your Address</label><span class="required">*</span>
                             <textarea id="address" name="address" style="height:60px"></textarea> -->
 
-                            <button class="btn_sub" type="submit" name="submit" <?php echo $css ?>>Submit</button>
+                            <button class="btn_sub" style="resize:none;" type="submit" name="submit"
+                                <?php echo $css ?>>Submit</button>
                         </form>
                     </div>
                     <div class=" button">

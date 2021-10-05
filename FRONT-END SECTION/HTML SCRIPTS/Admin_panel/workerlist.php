@@ -76,10 +76,14 @@ if (!isset($_SESSION['aID'])) {
                 <i class='bx bx-menu sidebarBtn'></i>
                 <span class="dashboard">Worker List</span>
             </div>
-            <div class="search-box">
-                <input type="text" placeholder="Search...">
-                <i class='bx bx-search'></i>
-            </div>
+
+            <form method="POST">
+                <div class="search-box">
+                    <input type="text" name="input" placeholder="Search..." required>
+                    <button name="search"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+
             <div class="profile-details">
                 <span class="admin_name">Muktadir Mazumder</span>
             </div>
@@ -113,9 +117,18 @@ if (!isset($_SESSION['aID'])) {
 
                                 <?php
 
-                                $query = "SELECT id, name, type, company, email, number, address, rating,price,completed_services,
+                                if (isset($_POST['search'])) {
+                                    $e_id = $_POST['input'];
+                                    $query = "SELECT id, name, type, company, email, number, address, rating,price,completed_services,
+                                            total_payment FROM employee WHERE id = $e_id";
+                                    $result = mysqli_query($connect, $query);
+                                } else {
+
+                                    $query = "SELECT id, name, type, company, email, number, address, rating,price,completed_services,
                                             total_payment FROM employee";
-                                $result = mysqli_query($connect, $query);
+                                    $result = mysqli_query($connect, $query);
+                                }
+
 
                                 if ($result && mysqli_num_rows($result) > 0) {
                                     while ($data = mysqli_fetch_assoc($result)) {

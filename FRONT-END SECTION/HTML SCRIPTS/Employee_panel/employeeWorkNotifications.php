@@ -88,10 +88,10 @@ if (isset($_POST['search'])) {
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="search">
+                <!-- <div class="search">
                     <input type="text" placeholder="Search...">
                     <button type="submit"><img src="../../ICONS/search.png" alt=""></button>
-                </div>
+                </div> -->
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->
                     <div class="img-case">
@@ -160,22 +160,10 @@ if (isset($_POST['search'])) {
             </div>
             <!--record-table-->
             <div class="records-Of-Working-Notifications">
-                <table>
-                    <tr>
-                        <th>Customer name</th>
-                        <th>Contact</th>
-                        <th>Area</th>
-                        <th>Address</th>
-                        <th>Date</th>
-                        <th>Shift</th>
-                        <th>Total Payment</th>
-                        <th>Working State</th>
-                        <!--"done" button headline-->
-                        <th>End Work</th>
-                    </tr>
 
 
-                    <!-- <tr>
+
+                <!-- <tr>
                         <td>Ahsan Habib</td>
                         <td>0189634766</td>
                         <td> Dhaka</td>
@@ -200,68 +188,82 @@ if (isset($_POST['search'])) {
                         <td><button class="btn-0" style="text-align: center;">Done</button></td>
                     </tr> -->
 
-                    <?php
+                <?php
 
-                    if ($result && mysqli_num_rows($result) > 0) {
-                        while ($list = mysqli_fetch_assoc($result)) {
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($list = mysqli_fetch_assoc($result)) {
 
-                            if (isset($_POST['done'])) {
-                                $o_id = $_POST['o_id'];
-                                $status = $list['status'];
-
-                                if ($status != 'Completed') {
-                                    $sql = "UPDATE orderlist SET status = 'Pending-C-Approval' WHERE id = $o_id";
-                                    mysqli_query($connect, $sql);
-                                }
-                            }
-
-                            $o_id = $list['id'];
-                            $u_name = $list['u_name'];
-                            $u_number = $list['u_number'];
-                            $u_area = $list['u_thana'];
-                            $u_address = $list['u_address'];
-                            $date = $list['date'];
-                            $payment = $list['payment'];
-                            $shift = $list['shift'];
+                        if (isset($_POST['done'])) {
+                            $o_id = $_POST['o_id'];
                             $status = $list['status'];
 
-                            $css = '';
-                            $css2 = '';
-                            $css3 = 'display:none;';
-                            if ($status == 'Not started') {
-                                $css = 'disabled';
-                            } elseif ($status == 'Pending-C-Approval') {
-                                $css2 = 'display:none;';
-                                $css3 = '';
+                            if ($status != 'Completed') {
+                                $sql = "UPDATE orderlist SET status = 'Pending-C-Approval' WHERE id = $o_id";
+                                mysqli_query($connect, $sql);
                             }
-
-                            echo "
-                            <tr>
-                                <td>$u_name</td>
-                                <td>$u_number</td>
-                                <td>$u_area</td>
-                                <td>$u_address</td>
-                                <td>$date</td>
-                                <td>$shift</td>
-                                <td>$payment</td>
-                                <td>$status</td>
-                                <form method='POST'>
-                                    <input type='hidden' name='o_id' value='" . $o_id . "'>
-                                    <td><button name='done' class='btn-0' style='margin-left:30%;text-align: center; $css2' $css>Done</button>
-                                    <span style='color:green;margin-left:40%;$css3'>&#10003;</span>
-                                    </td>
-                                </form>
-                            </tr>
-                            ";
                         }
-                    } else {
-                        echo "No Notifications to show";
+
+                        $o_id = $list['id'];
+                        $u_name = $list['u_name'];
+                        $u_number = $list['u_number'];
+                        $u_area = $list['u_thana'];
+                        $u_address = $list['u_address'];
+                        $date = $list['date'];
+                        $payment = $list['payment'];
+                        $shift = $list['shift'];
+                        $status = $list['status'];
+
+                        $css = '';
+                        $css2 = '';
+                        $css3 = 'display:none;';
+                        if ($status == 'Not started') {
+                            $css = 'disabled';
+                        } elseif ($status == 'Pending-C-Approval') {
+                            $css2 = 'display:none;';
+                            $css3 = '';
+                        }
+
+                        echo "
+                            <table>
+                                <tr>
+                                    <th>Customer name</th>
+                                    <th>Contact</th>
+                                    <th>Area</th>
+                                    <th>Address</th>
+                                    <th>Date</th>
+                                    <th>Shift</th>
+                                    <th>Total Payment</th>
+                                    <th>Working State</th>
+                                    <th>End Work</th>
+                                </tr>
+
+                                <tr>
+                                    <td>$u_name</td>
+                                    <td>$u_number</td>
+                                    <td>$u_area</td>
+                                    <td>$u_address</td>
+                                    <td>$date</td>
+                                    <td>$shift</td>
+                                    <td>$payment</td>
+                                    <td>$status</td>
+                                    <form method='POST'>
+                                        <input type='hidden' name='o_id' value='" . $o_id . "'>
+                                        <td><button name='done' class='btn-0' style='margin-left:30%;text-align: center; $css2' $css>Done</button>
+                                        <span style='color:green;margin-left:40%;$css3'>&#10003;</span>
+                                        </td>
+                                    </form>
+                                </tr>
+                            
+                            </table>
+                            ";
                     }
+                } else {
+                    echo "<center style='color: red'>No Notifications to show</center>";
+                }
 
-                    ?>
+                ?>
 
 
-                </table>
             </div>
 </body>
 

@@ -186,7 +186,7 @@ if (!isset($_SESSION['uID'])) {
                 } else {
                     echo "
                     <div class='row'>
-                        <p> <b style='font-size: 30px;'>No worker found at this moment</b> </p>
+                        <center> <b style='font-size: 30px; color: red'>No worker found at this moment</b> </center>
                     </div>
                     ";
                 }
