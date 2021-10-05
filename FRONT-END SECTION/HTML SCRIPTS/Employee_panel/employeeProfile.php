@@ -99,7 +99,11 @@ if (isset($_POST['delete'])) {
             <!-- <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
                     History</a></li> -->
-            <!--<li><a href="#" ><img src="messageIncome.png" alt="notifications" > &nbsp; Incoming-Messages</a></li>-->
+
+             <!--message html file-->
+             <li><a href="EmployeeMessageBoard.html" ><img src="messageIncome.png" alt="notifications" > &nbsp; Message Board</a></li>
+            <!--message html file-->
+            
             <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
             <li><a href="employeePrivacy&Policy.php"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
                     Privacy &
