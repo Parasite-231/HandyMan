@@ -122,10 +122,10 @@ if (isset($_POST['delete'])) {
                     <span class="dashboard" style="color: brown; " >Profile</span>
                 </div>
                 <!--minor change-->
-                <div class="search">
-                    <input type="text" placeholder="Search...">
-                    <button type="submit"><img src="../../ICONS/search.png" alt=""></button>
-                </div>
+                <!-- <div class="search">
+                     <input type="text" placeholder="Search...">
+                    <button type="submit"><img src="../../ICONS/search.png" alt=""></button> 
+                </div> -->
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->
                     <div class="img-case">
