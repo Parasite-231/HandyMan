@@ -41,11 +41,12 @@ if (!isset($_SESSION['eID'])) {
             <!-- <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
                     History</a></li> -->
-            
-             <!--message html file-->
-             <li><a href="EmployeeMessageBoard.html" ><img src="../../ICONS/messageIncome.png" alt="notifications" > &nbsp; Message Board</a></li>
+
             <!--message html file-->
-           
+            <li><a href="EmployeeMessageBoard.php"><img src="../../ICONS/messageIncome.png" alt="notifications"> &nbsp;
+                    Message Board</a></li>
+            <!--message html file-->
+
             <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
             <li><a href="employeePrivacy&Policy.php"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
                     Privacy &
@@ -61,7 +62,7 @@ if (!isset($_SESSION['eID'])) {
                 <!--minor change-->
                 <div class="upperbar-symbol">
                     <i class='bx bx-menu sidebarBtn'></i>
-                    <span class="dashboard" style="color: brown; " >Privacy & Policy</span>
+                    <span class="dashboard" style="color: brown; ">Privacy & Policy</span>
                 </div>
                 <!--minor change-->
                 <!--<div class="search">
@@ -75,13 +76,13 @@ if (!isset($_SESSION['eID'])) {
                     </div>
                 </div>
 
-                   <!--minor change to show account name-->
+                <!--minor change to show account name-->
                 <div class="profile-details">
                     <img src="../../ICONS/workerprofile.png" alt="account">
                     <span class="admin_name">Shamsu Mazumder</span>
                 </div>
-                 <!--end of minor change to show account name-->
-                 
+                <!--end of minor change to show account name-->
+
             </div>
         </div>
         <!--profile-icon-->

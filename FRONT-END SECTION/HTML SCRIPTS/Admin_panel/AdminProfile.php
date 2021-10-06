@@ -61,20 +61,20 @@ $a_id = $_SESSION['aID'];
             </li>
             <li>
                 <a href="ComplaintList.php">
-                     <i class='bx bxs-file-import'></i>
+                    <i class='bx bxs-file-import'></i>
                     <span class="links_name">Complaint List</span>
                 </a>
             </li>
 
-              <!--send message link-->
-              <li>
-                    <a href="AdminMessageBox.html" target="_blank">
+            <!--send message link-->
+            <li>
+                <a href="AdminMessageBox.php">
                     <i class='bx bxs-message-alt-edit'></i>
                     <span class="links_name">Message Box</span>
-                    </a>
-                </li>
-             <!--send message link-->
-             
+                </a>
+            </li>
+            <!--send message link-->
+
             <li class="log_out">
                 <a href="../../Inc/admin_logout.php">
                     <i class='bx bx-log-out'></i>

@@ -92,14 +92,14 @@ if ($result && mysqli_num_rows($result) > 0) {
                 </a>
             </li>
 
-              <!--send message link-->
-              <li>
-                    <a href="AdminMessageBox.html" target="_blank">
+            <!--send message link-->
+            <li>
+                <a href="AdminMessageBox.php">
                     <i class='bx bxs-message-alt-edit'></i>
                     <span class="links_name">Message Box</span>
-                    </a>
-                </li>
-              <!--send message link-->
+                </a>
+            </li>
+            <!--send message link-->
 
             <li class="log_out">
                 <a href="../../Inc/admin_logout.php">
