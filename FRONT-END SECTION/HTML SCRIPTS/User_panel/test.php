@@ -46,8 +46,18 @@ require('../../Inc/function.php');
 //         ";
 //     }
 // }
-$ndt = (string)ban(7);
-echo $ndt;
 
-$date = date('M j, Y H:i:s', strtotime($ndt));
-echo $date;
+$date = ban(7);
+$date = date('M j, Y H:i:s', strtotime($date));
+$c_date = date('M j, Y H:i:s');
+
+
+echo 'today: ' . $c_date . ' banday:' . $date;
+
+if ($c_date > $date) {
+    echo 'ok';
+} else {
+    echo 'not ok';
+}
+
+echo ban(7);
