@@ -63,15 +63,24 @@ session_start();
             minutes + " minutes " + seconds + " seconds ";
 
         // If the count down is over, write some text 
-        if (distance < 0) {
-            <?php
 
-                $query = "UPDATE employee SET ban_status = 0, ban_removal_date = NULL WHERE id = $id";
+        <?php
+
+            $c_date = date('M j, Y H:i:s');
+
+            if ($c_date == $date || $c_date > $date) {
+                $query = "UPDATE employee SET ban_status = '0', ban_removal_date = NULL WHERE id = $id";
                 mysqli_query($connect, $query);
+                //header("location:./employee login.php");
+            }
 
-                header("location:./employee login.php");
 
-                ?>
+
+            ?>
+
+
+        if (distance < 0) {
+            // add button to redirect to login;
         }
     }, 1000);
     </script>

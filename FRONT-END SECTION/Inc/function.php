@@ -75,7 +75,7 @@ function newDate($day)
 function ban($day)
 {
     $date = date("Y-m-d H:i:s", time() + 4 * 3600);
-    echo date('Y-m-d H:i:s', strtotime($date . ' + ' . $day . 'days'));
+    return date('Y-m-d H:i:s', strtotime($date . ' + ' . $day . 'days'));
 }
 
 

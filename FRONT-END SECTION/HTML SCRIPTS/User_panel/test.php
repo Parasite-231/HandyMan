@@ -46,4 +46,8 @@ require('../../Inc/function.php');
 //         ";
 //     }
 // }
-echo ban(7);
+$ndt = (string)ban(7);
+echo $ndt;
+
+$date = date('M j, Y H:i:s', strtotime($ndt));
+echo $date;

@@ -43,7 +43,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                         header("location:./dashboard.php");
                         die;
                     } elseif ($status == 1) {
-                        header("location:./ban.php?id=" . $id . "");
+                        header("location:ban.php");
                     }
                 } else {
                     $msg = 'Invalid information or Wrong Password !';

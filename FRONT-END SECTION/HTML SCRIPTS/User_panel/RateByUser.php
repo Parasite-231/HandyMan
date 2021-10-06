@@ -45,8 +45,8 @@ if (isset($_POST['final'])) {
 
             if ($rating < 2.5 && $completed > 3) {
 
-
-                $query = "UPDATE employee SET ban_status = '1', ban_removal_date = '2021-10-12 21:53:58' WHERE id = $e_id";
+                $date = ban(7);
+                $query = "UPDATE employee SET ban_status = '1', ban_removal_date = '$date' WHERE id = $e_id";
                 mysqli_query($connect, $query);
             }
         }
@@ -74,7 +74,7 @@ if (isset($_POST['final'])) {
         }
     }
 
-    //header("location:./userOrderHistoryPage.php");
+    header("location:./userOrderHistoryPage.php");
 }
 
 
