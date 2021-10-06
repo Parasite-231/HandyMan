@@ -22,7 +22,10 @@ session_start();
 
 <body>
 
-    <p id="demo"></p>
+    <p id="timer"></p>
+
+
+
     <?php
 
 
@@ -59,7 +62,7 @@ session_start();
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         // Output the result in an element with id="demo"
-        document.getElementById("demo").innerHTML = days + " days " + hours + " hours " +
+        document.getElementById("timer").innerHTML = days + " days " + hours + " hours " +
             minutes + " minutes " + seconds + " seconds ";
 
         // If the count down is over, write some text 
@@ -68,7 +71,7 @@ session_start();
 
             $c_date = date('M j, Y H:i:s');
 
-            if ($c_date == $date || $c_date > $date) {
+            if ($c_date == $date || $c_date < $date) {
                 $query = "UPDATE employee SET ban_status = '0', ban_removal_date = NULL WHERE id = $id";
                 mysqli_query($connect, $query);
                 //header("location:./employee login.php");
