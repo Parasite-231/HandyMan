@@ -74,6 +74,14 @@ $a_id = $_SESSION['aID'];
                 </a>
             </li>
             <!--send message link-->
+            <!--Message history link-->
+            <li>
+                <a href="AdminMessageHistory.php" class="active">
+                    <i class='bx bx-history'></i>
+                    <span class="links_name">Message History</span>
+                </a>
+            </li>
+            <!--Message History link-->
 
             <li class="log_out">
                 <a href="../../Inc/admin_logout.php">
