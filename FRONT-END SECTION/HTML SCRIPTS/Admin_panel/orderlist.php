@@ -62,7 +62,7 @@ if (!isset($_SESSION['aID'])) {
             </li>
             <li>
                 <a href="ComplaintList.php">
-                    <i class='bx bx-coin-stack'></i>
+                    <i class='bx bxs-file-import'></i>
                     <span class="links_name">Complaint List</span>
                 </a>
             </li>
