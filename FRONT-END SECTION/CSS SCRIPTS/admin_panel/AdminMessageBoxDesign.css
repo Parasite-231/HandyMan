@@ -333,8 +333,9 @@ th {
     resize: none;
     font-size: 17px;
   }
-  
-  input[type=send] {
+
+
+  input[type=button] {
     width: 10%;
     background-color: #2697FF;
     color: white;
@@ -349,10 +350,11 @@ th {
     transition: 0.3s;
   }
   
-  input[type=send]:hover {
+  input[type=button]:hover {
     background-color: white;
     color: #2697FF;
-  }
+  } 
+
   /* 
   old-one-->
   div.working-criteria-form--of-employee {

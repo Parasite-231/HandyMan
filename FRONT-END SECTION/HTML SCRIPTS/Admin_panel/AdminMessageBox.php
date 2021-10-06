@@ -122,9 +122,7 @@ if (!isset($_SESSION['aID'])) {
                                             <textarea id="address" name="address" style="height:60px"></textarea>
                                             <!--message part-->
 
-                                            <div class="send-me">
-                                                <input type="Send" value="Send">
-                                            </div>
+                                            <input type="button" value="Send">
                                         </form>
                                     </div>
                                 </div>
@@ -148,9 +146,7 @@ if (!isset($_SESSION['aID'])) {
                                             <textarea id="address" name="address" style="height:60px"></textarea>
                                             <!--message part-->
 
-                                            <div class="send-me">
-                                                <input type="Send" value="Send">
-                                            </div>
+                                            <input type="button" value="Send">
                                         </form>
                                     </div>
                                 </div>
