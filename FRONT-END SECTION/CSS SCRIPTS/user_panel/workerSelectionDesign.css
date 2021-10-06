@@ -326,7 +326,7 @@ button:hover {
     box-shadow: 1px 2px 3px black;
     border-radius: 9.5px;
     text-align: justify;
-    background-color: antiquewhite;
+    background-color: #f2f2f2;
 }
 
 /*for making all elements on the same line*/
