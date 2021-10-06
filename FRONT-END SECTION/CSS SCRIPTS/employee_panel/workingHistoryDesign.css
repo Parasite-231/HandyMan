@@ -322,7 +322,8 @@ border-radius: 5px;
 background-color: #f2f2f2;
 padding: 20px;
 margin-top: 130px;
-box-shadow: 0 6px 32px 0 rgba(0,0,0,0.2);
+/* box-shadow: 0 6px 32px 0 rgba(0,0,0,0.2); */
+box-shadow: 0 4px 8px #f57171, 0 6px 17px 0px #f36e6e;
 width: 97%;
 height: 229.5px;
 font-weight: bold;
@@ -352,7 +353,8 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 97%;
-  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.2);
+  /* box-shadow: 0 6px 32px 0 rgba(0,0,0,0.2); */
+  box-shadow: 0 4px 8px #f57171, 0 6px 17px 0px #f36e6e;
 }
 
 td,
@@ -468,7 +470,8 @@ tr:nth-child(even) {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0 4px 8px black, 0 6px 17px 0px black;
+  /* box-shadow: 0 4px 8px black, 0 6px 17px 0px black; */
+  box-shadow: 0 4px 8px #f57171, 0 6px 17px 0px #f36e6e;
 }
 
 h3 {

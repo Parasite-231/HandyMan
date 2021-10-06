@@ -229,7 +229,8 @@ tr:nth-child(odd) {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0 4px 8px black, 0 6px 17px 0px black;
+  /* box-shadow: 0 4px 8px black, 0 6px 17px 0px black; */
+  box-shadow: 0 4px 8px #f57171, 0 6px 17px 0px #f36e6e;
 }
 
 h3 {

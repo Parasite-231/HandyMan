@@ -211,7 +211,8 @@
     height: 340px;
     font-size: 17.5px;
     font-weight: bold;
-    box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 4px 8px #f57171, 0 6px 17px 0px #f36e6e;
   }
   
   .description {
@@ -229,7 +230,8 @@
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 97%;
-    box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 6px 32px 0 rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 4px 8px #f57171, 0 6px 17px 0px #f36e6e;
   }
   
   td,
