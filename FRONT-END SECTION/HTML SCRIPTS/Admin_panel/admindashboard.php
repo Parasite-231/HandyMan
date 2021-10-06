@@ -91,6 +91,16 @@ if ($result && mysqli_num_rows($result) > 0) {
                     <span class="links_name">Complaint List</span>
                 </a>
             </li>
+
+              <!--send message link-->
+              <li>
+                    <a href="AdminMessageBox.html" target="_blank">
+                    <i class='bx bxs-message-alt-edit'></i>
+                    <span class="links_name">Message Box</span>
+                    </a>
+                </li>
+              <!--send message link-->
+
             <li class="log_out">
                 <a href="../../Inc/admin_logout.php">
                     <i class='bx bx-log-out'></i>
