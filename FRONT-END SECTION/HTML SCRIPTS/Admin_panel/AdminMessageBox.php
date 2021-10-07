@@ -11,8 +11,20 @@ if (isset($_POST['send'])) {
     $o_id = $_POST['o_id'];
     $msg = $_POST['msg'];
 
-    $query = "INSERT INTO message(o_id, msg) VALUES ('$o_id', '$msg')";
-    mysqli_query($connect, $query);
+
+
+    $query = "SELECT id, e_id FROM orderlist WHERE id = '$o_id'";
+    $result = mysqli_query($connect, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $data = mysqli_fetch_assoc($result);
+        $e_id = $data['e_id'];
+        $date = date('Y-m-d');
+        $query = "INSERT INTO message(o_id, e_id, msg, date) VALUES ('$o_id', '$e_id', '$msg', '$date')";
+        mysqli_query($connect, $query);
+    } else {
+        //show error msg
+    }
 }
 
 
@@ -137,17 +149,17 @@ if (isset($_POST['send'])) {
                                             <!-- Order ID -->
                                             <h3 style="margin-top: 20px;">
                                                 <label for="OrderID">Order ID</label>
-                                                <input type="text" id="OrderID" name="OrderID">
+                                                <input type="text" name="o_id" id="OrderID" name="OrderID">
 
                                             </h3>
-                                            <t style="font-size: small; color:red;">hello fuck me
-                                            </t>
+                                            <h5 hidden style="font-size: small; color:red;">hello fuck me</h5>
                                             <!--message part-->
                                             <label for="address">
                                                 <h3 style="margin-top: 12px;">Message</h3>
                                             </label>
 
-                                            <textarea id="address" name="address" style="height:120px"></textarea>
+                                            <textarea maxlength="255" id="address" name="msg" style="height:120px"
+                                                placeholder="Write message in 255 characters"></textarea>
 
                                             <!--message part-->
 
