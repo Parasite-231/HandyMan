@@ -11,8 +11,6 @@ if (isset($_POST['send'])) {
     $o_id = $_POST['o_id'];
     $msg = $_POST['msg'];
 
-    echo "hello";
-
 
     $query = "SELECT id, e_id FROM orderlist WHERE id = '$o_id'";
     $result = mysqli_query($connect, $query);
