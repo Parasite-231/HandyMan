@@ -15,7 +15,7 @@ session_start();
     p {
         text-align: center;
         font-size: 60px;
-        margin-top: 0px;
+        margin-top: 200px;
     }
     </style>
 </head>
@@ -83,7 +83,7 @@ session_start();
 
 
         if (distance < 0) {
-            // add button to redirect to login;
+            window.location.replace("./employee login.php");
         }
     }, 1000);
     </script>
