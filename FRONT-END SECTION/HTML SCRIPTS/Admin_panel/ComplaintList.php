@@ -125,10 +125,13 @@ if (!isset($_SESSION['aID'])) {
                                         <div class='bio-of-founder'>
     
                                             <form>
-                                                <h1>Order ID: $id
-                                                    <img src='../../ICONS/complaint.png' style='float: right;'>
-                                                </h1>
-                                                <hr>
+                                                <h1 style='display: inline-block;'>Order ID: $id
+                                                    <h2 style='display: inline-block;float: right;'>Rating : 3 <img src='../../ICONS/rating.png' style='display: inline-block;' ></h2>
+                                                </h1>   
+                                                <hr style='width: 100%;'>
+                                                
+
+
                                                 <label for='name'>
                                                     <h3 style='margin-top: 20px;'>Customer Name</h3>
                                                 </label>
