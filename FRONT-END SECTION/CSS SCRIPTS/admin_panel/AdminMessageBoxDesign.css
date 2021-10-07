@@ -281,9 +281,9 @@ th {
   }
   
 
-  input[type=text],
-  select {
-    width: 100%;
+  input[type=text]
+   {
+    width: 20%;
     padding: 12px 20px;
     margin: 8px 0;
     display: block;
@@ -320,7 +320,6 @@ th {
     resize: none;
   }
   
-  input[type=text],
   select,
   textarea {
     width: 100%;
@@ -333,9 +332,7 @@ th {
     resize: none;
     font-size: 17px;
   }
-
-
-  input[type=button] {
+ input[type=button] {
     width: 10%;
     background-color: #2697FF;
     color: white;
@@ -354,7 +351,6 @@ th {
     background-color: white;
     color: #2697FF;
   } 
-
   /* 
   old-one-->
   div.working-criteria-form--of-employee {
@@ -639,3 +635,17 @@ th {
     width: 100%;
   }
 
+/* 
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+ */

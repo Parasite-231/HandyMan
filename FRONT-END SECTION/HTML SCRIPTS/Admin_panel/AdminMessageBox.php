@@ -134,45 +134,28 @@ if (isset($_POST['send'])) {
                                             </h3>
                                             <hr>
 
-                                            <label for="name">
-                                                <h3 style="margin-top: 20px;">Order ID </h3>
-                                            </label>
+                                            <!-- Order ID -->
+                                            <h3 style="margin-top: 20px;">
+                                                <label for="OrderID">Order ID</label>
+                                                <input type="text" id="OrderID" name="OrderID">
+                                            </h3>
 
                                             <!--message part-->
                                             <label for="address">
                                                 <h3 style="margin-top: 12px;">Message</h3>
                                             </label>
-                                            <textarea id="address" name="msg" style="height:60px"></textarea>
+                                            <textarea id="address" name="address" style="height:60px">
+                                                </textarea>
+
+                                            <textarea id="address" name="address" style="height:120px"></textarea>
+
                                             <!--message part-->
 
                                             <input name="send" type="button" value="Send">
                                         </form>
                                     </div>
                                 </div>
-                                <!--new card-->
-                                <!-- <div class="card" style="margin-top: 9px;">
-                                    <div class="bio-of-founder">
-                                        <form action="">
-                                            <h3>
-                                                <img src="adminmessage.png">
-                                                <p style="float: right;">Date: 05 May, 2021</p>
-                                            </h3>
-                                            <hr>
-                                            <label for="name">
-                                                <h3 style="margin-top: 20px;">Order ID </h3>
-                                            </label>
 
-                                            message part
-                                            <label for="address">
-                                                <h3 style="margin-top: 12px;">Message</h3>
-                                            </label>
-                                            <textarea id="address" name="address" style="height:60px"></textarea>
-                                            message part
-
-                                            <input type="button" value="Send">
-                                        </form>
-                                \`/div>
-                                </div> -->
                             </div>
                         </div>
                     </div>
