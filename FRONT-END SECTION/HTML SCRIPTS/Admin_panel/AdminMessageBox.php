@@ -174,7 +174,7 @@ if (isset($_POST['send'])) {
                                             <!--message part-->
 
                                             <!-- <input name="send" type="submit" value="Send"> -->
-                                            <button type="button" >Send</button>
+                                            <button type="submit">Send</button>
                                         </form>
                                     </div>
                                 </div>
