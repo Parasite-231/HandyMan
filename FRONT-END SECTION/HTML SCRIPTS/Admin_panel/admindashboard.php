@@ -7,7 +7,7 @@ if (!isset($_SESSION['aID'])) {
 
 $a_id = $_SESSION['aID'];
 
-$query = "SELECT username FROM admin";
+$query = "SELECT username FROM admin WHERE id = $a_id";
 $result = mysqli_query($connect, $query);
 
 if ($result && mysqli_num_rows($result) > 0) {
