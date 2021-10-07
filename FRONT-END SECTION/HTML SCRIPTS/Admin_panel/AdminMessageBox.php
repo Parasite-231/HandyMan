@@ -119,15 +119,17 @@ if (!isset($_SESSION['aID'])) {
                                             </h3>
                                             <hr>
 
-                                            <label for="name">
-                                                <h3 style="margin-top: 20px;">Order ID </h3>
-                                            </label>
+                                            <!-- Order ID -->
+                                            <h3 style="margin-top: 20px;">
+                                                <label for="OrderID">Order ID</label>
+                                                <input type="text" id="OrderID" name="OrderID">
+                                            </h3>
 
                                             <!--message part-->
                                             <label for="address">
                                                 <h3 style="margin-top: 12px;">Message</h3>
                                             </label>
-                                            <textarea id="address" name="address" style="height:60px"></textarea>
+                                            <textarea id="address" name="address" style="height:120px"></textarea>
                                             <!--message part-->
 
                                             <input type="button" value="Send">
@@ -145,13 +147,15 @@ if (!isset($_SESSION['aID'])) {
                                             <hr>
                                             <label for="name">
                                                 <h3 style="margin-top: 20px;">Order ID </h3>
+                                                <!-- <label for="fname">First name:</label> -->
+                                                <input type="text" id="fname" name="fname">
                                             </label>
 
                                             <!--message part-->
                                             <label for="address">
                                                 <h3 style="margin-top: 12px;">Message</h3>
                                             </label>
-                                            <textarea id="address" name="address" style="height:60px"></textarea>
+                                            <textarea id="address" name="address" style="height:100px"></textarea>
                                             <!--message part-->
 
                                             <input type="button" value="Send">
