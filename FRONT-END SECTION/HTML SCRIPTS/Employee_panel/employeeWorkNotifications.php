@@ -10,7 +10,7 @@ $shift = '';
 $u_area = '';
 
 
-//updatestatus func
+
 
 
 if (isset($_POST['search'])) {
