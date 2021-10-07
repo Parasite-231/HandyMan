@@ -77,8 +77,6 @@ session_start();
                 header("location:./employee login.php");
             }
 
-
-
             ?>
 
 
