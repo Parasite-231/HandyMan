@@ -98,24 +98,44 @@ if (!isset($_SESSION['eID'])) {
         <!--profile-icon-->
         <div class="Description">
             <!--new code-->
-            <div class="card">
-                <!-- <div class="image">
-                <img src="ac-repairer.jpg">
-            </div> -->
 
-                <!--start of message portion in card -->
-                <div class="bio-of-founder">
-                    <h2>
-                        <img src="../../ICONS/adminmessage.png">
-                        <p style="float: right;">05 May, 2021</p>
 
-                    </h2>
-                    <hr>
+            <?php
+
+
+            $query = "SELECT * FROM message";
+            $result = mysqli_query($connect, $query);
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($data = mysqli_fetch_assoc($result)) {
+                    $o_id = $data['o_id'];
+                    $e_id = $data['e_id'];
+                    $msg = $data['msg'];
+                    $date = $data['date'];
+                    $date = date('d-m-Y', strtotime($date));
+                    echo "
+                    <div class='card'>
+
+                    <div class='bio-of-founder'>
+                        <h2>
+                            <img src='../../ICONS/adminmessage.png'>
+                            <p style='float: right;'>$date</p>
+    
+                        </h2>
+                        <hr>
+                    </div>
+                    <p style='margin-top: 20px;justify-content: space-between;'>$msg</p>
+    
                 </div>
-                <p style="margin-top: 20px;justify-content: space-between;">This is your last warning. If you do it
-                    again you will be banned</p>
-                <!--end of message portion in card -->
-            </div>
+
+                    ";
+                }
+            }
+
+
+
+            ?>
+
+
 
 
 </body>
