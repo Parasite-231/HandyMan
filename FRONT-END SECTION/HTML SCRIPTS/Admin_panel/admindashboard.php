@@ -102,13 +102,13 @@ if ($result && mysqli_num_rows($result) > 0) {
             <!--send message link-->
             <!--Message history link-->
             <li>
-                <a href="AdminMessageHistory.php" class="active">
+                <a href="AdminMessageHistory.php">
                     <i class='bx bx-history'></i>
                     <span class="links_name">Message History</span>
                 </a>
             </li>
             <!--Message History link-->
-            
+
 
             <li class="log_out">
                 <a href="../../Inc/admin_logout.php">

@@ -73,7 +73,7 @@ if (!isset($_SESSION['aID'])) {
             <!--send message link-->
             <!--Message history link-->
             <li>
-                <a href="AdminMessageHistory.php" class="active">
+                <a href="AdminMessageHistory.php">
                     <i class='bx bx-history'></i>
                     <span class="links_name">Message History</span>
                 </a>

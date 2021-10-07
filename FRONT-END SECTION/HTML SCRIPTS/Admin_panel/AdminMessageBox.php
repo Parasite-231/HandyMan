@@ -4,6 +4,21 @@ session_start();
 if (!isset($_SESSION['aID'])) {
     header("location:./adminlogin.php");
 }
+
+
+
+if (isset($_POST['send'])) {
+    $o_id = $_POST['o_id'];
+    $msg = $_POST['msg'];
+
+    $query = "INSERT INTO message(o_id, msg) VALUES ('$o_id', '$msg')";
+    mysqli_query($connect, $query);
+}
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +88,7 @@ if (!isset($_SESSION['aID'])) {
             <!--send message link-->
             <!--Message history link-->
             <li>
-                <a href="AdminMessageHistory.php" class="active">
+                <a href="AdminMessageHistory.php">
                     <i class='bx bx-history'></i>
                     <span class="links_name">Message History</span>
                 </a>
@@ -112,7 +127,7 @@ if (!isset($_SESSION['aID'])) {
                                 <!--new code-->
                                 <div class="card">
                                     <div class="bio-of-founder">
-                                        <form action="">
+                                        <form method="POST">
                                             <h3>
                                                 <img src="../../ICONS/adminmessage.png">
                                                 <p style="float: right;">Date: 05 May, 2021</p>
@@ -127,15 +142,15 @@ if (!isset($_SESSION['aID'])) {
                                             <label for="address">
                                                 <h3 style="margin-top: 12px;">Message</h3>
                                             </label>
-                                            <textarea id="address" name="address" style="height:60px"></textarea>
+                                            <textarea id="address" name="msg" style="height:60px"></textarea>
                                             <!--message part-->
 
-                                            <input type="button" value="Send">
+                                            <input name="send" type="button" value="Send">
                                         </form>
                                     </div>
                                 </div>
                                 <!--new card-->
-                                <div class="card" style="margin-top: 9px;">
+                                <!-- <div class="card" style="margin-top: 9px;">
                                     <div class="bio-of-founder">
                                         <form action="">
                                             <h3>
@@ -147,17 +162,17 @@ if (!isset($_SESSION['aID'])) {
                                                 <h3 style="margin-top: 20px;">Order ID </h3>
                                             </label>
 
-                                            <!--message part-->
+                                            message part
                                             <label for="address">
                                                 <h3 style="margin-top: 12px;">Message</h3>
                                             </label>
                                             <textarea id="address" name="address" style="height:60px"></textarea>
-                                            <!--message part-->
+                                            message part
 
                                             <input type="button" value="Send">
                                         </form>
-                                    </div>
-                                </div>
+                                \`/div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
