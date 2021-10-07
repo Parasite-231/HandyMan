@@ -74,6 +74,12 @@ $a_id = $_SESSION['aID'];
                     <span class="links_name">Complaint List</span>
                 </a>
             </li>
+            <li>
+                <a href="ServiceList.php">
+                    <i class='bx bxs-user-voice'></i>
+                    <span class="links_name">Service List</span>
+                </a>
+            </li>
 
             <!--send message link-->
             <li>

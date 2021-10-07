@@ -99,6 +99,14 @@ if (isset($_POST['send'])) {
                 </a>
             </li>
 
+            <li>
+                <a href="ServiceList.php">
+                    <i class='bx bxs-user-voice'></i>
+                    <span class="links_name">Service List</span>
+                </a>
+            </li>
+
+
             <!--send message link-->
             <li>
                 <a href="AdminMessageBox.php" class="active">

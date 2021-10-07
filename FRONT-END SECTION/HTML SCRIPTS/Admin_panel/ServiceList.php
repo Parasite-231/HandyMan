@@ -1,10 +1,27 @@
+<?php
+require("../../Inc/function.php");
+session_start();
+if (!isset($_SESSION['aID'])) {
+    header("location:./adminlogin.php");
+}
 
+$a_id = $_SESSION['aID'];
+
+$query = "SELECT username FROM admin WHERE id = $a_id";
+$result = mysqli_query($connect, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $list = mysqli_fetch_assoc($result);
+    $name = $list['username'];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../CSS SCRIPTS/ServiceListDesign.css">
+    <link rel="stylesheet" href="../../CSS SCRIPTS/admin_panel/ServiceListDesign.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/adminbro3.png">
@@ -39,7 +56,7 @@
                 </a>
             </li>
             <li>
-                <a href="#" >
+                <a href="#">
                     <i class='bx bx-pie-chart-alt-2'></i>
                     <span class="links_name">Customer List</span>
                 </a>
@@ -107,7 +124,7 @@
             <!--ajaira-->
 
             <div class="profile-details">
-                <span class="admin_name">Muktadir Mazumder</span>
+                <span class="admin_name"><?php echo $name ?></span>
             </div>
         </nav>
 
@@ -131,19 +148,38 @@
                                 <th>Set Mode</th>
                             </tr>
 
-                            <tr>
-                                <td>1344</td>
-                                <td>AC Repairing</td>
-                                <td>Electric Work</td>
-                                <td>3.55</td>
-                                <td>5456</td>
-                                 <td><button name="done" class="btn-0" style="text-align: center;">Delete</button>
-                                    <!-- <span style="color:green;margin-left:40%"></span> -->
-                                </td>
-        
-                            </tr>
+                            <?php
 
-                           
+                            $query = "SELECT * FROM services";
+                            $result = mysqli_query($connect, $query);
+
+                            if ($result && mysqli_num_rows($result) > 0) {
+                                while ($data = mysqli_fetch_assoc($result)) {
+                                    $id = $data['id'];
+                                    $name = $data['name'];
+                                    $type = $data['type'];
+                                    $price = $data['price'];
+                                    $rating = $data['rating'];
+                                    echo "
+                                    <tr>
+                                        <td>$id</td>
+                                        <td>$name</td>
+                                        <td>$type</td>
+                                        <td>$rating</td>
+                                        <td>$price</td>
+                                        <td><button name='done' class='btn-0' style='text-align: center;'>Delete</button>
+                                        </td>
+                                    </tr>
+                                    ";
+                                }
+                            }
+
+
+                            ?>
+
+
+
+
 
                         </table>
                     </div>
