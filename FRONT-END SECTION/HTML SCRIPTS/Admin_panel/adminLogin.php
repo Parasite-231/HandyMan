@@ -62,7 +62,9 @@ if (filter_has_var(INPUT_POST, 'submit')) {
 
     <div>
         <?php if ($msg != '') : ?>
-        <div style="  padding: 20px; background-color: #f44336; color: white;"><?php echo $msg ?></div>
+        <div style="  padding: 20px; background-color: #f44336; color: white;">
+            <center><?php echo $msg ?></center>
+        </div>
         <?php endif; ?>
     </div>
 
