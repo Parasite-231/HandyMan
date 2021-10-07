@@ -5,12 +5,13 @@ if (!isset($_SESSION['aID'])) {
     header("location:./adminlogin.php");
 }
 
-
+$hide = 'hidden';
 
 if (isset($_POST['send'])) {
     $o_id = $_POST['o_id'];
     $msg = $_POST['msg'];
 
+    echo "hello";
 
 
     $query = "SELECT id, e_id FROM orderlist WHERE id = '$o_id'";
@@ -23,7 +24,7 @@ if (isset($_POST['send'])) {
         $query = "INSERT INTO message(o_id, e_id, msg, date) VALUES ('$o_id', '$e_id', '$msg', '$date')";
         mysqli_query($connect, $query);
     } else {
-        //show error msg
+        $hide = '';
     }
 }
 
@@ -153,13 +154,15 @@ if (isset($_POST['send'])) {
 
                                             </h3>
                                             <!--alert-->
-                                            <img src="../../ICONS/ouch3.png" alt="alert" >
+                                            <img <?php echo $hide ?> src="../../ICONS/ouch3.png" alt="alert">
                                             <!-- <img src="../../ICONS/ouch2.png" alt="" >
                                             <img src="../../ICONS/ouch.png" alt="" > -->
-                                            <sup><h5 hidden style="font-size: small; color:red; margin: left 0px;">hello fuck me</h5></sup>
+                                            <sup>
+                                                <t <?php echo $hide ?> style="font-size: small; color:red; margin: left 0px;
+                                                font-weight:bold; "> Order ID not matched
+                                                </t>
+                                            </sup>
                                             <!--alert-->
-
-                                            <h5 hidden style="font-size: small; color:red;">hello fuck me</h5>
                                             <!--message part-->
                                             <label for="address">
                                                 <h3 style="margin-top: 12px;">Message</h3>
