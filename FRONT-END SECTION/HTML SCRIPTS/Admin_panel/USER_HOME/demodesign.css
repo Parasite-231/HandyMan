@@ -1,0 +1,119 @@
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+  .menu-bar{
+
+    background-color: aqua;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+    height: 90px;
+    color: aliceblue;
+
+    
+    }
+    
+.menu-bar ul{
+
+    display: inline-flex;
+    list-style: none;
+    color: yellow;
+}
+
+.menu-bar ul li{
+
+     padding: 15px;
+     margin: 15px;
+     width: 110px;
+     font-size: 18px;
+
+}
+
+
+.menu-bar ul li:hover{
+
+    background-color: coral;
+    border-radius: 5px;
+}
+
+.menu-bar .fa{
+
+    margin-right: 3px;
+
+}
+
+
+.constant, .menu-bar ul li:hover{
+
+    background-color: white;
+    border-radius: 5px;
+    height: 18px;
+   
+
+}
+
+.menu-bar ul li a{
+
+    text-decoration: none;
+    
+}
+
+.submenu-about{
+
+    display: none;
+}
+
+.menu-bar ul li:hover .submenu-about{
+
+    display: block;
+    position: absolute;
+    background-color: orange;
+    margin-top: 15px;
+    margin-left: -15px;
+    color: white;
+  
+}
+
+.menu-bar ul li:hover .submenu-about ul{
+
+    display: block;
+    margin: 10px;
+}
+
+.menu-bar ul li:hover .submenu-about ul li{
+
+    width: 150px;
+    padding: 10px;
+    border-top: none;
+    border-bottom: 1px dotted white;
+    background: transparent;
+    border-radius: 0px;
+    text-align: left;
+}
+
+.menu-bar ul li:hover .submenu-about ul li:last-child {
+
+    border-bottom: none;
+}
+
+.menu-bar ul li:hover .submenu-about ul li a{
+
+     color: blue;
+    
+}
