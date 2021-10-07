@@ -125,7 +125,7 @@ if (!isset($_SESSION['aID'])) {
                                         <div class='bio-of-founder'>
     
                                             <form>
-                                                <h1>$id
+                                                <h1>Order ID: $id
                                                     <img src='../../ICONS/complaint.png' style='float: right;'>
                                                 </h1>
                                                 <hr>
