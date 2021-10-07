@@ -64,7 +64,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             <li>
                 <a href="workerlist.php">
                     <i class='bx bxs-user'></i>
-                    <i class='bx bx-coin-stack'></i>
+                    <!-- <i class='bx bx-coin-stack'></i> -->
                     <span class="links_name">Worker List</span>
                 </a>
             </li>
