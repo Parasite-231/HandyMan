@@ -1,3 +1,9 @@
+<?php
+require("../../Inc/function.php");
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,9 +11,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS SCRIPTS/BanDesign.css">
+    <link rel="stylesheet" href="../../CSS SCRIPTS/Employee_panel/BanDesign.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/banned.png">
-    <script src="BanBot.js"></script>
+    <!-- <script src="BanBot.js"></script> -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
@@ -21,12 +27,12 @@
 
     <h2>You have been banned!!!</h2>
     <div class="animation">
-    <div id="banbot" class="fa" ></div>
+        <div id="banbot" class="fa"></div>
     </div>
     <h4></h4>
     <p id="timer"></p>
 
-    
+
     <?php
 
 
@@ -75,7 +81,7 @@
             if ($c_date == $date || $c_date < $date) {
                 $query = "UPDATE employee SET ban_status = '0', ban_removal_date = NULL WHERE id = $id";
                 mysqli_query($connect, $query);
-                header("location:./employee login.php");
+                //header("location:./employee login.php");
             }
 
 
@@ -88,10 +94,9 @@
         }
     }, 1000);
     </script>
-
+    <script src="BanBot.js"></script>
 
 
 </body>
 
 </html>
-
