@@ -83,6 +83,15 @@ $a_id = $_SESSION['aID'];
                 </a>
             </li>
 
+            <!--Banned list link-->
+            <li>
+                <a href="BannedList.php" class="active">
+                    <i class='bx bxs-error' ></i>
+                    <span class="links_name">Banned List</span>
+                </a>
+            </li>
+            <!--Banned list link-->
+
             <!--send message link-->
             <li>
                 <a href="AdminMessageBox.php">
