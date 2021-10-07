@@ -141,7 +141,7 @@ if (isset($_POST['send'])) {
                                         <form method="POST">
                                             <h3>
                                                 <img src="../../ICONS/adminmessage.png">
-                                                <p style="float: right;">Date: 05 May, 2021</p>
+                                                <p style="float: right;">Date: <?php echo date('d-m-Y') ?></p>
                                             </h3>
                                             <hr>
 

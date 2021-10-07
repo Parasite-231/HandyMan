@@ -1,3 +1,13 @@
+<?php
+require("../../Inc/function.php");
+session_start();
+if (!isset($_SESSION['aID'])) {
+    header("location:./adminlogin.php");
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -98,36 +108,45 @@
                     <!-- <div class="title">Profile</div> -->
                     <div class="sales-details" style="margin-top: 23px;">
 
-                        <div class="card">
-                            <!--start of message portion in card -->
-                            <div class="bio-of-founder">
-                                <h3>
-                                    <p>Order ID:</p>
-                                    <p style="float: right;">05 May, 2021</p>
-                                </h3>
-                                <hr>
-                            </div>
-                            <!--start of message portion in card -->
-                            <h2 style="margin-top: 20px;">Sent To: </h2>
-                            <p style="margin-top: 20px;justify-content: space-between;">This is your last warning. If
-                                you do it again you will be banned</p>
-                            <!--end of message portion in card -->
-                        </div>
 
-                        <div class="card">
-                            <div class="bio-of-founder">
-                                <h3>
-                                    <p>Order ID:</p>
-                                    <p style="float: right;">05 May, 2021</p>
-                                </h3>
-                                <hr>
-                            </div>
-                            <!--start of message portion in card -->
-                            <h2 style="margin-top: 20px;">Sent To: </h2>
-                            <p style="margin-top: 20px;justify-content: space-between;">This is your last warning. If
-                                you do it again you will be banned</p>
-                            <!--end of message portion in card -->
-                        </div>
+                        <?php
+
+
+                        $query = "SELECT * FROM message";
+                        $result = mysqli_query($connect, $query);
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            while ($data = mysqli_fetch_assoc($result)) {
+                                $o_id = $data['o_id'];
+                                $e_id = $data['e_id'];
+                                $msg = $data['msg'];
+                                $date = $data['date'];
+                                $date = date('d-m-Y', strtotime($date));
+                                echo "
+                                <div class='card'>
+
+                                    <div class='bio-of-founder'>
+                                        <h3>
+                                            <p>Order ID: $o_id </p>
+                                            <p style='float: right;'>$date</p>
+                                        </h3>
+                                        <hr>
+                                    </div>
+
+                                    <h2 style='margin-top: 20px;'>Sent To: $e_id</h2>
+                                    <p style='margin-top: 20px;justify-content: space-between;'>$msg</p>
+    
+                                </div>
+    
+                                ";
+                            }
+                        }
+
+
+
+                        ?>
+
+
+
 
                     </div>
                 </div>
