@@ -150,7 +150,7 @@ if (isset($_POST['send'])) {
                                             <!-- Order ID -->
                                             <h3 style="margin-top: 20px;">
                                                 <label for="OrderID">Order ID</label>
-                                                <input type="text" name="o_id" id="OrderID" name="OrderID">
+                                                <input type="text" name="o_id" id="OrderID" required>
 
                                             </h3>
                                             <!--alert-->
