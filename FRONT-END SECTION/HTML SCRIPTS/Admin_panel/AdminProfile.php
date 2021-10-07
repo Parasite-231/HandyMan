@@ -4,6 +4,15 @@ session_start();
 if (!isset($_SESSION['aID'])) {
     header("location:./adminlogin.php");
 }
+$a_id = $_SESSION['aID'];
+
+$query = "SELECT username FROM admin  WHERE id = $a_id";
+$result = mysqli_query($connect, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $list = mysqli_fetch_assoc($result);
+    $name = $list['username'];
+}
 
 $a_id = $_SESSION['aID'];
 
@@ -102,7 +111,7 @@ $a_id = $_SESSION['aID'];
                 <i class='bx bx-search'></i>
             </div> -->
             <div class="profile-details">
-                <span class="admin_name">Admin</span>
+                <span class="admin_name"><?php echo $name ?></span>
             </div>
         </nav>
         <div class="home-content">

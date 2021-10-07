@@ -10,7 +10,13 @@ $shift = '';
 $u_area = '';
 
 
+$query = "SELECT name FROM employee WHERE id = $e_id";
+$result = mysqli_query($connect, $query);
 
+if ($result && mysqli_num_rows($result) > 0) {
+    $list = mysqli_fetch_assoc($result);
+    $emp_name = $list['name'];
+}
 
 
 if (isset($_POST['search'])) {
@@ -116,7 +122,7 @@ if (isset($_POST['search'])) {
                 <!--minor change to show account name-->
                 <div class="profile-details">
                     <img src="../../ICONS/workerprofile.png" alt="account">
-                    <span class="admin_name">Shamsu Mazumder</span>
+                    <span class="admin_name"><?php echo $emp_name ?></span>
                 </div>
                 <!--end of minor change to show account name-->
 

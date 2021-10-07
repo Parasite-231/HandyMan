@@ -4,6 +4,16 @@ session_start();
 if (!isset($_SESSION['aID'])) {
     header("location:./adminlogin.php");
 }
+
+$a_id = $_SESSION['aID'];
+
+$query = "SELECT username FROM admin  WHERE id = $a_id";
+$result = mysqli_query($connect, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $list = mysqli_fetch_assoc($result);
+    $name = $list['username'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -96,7 +106,7 @@ if (!isset($_SESSION['aID'])) {
             </div>
 
             <div class="profile-details">
-                <span class="admin_name">Muktadir Mazumder</span>
+                <span class="admin_name"><?php echo $name ?></span>
             </div>
         </nav>
         <div class="home-content">
@@ -120,13 +130,14 @@ if (!isset($_SESSION['aID'])) {
                                         $name = $data['u_name'];
                                         $problem = $data['problem'];
                                         $description = $data['description'];
+                                        $rating = $data['rating'];
                                         echo "
                                         <div class='card'>
                                         <div class='bio-of-founder'>
     
                                             <form>
                                                 <h1 style='display: inline-block;'>Order ID: $id
-                                                    <h2 style='display: inline-block;float: right;'>Rating : 3 <img src='../../ICONS/rating.png' style='display: inline-block;' ></h2>
+                                                    <h2 style='display: inline-block;float: right;'>Rating : $rating <img src='../../ICONS/rating.png' style='display: inline-block;' ></h2>
                                                 </h1>   
                                                 <hr style='width: 100%;'>
                                                 
