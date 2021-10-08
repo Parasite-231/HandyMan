@@ -8,16 +8,12 @@ more convenient and hassle-free. Their priority will be customer service
 and the satisfaction of the customers.
 
 ## Objectives
-Some of the objectives are
-
 * Improving our daily life.
 * Increasing employment through online platform.
 * Saving time and providing solutions effectively through online platform.
 * Ensuring good quality service and payment options.
 
 ## Project Features
-This project will provide the following features
-
 * Divided into three seperate platforms.
 * User login and registration systems.
 * Admin login system.
