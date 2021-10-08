@@ -149,17 +149,6 @@ if ($result && mysqli_num_rows($result) > 0) {
                     <div class="sales-details" style="margin-top: 23px;">
                         <table>
 
-
-                            <?php
-
-                            $query = "SELECT * FROM employee WHERE ban_status = 1";
-                            $result = mysqli_query($connect, $query);
-                            if ($result && mysqli_num_rows($result) > 0) {
-                                $data = mysqli_fetch_assoc($result);
-                            }
-
-
-                            ?>
                             <tr>
                                 <th>Employee ID</th>
                                 <th>Employee Name</th>
@@ -167,26 +156,34 @@ if ($result && mysqli_num_rows($result) > 0) {
                                 <th>Average Rating</th>
                                 <th>Set Mode</th>
                             </tr>
-                            <tr>
-                                <td>13442</td>
-                                <td>Boku</td>
-                                <td>Electrician</td>
-                                <td>3.55</td>
-                                <td>
-                                    <button name="done" class="btn-0" style="text-align: center;">Unbanned</button>
-                                    <!-- <span style="color:green;margin-left:40%"></span> -->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>13442</td>
-                                <td>Boku</td>
-                                <td>Electrician</td>
-                                <td>3.55</td>
-                                <td>
-                                    <button name="done" class="btn-0" style="text-align: center;">Unbanned</button>
-                                    <!-- <span style="color:green;margin-left:40%"></span> -->
-                                </td>
-                            </tr>
+
+
+                            <?php
+
+                            $query = "SELECT * FROM employee WHERE ban_status = 1";
+                            $result = mysqli_query($connect, $query);
+                            if ($result && mysqli_num_rows($result) > 0) {
+                                $data = mysqli_fetch_assoc($result);
+                                $id = $data['id'];
+                                $name = $data['name'];
+                                $type = $data['type'];
+                                $rating = $data['rating'];
+                                echo "
+                                <tr>
+                                    <td>$id</td>
+                                    <td>$name</td>
+                                    <td>$type</td>
+                                    <td>$rating</td>
+                                    <td>
+                                        <button name='done' class='btn-0' style='text-align: center;'>Unban</button>
+                                        <!-- <span style='color:green;margin-left:40%'></span> -->
+                                    </td>
+                                </tr>
+                                ";
+                            }
+
+
+                            ?>
                         </table>
                     </div>
                     <!-- <div class="button" style="margin-top: 12px;">
