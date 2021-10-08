@@ -35,7 +35,7 @@ we need plumbers to fix our sanitation system,
 sometimes we need repairers to fix our air
 conditioner or refrigerator. HandyMan is there to help us.
 
-## Technologies used
+## Technologies Used
 
 ### Coding scripts and languages :
 * Html, CSS and javascript are used for the front-end section 
