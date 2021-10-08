@@ -197,11 +197,11 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <img src="../../ICONS/duework.png" alt="work">
                     </div>
                 </div>
-                <div class="card" style="background-color: green;">
+                <div class="card" style="background-color: #80c904;">
                     <div class="box">
 
-                        <h1 style="color:black;">Good</h1>
-                        <h3 style="color:black;">Account Status</h3>
+                        <h1 style="color:white;">Good</h1>
+                        <h3 style="color:white;">Account Status</h3>
                     </div>
                     <div class="icon-case">
                         <img src="../../ICONS/wc3.png" alt="work">
