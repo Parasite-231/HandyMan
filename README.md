@@ -88,7 +88,7 @@ Contributors names and github info
 ## License 
 
 
-## Project status
+## Project Status
 
 
 
