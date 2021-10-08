@@ -133,6 +133,14 @@ if (isset($_POST['send'])) {
                 </a>
             </li>
             <!--Message History link-->
+            <!--Appeal history link-->
+            <li>
+                <a href="AppealHistory.php" >
+                <i class='bx bxs-hand'></i>
+                <span class="links_name">Appeal History</span>
+                </a>
+            </li>
+            <!--Appeal History link-->
 
             <li class="log_out">
                 <a href="../../Inc/admin_logout.php">

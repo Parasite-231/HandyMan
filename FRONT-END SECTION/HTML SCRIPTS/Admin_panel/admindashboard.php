@@ -137,8 +137,8 @@ if ($result && mysqli_num_rows($result) > 0) {
 
             <!--Appeal history link-->
             <li>
-                <a href="AppealHistory.php" class="active">
-                <i class='bx bx-history'></i>
+                <a href="AppealHistory.php">
+                <i class='bx bxs-hand'></i>
                 <span class="links_name">Appeal History</span>
                 </a>
             </li>

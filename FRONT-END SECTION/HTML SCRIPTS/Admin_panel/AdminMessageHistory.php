@@ -105,10 +105,18 @@ if ($result && mysqli_num_rows($result) > 0) {
             <li>
                 <a href="AdminMessageHistory.php" class="active">
                     <i class='bx bx-history'></i>
-                    <span class="links_name">Message History</span>
+                    <span class="links_name">Complaint History</span>
                 </a>
             </li>
             <!--Message History link-->
+            <!--Appeal history link-->
+            <li>
+                <a href="AppealHistory.php" class="active">
+                    <i class='bx bxs-hand'></i>
+                    <span class="links_name">Appeal History</span>
+                </a>
+            </li>
+            <!--Appeal History link-->
             <li class="log_out">
                 <a href="../../Inc/admin_logout.php">
                     <i class='bx bx-log-out'></i>
