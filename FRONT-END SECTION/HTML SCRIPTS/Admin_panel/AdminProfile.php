@@ -85,8 +85,8 @@ $a_id = $_SESSION['aID'];
 
             <!--Banned list link-->
             <li>
-                <a href="BannedList.php" class="active">
-                    <i class='bx bxs-error' ></i>
+                <a href="BannedList.php">
+                    <i class='bx bxs-error'></i>
                     <span class="links_name">Banned List</span>
                 </a>
             </li>
