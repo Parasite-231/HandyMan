@@ -27,13 +27,24 @@ if ($result && mysqli_num_rows($result) > 0) {
 
 }
 
-$query = "SELECT name FROM employee WHERE id = $e_id";
+$query = "SELECT name,ban_status FROM employee WHERE id = $e_id";
 $result = mysqli_query($connect, $query);
 
 if ($result && mysqli_num_rows($result) > 0) {
     $list = mysqli_fetch_assoc($result);
     $emp_name = $list['name'];
+    $ban_status = $list['ban_status'];
 }
+
+$status_good = '';
+$status_banned = 'display:none;';
+
+if ($ban_status == 1) {
+    $status_good = 'display:none;';
+    $status_banned = '';
+}
+
+
 ?>
 
 
@@ -197,7 +208,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <img src="../../ICONS/duework.png" alt="work">
                     </div>
                 </div>
-                <div class="card" style="background-color: #80c904;">
+                <div class="card" style="background-color: #80c904; <?php echo $status_good ?>">
                     <div class="box">
 
                         <h1 style="color:white;">Good</h1>
@@ -207,7 +218,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <img src="../../ICONS/wc3.png" alt="work">
                     </div>
                 </div>
-                <div class="card" style="background-color: red;">
+                <div class="card" style="background-color: red;<?php echo $status_banned ?>">
                     <div class="box">
 
                         <h1 style="color:white;">Banned</h1>
