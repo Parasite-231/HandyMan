@@ -84,9 +84,9 @@ https://github.com/Parasite-231/HandyMan.git
 
 ## Authors
 Contributors names and github info :
-[@IftyKhan-911](https://github.com/IftyKhan-911)
-[@Parasite-231](https://github.com/Parasite-231)
-[@sadmanmehedi](https://github.com/sadmanmehedi)
+* [@IftyKhan-911](https://github.com/IftyKhan-911)
+* [@Parasite-231](https://github.com/Parasite-231)
+* [@sadmanmehedi](https://github.com/sadmanmehedi)
 
 ## License 
 
