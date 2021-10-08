@@ -7,7 +7,7 @@ connect households with the verified service provider to make our life
 more convenient and hassle-free. Their priority will be customer service
 and the satisfaction of the customers.
 
-# Objectives
+## Objectives
 Some of the objectives are:
 
 * Improving our daily life.
@@ -15,7 +15,7 @@ Some of the objectives are:
 * Saving time and providing solutions effectively through online platform.
 * Ensuring good quality service and payment options.
 
-# Project Features
+## Project Features
 This project will provide the following features:
 
 * Divided into three seperate platforms.
@@ -27,11 +27,11 @@ This project will provide the following features:
 * Includes banning system for admin panel.
 * Communication between admin and workers.
 
-# Badges
+## Badges
 
-# Visuals
+## Visuals
 
-# Usage
+## Usage
 In our day-to-day life, we feel the necessity for
 various kinds of services. Sometimes we need a
 housekeeper for household chores, sometimes
@@ -39,17 +39,17 @@ we need plumbers to fix our sanitation system,
 sometimes we need repairers to fix our air
 conditioner or refrigerator. HandyMan is there to help us.
 
-# Technogies used
+## Technogies used
 
 * Html, CSS and javascript are used for the front-end section 
 * No bootstrap and templete are used.
 * PHP and mySQL are used for the back-end section.
 
-# Authors
+## Authors
 
-# License 
+## License 
 
-# Project status
+## Project status
 
 
 
