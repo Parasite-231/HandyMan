@@ -111,7 +111,7 @@ $a_id = $_SESSION['aID'];
             <!--Appeal history link-->
             <li>
                 <a href="AppealHistory.php" >
-                <i class='bx bxs-hand'></i>
+                <i class='bx bx-user-voice'></i>
                 <span class="links_name">Appeal History</span>
                 </a>
             </li>
