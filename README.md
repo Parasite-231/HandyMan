@@ -49,7 +49,7 @@ conditioner or refrigerator. HandyMan is there to help us.
 * Visual Studio Code
 * Sublime Text
 ### Online Platforms and Tools :
-* w3 schools 
+* Learning Sites
 ```Link
 https://www.w3schools.com/
 https://stackoverflow.com/
@@ -63,6 +63,16 @@ https://www.freepik.com/free-photos-vectors/icons
 https://www.online-image-editor.com/
 https://www.remove.bg/
 ```
+* Code Beautifires
+```Link
+https://www.freeformatter.com/html-formatter.html
+https://www.freeformatter.com/css-beautifier.html
+```
+* Version Control
+```Link
+https://github.com/
+```
+
 
 ## Run the HandyMan website locally
 
