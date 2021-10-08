@@ -8,7 +8,7 @@ more convenient and hassle-free. Their priority will be customer service
 and the satisfaction of the customers.
 
 ## Objectives
-Some of the objectives are:
+Some of the objectives are
 
 * Improving our daily life.
 * Increasing employment through online platform.
@@ -16,7 +16,7 @@ Some of the objectives are:
 * Ensuring good quality service and payment options.
 
 ## Project Features
-This project will provide the following features:
+This project will provide the following features
 
 * Divided into three seperate platforms.
 * User login and registration systems.
@@ -75,7 +75,7 @@ https://github.com/
 
 ## Run the HandyMan website locally
 
-* Step 01: At first clone the repository from 'main' branch -->
+* Step 01: At first clone the repository 
 
 ```sh
 https://github.com/Parasite-231/HandyMan.git
@@ -83,7 +83,7 @@ https://github.com/Parasite-231/HandyMan.git
 * Step 02: 
 
 ## Authors
-Contributors names and github info :
+Contributors names and github info 
 * [@IftyKhan-911](https://github.com/IftyKhan-911)
 * [@mdmuktadir](https://github.com/Parasite-231)
 * [@sadmanmehedi](https://github.com/sadmanmehedi)
