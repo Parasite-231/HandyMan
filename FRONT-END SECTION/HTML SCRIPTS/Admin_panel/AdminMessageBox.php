@@ -107,6 +107,15 @@ if (isset($_POST['send'])) {
                 </a>
             </li>
 
+            <!--Banned list link-->
+            <li>
+                <a href="BannedList.php" >
+                    <i class='bx bxs-error' ></i>
+                    <span class="links_name">Banned List</span>
+                </a>
+            </li>
+            <!--Banned list link-->
+
 
             <!--send message link-->
             <li>

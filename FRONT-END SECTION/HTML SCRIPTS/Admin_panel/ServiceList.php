@@ -92,6 +92,15 @@ if ($result && mysqli_num_rows($result) > 0) {
                 </a>
             </li>
             <!--send message link-->
+
+            <!--Banned list link-->
+            <li>
+                <a href="BannedList.php" >
+                    <i class='bx bxs-error' ></i>
+                    <span class="links_name">Banned List</span>
+                </a>
+            </li>
+            <!--Banned list link-->
             <!--Message history link-->
             <li>
                 <a href="AdminMessageHistory.php">
