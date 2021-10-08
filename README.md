@@ -45,7 +45,7 @@ conditioner or refrigerator. HandyMan is there to help us.
 * Visual Studio Code
 * Sublime Text
 ### Online Platforms and Tools :
-* Learning Sites
+* Helping Sites
 ```Link
 https://www.w3schools.com/
 https://stackoverflow.com/
