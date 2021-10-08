@@ -53,7 +53,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     $date = $data['ban_removal_date'];
 }
 
-$c_date = date('Y-m-d H:i:s');
+$c_date = date('Y-m-d H:i:s',  time() + 4 * 3600);
 
 if ($c_date == $date || $c_date > $date) {
     $query = "UPDATE employee SET ban_status = '0', ban_removal_date = NULL WHERE id = $e_id";
@@ -302,7 +302,7 @@ if ($c_date == $date || $c_date > $date) {
                                 <td>$u_area</td>
                                 <td>$date</td>
                                 <td>$shift</td>
-                                <td>$rating</td>
+                                <td>$e_rating</td>
                                 <td>$payment</td>
                             </tr>
                             ";

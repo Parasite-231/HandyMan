@@ -86,8 +86,8 @@ if ($result && mysqli_num_rows($result) > 0) {
 
             <!--Banned list link-->
             <li>
-                <a href="BannedList.php" class="active">
-                    <i class='bx bxs-error' ></i>
+                <a href="BannedList.php">
+                    <i class='bx bxs-error'></i>
                     <span class="links_name">Banned List</span>
                 </a>
             </li>
@@ -103,7 +103,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             <!--send message link-->
             <!--Message history link-->
             <li>
-                <a href="AdminMessageHistory.php">
+                <a href="AdminMessageHistory.php" class="active">
                     <i class='bx bx-history'></i>
                     <span class="links_name">Message History</span>
                 </a>

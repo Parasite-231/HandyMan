@@ -48,8 +48,8 @@ require('../../Inc/function.php');
 // }
 
 $date = ban(7);
-$date = date('Y-m-d H:i:s', strtotime($date));
-$c_date = date('Y-m-d H:i:s');
+$date = '2021-10-08 11:29:19';
+$c_date = date('Y-m-d H:i:s',  time() + 4 * 3600);
 
 
 echo 'today: ' . $c_date . ' banday:' . $date;
