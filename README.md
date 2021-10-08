@@ -41,9 +41,37 @@ conditioner or refrigerator. HandyMan is there to help us.
 
 ## Technogies used
 
+### Coding scripts and languages :
 * Html, CSS and javascript are used for the front-end section 
 * No bootstrap and templete are used.
 * PHP and mySQL are used for the back-end section.
+### IDE and code editors :
+* Visual Studio Code
+* Sublime Text
+### Online Platforms and Tools :
+* w3 schools 
+```Link
+https://www.w3schools.com/
+https://stackoverflow.com/
+```
+* UI Tools 
+```Links
+https://boxicons.com/
+https://www.color-hex.com/
+https://www.flaticon.com/icons
+https://www.freepik.com/free-photos-vectors/icons
+https://www.online-image-editor.com/
+https://www.remove.bg/
+```
+
+## Run the HandyMan website locally
+
+* Step 01: At first clone the repository from 'main' branch -->
+
+```sh
+https://github.com/Parasite-231/HandyMan.git
+```
+* Step 02: 
 
 ## Authors
 
