@@ -197,7 +197,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <img src="../../ICONS/duework.png" alt="work">
                     </div>
                 </div>
-                <div class="card" style="background-color: greenyellow;">
+                <div class="card" style="background-color: green;">
                     <div class="box">
         
                         <h1 style="color:black;">Good</h1>
