@@ -55,6 +55,7 @@ https://stackoverflow.com/
 https://boxicons.com/
 https://www.color-hex.com/
 https://www.flaticon.com/icons
+https://fontawesome.com/
 https://www.freepik.com/free-photos-vectors/icons
 https://www.online-image-editor.com/
 https://www.remove.bg/
@@ -85,6 +86,7 @@ Contributors names and github info
 * [@sadmanmehedi](https://github.com/sadmanmehedi)
 
 ## License 
+
 
 ## Project status
 
