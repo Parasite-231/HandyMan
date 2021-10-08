@@ -91,6 +91,7 @@ session_start();
 
         if (distance < 0) {
             window.location.replace("./employee login.php");
+
         }
     }, 1000);
     </script>

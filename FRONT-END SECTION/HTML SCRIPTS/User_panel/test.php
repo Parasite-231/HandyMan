@@ -48,16 +48,14 @@ require('../../Inc/function.php');
 // }
 
 $date = ban(7);
-$date = date('M j, Y H:i:s', strtotime($date));
-$c_date = date('M j, Y H:i:s');
+$date = date('Y-m-d H:i:s', strtotime($date));
+$c_date = date('Y-m-d H:i:s');
 
 
 echo 'today: ' . $c_date . ' banday:' . $date;
 
 if ($c_date > $date) {
-    echo 'ok';
+    echo 'today is past';
 } else {
-    echo 'not ok';
+    echo 'today is future';
 }
-
-echo ban(7);
