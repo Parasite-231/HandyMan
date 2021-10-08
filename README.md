@@ -80,7 +80,7 @@ https://github.com/Parasite-231/HandyMan.git
 * Step 02: 
 
 ## Authors
-Contributors names and github info 
+Contributors names and contact info 
 * [@IftyKhan-911](https://github.com/IftyKhan-911)
 * [@mdmuktadir](https://github.com/Parasite-231)
 * [@sadmanmehedi](https://github.com/sadmanmehedi)
