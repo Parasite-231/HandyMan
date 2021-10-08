@@ -129,7 +129,7 @@ if (isset($_POST['send'])) {
             <li>
                 <a href="AdminMessageHistory.php">
                     <i class='bx bx-history'></i>
-                    <span class="links_name">Message History</span>
+                    <span class="links_name">Complaint History</span>
                 </a>
             </li>
             <!--Message History link-->

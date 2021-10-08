@@ -111,7 +111,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             <!--Message History link-->
             <!--Appeal history link-->
             <li>
-                <a href="AppealHistory.php" class="active">
+                <a href="AppealHistory.php">
                     <i class='bx bxs-hand'></i>
                     <span class="links_name">Appeal History</span>
                 </a>
@@ -129,7 +129,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         <nav>
             <div class="sidebar-button">
                 <i class='bx bx-menu sidebarBtn'></i>
-                <span class="dashboard">Message History</span>
+                <span class="dashboard">Complaint History</span>
             </div>
             <!-- <div class="search-box">
                     <input type="text" placeholder="Search...">
