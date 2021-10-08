@@ -87,7 +87,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             <li><a href="../../Inc/e_logout.php"><img src="../../ICONS/logou.png" alt="logmeout">&nbsp; Log out</a></li>
         </ul>
     </div>
-       <div class="container">
+    <div class="container">
         <div class="header">
             <div class="nav">
                 <!--minor change-->
@@ -118,7 +118,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 
             </div>
         </div>
-       <!--upper-bar, serachbar and headline containing boxes/cards-->
+        <!--upper-bar, serachbar and headline containing boxes/cards-->
         <div class="content">
             <div class="cards">
                 <div class="card">
@@ -151,7 +151,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                         }
 
                         ?>
-                        
+
                         <h1><?php echo $progress ?></h1>
                         <h3>Work In-progress</h3>
                     </div>
@@ -189,7 +189,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                             $notification = 0;
                         }
                         ?>
-        
+
                         <h1><?php echo $notification; ?></h1>
                         <h3>Due Work</h3>
                     </div>
@@ -199,7 +199,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                 </div>
                 <div class="card" style="background-color: greenyellow;">
                     <div class="box">
-        
+
                         <h1 style="color:black;">Good</h1>
                         <h3 style="color:black;">Account Status</h3>
                     </div>
@@ -209,17 +209,17 @@ if ($result && mysqli_num_rows($result) > 0) {
                 </div>
                 <div class="card" style="background-color: red;">
                     <div class="box">
-        
+
                         <h1 style="color:white;">Banned</h1>
                         <h3 style="color:white;">Account Status</h3>
-                     
+
                     </div>
                     <!--button-->
                     <button name="send" class="buttonz">Appeal</button>
                     <div class="icon-case">
-                        <img src="../../ICONS/banned.png"  alt="work">
+                        <img src="../../ICONS/banned.png" alt="work">
                     </div>
-                    
+
                 </div>
             </div>
             <div class="content-2">
