@@ -415,9 +415,11 @@ th {
     font-size: 16.5px;
     justify-content: center;
     border: 1px solid white;
-    background-color: white;
+    /* background-color: white; */
+    background-color: red;
+    color: #fff;
     cursor: pointer;
-     box-shadow: 0 3px 32px 0 rgba(0, 0, 0, 0.459);
+    box-shadow: 0 3px 32px 0 rgba(0, 0, 0, 0.459);
     
   }
   
@@ -430,7 +432,9 @@ th {
     font-size: 16.5px;
     justify-content: center;
     border: 1px solid white;
-    background-color: white;
+    /* background-color: white; */
+    background-color: red;
+    color: #fff;
     cursor: pointer;
     box-shadow: 0 3px 32px 0 rgba(0, 0, 0, 0.459);
     
@@ -439,8 +443,8 @@ th {
   .btn-0:hover{
   
     transition: 0.2s;
-    background-color: #2697FF;
-    color: white;
+    background-color:#fff;
+    color: red;
   }
   
   /*done-button*/
