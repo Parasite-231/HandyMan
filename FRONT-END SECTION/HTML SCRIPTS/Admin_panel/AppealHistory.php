@@ -62,7 +62,8 @@ if ($result && mysqli_num_rows($result) > 0) {
             </li>
             <li>
                 <a href="workerlist.php">
-                    <i class='bx bx-coin-stack'></i>
+                    <i class='bx bxs-user'></i>
+                    <!-- <i class='bx bx-coin-stack'></i> -->
                     <span class="links_name">Worker List</span>
                 </a>
             </li>
@@ -72,6 +73,23 @@ if ($result && mysqli_num_rows($result) > 0) {
                     <span class="links_name">Complaint List</span>
                 </a>
             </li>
+
+            <li>
+                <a href="ServiceList.php">
+                    <!-- <i class='bx bxs-user-voice'></i> -->
+                    <i class='bx bx-coin-stack'></i>
+                    <span class="links_name">Service List</span>
+                </a>
+            </li>
+            <!--Banned list link-->
+            <li>
+                <a href="BannedList.php" >
+                    <i class='bx bxs-error' ></i>
+                    <span class="links_name">Banned List</span>
+                </a>
+            </li>
+            <!--Banned list link-->
+
             <!--send message link-->
             <li>
                 <a href="AdminMessageBox.php">
@@ -91,12 +109,14 @@ if ($result && mysqli_num_rows($result) > 0) {
 
             <!--Appeal history link-->
             <li>
-                <a href="AppealHistory.php" class="active">
-                    <i class='bx bx-history'></i>
-                    <span class="links_name">Appeal History</span>
+                <a href="AppealHistory.php"  class="active">
+                <i class='bx bxs-hand'></i>
+                <span class="links_name">Appeal History</span>
                 </a>
             </li>
             <!--Appeal History link-->
+
+
             <li class="log_out">
                 <a href="../../Inc/admin_logout.php">
                     <i class='bx bx-log-out'></i>
