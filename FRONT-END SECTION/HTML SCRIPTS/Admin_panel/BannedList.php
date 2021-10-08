@@ -14,6 +14,13 @@ if ($result && mysqli_num_rows($result) > 0) {
     $list = mysqli_fetch_assoc($result);
     $username = $list['username'];
 }
+
+
+if (isset($_POST['unban'])) {
+    $e_id = $_POST['id'];
+    $query = "UPDATE employee SET ban_status = '0', ban_removal_date = NULL WHERE id = $e_id";
+    mysqli_query($connect, $query);
+}
 ?>
 
 
@@ -175,7 +182,10 @@ if ($result && mysqli_num_rows($result) > 0) {
                                     <td>$type</td>
                                     <td>$rating</td>
                                     <td>
-                                        <button name='done' class='btn-0' style='text-align: center;'>Unban</button>
+                                    <form method='POST'>
+                                    <input type='hidden' name='id' value='$id'>
+                                        <button name='unban' class='btn-0' style='text-align: center;'>Unban</button>
+                                    </form>
                                         <!-- <span style='color:green;margin-left:40%'></span> -->
                                     </td>
                                 </tr>
