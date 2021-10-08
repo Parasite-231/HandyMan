@@ -78,7 +78,8 @@ if ($result && mysqli_num_rows($result) > 0) {
             <!--Service list-->
             <li>
                 <a href="ServiceList.php" class="active">
-                    <i class='bx bxs-user-voice'></i>
+                    <!-- <i class='bx bxs-user-voice'></i> -->
+                    <i class='bx bx-coin-stack'></i>
                     <span class="links_name">Service List</span>
                 </a>
             </li>

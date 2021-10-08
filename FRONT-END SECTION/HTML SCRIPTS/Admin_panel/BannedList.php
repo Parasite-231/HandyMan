@@ -55,7 +55,8 @@
                 <!--Service list-->
                 <li>
                     <a href="ServiceList.php" >
-                    <i class='bx bxs-user-voice'></i>
+                    <!-- <i class='bx bxs-user-voice'></i> -->
+                    <i class='bx bx-coin-stack'></i>
                     <span class="links_name">Service List</span>
                     </a>
                 </li>
