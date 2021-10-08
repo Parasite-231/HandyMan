@@ -45,6 +45,21 @@ if ($ban_status == 1) {
 }
 
 
+$query = "SELECT ban_removal_date FROM employee WHERE id = $e_id ";
+$result = mysqli_query($connect, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $data = mysqli_fetch_assoc($result);
+    $date = $data['ban_removal_date'];
+}
+
+$c_date = date('Y-m-d H:i:s');
+
+if ($c_date == $date || $c_date > $date) {
+    $query = "UPDATE employee SET ban_status = '0', ban_removal_date = NULL WHERE id = $e_id";
+    mysqli_query($connect, $query);
+}
+
 ?>
 
 
@@ -226,11 +241,24 @@ if ($ban_status == 1) {
 
                     </div>
                     <!--button-->
-                    <button name="send" class="buttonz">Appeal</button>
+                    <form action="employeeAppealMessage.php">
+                        <button name="appeal" class="buttonz">Appeal</button>
+                    </form>
+
                     <div class="icon-case">
                         <img src="../../ICONS/banned.png" alt="work">
                     </div>
 
+                </div>
+                <div class="card" style="background-color: #80c904; visibility:hidden">
+                    <div class="box">
+
+                        <h1 style="color:white;">Good</h1>
+                        <h3 style="color:white;">Account Status</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="../../ICONS/wc3.png" alt="work">
+                    </div>
                 </div>
             </div>
             <div class="content-2">
