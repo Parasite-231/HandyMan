@@ -120,7 +120,7 @@ if (isset($_POST['send'])) {
         <div class="Description">
             <!--new code-->
             <!--Appeal Message-->
-            <div class='card'>
+            <div class='card' style="height: 370px;">
                 <div class='bio-of-founder'>
                     <h2>
                         <img src='../../ICONS/adminmessage.png'>
@@ -133,7 +133,7 @@ if (isset($_POST['send'])) {
                     <label for="EmployeeID">Employee ID</label>
                     <input type="text" name="EmployeeID" id="EmployeeID" required>
                 </h3> -->
-                <form method="POST">
+                <form method="POST" >
                     <h3 style="margin-top: 20px;justify-content: space-between; color: #f17777;"> Message</h3>
                     <textarea maxlength="255" id="address" name="msg" style="height:120px"
                         placeholder="Write message in 255 characters" required></textarea>

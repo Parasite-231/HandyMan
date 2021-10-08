@@ -129,7 +129,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         <nav>
             <div class="sidebar-button">
                 <i class='bx bx-menu sidebarBtn'></i>
-                <span class="dashboard">Message History</span>
+                <span class="dashboard">Appeal History</span>
             </div>
             <!-- <div class="search-box">
                     <input type="text" placeholder="Search...">
