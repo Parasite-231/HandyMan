@@ -14,7 +14,6 @@ if ($result && mysqli_num_rows($result) > 0) {
 }
 
 
-
 $query = "SELECT * FROM employee WHERE id = $e_id";
 $result = mysqli_query($connect, $query);
 if (mysqli_num_rows($result) > 0) {
@@ -27,6 +26,16 @@ if (mysqli_num_rows($result) > 0) {
     $gender = $data['gender'];
     $address = $data['address'];
     $price = $data['price'];
+}
+
+$query = "SELECT * FROM services WHERE name = '$type'";
+$res = mysqli_query($connect, $query);
+
+if ($res && mysqli_num_rows($res) > 0) {
+
+    $dota = mysqli_fetch_assoc($res);
+    $lprice = $dota['lprice'];
+    $uprice = $dota['uprice'];
 }
 
 if (isset($_POST['submit'])) {
@@ -247,8 +256,9 @@ if (isset($_POST['delete'])) {
 
                 <label for="rate-worker" style="display: inline;">Set Asking Price</label>
 
-                <input name="fee" type="range" min="430" max="5000" value="<?php echo $price ?>" class="rate-bot"
-                    id="admin_rating" style="width: 66%; margin-top: 10px;" required>
+                <input name="fee" type="range" min="<?php echo $lprice ?>" max="<?php echo $uprice ?>"
+                    value="<?php echo $price ?>" class="rate-bot" id="admin_rating"
+                    style="width: 66%; margin-top: 10px;" required>
 
                 <input type="submit" name="save" class="add" value="Save" style="display: inline; width:20%;">
                 <p style="margin-bottom: 13px;color:#f76e6e;font-weight: 700;">Asking Price : <span id="rated"></span>

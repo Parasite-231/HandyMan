@@ -24,7 +24,7 @@ if (isset($_POST['final'])) {
     mysqli_query($connect, $query);
 
     $query = "SELECT AVG(rating) AS rating FROM orderlist WHERE e_id =  $e_id";
-    $result = mysqli_query($connect, $query);
+    $result = mysqli_query($connect, $query); //this can no longer be done
 
     if ($result && mysqli_num_rows($result) > 0) {
         $data = mysqli_fetch_assoc($result);
