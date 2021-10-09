@@ -51,7 +51,7 @@ if (isset($_POST['add'])) {
                 '$type', '0', '500', '$lprice', '$uprice')";
                 mysqli_query($connect, $query);
                 $msg = 'Added New Service Successfully!';
-                $color = 'greenyellow';
+                $color = 'limegreen';
             } else {
                 $msg = 'Set Lower Bound Price lower Than Upper Bound Price';
             }
@@ -252,8 +252,8 @@ if (isset($_POST['update'])) {
                                 <label for="type">Service Type</label>
                                 <select id="type" name="type">
                                     <option value="Home & Office Appliances">For Home & Office Appliances</option>
-                                    <option value="Construction sites">For Construction sites</option>
-                                    <option value="Cleaning Services">Cleaning Services</option>
+                                    <option value="Construction-site">For Construction sites</option>
+                                    <option value="Cleaning">Cleaning Services</option>
                                 </select>
 
                                 <!--end of work-type selection-->
