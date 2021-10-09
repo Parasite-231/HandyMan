@@ -71,7 +71,10 @@ https://github.com/
 ```
 
 ## Run the HandyMan website locally
-
+### Requirements
+* Installed XAMPP for cross-platform facilities, Apache, MySQL, PHP.
+* Have an Internet Connection on your Machine.
+### Steps
 * Step 01: At first clone the repository 
 
 ```sh
