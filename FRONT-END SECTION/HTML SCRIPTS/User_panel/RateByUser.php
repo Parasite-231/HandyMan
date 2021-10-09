@@ -16,24 +16,31 @@ if (isset($_POST['submit'])) {
 }
 
 if (isset($_POST['final'])) {
-    $rating = $_POST['rate'];
+    $c_rating = $_POST['rate'];
     $o_id = $_POST['o_id'];
     $e_id = $_POST['e_id'];
 
-    $query = "UPDATE orderlist SET rating = $rating WHERE id = $o_id";
+    $query = "UPDATE orderlist SET rating = $c_rating WHERE id = $o_id";
     mysqli_query($connect, $query);
 
-    $query = "SELECT AVG(rating) AS rating FROM orderlist WHERE e_id =  $e_id";
-    $result = mysqli_query($connect, $query); //this can no longer be done
+    // $query = "SELECT AVG(rating) AS rating FROM orderlist WHERE e_id =  $e_id";
+    // $result = mysqli_query($connect, $query); //this can no longer be done
+
+    $query = "SELECT rating, rated_services FROM employee WHERE id = $e_id";
+    $result = mysqli_query($connect, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $data = mysqli_fetch_assoc($result);
+        $rated = $data['rated_services'];
         $rating = $data['rating'];
+        $total_rated = $rated + 1;
+        $rating = ($rating * $rated + $c_rating) / $total_rated;
 
-        $sql = "UPDATE employee SET rating = $rating WHERE id = $e_id";
+
+        $sql = "UPDATE employee SET rating = $rating, rated_services = $total_rated WHERE id = $e_id";
         mysqli_query($connect, $sql);
 
-        $sql = "SELECT completed_services,rating FROM employee WHERE id = $e_id";
+        $sql = "SELECT completed_services, rating, grace_points FROM employee WHERE id = $e_id";
         $res = mysqli_query($connect, $sql);
 
         if ($res && mysqli_num_rows($res) > 0) {
@@ -42,12 +49,23 @@ if (isset($_POST['final'])) {
 
             $completed = $data['completed_services'];
             $rating = $data['rating'];
+            $grace_points = $data['grace_points'];
 
             if ($rating < 2.5 && $completed > 3) {
 
-                $date = ban(7);
-                $query = "UPDATE employee SET ban_status = '1', ban_removal_date = '$date' WHERE id = $e_id";
-                mysqli_query($connect, $query);
+                $grace_points = $grace_points - 1;
+                $sql = "UPDATE employee SET grace_points = $grace_points WHERE id = $e_id";
+                mysqli_query($connect, $sql);
+
+                if ($grace_points < 1) {
+                    $sql = "UPDATE employee SET grace_points = 5 WHERE id = $e_id";
+                    mysqli_query($connect, $sql);
+
+
+                    $date = ban(7);
+                    $query = "UPDATE employee SET ban_status = '1', ban_removal_date = '$date' WHERE id = $e_id";
+                    mysqli_query($connect, $query);
+                }
             }
         }
 
