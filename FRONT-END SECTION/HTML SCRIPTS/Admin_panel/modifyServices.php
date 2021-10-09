@@ -50,7 +50,7 @@ if (isset($_POST['add'])) {
                 '$type', '0', '500', '$lprice', '$uprice')";
                 mysqli_query($connect, $query);
             } else {
-                $msg = 'SET Lower Bound Price lower Than Upper Bound Price';
+                $msg = 'Set Lower Bound Price lower Than Upper Bound Price';
             }
         } else {
             $msg = "Please upload an image";
@@ -220,8 +220,21 @@ if (isset($_POST['update'])) {
                     <!-- <div class="title">Profile</div> -->
                     <div class="sales-details" style="margin-top: 23px;">
                         <!--Profile-->
+                        <center>
+                            <div>
+                                <?php if ($msg != '') : ?>
+                                <div style="margin-top:23px;  padding: 20px; background-color: #f44336; color: white;
+                                        width:80%">
+                                    <center><?php echo $msg ?></center>
+                                </div>
+                                <?php endif; ?>
+                            </div>
+                        </center>
+
 
                         <div class="profileform">
+
+
 
                             <form method="POST" enctype="multipart/form-data">
 

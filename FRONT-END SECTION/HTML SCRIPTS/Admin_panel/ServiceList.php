@@ -227,7 +227,7 @@ if (isset($_POST['delete'])) {
                         </table>
                     </div>
                     <div class="button" style="margin-top: 12px;">
-                        <a href="#">Add a new Service</a>
+                        <a href="./modifyServices.php">Add a new Service</a>
                     </div>
                 </div>
             </div>
