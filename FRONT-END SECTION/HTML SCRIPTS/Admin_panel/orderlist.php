@@ -142,6 +142,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             </form>
 
             <div class="profile-details">
+                <img src="../../ICONS/adminboss.png" alt="adminaccount">
                 <span class="admin_name"><?php echo $name ?></span>
             </div>
         </nav>

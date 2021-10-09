@@ -140,6 +140,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             <!--ajaira-->
 
             <div class="profile-details">
+                <img src="../../ICONS/adminboss.png" alt="adminaccount">
                 <span class="admin_name"><?php echo $name ?></span>
             </div>
         </nav>

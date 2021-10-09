@@ -146,6 +146,7 @@ if (isset($_POST['unban'])) {
             </form>
             <!--ajaira-->
             <div class="profile-details">
+                <img src="../../ICONS/adminboss.png" alt="adminaccount">
                 <span class="admin_name"><?php echo $username ?></span>
             </div>
         </nav>
