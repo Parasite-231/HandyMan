@@ -81,10 +81,18 @@ if ($result && mysqli_num_rows($result) > 0) {
                     <span class="links_name">Service List</span>
                 </a>
             </li>
+
+            <li>
+                <a href="modifyServices.php">
+                    <!-- <i class='bx bxs-user-voice'></i> -->
+                    <i class='bx bx-wrench'></i>
+                    <span class="links_name">Service Modification</span>
+                </a>
+            </li>
             <!--Banned list link-->
             <li>
-                <a href="BannedList.php" >
-                    <i class='bx bxs-error' ></i>
+                <a href="BannedList.php">
+                    <i class='bx bxs-error'></i>
                     <span class="links_name">Banned List</span>
                 </a>
             </li>
@@ -109,9 +117,9 @@ if ($result && mysqli_num_rows($result) > 0) {
 
             <!--Appeal history link-->
             <li>
-                <a href="AppealHistory.php"  class="active">
-                <i class='bx bx-user-voice'></i>
-                <span class="links_name">Appeal History</span>
+                <a href="AppealHistory.php" class="active">
+                    <i class='bx bx-user-voice'></i>
+                    <span class="links_name">Appeal History</span>
                 </a>
             </li>
             <!--Appeal History link-->
