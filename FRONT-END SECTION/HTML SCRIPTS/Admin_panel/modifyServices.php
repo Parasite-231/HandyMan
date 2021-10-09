@@ -225,12 +225,12 @@ if (isset($_POST['update'])) {
 
                             <form method="POST" enctype="multipart/form-data">
 
-                                <label for="name"> Work Name</label>
+                                <label for="name"> Service Name</label>
                                 <input type="text" id="name" name="name" value="">
 
                                 <!--work-type selection-->
 
-                                <label for="type">Work Type</label>
+                                <label for="type">Service Type</label>
                                 <select id="type" name="type">
                                     <option value="Home & Office Appliances">For Home & Office Appliances</option>
                                     <option value="Construction sites">For Construction sites</option>
