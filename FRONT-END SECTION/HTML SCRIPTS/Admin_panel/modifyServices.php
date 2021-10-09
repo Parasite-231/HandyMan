@@ -61,14 +61,14 @@ if (isset($_POST['update'])) {
 
     $lprice = $_POST['lprice'];
     $uprice = $_POST['uprice'];
-    $s_id = $_POST['id'];
+    $s_id = $_POST['s_id'];
 
     if (!empty($lprice) && !empty($uprice) && !empty($s_id)) {
         $query = "SELECT * FROM services WHERE id = $s_id";
         $result = mysqli_query($connect, $query);
         if ($result && mysqli_num_rows($result) > 0) {
 
-            $query = "UPDATE services SET lprice = $lprice, uprice = $uprice";
+            $query = "UPDATE services SET lprice = $lprice, uprice = $uprice WHERE id = $s_id";
             mysqli_query($connect, $query);
         } else {
             $msg = "No services found with this ID";

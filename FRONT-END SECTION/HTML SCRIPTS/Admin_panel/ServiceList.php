@@ -178,6 +178,8 @@ if (isset($_POST['delete'])) {
                                 <th>Service Type</th>
                                 <th>Rating</th>
                                 <th>Price</th>
+                                <th>Lower Bound Price</th>
+                                <th>Upper Bound Price</th>
                                 <th>Set Mode</th>
                             </tr>
 
@@ -192,6 +194,8 @@ if (isset($_POST['delete'])) {
                                     $name = $data['name'];
                                     $type = $data['type'];
                                     $price = $data['price'];
+                                    $lprice = $data['lprice'];
+                                    $uprice = $data['uprice'];
                                     $rating = $data['rating'];
                                     echo "
                                     <tr>
@@ -200,6 +204,8 @@ if (isset($_POST['delete'])) {
                                         <td>$type</td>
                                         <td>$rating</td>
                                         <td>$price</td>
+                                        <td>$lprice</td>
+                                        <td>$uprice</td>
                                         <form method='POST'>
                                         <input type='hidden' name='id' value='$id'></input>
                                         <td><button name='delete' class='btn-0' style='text-align: center;'>Delete</button>
