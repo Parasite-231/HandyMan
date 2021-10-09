@@ -56,6 +56,27 @@ if (isset($_POST['add'])) {
     }
 }
 
+
+if (isset($_POST['update'])) {
+
+    $lprice = $_POST['lprice'];
+    $uprice = $_POST['uprice'];
+    $s_id = $_POST['id'];
+
+    if (!empty($lprice) && !empty($uprice) && !empty($s_id)) {
+        $query = "SELECT * FROM services WHERE id = $s_id";
+        $result = mysqli_query($connect, $query);
+        if ($result && mysqli_num_rows($result) > 0) {
+
+            $query = "UPDATE services SET lprice = $lprice, uprice = $uprice";
+            mysqli_query($connect, $query);
+        } else {
+            $msg = "No services found with this ID";
+        }
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -255,17 +276,17 @@ if (isset($_POST['add'])) {
                                 <form method="POST">
 
                                     <label for="name"> Service ID</label>
-                                    <input type="text" id="name" name="name" value="">
+                                    <input type="text" id="name" name="s_id" value="" required>
 
                                     <div class="priceTab">
                                         <div class="sanu">
                                             <label for="lprice">Lower Price </label>
-                                            <input type="text" id="lprice" name="lprice" value="">
+                                            <input type="number" id="lprice" name="lprice" value="" required>
                                         </div>
 
                                         <div class="sanu-2">
                                             <label for="uprice">Upper Price</label>
-                                            <input type="text" id="uprice" name="uprice" value="">
+                                            <input type="number" id="uprice" name="uprice" value="" required>
                                         </div>
                                     </div>
 
