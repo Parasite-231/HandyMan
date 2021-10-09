@@ -22,6 +22,7 @@ if (isset($_POST['edit'])) {
     $hide = '';
 }
 
+$color = '#f44336';
 $msg = '';
 if (isset($_POST['add'])) {
     $w_name = $_POST['name'];
@@ -49,6 +50,8 @@ if (isset($_POST['add'])) {
                 $query = "INSERT INTO services(name, image, type, rating, price, lprice, uprice) VALUES ('$w_name', '$dest',
                 '$type', '0', '500', '$lprice', '$uprice')";
                 mysqli_query($connect, $query);
+                $msg = 'Added New Service Successfully!';
+                $color = 'greenyellow';
             } else {
                 $msg = 'Set Lower Bound Price lower Than Upper Bound Price';
             }
@@ -74,6 +77,8 @@ if (isset($_POST['update'])) {
             if ($lprice < $uprice) {
                 $query = "UPDATE services SET lprice = $lprice, uprice = $uprice WHERE id = $s_id";
                 mysqli_query($connect, $query);
+                $msg = 'Price Updated Successfully';
+                $color = 'limegreen';
             } else {
                 $msg = "SET Lower Bound Price lower Than Upper Bound Price";
             }
@@ -223,7 +228,8 @@ if (isset($_POST['update'])) {
                         <center>
                             <div>
                                 <?php if ($msg != '') : ?>
-                                <div style="margin-top:23px;  padding: 20px; background-color: #f44336; color: white;
+                                <div style="margin-top:23px;  padding: 20px; background-color: <?php echo $color ?>;
+                                 color: white;
                                         width:80%">
                                     <center><?php echo $msg ?></center>
                                 </div>
@@ -296,7 +302,7 @@ if (isset($_POST['update'])) {
                                 <form method="POST">
 
                                     <label for="name"> Service ID</label>
-                                    <input type="text" id="name" name="s_id" value="" required>
+                                    <input type="number" id="name" name="s_id" value="" required>
 
                                     <div class="priceTab">
                                         <div class="sanu">
