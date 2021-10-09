@@ -19,7 +19,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 if (isset($_POST['delete'])) {
     $id = $_POST['id'];
     $query = "DELETE FROM services WHERE id = $id";
-    mysqli($connect, $query);
+    mysqli_query($connect, $query);
 }
 
 ?>
@@ -201,6 +201,7 @@ if (isset($_POST['delete'])) {
                                         <td>$rating</td>
                                         <td>$price</td>
                                         <form method='POST'>
+                                        <input type='hidden' name='id' value='$id'></input>
                                         <td><button name='delete' class='btn-0' style='text-align: center;'>Delete</button>
                                         </td>
                                         </form>
