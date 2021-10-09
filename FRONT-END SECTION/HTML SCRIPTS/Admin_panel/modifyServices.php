@@ -45,9 +45,13 @@ if (isset($_POST['add'])) {
         if (in_array($imgExt, $allowed)) {
             move_uploaded_file($img_tmp, "../../service_img/" . $img_name);
 
-            $query = "INSERT INTO services(name, image, type, rating, price, lprice, uprice) VALUES ('$w_name', '$dest',
-             '$type', '0', '500', '$lprice', '$uprice')";
-            mysqli_query($connect, $query);
+            if ($lprice < $uprice) {
+                $query = "INSERT INTO services(name, image, type, rating, price, lprice, uprice) VALUES ('$w_name', '$dest',
+                '$type', '0', '500', '$lprice', '$uprice')";
+                mysqli_query($connect, $query);
+            } else {
+                $msg = 'SET Lower Bound Price lower Than Upper Bound Price';
+            }
         } else {
             $msg = "Please upload an image";
         }
@@ -67,9 +71,12 @@ if (isset($_POST['update'])) {
         $query = "SELECT * FROM services WHERE id = $s_id";
         $result = mysqli_query($connect, $query);
         if ($result && mysqli_num_rows($result) > 0) {
-
-            $query = "UPDATE services SET lprice = $lprice, uprice = $uprice WHERE id = $s_id";
-            mysqli_query($connect, $query);
+            if ($lprice < $uprice) {
+                $query = "UPDATE services SET lprice = $lprice, uprice = $uprice WHERE id = $s_id";
+                mysqli_query($connect, $query);
+            } else {
+                $msg = "SET Lower Bound Price lower Than Upper Bound Price";
+            }
         } else {
             $msg = "No services found with this ID";
         }
