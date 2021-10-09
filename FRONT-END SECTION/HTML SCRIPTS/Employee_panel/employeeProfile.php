@@ -247,8 +247,8 @@ if (isset($_POST['delete'])) {
 
                 <label for="rate-worker" style="display: inline;">Set Asking Price</label>
 
-                <input name="fee" type="range" min="430" max="5000" value="430" class="rate-bot" id="admin_rating"
-                    style="width: 66%; margin-top: 10px;" required>
+                <input name="fee" type="range" min="430" max="5000" value="<?php echo $price ?>" class="rate-bot"
+                    id="admin_rating" style="width: 66%; margin-top: 10px;" required>
 
                 <input type="submit" name="save" class="add" value="Save" style="display: inline; width:20%;">
                 <p style="margin-bottom: 13px;color:#f76e6e;font-weight: 700;">Asking Price : <span id="rated"></span>
