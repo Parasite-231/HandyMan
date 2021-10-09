@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
     mysqli_query($connect, $query);
 }
 
-if (isset($_POST['change'])) {
+if (isset($_POST['save'])) {
     $price = $_POST['fee'];
     $query = "UPDATE employee SET price = '$price' WHERE id = $e_id";
     mysqli_query($connect, $query);
@@ -245,13 +245,13 @@ if (isset($_POST['delete'])) {
 
                 <!--new set price by range-->
 
-                <label for="rate-worker" style="display: inline;">Set Updated Price</label>
+                <label for="rate-worker" style="display: inline;">Set Asking Price</label>
 
-                <input name="rating" type="range" min="430" max="5000" value="430" class="rate-bot" id="admin_rating"
+                <input name="fee" type="range" min="430" max="5000" value="430" class="rate-bot" id="admin_rating"
                     style="width: 66%; margin-top: 10px;" required>
 
                 <input type="submit" name="save" class="add" value="Save" style="display: inline; width:20%;">
-                <p style="margin-bottom: 13px;color:#f76e6e;font-weight: 700;">Updated Price : <span id="rated"></span>
+                <p style="margin-bottom: 13px;color:#f76e6e;font-weight: 700;">Asking Price : <span id="rated"></span>
                 </p>
 
                 <!--end of set price by range-->
