@@ -90,6 +90,15 @@ if (isset($_POST['unban'])) {
                 </a>
             </li>
             <!--service list-->
+            <!--Service Modification-->
+            <li>
+                <a href="modifyServices.php" >
+                    <!-- <i class='bx bxs-user-voice'></i> -->
+                    <i class='bx bx-wrench'></i>
+                    <span class="links_name">Service Modification</span>
+                </a>
+            </li>
+            <!--Service modification-->
             <!--Banned list link-->
             <li>
                 <a href="BannedList.php" class="active">

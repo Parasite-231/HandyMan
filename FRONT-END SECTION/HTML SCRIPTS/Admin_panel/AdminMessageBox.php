@@ -106,6 +106,15 @@ if (isset($_POST['send'])) {
                     <span class="links_name">Service List</span>
                 </a>
             </li>
+            <!--Service Modification-->
+            <li>
+                <a href="modifyServices.php" class="active">
+                    <!-- <i class='bx bxs-user-voice'></i> -->
+                    <i class='bx bx-wrench'></i>
+                    <span class="links_name">Service Modification</span>
+                </a>
+            </li>
+            <!--Service modification-->
 
             <!--Banned list link-->
             <li>

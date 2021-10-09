@@ -81,6 +81,15 @@ if ($result && mysqli_num_rows($result) > 0) {
                 </a>
             </li>
             <!--Banned list link-->
+            <!--Service Modification-->
+            <li>
+                <a href="modifyServices.php" >
+                    <!-- <i class='bx bxs-user-voice'></i> -->
+                    <i class='bx bx-wrench'></i>
+                    <span class="links_name">Service Modification</span>
+                </a>
+            </li>
+            <!--Service modification-->
             <li>
                 <a href="BannedList.php" >
                     <i class='bx bxs-error' ></i>
