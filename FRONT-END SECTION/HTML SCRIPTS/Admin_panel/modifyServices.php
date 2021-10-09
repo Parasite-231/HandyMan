@@ -45,8 +45,8 @@ if (isset($_POST['add'])) {
         if (in_array($imgExt, $allowed)) {
             move_uploaded_file($img_tmp, "../../service_img/" . $img_name);
 
-            $query = "INSERT INTO services(name, image, type, lprice, uprice) VALUES ('$w_name', '$$dest', '$type'
-                        '$lprice', '$uprice')";
+            $query = "INSERT INTO services(name, image, type, rating, price, lprice, uprice) VALUES ('$w_name', '$dest',
+             '$type', '0', '500', '$lprice', '$uprice')";
             mysqli_query($connect, $query);
         } else {
             $msg = "Please upload an image";

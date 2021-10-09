@@ -108,7 +108,7 @@ if (isset($_POST['send'])) {
             </li>
             <!--Service Modification-->
             <li>
-                <a href="modifyServices.php" class="active">
+                <a href="modifyServices.php">
                     <!-- <i class='bx bxs-user-voice'></i> -->
                     <i class='bx bx-wrench'></i>
                     <span class="links_name">Service Modification</span>
@@ -118,8 +118,8 @@ if (isset($_POST['send'])) {
 
             <!--Banned list link-->
             <li>
-                <a href="BannedList.php" >
-                    <i class='bx bxs-error' ></i>
+                <a href="BannedList.php">
+                    <i class='bx bxs-error'></i>
                     <span class="links_name">Banned List</span>
                 </a>
             </li>
@@ -144,9 +144,9 @@ if (isset($_POST['send'])) {
             <!--Message History link-->
             <!--Appeal history link-->
             <li>
-                <a href="AppealHistory.php" >
-                <i class='bx bx-user-voice'></i>
-                <span class="links_name">Appeal History</span>
+                <a href="AppealHistory.php">
+                    <i class='bx bx-user-voice'></i>
+                    <span class="links_name">Appeal History</span>
                 </a>
             </li>
             <!--Appeal History link-->
