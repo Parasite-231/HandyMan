@@ -18,18 +18,18 @@ if ($result && mysqli_num_rows($result) > 0) {
 $hide = 'hidden';
 
 if (isset($_POST['send'])) {
-    $o_id = $_POST['o_id'];
+    $e_id = $_POST['e_id'];
     $msg = $_POST['msg'];
 
 
-    $query = "SELECT id, e_id FROM orderlist WHERE id = '$o_id'";
+    $query = "SELECT e_id FROM employee WHERE id = '$e_id'";
     $result = mysqli_query($connect, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $data = mysqli_fetch_assoc($result);
         $e_id = $data['e_id'];
-        $date = date('Y-m-d');
-        $query = "INSERT INTO message(o_id, e_id, msg, date) VALUES ('$o_id', '$e_id', '$msg', '$date')";
+        $date = date('Y-m-d', time() + 4 * 3600);
+        $query = "INSERT INTO message(e_id, msg, date) VALUES ('$e_id', '$msg', '$date')";
         mysqli_query($connect, $query);
     } else {
         $hide = '';
@@ -193,8 +193,8 @@ if (isset($_POST['send'])) {
 
                                             <!-- Order ID -->
                                             <h3 style="margin-top: 20px;">
-                                                <label for="OrderID">Order ID</label>
-                                                <input type="text" name="o_id" id="OrderID" required>
+                                                <label for="OrderID">Employee ID</label>
+                                                <input type="text" name="e_id" id="OrderID" required>
 
                                             </h3>
                                             <!--alert-->
@@ -203,7 +203,7 @@ if (isset($_POST['send'])) {
                                             <img src="../../ICONS/ouch.png" alt="" > -->
                                             <sup>
                                                 <t <?php echo $hide ?> style="font-size: small; color:red; margin: left 0px;
-                                                font-weight:bold; "> Order ID not matched
+                                                font-weight:bold; "> Employee ID not matched
                                                 </t>
                                             </sup>
                                             <!--alert-->
@@ -215,16 +215,7 @@ if (isset($_POST['send'])) {
                                             <textarea maxlength="255" id="address" name="msg" style="height:120px"
                                                 placeholder="Write message in 255 characters"></textarea>
 
-                                            <!--message part-->
-
-                                            <!-- <input name="send" type="submit" value="Send"> -->
-
-
-
-                                            <!-- <button name="send" type="submit">Send</button> -->
-
                                             <button name="send" class="buttonz">Send</button>
-
 
                                         </form>
                                     </div>
