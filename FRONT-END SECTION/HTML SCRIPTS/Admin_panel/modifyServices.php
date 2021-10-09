@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\type;
+
 require("../../Inc/function.php");
 session_start();
 if (!isset($_SESSION['aID'])) {
@@ -17,6 +20,40 @@ if ($result && mysqli_num_rows($result) > 0) {
 $hide = 'hidden';
 if (isset($_POST['edit'])) {
     $hide = '';
+}
+
+$msg = '';
+if (isset($_POST['add'])) {
+    $w_name = $_POST['name'];
+    $type = $_POST['type'];
+    $lprice = $_POST['lprice'];
+    $uprice = $_POST['uprice'];
+    $img = $_FILES['img'];
+
+
+    $img_name = $_FILES['img']['name'];
+    $img_type = $_FILES['img']['type'];
+    $img_tmp = $_FILES['img']['tmp_name'];
+
+    $imgExt = explode('.', $img_name);
+    $imgExt = strtolower(end($imgExt));
+    $allowed = array('jpg', 'jpeg', 'png');
+    $dest = "../../service_img/" . $img_name;
+
+
+    if (!empty($w_name) && !empty($type) && !empty($lprice) && !empty($uprice) && !empty($img)) {
+        if (in_array($imgExt, $allowed)) {
+            move_uploaded_file($img_tmp, "../../service_img/" . $img_name);
+
+            $query = "INSERT INTO services(name, image, type, lprice, uprice) VALUES ('$w_name', '$$dest', '$type'
+                        '$lprice', '$uprice')";
+            mysqli_query($connect, $query);
+        } else {
+            $msg = "Please upload an image";
+        }
+    } else {
+        $msg = "Please fill in all the fields !";
+    }
 }
 
 ?>
@@ -146,7 +183,7 @@ if (isset($_POST['edit'])) {
                     </div> -->
             <div class="profile-details">
                 <img src="../../ICONS/adminboss.png" alt="adminaccount">
-                <span class="admin_name"></span>
+                <span class="admin_name"><?php echo $name ?></span>
             </div>
         </nav>
         <div class="home-content">
@@ -158,15 +195,15 @@ if (isset($_POST['edit'])) {
 
                         <div class="profileform">
 
-                            <form method="POST">
+                            <form method="POST" enctype="multipart/form-data">
 
                                 <label for="name"> Work Name</label>
-                                <input type="text" id="name" name="name" value="" required>
+                                <input type="text" id="name" name="name" value="">
 
                                 <!--work-type selection-->
 
                                 <label for="type">Work Type</label>
-                                <select id="type" name="type" required>
+                                <select id="type" name="type">
                                     <option value="Home & Office Appliances">For Home & Office Appliances</option>
                                     <option value="Construction sites">For Construction sites</option>
                                     <option value="Cleaning Services">Cleaning Services</option>
@@ -178,11 +215,11 @@ if (isset($_POST['edit'])) {
                                 <div class="priceTab">
                                     <div class="sanu">
                                         <label for="lprice">Lower Price </label>
-                                        <input type="text" id="lprice" name="lprice" value="" required>
+                                        <input type="number" id="lprice" name="lprice" value="">
                                     </div>
                                     <div class="sanu-2">
                                         <label for="uprice">Upper Price</label>
-                                        <input type="text" id="uprice" name="uprice" value="" required>
+                                        <input type="number" id="uprice" name="uprice" value="">
                                     </div>
                                 </div>
 
@@ -193,7 +230,7 @@ if (isset($_POST['edit'])) {
 
                                 <div>
                                     <label>Upload your Service Image</label>
-                                    <input type="file" name="img" multiple class="choose" required>
+                                    <input type="file" name="img" multiple class="choose">
                                 </div>
 
                                 <!--End of upload image file-->

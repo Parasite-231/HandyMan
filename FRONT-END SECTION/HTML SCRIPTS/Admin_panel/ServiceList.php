@@ -15,6 +15,13 @@ if ($result && mysqli_num_rows($result) > 0) {
     $name = $list['username'];
 }
 
+
+if (isset($_POST['delete'])) {
+    $id = $_POST['id'];
+    $query = "DELETE FROM services WHERE id = $id";
+    mysqli($connect, $query);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -86,7 +93,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             <!--service list-->
             <!--Service Modification-->
             <li>
-                <a href="modifyServices.php" >
+                <a href="modifyServices.php">
                     <!-- <i class='bx bxs-user-voice'></i> -->
                     <i class='bx bx-wrench'></i>
                     <span class="links_name">Service Modification</span>
@@ -118,9 +125,9 @@ if ($result && mysqli_num_rows($result) > 0) {
             <!--Message History link-->
             <!--Appeal history link-->
             <li>
-                <a href="AppealHistory.php" >
-                <i class='bx bx-user-voice'></i>
-                <span class="links_name">Appeal History</span>
+                <a href="AppealHistory.php">
+                    <i class='bx bx-user-voice'></i>
+                    <span class="links_name">Appeal History</span>
                 </a>
             </li>
             <!--Appeal History link-->
@@ -193,8 +200,11 @@ if ($result && mysqli_num_rows($result) > 0) {
                                         <td>$type</td>
                                         <td>$rating</td>
                                         <td>$price</td>
-                                        <td><button name='done' class='btn-0' style='text-align: center;'>Delete</button>
+                                        <form method='POST'>
+                                        <td><button name='delete' class='btn-0' style='text-align: center;'>Delete</button>
                                         </td>
+                                        </form>
+                                        
                                     </tr>
                                     ";
                                 }
