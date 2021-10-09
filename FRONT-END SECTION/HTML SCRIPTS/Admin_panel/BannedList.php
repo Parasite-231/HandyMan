@@ -21,6 +21,9 @@ if (isset($_POST['unban'])) {
     $query = "UPDATE employee SET ban_status = '0', ban_removal_date = NULL WHERE id = $e_id";
     mysqli_query($connect, $query);
 }
+
+
+
 ?>
 
 
@@ -92,7 +95,7 @@ if (isset($_POST['unban'])) {
             <!--service list-->
             <!--Service Modification-->
             <li>
-                <a href="modifyServices.php" >
+                <a href="modifyServices.php">
                     <!-- <i class='bx bxs-user-voice'></i> -->
                     <i class='bx bx-wrench'></i>
                     <span class="links_name">Service Modification</span>
@@ -126,7 +129,7 @@ if (isset($_POST['unban'])) {
             <!--Message History link-->
             <!--Appeal history link-->
             <li>
-                <a href="AppealHistory.php" >
+                <a href="AppealHistory.php">
                     <i class='bx bx-user-voice'></i>
                     <span class="links_name">Appeal History</span>
                 </a>
@@ -148,10 +151,10 @@ if (isset($_POST['unban'])) {
             </div>
             <!--ajaira-->
             <form method="POST">
-                <!-- <div class="search-box">
-                        <input type="text" name="input" placeholder="Search..." required>
-                        <button name="search"><i class='bx bx-search'></i></button>
-                        </div> -->
+                <div class="search-box">
+                    <input type="text" name="input" placeholder="Search..." required>
+                    <button name="search"><i class='bx bx-search'></i></button>
+                </div>
             </form>
             <!--ajaira-->
             <div class="profile-details">
@@ -178,8 +181,15 @@ if (isset($_POST['unban'])) {
 
                             <?php
 
-                            $query = "SELECT * FROM employee WHERE ban_status = 1";
-                            $result = mysqli_query($connect, $query);
+                            if (isset($_POST['search'])) {
+                                $e_id = $_POST['input'];
+                                $query = "SELECT * FROM employee WHERE id = $e_id AND ban_status = 1";
+                                $result = mysqli_query($connect, $query);
+                            } else {
+                                $query = "SELECT * FROM employee WHERE ban_status = 1";
+                                $result = mysqli_query($connect, $query);
+                            }
+
                             if ($result && mysqli_num_rows($result) > 0) {
                                 $data = mysqli_fetch_assoc($result);
                                 $id = $data['id'];
