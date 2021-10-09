@@ -1,3 +1,26 @@
+<?php
+require("../../Inc/function.php");
+session_start();
+if (!isset($_SESSION['aID'])) {
+    header("location:./adminlogin.php");
+}
+
+$a_id = $_SESSION['aID'];
+$query = "SELECT username FROM admin WHERE id = $a_id";
+$result = mysqli_query($connect, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $list = mysqli_fetch_assoc($result);
+    $name = $list['username'];
+}
+
+$hide = 'hidden';
+if (isset($_POST['edit'])) {
+    $hide = '';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -138,15 +161,15 @@
                             <form method="POST">
 
                                 <label for="name"> Work Name</label>
-                                <input type="text" id="name" name="name" value="">
+                                <input type="text" id="name" name="name" value="" required>
 
                                 <!--work-type selection-->
 
                                 <label for="type">Work Type</label>
-                                <select id="type" name="type">
-                                    <option value="0">For Home & Office Appliances</option>
-                                    <option value="1">For Construction sites</option>
-                                    <option value="2">Cleaning Services</option>
+                                <select id="type" name="type" required>
+                                    <option value="Home & Office Appliances">For Home & Office Appliances</option>
+                                    <option value="Construction sites">For Construction sites</option>
+                                    <option value="Cleaning Services">Cleaning Services</option>
                                 </select>
 
                                 <!--end of work-type selection-->
@@ -155,11 +178,11 @@
                                 <div class="priceTab">
                                     <div class="sanu">
                                         <label for="lprice">Lower Price </label>
-                                        <input type="text" id="lprice" name="lprice" value="">
+                                        <input type="text" id="lprice" name="lprice" value="" required>
                                     </div>
                                     <div class="sanu-2">
                                         <label for="uprice">Upper Price</label>
-                                        <input type="text" id="uprice" name="uprice" value="">
+                                        <input type="text" id="uprice" name="uprice" value="" required>
                                     </div>
                                 </div>
 
@@ -170,47 +193,49 @@
 
                                 <div>
                                     <label>Upload your Service Image</label>
-                                    <input type="file" multiple class="choose">
+                                    <input type="file" name="img" multiple class="choose" required>
                                 </div>
 
                                 <!--End of upload image file-->
 
                                 <!--Save Section-->
                                 <div class="priceTab">
-
                                     <div class="sanu">
-                                        <Button style="width: 90%;" name="editService">Edit Service Price</Button>
+                                        <Button style="width: 90%;" name="edit">Edit Service</Button>
                                     </div>
                                     <div class="sanu-2">
-                                        <Button style="width: 90%;" name="saveService">Save Updated Price</Button>
+                                        <Button style="width: 90%;" name="add">Save</Button>
                                     </div>
 
                                 </div>
                             </form>
+
                             <!--End of Save Section-->
 
                             <!--LOWER SECTION-->
 
-                            <form method="POST">
+                            <div <?php echo $hide ?>>
+                                <form method="POST">
 
-                                <label for="name"> Service ID</label>
-                                <input type="text" id="name" name="name" value="">
+                                    <label for="name"> Service ID</label>
+                                    <input type="text" id="name" name="name" value="">
 
-                                <div class="priceTab">
-                                    <div class="sanu">
-                                        <label for="lprice">Lower Price </label>
-                                        <input type="text" id="lprice" name="lprice" value="">
+                                    <div class="priceTab">
+                                        <div class="sanu">
+                                            <label for="lprice">Lower Price </label>
+                                            <input type="text" id="lprice" name="lprice" value="">
+                                        </div>
+
+                                        <div class="sanu-2">
+                                            <label for="uprice">Upper Price</label>
+                                            <input type="text" id="uprice" name="uprice" value="">
+                                        </div>
                                     </div>
 
-                                    <div class="sanu-2">
-                                        <label for="uprice">Upper Price</label>
-                                        <input type="text" id="uprice" name="uprice" value="">
-                                    </div>
-                                </div>
+                                    <Button name="update" style="width: 140px;float: right;">Save</Button>
 
-                                <Button name="save" style="width: 140px;float: right;">Save</Button>
-
-                            </form>
+                                </form>
+                            </div>
 
                         </div>
                     </div>
