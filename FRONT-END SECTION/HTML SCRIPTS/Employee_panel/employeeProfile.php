@@ -231,11 +231,33 @@ if (isset($_POST['delete'])) {
                 <!--submitted button-->
                 <input type="submit" name="submit" value="Submit">
 
-                <!-- asking price -->
-                <label for="Price" style="display: inline;">Asking Price:</label>
-                <input type="text" name="fee" style="width: 15%; display: inline;" value="<?php echo $price ?>">
+                <!--  previously way of asking price -->
+
+                <!-- <label for="Price" style="display: inline;">Asking Price:</label>
+                <input type="text" name="fee" style="width: 15%; display: inline;" value="<?php //echo $price ?>">
                 </input><input type="submit" name="change" class="add" value="change"
-                    style="display: inline; width:7%;"><br>
+                    style="display: inline; width:7%;"> -->
+
+                <!--end of previously way of asking price -->
+
+
+
+                <!--new set price by range-->
+
+                <label for="rate-worker" style="display: inline;">Set Updated Price</label>
+
+                <input name="rating" type="range" min="430" max="5000" value="430" class="rate-bot"
+                        id="admin_rating" style="width: 67.5%; margin-top: 50px;" required>
+
+                <input type="submit" name="save" class="add" value="Save" style="display: inline; width:20%;">
+                <p style="margin-bottom: 13px;color:#f76e6e;font-weight: 700;">Updated Price : <span
+                            id="rated"></span></p>
+
+                <!--end of set price by range-->
+
+
+
+                <br>
 
                 <!--Date box-->
                 <label for="Date">Day off: </label>
@@ -259,6 +281,9 @@ if (isset($_POST['delete'])) {
 
             </form>
         </div>
+
+    <!--add file-->
+     <script src="PriceSettingBot.js"></script>
 </body>
 
 </html>
