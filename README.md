@@ -101,3 +101,5 @@ Contributors names and contact info
 * [@sadmanmehedi](https://mail.google.com/mail/sadmanmehedi%40gmail.com)
 
 ## Project Status
+
+Project is well finished according to the plan. In future, more feature will be implemented. Any suggestions, are highly appreciable.
