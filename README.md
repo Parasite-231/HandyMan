@@ -23,10 +23,6 @@ and the satisfaction of the customers.
 * Includes banning system for admin panel.
 * Communication between admin and workers.
 
-## Badges
-
-## Visuals
-
 ## Usage
 In our day-to-day life, we feel the necessity for
 various kinds of services. Sometimes we need a
