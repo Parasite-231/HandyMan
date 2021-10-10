@@ -114,7 +114,6 @@ if ($result && mysqli_num_rows($result) > 0) {
             $result = mysqli_query($connect, $query);
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($data = mysqli_fetch_assoc($result)) {
-                    $o_id = $data['o_id'];
                     $e_id = $data['e_id'];
                     $msg = $data['msg'];
                     $date = $data['date'];

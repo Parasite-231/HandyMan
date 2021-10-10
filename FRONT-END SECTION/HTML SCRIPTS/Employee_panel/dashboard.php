@@ -187,7 +187,18 @@ if ($c_date == $date || $c_date > $date) {
                 </div>
                 <div class="card">
                     <div class="box">
-                        <h1>0</h1>
+
+                        <?php
+                        $query = "SELECT COUNT(*) AS count FROM message WHERE e_id = $e_id";
+                        $result = mysqli_query($connect, $query);
+                        if ($result && mysqli_num_rows($result) > 0) {
+                            $array = mysqli_fetch_assoc($result);
+                            $msg = $array['count'];
+                        }
+
+                        ?>
+
+                        <h1><?php echo $msg ?></h1>
                         <h3>Message Received</h3>
                     </div>
                     <div class="icon-case">

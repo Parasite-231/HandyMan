@@ -54,16 +54,19 @@ if (isset($_POST['final'])) {
             if ($rating < 2.5 && $completed > 3) {
 
                 $grace_points = $grace_points - 1;
+
                 $sql = "UPDATE employee SET grace_points = $grace_points WHERE id = $e_id";
                 mysqli_query($connect, $sql);
 
+                if ($grace_points < 5 && $grace_points > 0) {
+                    $date = date('Y-m-d', time() + 4 * 3600);
+                    $msg = "WARNING !!! Your grace point is Less Than 5, You Will Be Banned FOR 7 Days if your 
+                            Grace Points go below 1";
 
-                $date = date('Y-m-d', time() + 4 * 3600);
-                $msg = "WARNING !!! Your grace point is Less Than 5, You Will Be Banned FOR 7 Days if your 
-                        Grace Points go below 1";
+                    $query = "INSERT INTO message(e_id, msg, date) VALUES ('$e_id', '$msg', '$date')";
+                    mysqli_query($connect, $query);
+                }
 
-                $query = "INSERT INTO message(e_id, msg, date) VALUES ('$e_id', '$msg', '$date')";
-                mysqli_query($connect, $query);
 
                 if ($grace_points < 1) {
 
