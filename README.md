@@ -75,18 +75,18 @@ https://github.com/
 * Installed XAMPP for cross-platform facilities, Apache, MySQL, PHP.
 * Have an Internet Connection on your Machine.
 ### Steps
-* Step 01: At first initialize git in htdocs folder.
-* Step 02: Clone the repository in your htdocs folder
+* Step 01 : At first initialize git in htdocs folder.
+* Step 02 : Clone the repository in your htdocs folder
 ```sh
 https://github.com/Parasite-231/HandyMan.git
 ```
-* Step 03: Create Database in phpMyAdmin with the same name as it was created originally.
-* Step 04: Import the SQL file in phpMyAdmin in newly created Database.
-* Step 05: Change the ID and password of the Database in the Software Package based on the newly created Database.
-* Step 06: Now to initialize the Web Application follow the steps below -->
-           (a) Open a Browser.
-           (b) Write www.handyman.com in the URL and press enter.
-           (c) It will present a workable version of the Web Application.
+* Step 03 : Create Database in phpMyAdmin with the same name as it was created originally.
+* Step 04 : Import the SQL file in phpMyAdmin in newly created Database.
+* Step 05 : Change the ID and password of the Database in the Software Package based on the newly created Database.
+* Step 06 : Now to initialize the Web Application follow the steps below :
+###### Open a Browser.
+###### Write www.handyman.com in the URL and press enter.
+###### It will present a workable version of the Web Application.
 ***For any problem regarding setting up the Web application please contact iftikharimrulkhan@gmail.com***
 
 ## Authors
