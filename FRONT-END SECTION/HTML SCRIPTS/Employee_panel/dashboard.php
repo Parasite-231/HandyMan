@@ -252,7 +252,8 @@ if ($c_date == $date || $c_date > $date) {
                         <h3 style="color:black;">Grace Points</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/wc3.png" alt="work">
+                        <img src="../../ICONS/smily.png" alt="work">
+                        <!-- <img src="../../ICONS/gp.png" alt="work"> -->
                     </div>
                 </div>
 
@@ -274,7 +275,8 @@ if ($c_date == $date || $c_date > $date) {
                         <h3 style="color:black;">Account Status</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/wc3.png" alt="work">
+                        <!-- <img src="../../ICONS/cut.png" alt="work"> -->
+                        <img src="../../ICONS/cut2.png" alt="work">
                     </div>
                 </div>
                 <div class="card" style="background-color: red;<?php echo $status_banned ?>">
