@@ -22,12 +22,12 @@ if (isset($_POST['send'])) {
     $msg = $_POST['msg'];
 
 
-    $query = "SELECT e_id FROM employee WHERE id = '$e_id'";
+    $query = "SELECT id FROM employee WHERE id = '$e_id'";
     $result = mysqli_query($connect, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $data = mysqli_fetch_assoc($result);
-        $e_id = $data['e_id'];
+        $e_id = $data['id'];
         $date = date('Y-m-d', time() + 4 * 3600);
         $query = "INSERT INTO message(e_id, msg, date) VALUES ('$e_id', '$msg', '$date')";
         mysqli_query($connect, $query);

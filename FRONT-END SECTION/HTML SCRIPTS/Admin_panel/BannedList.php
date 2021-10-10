@@ -152,7 +152,7 @@ if (isset($_POST['unban'])) {
             <!--ajaira-->
             <form method="POST">
                 <div class="search-box">
-                    <input type="text" name="input" placeholder="Search..." required>
+                    <input type="text" name="input" placeholder="Search by Employee ID..." required>
                     <button name="search"><i class='bx bx-search'></i></button>
                 </div>
             </form>
