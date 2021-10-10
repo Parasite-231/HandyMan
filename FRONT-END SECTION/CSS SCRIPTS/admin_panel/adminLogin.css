@@ -7,7 +7,7 @@ body {
    padding: 0;
    font-family: 'Poppins', sans-serif;
    /* background: #b174ee; */
-   background: #e67c7c;
+   background: #2697FF;
 }
 
 .container {
@@ -44,7 +44,7 @@ input {
    margin-top: 16px;
    /* background-color: #8749c5;
     color: #fff; */
-   background-color: #c95050;
+   background-color: #2697FF;
    color: #fff;
    border-radius: 8.5px;
    font-size: 18px;
@@ -56,6 +56,6 @@ input {
    /* background-color: white;
     color: #8749c5; */
    background-color: white;
-   color: #c95050;
+   color: #2697FF;
    transition: 0.35s;
 }

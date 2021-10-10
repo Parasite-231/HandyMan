@@ -7,6 +7,14 @@ if (!isset($_SESSION['eID'])) {
 
 $e_id = $_SESSION['eID'];
 
+$query = "SELECT name FROM employee WHERE id = $e_id";
+$result = mysqli_query($connect, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $list = mysqli_fetch_assoc($result);
+    $emp_name = $list['name'];
+}
+
 $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
 $result = mysqli_query($connect, $query);
 updateStatus($result, $connect);
@@ -34,6 +42,7 @@ if (isset($_POST['search'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS SCRIPTS/employee_panel/PaymentInformationdesign.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/workers.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Payment Information</title>
 </head>
@@ -58,7 +67,14 @@ if (isset($_POST['search'])) {
             <!-- <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
                     History</a></li> -->
-            <!--<li><a href="#" ><img src="messageIncome.png" alt="notifications" > &nbsp; Incoming-Messages</a></li>-->
+
+
+            <!--message html file-->
+            <li><a href="EmployeeMessageBoard.php"><img src="../../ICONS/messageIncome.png" alt="notifications"> &nbsp;
+                    Message Board</a></li>
+            <!--message html file-->
+
+
             <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
             <li><a href="employeePrivacy&Policy.php"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
                     Privacy &
@@ -70,16 +86,30 @@ if (isset($_POST['search'])) {
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="search">
-                    <input type="text" placeholder="Search...">
-                    <button type="submit"><img src="../../ICONS/search.png" alt=""></button>
+                <!--minor change-->
+                <div class="upperbar-symbol">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard" style="color: brown; ">Payment Information</span>
                 </div>
+                <!--minor change-->
+                <!--<div class="search">
+                     <input type="text" placeholder="Search...">
+                    <button type="submit"><img src="../../ICONS/search.png" alt=""></button> 
+                </div>-->
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->
                     <div class="img-case">
                         <!--<img src="../../ICONS/taketaka.png" alt="paymentInformation">-->
                     </div>
                 </div>
+
+                <!--minor change to show account name-->
+                <div class="profile-details">
+                    <img src="../../ICONS/workerprofile.png" alt="account">
+                    <span class="admin_name"><?php echo $emp_name ?></span>
+                </div>
+                <!--end of minor change to show account name-->
+
             </div>
         </div>
         <div class="description">

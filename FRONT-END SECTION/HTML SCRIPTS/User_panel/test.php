@@ -1,11 +1,7 @@
 <?php
 require('../../Inc/function.php');
 
-$date = '2021-07-26';
-$shift = '3PM - 6PM';
-$status = shiftStatus($shift);
 
-$c_date = date('Y-m-d', time() + 4 * 3600);
 
 
 
@@ -50,4 +46,16 @@ $c_date = date('Y-m-d', time() + 4 * 3600);
 //         ";
 //     }
 // }
-echo time();
+
+$date = ban(7);
+$date = '2021-10-08 11:29:19';
+$c_date = date('Y-m-d H:i:s',  time() + 4 * 3600);
+
+
+echo 'today: ' . $c_date . ' banday:' . $date;
+
+if ($c_date > $date) {
+    echo 'today is past';
+} else {
+    echo 'today is future';
+}

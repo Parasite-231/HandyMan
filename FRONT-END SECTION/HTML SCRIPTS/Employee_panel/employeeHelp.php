@@ -1,9 +1,17 @@
 <?php
 session_start();
+require("../../Inc/function.php");
 if (!isset($_SESSION['eID'])) {
     header("location:./employee login.php");
 }
+$e_id = $_SESSION['eID'];
+$query = "SELECT name FROM employee WHERE id = $e_id";
+$result = mysqli_query($connect, $query);
 
+if ($result && mysqli_num_rows($result) > 0) {
+    $list = mysqli_fetch_assoc($result);
+    $emp_name = $list['name'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +23,7 @@ if (!isset($_SESSION['eID'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS SCRIPTS/employee_panel/employeeHelp.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/account.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <title>Employee Help & Services</title>
@@ -40,7 +49,13 @@ if (!isset($_SESSION['eID'])) {
             <!-- <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
                     History</a></li> -->
-            <!--<li><a href="#" ><img src="messageIncome.png" alt="notifications" > &nbsp; Incoming-Messages</a></li>-->
+
+            <!--message html file-->
+            <li><a href="EmployeeMessageBoard.php"><img src="../../ICONS/messageIncome.png" alt="notifications"> &nbsp;
+                    Message Board</a></li>
+            <!--message html file-->
+
+
             <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
             <li><a href="employeePrivacy&Policy.php"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
                     Privacy &
@@ -52,16 +67,30 @@ if (!isset($_SESSION['eID'])) {
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="search">
-                    <input type="text" placeholder="Search...">
-                    <button type="submit"><img src="../../ICONS/search.png" alt=""></button>
+                <!--minor change-->
+                <div class="upperbar-symbol">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard" style="color: brown; ">Help</span>
                 </div>
+                <!--minor change-->
+                <!--<div class="search">
+                  <input type="text" placeholder="Search...">
+                    <button type="submit"><img src="../../ICONS/search.png" alt=""></button> 
+                </div>-->
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->
                     <div class="img-case">
                         <!--<img src="../../ICONS/help.png" alt="help">-->
                     </div>
                 </div>
+
+                <!--minor change to show account name-->
+                <div class="profile-details">
+                    <img src="../../ICONS/workerprofile.png" alt="account">
+                    <span class="admin_name"><?php echo $emp_name ?></span>
+                </div>
+                <!--end of minor change to show account name-->
+
             </div>
         </div>
         <!--profile-icon-->
@@ -69,6 +98,7 @@ if (!isset($_SESSION['eID'])) {
             <h2>FAQ</h2>
             <div class="informations">
                 <!--paragraph on "how we help our employees"-->
+                <!--changed parts-->
                 <div class="info">
                     <h3>Q. How does this site work?</h3>
                     <p>
@@ -84,7 +114,7 @@ if (!isset($_SESSION['eID'])) {
                     <h3>Q. How can I contact you?</h3>
                     <p>You can always contact us through our contact numbers provided in our contact us page and can
                         also mail us at <a href="mdmuktadirmazumder@gmail.com">reachus@handyman.com</a></a><br>
-                        Visit : <a href="contactUs.html" style="color: orange;">www.contacthandyman.com</a><br>
+                        Visit : <a href="contactUs.html" style="color: #f17777;">www.contacthandyman.com</a><br>
                         Contact: +8801306989579 </p>
 
 
@@ -96,13 +126,13 @@ if (!isset($_SESSION['eID'])) {
                     <p> You can get notifications about work from your customers by visiting the working notifications
                         page in your dashboard.<br>
                         Visit : <a href="employeeWorkNotifications.html"
-                            style="color: orange;">www.employeenotifications.com</a><br>
+                            style="color: #f17777;">www.employeenotifications.com</a><br>
                     </p>
 
                     <h3>Q. How can I get informations about my past works?</h3>
                     <p>You can only get necessary informations from your past works by visiting the working history site
                         from your dashboard<br>
-                        Visit:<a href="workingHistory.html" style="color: orange;">www.workinghistory.com</a> to know
+                        Visit:<a href="workingHistory.html" style="color:#f17777;">www.workinghistory.com</a> to know
                         your working history</p>
 
                     <h3>Q. How will you notify me about my bad actions?</h3>

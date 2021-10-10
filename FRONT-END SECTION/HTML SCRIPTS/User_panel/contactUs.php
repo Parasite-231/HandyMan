@@ -20,15 +20,15 @@ if (isset($_POST['submit'])) {
     $o_id = $_POST['orderid'];
     $problem = $_POST['specific_prob'];
     $description = $_POST['describe'];
-
+    $rating = $_POST['rating'];
 
     if (preg_match("/(^(\+88|0088)?(01){1}[356789]{1}(\d){8})$/", $u_number)) {
         if (filter_var($u_email, FILTER_VALIDATE_EMAIL)) {
             $query = "SELECT * FROM orderlist WHERE u_id = $u_id AND id = $o_id AND status = 'Completed'";
             $result = mysqli_query($connect, $query);
             if ($result && mysqli_num_rows($result) > 0) {
-                $query = "INSERT INTO complain(o_id, u_name, u_email, u_number, problem, description) 
-                            VALUES ('$o_id', '$u_name', '$u_email', '$u_number', '$problem', '$description')";
+                $query = "INSERT INTO complain(o_id, rating, u_name, u_email, u_number, problem, description) 
+                            VALUES ('$o_id', '$rating', '$u_name', '$u_email', '$u_number', '$problem', '$description')";
                 mysqli_query($connect, $query);
 
                 $msg = 'Your complain has been submitted';
@@ -200,6 +200,19 @@ if (isset($_POST['submit'])) {
                             </select>
                             <label for="orderId">Order number</label><span class="required">*</span>
                             <input type="text" id="orderId" name="orderid"></input>
+
+                            <!--changed part-->
+
+                            <!--Rate Worker-->
+                            <div class="rating-section">
+                                <label for="rate-worker">Give a rating</label><span class="required">*</span>
+                                <input name="rating" type="range" min="1" max="5" value="1" class="rate-bot"
+                                    id="customer_rating" required>
+                                <p style="margin-bottom: 13px;color: red;font-weight: 700;">You Rated : <span
+                                        id="rated"></span></p>
+                            </div>
+                            <!--Rate Worker-->
+
                             <label for="message">Describe your complain elaborately</label><span
                                 class="required">*</span>
                             <textarea maxlength="200" id="address" name="describe" style="height:80px"
@@ -207,7 +220,12 @@ if (isset($_POST['submit'])) {
                             <!-- <label for="address">Your Address</label><span class="required">*</span>
                             <textarea id="address" name="address" style="height:60px"></textarea> -->
 
-                            <button class="btn_sub" type="submit" name="submit" <?php echo $css ?>>Submit</button>
+                            <!--changed part-->
+
+
+
+                            <button class="btn_sub" style="resize:none;" type="submit" name="submit"
+                                <?php echo $css ?>>Submit</button>
                         </form>
                     </div>
                     <div class=" button">
@@ -228,6 +246,10 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </div>
+
+    <!--add file-->
+    <script src="ComplaintRating.js"></script>
+
 </body>
 
 </html>

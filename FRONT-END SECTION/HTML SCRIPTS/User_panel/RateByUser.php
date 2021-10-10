@@ -16,22 +16,83 @@ if (isset($_POST['submit'])) {
 }
 
 if (isset($_POST['final'])) {
-    $rating = $_POST['rate'];
+    $c_rating = $_POST['rate'];
     $o_id = $_POST['o_id'];
     $e_id = $_POST['e_id'];
 
-    $query = "UPDATE orderlist SET rating = $rating WHERE id = $o_id";
+    $query = "UPDATE orderlist SET rating = $c_rating WHERE id = $o_id";
     mysqli_query($connect, $query);
 
-    $query = "SELECT AVG(rating) AS rating FROM orderlist WHERE e_id =  $e_id";
+    // $query = "SELECT AVG(rating) AS rating FROM orderlist WHERE e_id =  $e_id";
+    // $result = mysqli_query($connect, $query); //this can no longer be done
+
+    $query = "SELECT rating, rated_services FROM employee WHERE id = $e_id";
     $result = mysqli_query($connect, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $data = mysqli_fetch_assoc($result);
+        $rated = $data['rated_services'];
         $rating = $data['rating'];
+        $total_rated = $rated + 1;
+        $rating = ($rating * $rated + $c_rating) / $total_rated;
 
-        $sql = "UPDATE employee SET rating = $rating WHERE id = $e_id";
+
+        $sql = "UPDATE employee SET rating = $rating, rated_services = $total_rated WHERE id = $e_id";
         mysqli_query($connect, $sql);
+
+        $sql = "SELECT completed_services, rating, grace_points,type FROM employee WHERE id = $e_id";
+        $res = mysqli_query($connect, $sql);
+
+        if ($res && mysqli_num_rows($res) > 0) {
+
+            $data = mysqli_fetch_assoc($res);
+
+            $completed = $data['completed_services'];
+            $rating = $data['rating'];
+            $grace_points = $data['grace_points'];
+            $e_type = $data['type'];
+
+            if ($rating < 2.5 && $completed > 3) {
+
+                $grace_points = $grace_points - 1;
+
+                $sql = "UPDATE employee SET grace_points = $grace_points WHERE id = $e_id";
+                mysqli_query($connect, $sql);
+
+                if ($grace_points < 5 && $grace_points > 0) {
+                    $date = date('Y-m-d', time() + 4 * 3600);
+                    $msg = "WARNING !!! Your grace point is Less Than 5, You Will Be Banned FOR 7 Days if your 
+                            Grace Points go below 1. However, If you can recover your average rating to above 2.5 
+                            You will not get suspended, But Once the Grace Points go below 5 , you will be suspended 
+                            For 7 days and you will not be able to get any new works for that period.";
+
+                    $query = "INSERT INTO message(e_id, e_type, msg, date) VALUES ('$e_id', '$e_type', '$msg', '$date')";
+                    mysqli_query($connect, $query);
+                }
+
+
+                if ($grace_points < 1) {
+
+                    $date = ban(7);
+                    $query = "UPDATE employee SET ban_status = '1', ban_removal_date = '$date' WHERE id = $e_id";
+                    mysqli_query($connect, $query);
+
+                    $sql = "UPDATE employee SET rating = 2.5 WHERE id = $e_id";
+                    mysqli_query($connect, $sql);
+
+                    $date = date('Y-m-d', time() + 4 * 3600);
+                    $msg = "You Have Been Suspended for 7 days due to your low rating. You can still work on your reserved works but you will not receive any new works in this period.
+                            Your grace Points are restored to 5.  Your Average rating is set to 2.5. ";
+
+                    $query = "INSERT INTO message(e_id, 'e_type', msg, date) VALUES ('$e_id', '$e_type', '$msg', '$date')";
+                    mysqli_query($connect, $query);
+
+                    $sql = "UPDATE employee SET grace_points = 5 WHERE id = $e_id";
+                    mysqli_query($connect, $sql);
+                }
+            }
+        }
+
 
         $query = "SELECT * FROM services";
         $result = mysqli_query($connect, $query);
@@ -41,7 +102,7 @@ if (isset($_POST['final'])) {
                 $sql = "SELECT AVG(rating) AS rating FROM employee WHERE type = '$e_type' AND NOT rating = 0";
                 $res = mysqli_query($connect, $sql);
 
-                if ($res) {
+                if ($res && mysqli_num_rows($res) > 0) {
                     $data = mysqli_fetch_assoc($res);
                 } else {
                     echo "Internal Issue";

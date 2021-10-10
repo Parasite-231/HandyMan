@@ -1,11 +1,18 @@
 <?php
+require("../../Inc/function.php");
 session_start();
 if (!isset($_SESSION['eID'])) {
     header("location:./employee login.php");
 }
 $e_id = $_SESSION['eID'];
+$query = "SELECT name FROM employee WHERE id = $e_id";
+$result = mysqli_query($connect, $query);
 
-require("../../Inc/function.php");
+if ($result && mysqli_num_rows($result) > 0) {
+    $list = mysqli_fetch_assoc($result);
+    $emp_name = $list['name'];
+}
+
 
 $query = "SELECT * FROM employee WHERE id = $e_id";
 $result = mysqli_query($connect, $query);
@@ -21,6 +28,16 @@ if (mysqli_num_rows($result) > 0) {
     $price = $data['price'];
 }
 
+$query = "SELECT * FROM services WHERE name = '$type'";
+$res = mysqli_query($connect, $query);
+
+if ($res && mysqli_num_rows($res) > 0) {
+
+    $dota = mysqli_fetch_assoc($res);
+    $lprice = $dota['lprice'];
+    $uprice = $dota['uprice'];
+}
+
 if (isset($_POST['submit'])) {
     $company = $_POST['company_name'];
     $type = $_POST['type'];
@@ -32,7 +49,7 @@ if (isset($_POST['submit'])) {
     mysqli_query($connect, $query);
 }
 
-if (isset($_POST['change'])) {
+if (isset($_POST['save'])) {
     $price = $_POST['fee'];
     $query = "UPDATE employee SET price = '$price' WHERE id = $e_id";
     mysqli_query($connect, $query);
@@ -73,6 +90,7 @@ if (isset($_POST['delete'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS SCRIPTS/employee_panel/employeeProfiledesign.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/workers.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <title>Employee Profile</title>
@@ -98,7 +116,12 @@ if (isset($_POST['delete'])) {
             <!-- <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
                     History</a></li> -->
-            <!--<li><a href="#" ><img src="messageIncome.png" alt="notifications" > &nbsp; Incoming-Messages</a></li>-->
+
+            <!--message html file-->
+            <li><a href="EmployeeMessageBoard.php"><img src="../../ICONS/messageIncome.png" alt="notifications"> &nbsp;
+                    Message Board</a></li>
+            <!--message html file-->
+
             <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
             <li><a href="employeePrivacy&Policy.php"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
                     Privacy &
@@ -111,16 +134,30 @@ if (isset($_POST['delete'])) {
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="search">
-                    <input type="text" placeholder="Search...">
-                    <button type="submit"><img src="../../ICONS/search.png" alt=""></button>
+                <!--minor change-->
+                <div class="upperbar-symbol">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard" style="color: brown; ">Profile</span>
                 </div>
+                <!--minor change-->
+                <!-- <div class="search">
+                     <input type="text" placeholder="Search...">
+                    <button type="submit"><img src="../../ICONS/search.png" alt=""></button> 
+                </div> -->
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->
                     <div class="img-case">
-                        <img src="../../ICONS/workerp.png" alt="worker">
+                        <!-- <img src="../../ICONS/workerp.png" alt="worker"> -->
                     </div>
                 </div>
+
+                <!--minor change to show account name-->
+                <div class="profile-details">
+                    <img src="../../ICONS/workerprofile.png" alt="account">
+                    <span class="admin_name"><?php echo $emp_name ?></span>
+                </div>
+                <!--end of minor change to show account name-->
+
             </div>
         </div>
         <!--form-->
@@ -203,11 +240,35 @@ if (isset($_POST['delete'])) {
                 <!--submitted button-->
                 <input type="submit" name="submit" value="Submit">
 
-                <!-- asking price -->
-                <label for="Price" style="display: inline;">Asking Price:</label>
-                <input type="text" name="fee" style="width: 15%; display: inline;" value="<?php echo $price ?>">
+                <!--  previously way of asking price -->
+
+                <!-- <label for="Price" style="display: inline;">Asking Price:</label>
+                <input type="text" name="fee" style="width: 15%; display: inline;" value="<?php //echo $price 
+                                                                                            ?>">
                 </input><input type="submit" name="change" class="add" value="change"
-                    style="display: inline; width:7%;"><br>
+                    style="display: inline; width:7%;"> -->
+
+                <!--end of previously way of asking price -->
+
+
+
+                <!--new set price by range-->
+
+                <label for="rate-worker" style="display: inline;">Set Asking Price</label>
+
+                <input name="fee" type="range" min="<?php echo $lprice ?>" max="<?php echo $uprice ?>"
+                    value="<?php echo $price ?>" class="rate-bot" id="admin_rating"
+                    style="width: 66%; margin-top: 10px;" required>
+
+                <input type="submit" name="save" class="add" value="Save" style="display: inline; width:20%;">
+                <p style="margin-bottom: 13px;color:#f76e6e;font-weight: 700;">Asking Price : <span id="rated"></span>
+                </p>
+
+                <!--end of set price by range-->
+
+
+
+                <br>
 
                 <!--Date box-->
                 <label for="Date">Day off: </label>
@@ -231,6 +292,9 @@ if (isset($_POST['delete'])) {
 
             </form>
         </div>
+
+        <!--add file-->
+        <script src="PriceSettingBot.js"></script>
 </body>
 
 </html>

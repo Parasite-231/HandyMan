@@ -13,7 +13,7 @@
 }
 
 body {
-    background-color: #fdb736;
+    background-color: #f17777;
 }
 
 form {
@@ -72,7 +72,7 @@ input[type="text"] {
     font-size: 17.5px;
     height: 49px;
     /*border-radius: 25px;*/
-    background-color: #FFA500;
+    background-color: #e67c7c;
     color: white;
     margin-left: -3px;
     cursor: pointer;
@@ -146,7 +146,7 @@ input[type="text"] {
 }
 
 a {
-    color: #FFA500;
+    color: #e67c7c;
 }
 
 .alert-danger {

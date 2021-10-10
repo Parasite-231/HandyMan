@@ -10,7 +10,13 @@ $shift = '';
 $u_area = '';
 
 
-//updatestatus func
+$query = "SELECT name FROM employee WHERE id = $e_id";
+$result = mysqli_query($connect, $query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $list = mysqli_fetch_assoc($result);
+    $emp_name = $list['name'];
+}
 
 
 if (isset($_POST['search'])) {
@@ -50,6 +56,7 @@ if (isset($_POST['search'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS SCRIPTS/employee_panel/employeeWorkNotificationDesign.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/workers.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <title>Employee Working Notifications</title>
@@ -75,7 +82,14 @@ if (isset($_POST['search'])) {
             <!-- <li><a href="workingHistory.php"><img src="../../ICONS/workon.png" alt="notifications"> &nbsp;
                     Working
                     History</a></li> -->
-            <!--<li><a href="#" ><img src="messageIncome.png" alt="notifications" > &nbsp; Incoming-Messages</a></li>-->
+
+
+            <!--message html file-->
+            <li><a href="EmployeeMessageBoard.php"><img src="../../ICONS/messageIncome.png" alt="notifications"> &nbsp;
+                    Message Board</a></li>
+            <!--message html file-->
+
+
             <!--<li><a href="#"><img src="../../ICONS/settings.png" alt="settings">&nbsp; Settings</a></li>-->
             <li><a href="employeePrivacy&Policy.php"><img src="../../ICONS/privacy-policy.png" alt="policy">&nbsp;
                     Privacy &
@@ -88,16 +102,30 @@ if (isset($_POST['search'])) {
     <div class="container">
         <div class="header">
             <div class="nav">
-                <div class="search">
+                <!--minor change-->
+                <div class="upperbar-symbol">
+                    <i class='bx bx-menu sidebarBtn'></i>
+                    <span class="dashboard" style="color: brown; ">Working Notification</span>
+                </div>
+                <!--minor change-->
+                <!-- <div class="search">
                     <input type="text" placeholder="Search...">
                     <button type="submit"><img src="../../ICONS/search.png" alt=""></button>
-                </div>
+                </div> -->
                 <div class="user">
                     <!--<a href="#" class="btn">Log Out</a>-->
                     <div class="img-case">
                         <!--<img src="../../ICONS/worknotifications.png" alt="worknotifications">-->
                     </div>
                 </div>
+
+                <!--minor change to show account name-->
+                <div class="profile-details">
+                    <img src="../../ICONS/workerprofile.png" alt="account">
+                    <span class="admin_name"><?php echo $emp_name ?></span>
+                </div>
+                <!--end of minor change to show account name-->
+
             </div>
         </div>
         <div class="description">
@@ -160,22 +188,10 @@ if (isset($_POST['search'])) {
             </div>
             <!--record-table-->
             <div class="records-Of-Working-Notifications">
-                <table>
-                    <tr>
-                        <th>Customer name</th>
-                        <th>Contact</th>
-                        <th>Area</th>
-                        <th>Address</th>
-                        <th>Date</th>
-                        <th>Shift</th>
-                        <th>Total Payment</th>
-                        <th>Working State</th>
-                        <!--"done" button headline-->
-                        <th>End Work</th>
-                    </tr>
 
 
-                    <!-- <tr>
+
+                <!-- <tr>
                         <td>Ahsan Habib</td>
                         <td>0189634766</td>
                         <td> Dhaka</td>
@@ -199,6 +215,19 @@ if (isset($_POST['search'])) {
                         <td>Not started</td>
                         <td><button class="btn-0" style="text-align: center;">Done</button></td>
                     </tr> -->
+
+                <table>
+                    <tr>
+                        <th>Customer name</th>
+                        <th>Contact</th>
+                        <th>Area</th>
+                        <th>Address</th>
+                        <th>Date</th>
+                        <th>Shift</th>
+                        <th>Total Payment</th>
+                        <th>Working State</th>
+                        <th>End Work</th>
+                    </tr>
 
                     <?php
 
@@ -236,32 +265,35 @@ if (isset($_POST['search'])) {
                             }
 
                             echo "
-                            <tr>
-                                <td>$u_name</td>
-                                <td>$u_number</td>
-                                <td>$u_area</td>
-                                <td>$u_address</td>
-                                <td>$date</td>
-                                <td>$shift</td>
-                                <td>$payment</td>
-                                <td>$status</td>
-                                <form method='POST'>
-                                    <input type='hidden' name='o_id' value='" . $o_id . "'>
-                                    <td><button name='done' class='btn-0' style='margin-left:30%;text-align: center; $css2' $css>Done</button>
-                                    <span style='color:green;margin-left:40%;$css3'>&#10003;</span>
-                                    </td>
-                                </form>
-                            </tr>
+
+
+                                <tr>
+                                    <td>$u_name</td>
+                                    <td>$u_number</td>
+                                    <td>$u_area</td>
+                                    <td>$u_address</td>
+                                    <td>$date</td>
+                                    <td>$shift</td>
+                                    <td>$payment</td>
+                                    <td>$status</td>
+                                    <form method='POST'>
+                                        <input type='hidden' name='o_id' value='" . $o_id . "'>
+                                        <td><button name='done' class='btn-0' style='margin-left:30%;text-align: center; $css2' $css>Done</button>
+                                        <span style='color:green;margin-left:40%;$css3'>&#10003;</span>
+                                        </td>
+                                    </form>
+                                </tr>
+                            
+                            
                             ";
                         }
                     } else {
-                        echo "No Notifications to show";
+                        echo "<center style='color: red'>No Notifications to show</center>";
                     }
 
                     ?>
-
-
                 </table>
+
             </div>
 </body>
 

@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  /* font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif; */
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -227,7 +229,8 @@ tr:nth-child(odd) {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0 4px 8px black, 0 6px 17px 0px black;
+  /* box-shadow: 0 4px 8px black, 0 6px 17px 0px black; */
+  box-shadow: 0 4px 8px #f57171, 0 6px 17px 0px #f36e6e;
 }
 
 h3 {
@@ -271,4 +274,58 @@ h3 {
 p {
   margin-bottom: 16px;
   margin-top: 5px;
+}
+
+/*minor change*/
+.upperbar-symbol{
+  display: flex;
+  align-items: center;
+  font-size: 27px;
+  font-weight: 500;
+  margin-left: 0px;
+}
+.upperbar-symbol i{
+  font-size: 30px;
+  margin-right: 10px;
+  color: brown;
+}
+
+
+/*account show*/
+.profile-details{
+  display: flex;
+  align-items: center;
+  background: #F5F6FA;
+  border: 2px solid #EFEEF1;
+  border-radius: 6px;
+  height: 50px;
+  min-width: 190px;
+  padding: 0 15px 0 2px;
+  background-color: #f17777;;
+  /* margin-left: 1060px; */
+  cursor: pointer;
+  
+
+  
+}
+
+/* .profile-details img{
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+} */
+
+ .profile-details .admin_name{
+  font-size: 15px;
+  font-weight: 550;
+  color: white;
+  margin: 0 10px;
+  white-space: nowrap;
+ 
+}
+
+.profile-details i{
+  font-size: 25px;
+  /* color: #333; */
 }

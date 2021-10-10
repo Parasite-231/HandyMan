@@ -9,6 +9,10 @@ if (!isset($_SESSION['uID'])) {
 
 $u_id = $_SESSION['uID'];
 
+$query = "SELECT * FROM orderlist WHERE u_id = $u_id AND NOT status = 'Completed'";
+$result = mysqli_query($connect, $query);
+updateStatus($result, $connect);
+
 if (isset($_POST['done'])) {
     $o_id = $_POST['o_id'];
     $e_id = $_POST['e_id'];
@@ -30,6 +34,7 @@ if (isset($_POST['done'])) {
 
             $completed_services = $data['completed_services'] + 1;
             $price = $data['price'];
+            $price = $price - $price * (15 / 100);
             $total_payment = $data['total_payment'] + $price;
 
             $query = "UPDATE employee SET total_payment = '$total_payment', completed_services = '$completed_services'
