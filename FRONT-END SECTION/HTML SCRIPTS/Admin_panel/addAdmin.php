@@ -160,51 +160,37 @@ $a_id = $_SESSION['aID'];
 
                         <?php
 
-                        $hide = 'hidden';
                         $error = '';
                         $color = 'red';
 
-                        $query = "SELECT * FROM admin WHERE id = $a_id";
-                        $result = mysqli_query($connect, $query);
-
-                        if ($result && mysqli_num_rows($result) > 0) {
-                            $data = mysqli_fetch_assoc($result);
-
-                            $name = $data['name'];
-                            $email = $data['email'];
-                            $phone = $data['phone'];
-                        }
-
-
-                        if (isset($_POST['editPass'])) {
-                            $hide = 'password';
-                        }
-
                         if (isset($_POST['save'])) {
 
-                            $c_password = $_POST['c_password'];
+                            $name = $_POST['name'];
+                            $username = $_POST['username'];
+                            $email = $_POST['email'];
+                            $phone = $_POST['phone'];
                             $password = $_POST['password'];
-                            $con_pass = $_POST['confirm_password'];
+                            $con_pass = $_POST['con_password'];
 
-                            $query = "SELECT * FROM admin WHERE id = $a_id LIMIT 1";
-                            $result = mysqli_query($connect, $query);
 
-                            if ($result && mysqli_num_rows($result) > 0) {
-                                $user_data = mysqli_fetch_assoc($result);
-                                if ($c_password == $user_data['password'] || password_verify($c_password, $user_data['password'])) {
-                                    if ($password === $con_pass) {
+                            if ($password === $con_pass) {
+                                if (preg_match("/(^(\+88|0088)?(01){1}[356789]{1}(\d){8})$/", $phone)) {
+                                    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
                                         $password = password_hash($password, PASSWORD_DEFAULT);
 
-                                        $query = "UPDATE admin SET password = '$password' WHERE id = $a_id ";
+                                        $query = "INSERT INTO admin(name, username, password, email, phone)
+                                                     VALUES('$name', '$username', '$password', '$email', '$phone')";
                                         mysqli_query($connect, $query);
-                                        $error = "Successfully Edited Password";
+                                        $error = "Successfully Added Admin";
                                         $color = 'limegreen';
                                     } else {
-                                        $error = "Passwords do not Match!";
+                                        $error = "Enter a Valid Email Address";
                                     }
                                 } else {
-                                    $error = "Current Password Does Not Match";
+                                    $error = "Enter A valid Phone Number";
                                 }
+                            } else {
+                                $error = "Passwords do not Match!";
                             }
                         }
 
@@ -226,22 +212,18 @@ $a_id = $_SESSION['aID'];
                             <div class="profileform">
                                 <form method="POST">
                                     <label style="float: left;" for="name">Name</label>
-                                    <input type="text" id="name" name="name" value="<?php echo $name ?>" disabled>
+                                    <input type="text" id="name" name="name" required>
+                                    <label style="float: left;" for="name">Userame</label>
+                                    <input type="text" id="name" name="username" required>
                                     <label style="float: left;" for="email">Email Address</label>
-                                    <input type="email" id="email" name="email" value="<?php echo $email ?>" disabled>
+                                    <input type="email" id="email" name="email" required>
                                     <label style="float: left;" for="phonenumber">Phone Number</label>
-                                    <input type="text" id="phonenumber" name="phone" value="<?php echo $phone ?>"
-                                        disabled>
-
-
-                                    <Button name="editPass">Edit Password</Button>
-                                    <input type="<?php echo $hide ?>" id="password" placeholder="Current Password"
-                                        name="c_password" required>
-                                    <input type="<?php echo $hide ?>" id="password" placeholder=" New Password"
-                                        name="password" required>
-                                    <input type="<?php echo $hide ?>" id="password" placeholder="Confirm Password"
-                                        name="confirm_password" required>
-
+                                    <input type="text" id="phonenumber" name="phone" required>
+                                    <label style="float: left;" for="name">Set Password</label>
+                                    <input type="password" id="password" placeholder="Password" name="password"
+                                        required>
+                                    <input type="password" id="password" placeholder="Confirm Password"
+                                        name="con_password" required>
                                     <Button name="save">Save</Button>
                                 </form>
                             </div>
