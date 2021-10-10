@@ -72,23 +72,32 @@ https://github.com/
 
 ## Run the HandyMan website locally
 ### Requirements
+-----------------
 * Installed XAMPP for cross-platform facilities, Apache, MySQL, PHP.
 * Have an Internet Connection on your Machine.
+
 ### Steps
-* Step 01: At first clone the repository 
+----------
+* Step 01 : At first initialize git in htdocs folder.
+* Step 02 : Clone the repository in your htdocs folder.
 
 ```sh
 https://github.com/Parasite-231/HandyMan.git
 ```
-* Step 02: 
+* Step 03 : Create Database in phpMyAdmin with the same name as it was created originally.
+* Step 04 : Import the SQL file in phpMyAdmin in newly created Database.
+* Step 05 : Change the ID and password of the Database in the Software Package based on the newly created Database.
+* Step 06 : Now to initialize the Web Application follow the steps below :<br />
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> Open a Browser.<br />
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> Write www.handyman.com in the URL and press enter.<br />
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> It will present a workable version of the Web Application.
+            
+***For any problem regarding setting up the Web Application please contact iftikharimrulkhan@gmail.com***
 
 ## Authors
-Contributors names and github info 
-* [@IftyKhan-911](https://github.com/IftyKhan-911)
-* [@mdmuktadir](https://github.com/Parasite-231)
-* [@sadmanmehedi](https://github.com/sadmanmehedi)
-
-## License 
-
+Contributors names and contact info 
+* [@IftyKhan-911](https://mail.google.com/mail/iftikharimrulkhan@gmail.com)
+* [@mdmuktadir](https://mail.google.com/mail/mdmuktadirmazumder@gmail.com)
+* [@sadmanmehedi](https://mail.google.com/mail/sadmanmehedi%40gmail.com)
 
 ## Project Status
