@@ -100,7 +100,4 @@ Contributors names and github info
 * [@mdmuktadir](https://github.com/Parasite-231)
 * [@sadmanmehedi](https://github.com/sadmanmehedi)
 
-## License 
-
-
 ## Project Status
