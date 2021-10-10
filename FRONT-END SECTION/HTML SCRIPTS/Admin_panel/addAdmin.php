@@ -28,7 +28,7 @@ $a_id = $_SESSION['aID'];
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/adminbro3.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Profile</title>
+    <title>Add Admin</title>
 </head>
 
 <body>
@@ -45,11 +45,19 @@ $a_id = $_SESSION['aID'];
                 </a>
             </li>
             <li>
-                <a href="AdminProfile.php" class="active">
+                <a href="AdminProfile.php" >
                     <i class='bx bx-box'></i>
                     <span class="links_name">Profile</span>
                 </a>
             </li>
+            <!--add new admin-->
+            <li>
+                <a href="addAdmin.php" class="active">
+                    <i class='bx bx-user-plus'></i>
+                    <span class="links_name">Add Admin</span>
+                </a>
+            </li>
+            <!--add anew admin-->
             <li>
                 <a href="orderlist.php">
                     <i class='bx bx-list-ul'></i>

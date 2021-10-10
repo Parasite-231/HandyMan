@@ -60,6 +60,14 @@ if (isset($_POST['unban'])) {
                     <span class="links_name">Profile</span>
                 </a>
             </li>
+            <!--add new admin-->
+            <li>
+                <a href="addAdmin.php" >
+                    <i class='bx bx-user-plus'></i>
+                    <span class="links_name">Add Admin</span>
+                </a>
+            </li>
+            <!--add anew admin-->
             <li>
                 <a href="orderlist.php">
                     <i class='bx bx-list-ul'></i>
