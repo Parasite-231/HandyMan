@@ -22,14 +22,15 @@ if (isset($_POST['send'])) {
     $msg = $_POST['msg'];
 
 
-    $query = "SELECT id FROM employee WHERE id = '$e_id'";
+    $query = "SELECT id, type FROM employee WHERE id = '$e_id'";
     $result = mysqli_query($connect, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $data = mysqli_fetch_assoc($result);
         $e_id = $data['id'];
+        $e_type = $data['type'];
         $date = date('Y-m-d', time() + 4 * 3600);
-        $query = "INSERT INTO message(e_id, msg, date) VALUES ('$e_id', '$msg', '$date')";
+        $query = "INSERT INTO message(e_id, e_type, msg, date) VALUES ('$e_id', '$e_type', '$msg', '$date')";
         mysqli_query($connect, $query);
     } else {
         $hide = '';
@@ -77,7 +78,7 @@ if (isset($_POST['send'])) {
 
             <!--add new admin-->
             <li>
-                <a href="addAdmin.php" >
+                <a href="addAdmin.php">
                     <i class='bx bx-user-plus'></i>
                     <span class="links_name">Add Admin</span>
                 </a>

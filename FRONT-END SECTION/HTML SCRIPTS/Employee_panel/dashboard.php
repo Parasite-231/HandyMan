@@ -175,46 +175,50 @@ if ($c_date == $date || $c_date > $date) {
                         <img src="../../ICONS/payme12.png" alt="work">
                     </div>
                 </div>
-                <div class="card">
-                    <div class="box">
-                        <?php
-                        $sql = "SELECT COUNT(*) AS progress FROM orderlist WHERE e_id = $e_id AND status='In Progress'";
-                        $prog_result = mysqli_query($connect, $sql);
+                <a href="employeeWorkNotifications.php">
+                    <div class="card">
+                        <div class="box">
+                            <?php
+                            $sql = "SELECT COUNT(*) AS progress FROM orderlist WHERE e_id = $e_id AND status='In Progress'";
+                            $prog_result = mysqli_query($connect, $sql);
 
-                        if ($prog_result && mysqli_num_rows($prog_result) > 0) {
-                            $prog_data = mysqli_fetch_assoc($prog_result);
-                            $progress = $prog_data['progress'];
-                        }
+                            if ($prog_result && mysqli_num_rows($prog_result) > 0) {
+                                $prog_data = mysqli_fetch_assoc($prog_result);
+                                $progress = $prog_data['progress'];
+                            }
 
-                        ?>
+                            ?>
 
-                        <h1><?php echo $progress ?></h1>
-                        <h3>Work In-progress</h3>
+                            <h1><?php echo $progress ?></h1>
+                            <h3 style="color: black;">Work In-progress</h3>
+                        </div>
+                        <div class="icon-case">
+                            <img src="../../ICONS/workinpro.png" alt="work">
+                        </div>
                     </div>
-                    <div class="icon-case">
-                        <img src="../../ICONS/workinpro.png" alt="work">
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
+                </a>
+                <a href="EmployeeMessageBoard.php">
+                    <div class="card">
+                        <div class="box">
 
-                        <?php
-                        $query = "SELECT COUNT(*) AS count FROM message WHERE e_id = $e_id";
-                        $result = mysqli_query($connect, $query);
-                        if ($result && mysqli_num_rows($result) > 0) {
-                            $array = mysqli_fetch_assoc($result);
-                            $msg = $array['count'];
-                        }
+                            <?php
+                            $query = "SELECT COUNT(*) AS count FROM message WHERE e_id = $e_id";
+                            $result = mysqli_query($connect, $query);
+                            if ($result && mysqli_num_rows($result) > 0) {
+                                $array = mysqli_fetch_assoc($result);
+                                $msg = $array['count'];
+                            }
 
-                        ?>
+                            ?>
 
-                        <h1><?php echo $msg ?></h1>
-                        <h3>Message Received</h3>
+                            <h1><?php echo $msg ?></h1>
+                            <h3 style="color: black;">Message Received</h3>
+                        </div>
+                        <div class="icon-case">
+                            <img src="../../ICONS/messagein.png" alt="work">
+                        </div>
                     </div>
-                    <div class="icon-case">
-                        <img src="../../ICONS/messagein.png" alt="work">
-                    </div>
-                </div>
+                </a>
                 <div class="card">
                     <div class="box">
                         <h1><?php echo $rating ?></h1>
@@ -224,26 +228,28 @@ if ($c_date == $date || $c_date > $date) {
                         <img src="../../ICONS/like2.png" alt="work">
                     </div>
                 </div>
-                <div class="card">
-                    <div class="box">
-                        <?php
-                        $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Not started' ";
-                        $result = mysqli_query($connect, $query);
+                <a href="employeeWorkNotifications.php">
+                    <div class="card">
+                        <div class="box">
+                            <?php
+                            $query = "SELECT * FROM orderlist WHERE e_id = $e_id AND status = 'Not started' ";
+                            $result = mysqli_query($connect, $query);
 
-                        if ($result && mysqli_num_rows($result) > 0) {
-                            $notification = mysqli_num_rows($result);
-                        } else {
-                            $notification = 0;
-                        }
-                        ?>
+                            if ($result && mysqli_num_rows($result) > 0) {
+                                $notification = mysqli_num_rows($result);
+                            } else {
+                                $notification = 0;
+                            }
+                            ?>
 
-                        <h1><?php echo $notification; ?></h1>
-                        <h3>Due Work</h3>
+                            <h1><?php echo $notification; ?></h1>
+                            <h3 style="color: black;">Due Work</h3>
+                        </div>
+                        <div class="icon-case">
+                            <img src="../../ICONS/duework.png" alt="work">
+                        </div>
                     </div>
-                    <div class="icon-case">
-                        <img src="../../ICONS/duework.png" alt="work">
-                    </div>
-                </div>
+                </a>
 
                 <div class="card" style="background-color: white;">
                     <div class="box">
@@ -345,7 +351,7 @@ if ($c_date == $date || $c_date > $date) {
                             ";
                             }
                         } else {
-                            echo "No Notifications to show";
+                            echo "<center>No Notifications to show</center>";
                         }
 
 

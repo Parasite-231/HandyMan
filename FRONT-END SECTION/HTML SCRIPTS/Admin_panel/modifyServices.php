@@ -74,9 +74,19 @@ if (isset($_POST['update'])) {
         $query = "SELECT * FROM services WHERE id = $s_id";
         $result = mysqli_query($connect, $query);
         if ($result && mysqli_num_rows($result) > 0) {
+            $data = mysqli_fetch_assoc($result);
+            $s_type = $data['name'];
+
             if ($lprice < $uprice) {
                 $query = "UPDATE services SET lprice = $lprice, uprice = $uprice WHERE id = $s_id";
                 mysqli_query($connect, $query);
+
+                $query = "UPDATE employee SET price = $lprice WHERE type = '$s_type' AND price < $lprice";
+                mysqli_query($connect, $query);
+
+                $query = "UPDATE employee SET price = $uprice WHERE type = '$s_type' AND price > $lprice";
+                mysqli_query($connect, $query);
+
                 $msg = 'Price Updated Successfully';
                 $color = 'limegreen';
             } else {
@@ -125,7 +135,7 @@ if (isset($_POST['update'])) {
             </li>
             <!--add new admin-->
             <li>
-                <a href="addAdmin.php" >
+                <a href="addAdmin.php">
                     <i class='bx bx-user-plus'></i>
                     <span class="links_name">Add Admin</span>
                 </a>

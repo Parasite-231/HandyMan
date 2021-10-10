@@ -40,7 +40,7 @@ if (isset($_POST['final'])) {
         $sql = "UPDATE employee SET rating = $rating, rated_services = $total_rated WHERE id = $e_id";
         mysqli_query($connect, $sql);
 
-        $sql = "SELECT completed_services, rating, grace_points FROM employee WHERE id = $e_id";
+        $sql = "SELECT completed_services, rating, grace_points,type FROM employee WHERE id = $e_id";
         $res = mysqli_query($connect, $sql);
 
         if ($res && mysqli_num_rows($res) > 0) {
@@ -50,6 +50,7 @@ if (isset($_POST['final'])) {
             $completed = $data['completed_services'];
             $rating = $data['rating'];
             $grace_points = $data['grace_points'];
+            $e_type = $data['type'];
 
             if ($rating < 2.5 && $completed > 3) {
 
@@ -65,7 +66,7 @@ if (isset($_POST['final'])) {
                             You will not get suspended, But Once the Grace Points go below 5 , you will be suspended 
                             For 7 days and you will not be able to get any new works for that period.";
 
-                    $query = "INSERT INTO message(e_id, msg, date) VALUES ('$e_id', '$msg', '$date')";
+                    $query = "INSERT INTO message(e_id, e_type, msg, date) VALUES ('$e_id', '$e_type', '$msg', '$date')";
                     mysqli_query($connect, $query);
                 }
 
@@ -83,7 +84,7 @@ if (isset($_POST['final'])) {
                     $msg = "You Have Been Suspended for 7 days due to your low rating. You can still work on your reserved works but you will not receive any new works in this period.
                             Your grace Points are restored to 5.  Your Average rating is set to 2.5. ";
 
-                    $query = "INSERT INTO message(e_id, msg, date) VALUES ('$e_id', '$msg', '$date')";
+                    $query = "INSERT INTO message(e_id, 'e_type', msg, date) VALUES ('$e_id', '$e_type', '$msg', '$date')";
                     mysqli_query($connect, $query);
 
                     $sql = "UPDATE employee SET grace_points = 5 WHERE id = $e_id";
