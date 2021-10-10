@@ -87,10 +87,10 @@ https://github.com/Parasite-231/HandyMan.git
 * Step 03 : Create Database in phpMyAdmin with the same name as it was created originally.
 * Step 04 : Import the SQL file in phpMyAdmin in newly created Database.
 * Step 05 : Change the ID and password of the Database in the Software Package based on the newly created Database.
-* Step 06 : Now to initialize the Web Application follow the steps below :
-            (a) Open a Browser.<br />
-            (b) Write www.handyman.com in the URL and press enter.<br />
-            (c) It will present a workable version of the Web Application.
+* Step 06 : Now to initialize the Web Application follow the steps below :<br />
+                        (a) Open a Browser.<br />
+                        (b) Write www.handyman.com in the URL and press enter.<br />
+                        (c) It will present a workable version of the Web Application.
             
 ***For any problem regarding setting up the Web application please contact iftikharimrulkhan@gmail.com***
 
