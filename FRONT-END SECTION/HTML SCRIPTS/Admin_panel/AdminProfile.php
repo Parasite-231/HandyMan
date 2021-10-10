@@ -84,7 +84,7 @@ $a_id = $_SESSION['aID'];
             </li>
             <!--Service Modification-->
             <li>
-                <a href="modifyServices.php" >
+                <a href="modifyServices.php">
                     <!-- <i class='bx bxs-user-voice'></i> -->
                     <i class='bx bx-wrench'></i>
                     <span class="links_name">Service Modification</span>
@@ -119,9 +119,9 @@ $a_id = $_SESSION['aID'];
             <!--Message History link-->
             <!--Appeal history link-->
             <li>
-                <a href="AppealHistory.php" >
-                <i class='bx bx-user-voice'></i>
-                <span class="links_name">Appeal History</span>
+                <a href="AppealHistory.php">
+                    <i class='bx bx-user-voice'></i>
+                    <span class="links_name">Appeal History</span>
                 </a>
             </li>
             <!--Appeal History link-->
@@ -161,7 +161,7 @@ $a_id = $_SESSION['aID'];
                         <?php
 
                         $hide = 'hidden';
-
+                        $error = '';
 
                         $query = "SELECT * FROM admin WHERE id = $a_id";
                         $result = mysqli_query($connect, $query);
@@ -181,40 +181,68 @@ $a_id = $_SESSION['aID'];
 
                         if (isset($_POST['save'])) {
 
+                            $c_password = $_POST['c_password'];
                             $password = $_POST['password'];
                             $con_pass = $_POST['confirm_password'];
 
-                            if ($password === $con_pass) {
-                                $password = password_hash($password, PASSWORD_DEFAULT);
+                            $query = "SELECT * FROM admin WHERE id = $a_id LIMIT 1";
+                            $result = mysqli_query($connect, $query);
 
-                                $query = "UPDATE admin SET password = '$password' WHERE id = $a_id ";
-                                mysqli_query($connect, $query);
+                            if ($result && mysqli_num_rows($result) > 0) {
+                                $user_data = mysqli_fetch_assoc($result);
+                                if ($c_password == $user_data['password'] || password_verify($c_password, $user_data['password'])) {
+                                    if ($password === $con_pass) {
+                                        $password = password_hash($password, PASSWORD_DEFAULT);
+
+                                        $query = "UPDATE admin SET password = '$password' WHERE id = $a_id ";
+                                        mysqli_query($connect, $query);
+                                    } else {
+                                        $error = "Passwords do not Match!";
+                                    }
+                                } else {
+                                    $error = "Current Password Does Not Match";
+                                }
                             }
                         }
 
 
                         ?>
+                        <center>
+                            <div>
+                                <?php if ($error != '') : ?>
+                                <div style="margin-top:23px;  padding: 20px; background-color: <?php echo "red" ?>;
+                                 color: white;
+                                        width:93.7%">
+                                    <center><?php echo $error ?></center>
+                                </div>
+                                <?php endif; ?>
+                            </div>
+                        </center>
 
-                        <div class="profileform">
-                            <form method="POST">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" value="<?php echo $name ?>" disabled>
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" value="<?php echo $email ?>" disabled>
-                                <label for="phonenumber">Phone Number</label>
-                                <input type="text" id="phonenumber" name="phone" value="<?php echo $phone ?>" disabled>
+                        <center>
+                            <div class="profileform">
+                                <form method="POST">
+                                    <label style="float: left;" for="name">Name</label>
+                                    <input type="text" id="name" name="name" value="<?php echo $name ?>" disabled>
+                                    <label style="float: left;" for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" value="<?php echo $email ?>" disabled>
+                                    <label style="float: left;" for="phonenumber">Phone Number</label>
+                                    <input type="text" id="phonenumber" name="phone" value="<?php echo $phone ?>"
+                                        disabled>
 
 
-                                <Button name="editPass">Edit Password</Button>
-                                <input type="<?php echo $hide ?>" id="password" placeholder="Password" name="password"
-                                    required>
-                                <input type="<?php echo $hide ?>" id="password" placeholder="Confirm Password"
-                                    name="confirm_password" required>
+                                    <Button name="editPass">Edit Password</Button>
+                                    <input type="<?php echo $hide ?>" id="password" placeholder="Current Password"
+                                        name="c_password" required>
+                                    <input type="<?php echo $hide ?>" id="password" placeholder=" New Password"
+                                        name="password" required>
+                                    <input type="<?php echo $hide ?>" id="password" placeholder="Confirm Password"
+                                        name="confirm_password" required>
 
-                                <Button name="save">Save</Button>
-                            </form>
-                        </div>
-
+                                    <Button name="save">Save</Button>
+                                </form>
+                            </div>
+                        </center>
 
                         <!--Profile-->
                     </div>

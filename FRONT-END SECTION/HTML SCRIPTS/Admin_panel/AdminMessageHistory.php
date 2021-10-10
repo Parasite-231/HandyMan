@@ -85,7 +85,7 @@ if ($result && mysqli_num_rows($result) > 0) {
             </li>
             <!--Service Modification-->
             <li>
-                <a href="modifyServices.php" >
+                <a href="modifyServices.php">
                     <!-- <i class='bx bxs-user-voice'></i> -->
                     <i class='bx bx-wrench'></i>
                     <span class="links_name">Service Modification</span>
@@ -159,11 +159,11 @@ if ($result && mysqli_num_rows($result) > 0) {
                         <?php
 
 
-                        $query = "SELECT * FROM message";
+                        $query = "SELECT * FROM message ORDER BY id DESC";
                         $result = mysqli_query($connect, $query);
                         if ($result && mysqli_num_rows($result) > 0) {
                             while ($data = mysqli_fetch_assoc($result)) {
-                                $o_id = $data['o_id'];
+                                $id = $data['id'];
                                 $e_id = $data['e_id'];
                                 $msg = $data['msg'];
                                 $date = $data['date'];
@@ -173,7 +173,7 @@ if ($result && mysqli_num_rows($result) > 0) {
 
                                     <div class='bio-of-founder'>
                                         <h3>
-                                            <p>Order ID: $o_id </p>
+                                            <p>Message ID: $id </p>
                                             <p style='float: right;'>$date</p>
                                         </h3>
                                         <hr>
