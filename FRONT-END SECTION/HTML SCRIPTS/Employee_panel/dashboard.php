@@ -27,22 +27,32 @@ if ($result && mysqli_num_rows($result) > 0) {
 
 }
 
-$query = "SELECT name,ban_status FROM employee WHERE id = $e_id";
+$query = "SELECT name,ban_status, grace_points FROM employee WHERE id = $e_id";
 $result = mysqli_query($connect, $query);
 
 if ($result && mysqli_num_rows($result) > 0) {
     $list = mysqli_fetch_assoc($result);
     $emp_name = $list['name'];
     $ban_status = $list['ban_status'];
+    $grace_points = $list['grace_points'];
 }
 
 $status_good = '';
+$status_caution = 'display:none';
 $status_banned = 'display:none;';
 
 if ($ban_status == 1) {
     $status_good = 'display:none;';
     $status_banned = '';
+    $status_caution = 'display:none;';
 }
+
+if ($grace_points < 5 && $grace_points > 1) {
+    $status_good = 'display:none;';
+    $status_banned = 'display:none;';
+    $status_caution = '';
+}
+
 
 
 $query = "SELECT ban_removal_date FROM employee WHERE id = $e_id ";
@@ -234,11 +244,34 @@ if ($c_date == $date || $c_date > $date) {
                         <img src="../../ICONS/duework.png" alt="work">
                     </div>
                 </div>
+
+                <div class="card" style="background-color: white;">
+                    <div class="box">
+
+                        <h1 style="color:black;"><?php echo $grace_points ?></h1>
+                        <h3 style="color:black;">Grace Points</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="../../ICONS/wc3.png" alt="work">
+                    </div>
+                </div>
+
                 <div class="card" style="background-color: #80c904; <?php echo $status_good ?>">
                     <div class="box">
 
                         <h1 style="color:white;">Good</h1>
                         <h3 style="color:white;">Account Status</h3>
+                    </div>
+                    <div class="icon-case">
+                        <img src="../../ICONS/wc3.png" alt="work">
+                    </div>
+                </div>
+
+                <div class="card" style="background-color: gold; <?php echo $status_caution ?>">
+                    <div class="box">
+
+                        <h1 style="color:black;">Caution</h1>
+                        <h3 style="color:black;">Account Status</h3>
                     </div>
                     <div class="icon-case">
                         <img src="../../ICONS/wc3.png" alt="work">
@@ -261,16 +294,7 @@ if ($c_date == $date || $c_date > $date) {
                     </div>
 
                 </div>
-                <div class="card" style="background-color: #80c904; visibility:hidden">
-                    <div class="box">
 
-                        <h1 style="color:white;">Good</h1>
-                        <h3 style="color:white;">Account Status</h3>
-                    </div>
-                    <div class="icon-case">
-                        <img src="../../ICONS/wc3.png" alt="work">
-                    </div>
-                </div>
             </div>
             <div class="content-2">
                 <div class="recent-payments">
