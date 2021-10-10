@@ -258,7 +258,11 @@ if ($c_date == $date || $c_date > $date) {
                         <h3 style="color:black;">Grace Points</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/smily.png" alt="work">
+                        <img src="../../ICONS/b5.png" alt="work">
+                        <!-- <img src="../../ICONS/b4.png" alt="work">
+                        <img src="../../ICONS/b3.png" alt="work">
+                        <img src="../../ICONS/b2.png" alt="work">
+                        <img src="../../ICONS/battery.png" alt="work"> -->
                         <!-- <img src="../../ICONS/gp.png" alt="work"> -->
                     </div>
                 </div>

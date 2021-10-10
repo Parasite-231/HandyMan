@@ -290,7 +290,7 @@ th {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 17px;
+    font-size: 21px;
     resize: none;
   }
   
@@ -316,7 +316,7 @@ th {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 17px;
+    font-size: 21px;
     resize: none;
   }
   
@@ -331,7 +331,7 @@ th {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: none;
-    font-size: 17px;
+    font-size: 21px;
   }
  input[type=button] {
     width: 10%;

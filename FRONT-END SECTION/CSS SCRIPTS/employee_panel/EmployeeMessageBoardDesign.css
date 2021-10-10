@@ -114,7 +114,7 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  font-size: 17px;
+  font-size: 23px;
 }
 
 input[type="date"] {
@@ -164,7 +164,7 @@ textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
-  font-size: 17px;
+  font-size: 23px;
 }
 
 input[type="submit"] {
