@@ -95,9 +95,9 @@ https://github.com/Parasite-231/HandyMan.git
 ***For any problem regarding setting up the Web Application please contact iftikharimrulkhan@gmail.com***
 
 ## Authors
-Contributors names and github info 
-* [@IftyKhan-911](https://iftikharimrulkhan@gmail.com)
+Contributors names and contact info 
+* [@IftyKhan-911](https://mail.google.com/mail/iftikharimrulkhan%40gmail.com)
 * [@mdmuktadir](https://github.com/Parasite-231)
-* [@sadmanmehedi](https://github.com/sadmanmehedi)
+* [@sadmanmehedi](https://mail.google.com/mail/sadmanmehedi%40gmail.com)
 
 ## Project Status
