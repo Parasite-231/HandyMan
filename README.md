@@ -87,7 +87,7 @@ https://github.com/Parasite-231/HandyMan.git
            (a) Open a Browser.
            (b) Write www.handyman.com in the URL and press enter.
            (c) It will present a workable version of the Web Application.
-***For any problem regarding setting up the Web application please contact [@IftyKhan-911](@iftikharimrulkhan@gmail.com)
+***For any problem regarding setting up the Web application please contact iftikharimrulkhan@gmail.com
 
 ## Authors
 Contributors names and github info 
