@@ -96,8 +96,8 @@ https://github.com/Parasite-231/HandyMan.git
 
 ## Authors
 Contributors names and contact info 
-* [@IftyKhan-911](<a href="iftikharimrulkhan@gmail.com"></a>)
-* [@mdmuktadir](https://github.com/Parasite-231)
+* [@IftyKhan-911](https://mail.google.com/mail/iftikharimrulkhan@gmail.com)
+* [@mdmuktadir](https://mail.google.com/mail/mdmuktadirmazumder@gmail.com)
 * [@sadmanmehedi](https://mail.google.com/mail/sadmanmehedi%40gmail.com)
 
 ## Project Status
