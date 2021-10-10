@@ -7,6 +7,9 @@ if (!isset($_SESSION['eID'])) {
 
 $e_id = $_SESSION['eID'];
 
+$bat = 'b6';
+
+
 $query = "SELECT * FROM orderlist WHERE e_id = $e_id";
 $result = mysqli_query($connect, $query);
 updateStatus($result, $connect);
@@ -47,13 +50,25 @@ if ($ban_status == 1) {
     $status_caution = 'display:none;';
 }
 
-if ($grace_points < 5 && $grace_points > 1) {
+if ($grace_points < 5 && $grace_points > 0) {
     $status_good = 'display:none;';
     $status_banned = 'display:none;';
     $status_caution = '';
 }
 
+if ($grace_points < 4 && $grace_points > 0) {
+    $status_good = 'display:none;';
+    $status_banned = 'display:none;';
+    $status_caution = '';
+    $bat = 'b5';
+}
 
+if ($grace_points < 2 && $grace_points > 0) {
+    $status_good = 'display:none;';
+    $status_banned = 'display:none;';
+    $status_caution = '';
+    $bat = 'b7';
+}
 
 $query = "SELECT ban_removal_date FROM employee WHERE id = $e_id ";
 $result = mysqli_query($connect, $query);
@@ -258,7 +273,7 @@ if ($c_date == $date || $c_date > $date) {
                         <h3 style="color:black;">Grace Points</h3>
                     </div>
                     <div class="icon-case">
-                        <img src="../../ICONS/b5.png" alt="work">
+                        <img src="../../ICONS/<?php echo $bat ?>.png" alt="work">
                         <!-- <img src="../../ICONS/b4.png" alt="work">
                         <img src="../../ICONS/b3.png" alt="work">
                         <img src="../../ICONS/b2.png" alt="work">

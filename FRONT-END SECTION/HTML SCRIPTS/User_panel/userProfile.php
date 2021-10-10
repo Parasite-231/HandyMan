@@ -64,12 +64,12 @@ if (isset($_POST['submit'])) {
             <div class="content-section">
                 <div class="title">
                     <h2>Profile</h2>
-                    <dib class="shadowimg">
+                    <!-- <div class="shadowimg">
                         <img src="../../UI-UX Designs/elonmusk.jpg">
                         <div class="container-4">
-                            <!--<h5><b>Md Siraj Mollah</b></h5> -->
+                            
                         </div>
-                    </dib>
+                    </div> -->
                 </div>
                 <div class="content">
                     <!--profile-form-->
@@ -108,7 +108,7 @@ if (isset($_POST['submit'])) {
                                 </div>
                                 <div class="colsection2">
                                     <textarea id="address" name="address"
-                                        style="height:150px"><?php echo $address; ?></textarea>
+                                        style="height:100px; resize:none"><?php echo $address; ?></textarea>
                                 </div>
                             </div>
                             <div class="row">

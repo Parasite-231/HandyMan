@@ -50,7 +50,7 @@ $type = $_GET['type'];
                     <label for="Date">Select a Date</label><img src="../../ICONS/showcalender.png"
                         style="float: right;">
                     <input type="date" id="start" name="date" value="yyyy-mm-dd" min="<?php echo newDate('0') ?>"
-                        max="<?php echo newDate('30') ?>" required>
+                        max="<?php echo newDate('30') ?>" style="resize: none;" required>
                     <label for="Timeline">Reserve a Time</label><img src="../../ICONS/showclock.png"
                         style="float: right;">
                     <select id="Timeline" name="shift">
