@@ -78,9 +78,9 @@ https://github.com/
 
 ### Steps
 ----------
-
 * Step 01 : At first initialize git in htdocs folder.
-* Step 02 : Clone the repository in your htdocs folder
+* Step 02 : Clone the repository in your htdocs folder.
+
 ```sh
 https://github.com/Parasite-231/HandyMan.git
 ```
