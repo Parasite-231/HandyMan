@@ -98,4 +98,4 @@ Contributors names and contact info
 
 ## Project Status
 
-Project is well finished according to the plan. In future, more feature will be implemented with much more respomsive UI. Any suggestions, are highly appreciable.
+Project is well finished according to the plan. In future, more feature will be implemented with much more respomsive UI. Any suggestions, are highly appreciated.
