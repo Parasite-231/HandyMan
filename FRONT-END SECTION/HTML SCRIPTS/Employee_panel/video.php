@@ -10,7 +10,7 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <title>Employee Help & Services</title>
+    <title>My Tutorial</title>
 </head>
 <body>
     <div class="motion-news" >
