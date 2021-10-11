@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="videodesign.css">
+    <link rel="stylesheet" href="../../CSS SCRIPTS/employee_panel/videodesign.css">
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/account.png">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -24,7 +24,7 @@
     <div class="tutorial-segment" style="text-align: center;">
     <!-- <p>||Tutorial on how you can you use our Platform</p> -->
     <video width = "1000px"  controls>
-        <source src="168_VZtNg0IpBKA.mp4" type="video/mp4">
+        <source src="../../MEDIA/CG Animation Of Outerspace.mp4" type="video/mp4">
         <!--<source src="mov_bbb.ogg" type="video/ogg">-->
     </video>
     <p>||Tutorial on how you can you use our Platform</p>
