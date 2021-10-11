@@ -80,7 +80,7 @@ if (isset($_POST['final'])) {
 
                     $date = date('Y-m-d', time() + 4 * 3600);
                     $msg = "You Have Been Suspended for 7 days due to your low rating. You can still work on your reserved works but you will not receive any new works in this period.
-                            Your grace Points are restored to 5.  Your Average rating is set to 2.5. ";
+                            Your grace Points are restored to 5.Your Average rating is set to 2.5 .";
 
                     $query = "INSERT INTO message(e_id, msg, date) VALUES ('$e_id', '$msg', '$date')";
                     mysqli_query($connect, $query);
