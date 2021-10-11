@@ -332,7 +332,7 @@ if ($c_date == $date || $c_date > $date) {
                         <!-- <h3 style="color: black;">Tutorial</h3> -->
                     </div>
                     <div class="icon-case">
-                        <img src="tutorial.png" alt="work">
+                        <img src="../../ICONS/tutorial.png" alt="work">
                     </div>
                 </div>
                </a>
