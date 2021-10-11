@@ -323,7 +323,7 @@ if ($c_date == $date || $c_date > $date) {
                 </div>
 
                 <!--tutorial-card-->
-                <a href="video.html">
+                <a href="video.php">
                 <div class="card" style="background-color: #8474F9;">
                     <div class="box">
                         <form action="video.html">

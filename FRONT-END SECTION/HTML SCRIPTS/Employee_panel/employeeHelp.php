@@ -111,10 +111,10 @@ if ($result && mysqli_num_rows($result) > 0) {
                     <!--tutorial-->
                     <h3>How can I use this platform?</h3>
                     <p>You can watch a short tutorial on how you use our platform. <br>
-                       Visit : <a href="video.html" style="color: #f17777;">www.MyTutorial.com</a><br>
+                       Visit : <a href="video.php" style="color: #f17777;">www.MyTutorial.com</a><br>
                     </p>
                     <!--tutorial-->
-                    
+
                     <h3>Q. Can I login to this website using E-mail?</h3>
                     <p>Yes, you can login to these website by using mail after registration process.</p>
 
@@ -122,7 +122,7 @@ if ($result && mysqli_num_rows($result) > 0) {
                     <h3>Q. How can I contact you?</h3>
                     <p>You can always contact us through our contact numbers provided in our contact us page and can
                         also mail us at <a href="mdmuktadirmazumder@gmail.com">reachus@handyman.com</a></a><br>
-                        Visit : <a href="contactUs.html" style="color: #f17777;">www.contacthandyman.com</a><br>
+                        Visit : <a href="contactUs.php" style="color: #f17777;">www.contacthandyman.com</a><br>
                         Contact: +8801306989579 </p>
 
 
@@ -133,14 +133,14 @@ if ($result && mysqli_num_rows($result) > 0) {
                     <h3>Q. How can I get my work notifications?</h3>
                     <p> You can get notifications about work from your customers by visiting the working notifications
                         page in your dashboard.<br>
-                        Visit : <a href="employeeWorkNotifications.html"
+                        Visit : <a href="employeeWorkNotifications.php"
                             style="color: #f17777;">www.employeenotifications.com</a><br>
                     </p>
 
                     <h3>Q. How can I get informations about my past works?</h3>
                     <p>You can only get necessary informations from your past works by visiting the working history site
                         from your dashboard<br>
-                        Visit:<a href="workingHistory.html" style="color:#f17777;">www.workinghistory.com</a> to know
+                        Visit:<a href="workingHistory.php" style="color:#f17777;">www.workinghistory.com</a> to know
                         your working history</p>
 
                     <h3>Q. How will you notify me about my bad actions?</h3>
