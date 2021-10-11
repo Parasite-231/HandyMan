@@ -15,7 +15,7 @@
 <body>
     <div class="motion-news" >
         <marquee direction="left" height="200px" scrollamount="9">
-            <h1 style="color: #f17777;">***For more help please contact 01306989579, 01306989580, 01306989510 or visit <a href="contactUs.html"
+            <h1 style="color: #f17777;">***For more help please contact 01306989579, 01306989580, 01306989510 or visit <a href="contactUs.php"
                 style="color: #f17777;">www.ContactHandyMan.com</a>***</h1>
         </marquee>
     </div>
@@ -24,7 +24,7 @@
     <div class="tutorial-segment" style="text-align: center;">
     <!-- <p>||Tutorial on how you can you use our Platform</p> -->
     <video width = "1000px"  controls>
-        <source src="../../MEDIA/CG Animation Of Outerspace.mp4" type="video/mp4">
+        <source src="../../MEDIA/spoiler.mp4" type="video/mp4">
         <!--<source src="mov_bbb.ogg" type="video/ogg">-->
     </video>
     <p>||Tutorial on how you can you use our Platform</p>
