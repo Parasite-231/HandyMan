@@ -322,6 +322,24 @@ if ($c_date == $date || $c_date > $date) {
 
                 </div>
 
+                <!--tutorial-card-->
+                <a href="video.html">
+                <div class="card" style="background-color: #8474F9;">
+                    <div class="box">
+                        <form action="video.html">
+                            <button name="appeal" class="buttonz2" >Play Tutorial</button>
+                        </form>
+                        <!-- <h3 style="color: black;">Tutorial</h3> -->
+                    </div>
+                    <div class="icon-case">
+                        <img src="tutorial.png" alt="work">
+                    </div>
+                </div>
+               </a>
+            <!--tutorial-card-->
+
+
+
             </div>
             <div class="content-2">
                 <div class="recent-payments">

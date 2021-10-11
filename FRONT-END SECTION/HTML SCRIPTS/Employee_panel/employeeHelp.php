@@ -107,6 +107,14 @@ if ($result && mysqli_num_rows($result) > 0) {
                         know your name, phone number, working sector, address, company name if you are from any – you
                         are done.
                     </p>
+
+                    <!--tutorial-->
+                    <h3>How can I use this platform?</h3>
+                    <p>You can watch a short tutorial on how you use our platform. <br>
+                       Visit : <a href="video.html" style="color: #f17777;">www.MyTutorial.com</a><br>
+                    </p>
+                    <!--tutorial-->
+                    
                     <h3>Q. Can I login to this website using E-mail?</h3>
                     <p>Yes, you can login to these website by using mail after registration process.</p>
 
