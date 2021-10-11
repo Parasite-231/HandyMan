@@ -30,7 +30,7 @@ if (isset($_POST['send'])) {
         $e_id = $data['id'];
         $e_type = $data['type'];
         $date = date('Y-m-d', time() + 4 * 3600);
-        $query = "INSERT INTO message(e_id, e_type, msg, date) VALUES ('$e_id', '$e_type', '$msg', '$date')";
+        $query = "INSERT INTO message(e_id, msg, date) VALUES ('$e_id', '$msg', '$date')";
         mysqli_query($connect, $query);
     } else {
         $hide = '';

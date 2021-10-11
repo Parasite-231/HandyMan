@@ -61,12 +61,10 @@ if (isset($_POST['final'])) {
 
                 if ($grace_points < 5 && $grace_points > 0) {
                     $date = date('Y-m-d', time() + 4 * 3600);
-                    $msg = "WARNING !!! Your grace point is Less Than 5, You Will Be Banned FOR 7 Days if your 
-                            Grace Points go below 1. However, If you can recover your average rating to above 2.5 
-                            You will not get suspended, But Once the Grace Points go below 5 , you will be suspended 
-                            For 7 days and you will not be able to get any new works for that period.";
+                    $msg = "WARNING !!! Your grace point is Less Than 5, You Will Be Banned FOR 7 Days if your
+                      Grace Points go below 1. However, If you can recover your average rating to above 2.5 You will not get suspended,.";
 
-                    $query = "INSERT INTO message(e_id, e_type, msg, date) VALUES ('$e_id', '$e_type', '$msg', '$date')";
+                    $query = "INSERT INTO message(e_id, msg, date) VALUES ('$e_id', '$msg', '$date')";
                     mysqli_query($connect, $query);
                 }
 
@@ -84,7 +82,7 @@ if (isset($_POST['final'])) {
                     $msg = "You Have Been Suspended for 7 days due to your low rating. You can still work on your reserved works but you will not receive any new works in this period.
                             Your grace Points are restored to 5.  Your Average rating is set to 2.5. ";
 
-                    $query = "INSERT INTO message(e_id, 'e_type', msg, date) VALUES ('$e_id', '$e_type', '$msg', '$date')";
+                    $query = "INSERT INTO message(e_id, msg, date) VALUES ('$e_id', '$msg', '$date')";
                     mysqli_query($connect, $query);
 
                     $sql = "UPDATE employee SET grace_points = 5 WHERE id = $e_id";

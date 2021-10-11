@@ -9,9 +9,6 @@ if (!isset($_SESSION['uID'])) {
 
 $u_id = $_SESSION['uID'];
 
-$query = "SELECT * FROM orderlist WHERE u_id = $u_id AND NOT status = 'Completed'";
-$result = mysqli_query($connect, $query);
-updateStatus($result, $connect);
 
 if (isset($_POST['done'])) {
     $o_id = $_POST['o_id'];
@@ -43,6 +40,13 @@ if (isset($_POST['done'])) {
         }
     }
 }
+$query = "SELECT * FROM orderlist WHERE u_id = $u_id AND NOT status = 'Completed'";
+$result = mysqli_query($connect, $query);
+updateStatus($result, $connect);
+
+
+
+
 
 ?>
 
@@ -123,8 +127,10 @@ if (isset($_POST['done'])) {
     <div id='jump' class="container-01">
         <?php
 
-        $query = "SELECT * FROM orderlist WHERE u_id = $u_id ORDER BY date";
+
+        $query = "SELECT * FROM orderlist WHERE u_id = $u_id ORDER BY date DESC";
         $result = mysqli_query($connect, $query);
+
         updateStatus($result, $connect);
 
         $query = "SELECT * FROM orderlist WHERE u_id = $u_id ORDER BY date DESC";

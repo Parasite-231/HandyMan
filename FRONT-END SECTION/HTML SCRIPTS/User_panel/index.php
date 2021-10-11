@@ -68,6 +68,7 @@ session_start();
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $e_type = $row['name'];
+                $lprice = $row['lprice'];
                 $sql = "SELECT AVG(price) AS price FROM employee WHERE type = '$e_type'";
                 $res = mysqli_query($connect, $sql);
                 if ($res) {
@@ -80,7 +81,7 @@ session_start();
                 $e_rating = number_format((float)$row['rating'], 2, '.', '');
 
                 if ($e_price == 0) {
-                    $e_price = 500.00;
+                    $e_price = $lprice;
                 }
                 if ($e_rating == 0) {
                     $e_rating = 'Not rated yet';
@@ -125,6 +126,7 @@ session_start();
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $e_type = $row['name'];
+                $lprice = $row['lprice'];
                 $sql = "SELECT AVG(price) AS price, AVG(rating) AS rating FROM employee WHERE type = '$e_type'";
                 $res = mysqli_query($connect, $sql);
                 if ($res) {
@@ -137,7 +139,7 @@ session_start();
                 $e_rating = number_format((float)$data['rating'], 2, '.', '');
 
                 if ($e_price == 0) {
-                    $e_price = 500.00;
+                    $e_price = $lprice;
                 }
                 if ($e_rating == 0) {
                     $e_rating = 'Not rated yet';
@@ -182,6 +184,7 @@ session_start();
         if ($result && mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $e_type = $row['name'];
+                $lprice = $row['lprice'];
                 $sql = "SELECT AVG(price) AS price, AVG(rating) AS rating FROM employee WHERE type = '$e_type'";
                 $res = mysqli_query($connect, $sql);
                 if ($res) {
@@ -194,7 +197,7 @@ session_start();
                 $e_rating = number_format((float)$data['rating'], 2, '.', '');
 
                 if ($e_price == 0) {
-                    $e_price = 500.00;
+                    $e_price = $lprice;
                 }
                 if ($e_rating == 0) {
                     $e_rating = 'Not rated yet';
