@@ -74,39 +74,71 @@ if (filter_has_var(INPUT_POST, 'submit')) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign up</title>
-    <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/userSignUp.css">
+    <!--Changed 2.0-->
+    <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/UserSignUpDesign2.0.css">
+    <!-- <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/userSignUp.css"> -->
     <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
-
 <body>
-    <div class="background">
-        <div class="text">
-            <h1>Signup</h1>
-            <p>Already have an account? <a href="userLogin.php">Login</a></p>
-        </div>
-        <div class="container">
-            <form class="form" method="POST">
-                <input type="text" class="username" name="username" placeholder="Full name"
-                    value="<?php echo isset($_POST['username']) ? $name : ''; ?>" required>
-                <input type="email" class="email" name="email" placeholder="Email Address"
-                    value="<?php echo isset($_POST['email']) ? $email : ''; ?>" required>
-                <input type="text" class="mobile-number" name="number" placeholder="Mobile Number"
-                    value="<?php echo isset($_POST['number']) ? $number : ''; ?>" required>
-                <input type="password" class="password" name="password" placeholder="Password" required>
-                <input type="password" class="password" name="confirm" placeholder="Repeat-password" required>
-                <!--<input type="submit" class="button" value="Login">-->
-                <p><input type="submit" class="button" name="submit" value="Sign Up"></p>
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <!-- The image half -->
+            <div class="col-md-7 d-none d-md-flex bg-image"></div>
+            <!-- The content half -->
+            <div class="col-md-5 bg-light">
+                <div class="login d-flex align-items-center py-5">
+                    <!-- Demo content-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-xl-7 mx-auto">
+                                <h3 class="display-4">Sign Up</h3>
+                                <p class="text-muted mb-4"></p>
+                                <form class="form"  method="POST">
+                                    <div class="form-group mb-3">
+                                        <input id="inputName" type="text" placeholder="Name" value="<?php echo isset($_POST['username']) ? $name : ''; ?>" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input id="inputEmail" type="email" placeholder="Email address" value="<?php echo isset($_POST['email']) ? $email : ''; ?>" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input id="inputNumber" type="text" placeholder="Mobile Number" value="<?php echo isset($_POST['number']) ? $number : ''; ?>" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input id="inputPassword" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 ">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input id="inputPassword" type="password" placeholder="Re-type Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 ">
+                                    </div>
+                                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+                                    <label>
+                                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> I agree to all the Terms & Policy.
+                                    </label>
+                                    <button type="submit" class="btn btn-dark btn-block  mb-2 rounded-pill shadow-sm" style="height: 42px;font-size: 17px;">Sign Up&nbsp;</button>
+                                    <!-- <a href="#" class="alert-link" style="text-align: center;color: black;font-weight: lighter;" >Forgot password?</a> -->
+                                    <a href="userLogin.php" class="alert-link" style="text-align: center; color: black;font-weight: lighter;" >&nbsp;&nbsp;&nbsp;&nbsp;Already have an account? Login </a>
+                                    <!-- <div class="text-center d-flex justify-content-between mt-4"><p>Code by <a href="#" class="font-italic text-muted"> 
+                                        <u>Jassa</u></a></p></div> -->
 
-                <div style="font-size : 17px">
-                    <?php if ($msg != '') : ?>
-                    <div class="<?php echo $errClass ?>"><?php echo $msg ?></div>
-                    <?php endif; ?>
+                                        <div style="font-size : 17px">
+                                            <?php if ($msg != '') : ?>
+                                            <div class="<?php echo $errClass ?>"><?php echo $msg ?></div>
+                                            <?php endif; ?>
+                                        </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End -->
                 </div>
-
-            </form>
+            </div>
+            <!-- End -->
         </div>
     </div>
 </body>
+
 
 </html>
