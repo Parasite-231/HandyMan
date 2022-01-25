@@ -93,7 +93,7 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                                     <div class="form-group mb-3">
                                         <input id="inputPassword" type="password"  name="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 ">
                                     </div>
-                                    <button type="submit"  name="submit" class="btn btn-primary btn-block  mb-2 rounded-pill shadow-sm" style="height: 42px;font-size: 17px;">Login&nbsp;<i class='bx bxs-log-in-circle'></i></button>
+                                    <button type="submit"  name="submit" class="btn btn-dark btn-block  mb-2 rounded-pill shadow-sm" style="height: 42px;font-size: 17px;">Login&nbsp;<i class='bx bxs-log-in-circle'></i></button>
                                     <div style="font-size : 17px">
                                         <?php if ($msg != '') : ?>
                                         <div class="<?php echo $errClass ?>"><?php echo $msg ?></div>
