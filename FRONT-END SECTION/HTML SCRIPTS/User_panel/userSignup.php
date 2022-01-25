@@ -99,19 +99,19 @@ if (filter_has_var(INPUT_POST, 'submit')) {
                                 <p class="text-muted mb-4"></p>
                                 <form class="form"  method="POST">
                                     <div class="form-group mb-3">
-                                        <input id="inputName" type="text" placeholder="Name" value="<?php echo isset($_POST['username']) ? $name : ''; ?>" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                        <input id="inputName" type="text" id="username" name="username" placeholder="Full Name" value="<?php echo isset($_POST['username']) ? $name : ''; ?>" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                     </div>
                                     <div class="form-group mb-3">
-                                        <input id="inputEmail" type="email" placeholder="Email address" value="<?php echo isset($_POST['email']) ? $email : ''; ?>" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                        <input id="inputEmail" type="email" name="email" placeholder="Email Address" value="<?php echo isset($_POST['email']) ? $email : ''; ?>" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                     </div>
                                     <div class="form-group mb-3">
-                                        <input id="inputNumber" type="text" placeholder="Mobile Number" value="<?php echo isset($_POST['number']) ? $number : ''; ?>" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
+                                        <input id="inputNumber" type="text" name="number" placeholder="Mobile Number" value="<?php echo isset($_POST['number']) ? $number : ''; ?>" required="" autofocus="" class="form-control rounded-pill border-0 shadow-sm px-4">
                                     </div>
                                     <div class="form-group mb-3">
-                                        <input id="inputPassword" type="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 ">
+                                        <input id="inputPassword" type="password" name="password" placeholder="Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 ">
                                     </div>
                                     <div class="form-group mb-3">
-                                        <input id="inputPassword" type="password" placeholder="Re-type Password" required="" class="form-control rounded-pill border-0 shadow-sm px-4 ">
+                                        <input id="inputPassword" type="password" name="confirm" placeholder="Repeat-password"  required="" class="form-control rounded-pill border-0 shadow-sm px-4 ">
                                     </div>
                                     <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
                                     <label>
