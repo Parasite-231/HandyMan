@@ -17,7 +17,7 @@ session_start();
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Home</title>
-		<link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/userHomepageDesign.css">
+		<link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/HomepageDesign.css">
 		<link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -104,21 +104,21 @@ session_start();
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active" data-bs-interval="10000">
-					<img src="backgroundimage6 (2).jpg" class="d-block w-100" height="700px" >
+					<img src="../../ICONS/backgroundimage6 (2).jpg" class="d-block w-100" height="700px" >
 					<div class="carousel-caption d-none d-md-block" style="margin-top: 12px;">
 						<h3 style="font-weight: bolder;font-size: 60px;color: goldenrod">Electrical Solutions</h3>
 						<p style="color: white;font-size: 20px;font-weight: bolder;">Let Us Glow Your Future in the Darkest Path of your Life</p>
 					</div>
 				</div>
 				<div class="carousel-item" data-bs-interval="2000" >
-					<img src="a2.jpg" class="d-block w-100" alt="..." height="700px">
+					<img src="../../ICONS/a2.jpg" class="d-block w-100" alt="..." height="700px">
 					<div class="carousel-caption d-none d-md-block">
 						<h3 style="font-weight: bolder;font-size: 60px;color: goldenrod">Mechanical Solutions</h3>
 						<p style="color: white;font-size: 20px;font-weight: bolder;">Make Us Your Closest Friend in the Long Run</p>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="a32.jpg" class="d-block w-100" alt="..." height="700px">
+					<img src="../../ICONS/a32.jpg" class="d-block w-100" alt="..." height="700px">
 					<div class="carousel-caption d-none d-md-block">
 						<h3 style="font-weight: bolder;font-size: 60px;color:goldenrod;">Cleaning Services</h3>
 						<p style="color: white;font-size: 20px;font-weight: bolder;">See the World through Our Eyes</p>

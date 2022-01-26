@@ -1,156 +1,304 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/aboutUs2.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <title>About us</title>
-</head>
-
-<body>
-    <div class="bg-img">
-        <div class="container">
-            <div class="topnav">
-                <a href="userProfile.php"><i class="fa  fa-user"></i>Profile</a>
-                <a href="index.php"><i class="fa  fa-house-user"></i>Home</a>
-                <a href="userOrderHistoryPage.php"><i class="fa  fa-shopping-cart"></i>My Orders</a>
-                <a href="About us.php" class="constant"><i class="fa  fa-users"></i>About Us</a>
-                <a href="contactUs.php"><i class="fa fa-phone-square"></i>Contact Us</a>
-                <a href="userTerms&policy.php" class="constant"><i class="fa fa-file-signature"></i>Terms & Policy</a>
-                <a href="userhelp.php"><i class="fa fa-question-circle"></i>Help</a>
-
-                <?php
-                session_start();
-
-                if (isset($_SESSION['uID'])) {
-                    echo "<a href='../../Inc/logout.php'><i class='fa fa-lock'></i>Sign out</a>";
-                } else {
-                    echo "<a href='./chooseusertype2.php'><i class='fa fa-lock'></i>Sign in</a>";
-                    echo "<a href='chooseUserType.php'><i class='fa fa-clipboard'></i>Register</a>";
-                }
-
-                ?>
-
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About us</title>
+        <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/HomepageDesign.css">
+        <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar sticky-top navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="index.php">
+                        <h4 style="color: goldenrod;">HandyMan</h4>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="index.php"><i class="fa  fa-home" ></i> Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="userProfile.php"><i class="fa  fa-user" ></i>&nbsp;Profile</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa fa-tools" ></i>&nbsp;Services
+                                </a>
+                                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown" id="fonter">
+                                    <li><a class="dropdown-item text-muted" href="index.php">Hot Water System</a></li>
+                                    <li><a class="dropdown-item text-muted" href="index.php">Booster Pump</a></li>
+                                    <li><a class="dropdown-item text-muted" href="index.php">Chiller</a></li>
+                                    <li><a class="dropdown-item text-muted" href="index.php">Fire Safety</a></li>
+                                    <li><a class="dropdown-item text-muted" href="index.php">Elevator</a></li>
+                                    <li><a class="dropdown-item text-muted" href="index.php">L.P.G</a></li>
+                                    <li><a class="dropdown-item text-muted" href="index.php">Escalator</a></li>
+                                    <li><a class="dropdown-item text-muted" href="index.php">Complete CC TV Solution</a></li>
+                                    <li><a class="dropdown-item text-muted" href="index.php">Complete Swimming Pool & Jacuzzi Solution</a></li>
+                                    <li><a class="dropdown-item text-muted" href="index.php">Electronic Home Appliance</a></li>
+                                    <li><a class="dropdown-item text-muted" href="index.php">Substration Turnkey(EPC Project) Solution</a></li>
+                                    <li><a class="dropdown-item text-muted" href="index.php">Power Generating Equipment(Disel & GasGenerator)</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="userOrderHistoryPage.php"><i class="fa  fa-shopping-cart" ></i>&nbsp;My Orders</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="userTerms&policy.php"><i class="fa fa-file-signature" ></i>&nbsp;Terms & Policy</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" active href="About us.php"><i class="fa  fa-users" ></i>&nbsp;About Us</a>
+                            </li>
+        
+                            <li class="nav-item" >
+                                <a class="nav-link" href="contactUs.php"><i class="fa fa-phone-square" ></i>&nbsp;Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="userhelp.php"><i class="fa fa-question-circle" ></i>&nbsp;Help</a>
+                            </li>
+                        </ul>
+                
+                    </div>
+                </div>
+            </nav>
+        </nav>
+        <div id="carouselExampleDark" class="carousel carousel-light slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1" ></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="../../UI-UX Designs/b01.jpg" class="d-block w-100" height="600px" >
+                    <div class="carousel-caption d-none d-md-block" style="margin-top: 12px;">
+                        <h3 style="font-weight: bolder;font-size: 60px;color: goldenrod">We are here to serve you</h3>
+                        <p style="color: white;font-size: 20px;font-weight: bolder;">Let us make your life easy</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000" >
+                    <img src="../../UI-UX Designs/b2.jpg" class="d-block w-100" alt="..." height="600px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 style="font-weight: bolder;font-size: 60px;color: goldenrod">Save our Beautiful Earth</h3>
+                        <p style="color: white;font-size: 20px;font-weight: bolder;">Make Us Your Closest Friend in the Long Run</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../../UI-UX Designs/b03.png" class="d-block w-100" alt="..." height="600px">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3 style="font-weight: bolder;font-size: 60px;color:goldenrod;">Construction Services</h3>
+                        <p style="color: white;font-size: 20px;font-weight: bolder;">See the World through Our Eyes</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
         </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing">
+      <h1 style="text-align: center;font-weight: lighter;margin-top: 20px;">Our Founders</h1>
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row" style="margin-top: 42px;margin-left: 50px;">
+      <div class="col-lg-4">
+        <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
+        <img src="../../UI-UX Designs/tb1-modified.png" width="60%" height="60%" alt="">
+        <h2>CEO</h2>
+        <p>"We are very much thankful to be with you.Remember with great power comes great responsibility"</p>
+        <p><a class="btn btn-warning" href="#">Contact &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
+        <img src="../../UI-UX Designs/tmh3-modified.png" width="60%" height="60%" alt="">
+        <h2>Finance Manager</h2>
+        <p>"Thankyou very much for your support.Our company is always here to support you"</p>
+        <p><a class="btn btn-warning" href="#">Contact &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
+        <img src="../../UI-UX Designs/adg2-modified.png" width="60%" height="60%" alt="">
+        <h2>Staff Manager</h2>
+        <p>"Hey there, how are you all. Keep in touch with us.We will try our best to serve you"</p>
+        <p><a class="btn btn-warning" href="#">Contact &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+    <h1 style="text-align: center;font-weight: lighter;">Our Goals</h1>
+    <div class="row featurette" style="margin-top: 43px;">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">We Care about you. <span class="text-muted"></span></h2>
+        <p class="lead">Your smile is our smile. Have faith on us.Smiling is universally considered to be a way we display joy. It can communicate our internal world to people on the outside, and it can be a welcoming sign to new people.</p>
+      </div>
+      <div class="col-md-5">
+        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
+        <img src="../../UI-UX Designs/v2.jpg" width="100%" height="100%" alt="">
+      </div>
     </div>
-    <div class="title">
-        <h1>About Us</h1>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Let us help you.<span class="text-muted"></span></h2>
+        <p class="lead">Communicate with us any time. We are here to serve you 24/7.If you’re reading this… Congratulations, you’re alive. If that’s not something to smile about, then I don’t know what is</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
+        <img src="../../UI-UX Designs/customercare.jpg" width="100%" height="100%" alt="">
+      </div>
     </div>
-    <div class="content">
-        <!--<h2 style="text-align: center; ">HandyMan</h2>-->
-        <p>Website is a hyper-media information storage system linking resources around the world. In website, browsers
-            allow highlighted words or an icon which is called hyper links to display text, video, graphics and sound on
-            a
-            local computer screen. With the introduction of World Wide Web in 1989, the concept of websites has become
-            more popular.
-            On this web, anyone can create a home page, which millions of users can watch on their computers and
-            respond.
-            A website (also written as web site) is a collection of web pages and related content that is identified by
-            a common
-            domain name and published on at least one web server. Notable examples are wikipedia.org, google.com, and
-            amazon.com.
-            All publicly accessible websites collectively constitute the World Wide Web. There are also private websites
-            that can
-            only be accessed on a private network, such as a company's internal website for its employees. Websites are
-            typically
-            dedicated to a particular topic or purpose, such as news, education, commerce, entertainment, or social
-            networking.
-            Hyperlinking between web pages guides the navigation of the site, which often starts with a home page.Users
-            can access
-            having a good website instantly boosts your credibility as a legitimate business. First impressions count,
-            and websites
-            allow you to make a very strong impression with a well designed introduction for your business. A website
-            can help showcase
-            your expertise and better position your business, websites on a range of devices,including desktops,
-            laptops, tablets, and smartphones.
-            The app used on these devices is called a web browser. A website is a collection of related material that
-            contains text, images, and may
-            also include video, audio or other media. A website can be as simple as a few static pages or as complex as
-            several web applications running
-            simultaneously, and everything in between.A web page is often used to provide information to viewers,
-            including pictures or videos to help illustrate
-            important topics. A web page may also be used as a method to sell products or services to viewers. Multiple
-            web pages make up a website, like our Computer Hope website.
-        </p>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">We are with you.<span class="text-muted"></span></h2>
+        <p class="lead">We believe in the quote; "Either you run the day or the day runs you".A gentle word, a kind look, a good-natured smile can work wonders and accomplish miracles.</p>
+      </div>
+      <div class="col-md-5">
+        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
+        <img src="../../UI-UX Designs/rateme5.jpg" width="100%" height="100%" alt="">
+      </div>
     </div>
-    <div class="founders-headline">
-        <h1>Our Founders</h1>
-    </div>
-    <!--card-->
-    <div class="mainframe">
-        <div class="card">
-            <div class="image">
-                <img src="../../UI-UX Designs/elon3.jpg">
-            </div>
-            <div class="bio-of-founder">
-                <h1>Elon Musk</h1>
-                <p>CEO </p>
-            </div>
-            <div class="description">
-                <!--<p>BSc in CSE, MSc in CSE, Former VC at Brac University,Bangladesh.</p>-->
-                <button>Contact</button>
-            </div>
-        </div>
-        <!--2nd card -->
-        <div class="card">
-            <div class="image">
-                <img src="../../UI-UX Designs/jeff.jpg">
-            </div>
-            <div class="bio-of-founder">
-                <h1>Jeff Bezos</h1>
-                <p>Finance Director</p>
-            </div>
-            <div class="description">
-                <!--<p>BSc in CSE, MBA in IBA, Former Manager at RFL Indusries, Bangladesh.</p>-->
-                <button>Contact</button>
-            </div>
-        </div>
-        <!--3rd card -->
-        <div class="card">
-            <div class="image">
-                <img src="../../UI-UX Designs/staffboss.jpg">
-            </div>
-            <div class="bio-of-founder">
-                <h1>Sam Hun</h1>
-                <p>Staff Manager
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+
+  <!--FOOTER-->
+ <!-- <footer class="container" >
+  
+    <h3>Connect with us</h3>
+ 
+      
+        <ul class="list-unstyled d-flex" >
+            <li class="ms-3"><a class="link-dark" href="#" ><img src="facebook (2).png" alt=""></a></li>
+            <li class="ms-3"><a class="link-dark" href="#" ><img src="discord (1).png" alt=""></a></li>
+            <li class="ms-3"><a class="link-dark" href="#" ><img src="linkedin (1).png" alt=""></a></li>
+        </ul>
+ 
+  </footer>
+ -->
+
+ 
+ <div class="container-1  bg-dark"   >
+    <footer class="py-5" style="margin: 3.4%;margin-bottom: 0%;">
+        <div class="row">
+            <div class="col-2" style="margin-left: 14px;">
+                <h5 style="color: goldenrod;">Corporate Office</h5>
+                <p class="text-muted">
+                    House # 4,Road # 11, Sector # 1, Uttara Model Town, Dhaka- 1230.<br>
+                    Mobile: 01737-793655, 01321-081879
                 </p>
-            </div>
-            <div class="description">
-                <!--<p>BSc in CSE , Former Astt.Teacher at IUT,Bangladesh.</p>-->
-                <button>Contact</button>
-            </div>
-        </div>
-        <!--4th card -->
-        <div class="card">
-            <div class="image">
-                <img src="../../UI-UX Designs/sundarpichai.jpg">
-            </div>
-            <div class="bio-of-founder">
-                <h1>Jim Cameroon</h1>
-                <p>Technical Director</p>
-            </div>
-            <div class="description">
-                <!--<p>BSc in CSE, Former Manager at BAT, Bangladesh.</p>-->
-                <button>Contact</button>
-            </div>
-        </div>
-        <!--connect with us-->
-        <div class="button2" style="margin-top: 65px; text-align: center;">
-            <a href="">Connect with us</a>
-        </div>
-        <div class="social-media" style=" text-align: center;">
-            <a href=""><i class="fab fa-facebook"></i></a>
-            <a href=""><i class="fab fa-linkedin"></i></a>
-            <a href=""><i class="fab fa-instagram-square"></i></a>
-            <a href=""><i class="fab fa-twitter-square"></i></a>
-        </div>
-        <!--End-part-->
-</body>
 
+            </div>
+            <div class="col-2" style="margin-left: 60px;">
+                <h5 style="color: goldenrod;">Branch Office</h5>
+                <p class="text-muted">
+                    Nur Super Market,Jahaj Company More,Station Road,Rangpur.<br>
+                    Mobile: 01728-678972, 01321-081879
+                </p>
+
+            </div>
+            <div class="col-2" style="margin-left: 40px;">
+                <h5 style="color: goldenrod;">Features</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Services</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Help</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terms & Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-4 offset-1">
+                <!-- <form> -->
+                <h5 style="color: goldenrod;">Contact Us</h5>
+                <p class="text-muted">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope-plus-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5a.5.5 0 0 0-1 0v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 0 0 1 0v-1h1a.5.5 0 0 0 0-1h-1v-1Z"/>
+                        <path fill-rule="evenodd" d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm.192 1.056 6.57-4.027L8 9.586l1.239-.757.367.225A4.49 4.49 0 0 0 8 12.5c0 .526.09 1.03.256 1.5H2a2 2 0 0 1-1.808-1.144ZM16 9.67V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z"/>
+                    </svg>
+                    &nbsp;Email: handymanbd@gmail.com
+                </p>
+                <h5 style="color: goldenrod;">Visit</h5>
+                <p class="text-muted">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-globe2" viewBox="0 0 16 16">
+                        <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287V1.077zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332zM8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5H4.51zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741H8.5zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008h2.49zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"/>
+                    </svg>
+                    &nbsp;Web: www.HandyMan.com
+                </p>
+
+            </div>
+        </div>
+        <div class="d-flex justify-content-between py-4 my-4 border-top">
+            <p class="text-muted">&copy; 2021 Company, Inc. All rights reserved.</p>
+            <ul class="list-unstyled d-flex">
+                <li class="ms-3">
+                    <a class="link-dark" href="#">
+                        <svg class="bi" width="24" height="24">
+                            <use xlink:href="#twitter"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="link-dark" href="#">
+                        <svg class="bi" width="24" height="24">
+                            <use xlink:href="#instagram"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="ms-3">
+                    <a class="link-dark" href="#">
+                        <svg class="bi" width="24" height="24">
+                            <use xlink:href="#facebook"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+  
+
+
+    </main>
+
+
+
+
+    <!-- <script src="../assets/dist/js/bootstrap.bundle.min.js"></script> -->
+
+      
+</body>
 </html>
