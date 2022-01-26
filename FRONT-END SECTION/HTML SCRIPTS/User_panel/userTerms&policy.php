@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Terms & Policies</title>
-        <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/HomepageDesign.css">
+        <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/TermsHomepageDesign.css">
         <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -137,21 +137,21 @@
     <div class="row" style="margin-top: 42px;margin-left: 50px;">
       <div class="col-lg-4">
         <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
-        <img src="../../UI-UX Designs/j1-modified.png" width="60%" height="60%" alt="">
+        <img src="../../UI-UX Designs/tx-modified.png" width="60%" height="50%" alt="">
         <h2 ></h2>
         <p style="margin-left: 10px;margin-top: 20px; justify-content: left;">"We are very much thankful to be with you.<br>Remember with great power comes great responsibility.We are very much thankful to <br> with you.Remember with great power comes<br> great responsibility"</p>
         <p></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
-        <img src="../../UI-UX Designs/j4-modified.png" width="60%" height="60%" alt="">
+        <img src="../../UI-UX Designs/t222-modified.png" width="60%" height="50%" alt="">
         <h2></h2>
         <p style="margin-left: 10px;margin-top: 20px;">"We are very much thankful to be with you.<br>Remember with great power comes great responsibility.We are very much thankful to <br> with you.Remember with great power comes<br> great responsibility"</p>
         <p></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
         <!-- <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
-        <img src="../../UI-UX Designs/j2-modified.png" width="60%" height="60%" alt="">
+        <img src="../../UI-UX Designs/t333-modified.png" width="60%" height="50%" alt="">
         <h2></h2>
         <p style="margin-left: 10px;margin-top: 20px;">"We are very much thankful to be with you.<br>Remember with great power comes great responsibility.We are very much thankful to <br> with you.Remember with great power comes<br> great responsibility"</p>
         <p></p>

@@ -73,10 +73,10 @@
                         session_start();
         
                         if (isset($_SESSION['uID'])) {
-                            echo "<a href='../../Inc/logout.php'><i class='fa fa-lock'></i>Sign out</a>";
+                            echo "<a href='../../Inc/logout.php'><i class='fa fa-lock'></i>&nbsp;Sign out</a>";
                         } else {
-                            echo "<a href='./chooseusertype2.php'><i class='fa fa-lock'></i>Sign in</a>";
-                            echo "<a href='chooseUserType.php'><i class='fa fa-clipboard'></i>Register</a>";
+                            echo "<a href='./chooseusertype2.php'><i class='fa fa-lock'></i>&nbsp;Sign in</a>";
+                            echo "<a href='chooseUserType.php'><i class='fa fa-clipboard'></i>&nbsp;Register</a>";
                         }
         
                         ?>
