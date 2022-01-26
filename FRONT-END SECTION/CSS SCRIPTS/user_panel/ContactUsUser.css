@@ -1,0 +1,223 @@
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+.mainframe {
+	margin: 2%;
+}
+
+.title {
+	margin-top: 3%;
+}
+
+.title h1 {
+	font-size: 39px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.button3 a {
+	margin-top: 76px;
+}
+
+.button3 a {
+	background-color: rgba(255, 255, 255, 0.904);
+	padding: 13px 45px;
+	color: #333;
+	text-decoration: solid;
+	background-color: gold;
+	font-weight: bolder;
+	font-size: 17px;
+	letter-spacing: 2px;
+	margin-top: 45px;
+	box-shadow: 2px 6px 20px rgba(0, 0, 0, 0.555);
+}
+
+.button3 a:hover {
+	background-color: black;
+	color: gold;
+}
+
+img {
+	min-height: 400px;
+}
+
+.fa {
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+
+/*links for navbar*/
+
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	text-decoration: none;
+	font-size: 15px;
+	padding: 12px 14px;
+}
+
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+h3 {
+	color: white;
+}
+
+p {
+	/* color: white; */
+	color: black;
+}
+
+.carousel-indicators {
+	color: rgb(255, 183, 0);
+}
+
+h1,h2,h3 {
+	font-weight: 800;
+	color: black;
+}
+
+.container .card .card-body {
+	display: inline-block;
+}
+
+#fonter:hover {
+	color: black;
+}
+
+.dropdown-menu .bg-dark:hover {
+	color: black;
+}
+
+.card-body {
+	/* margin-top: 120px; */
+	/* width: 18%; */
+	/* width: 100%; */
+	margin-bottom: 7px;
+	display: inline-block;
+	box-shadow: 0px 2px 22px black;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 25px;
+	cursor: pointer;
+	/* margin-bottom: 90px; */
+	/* height: 95px; */
+	/*border-radius: 5px; 
+       /* margin: 2%;*/
+	/* margin-left: 87px; */
+}
+
+.card-body:hover {
+	/*background-color: brown;*/
+	box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.575);
+}
+
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="email"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: grey;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: white;
+}
+
+div.complaint-form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 18px;
+  margin-top: 25px; 
+  width: 350px;
+  position: relative;
+  box-shadow: 0 6px 22px 0 rgba(0, 0, 0, 0.2);
+ 
+  
+}
+  
+
+
+.heading-of-complaint-form {
+  text-align: center;
+  font-size: 25px;
+  padding: 0px;
+}
+
+.required {
+  color: red;
+}
+
+/*form end*/
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  /*background: #ddd;*/
+}
+
+.container-2 {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-top: 100px;
+}
+
+.content-section {
+  float: left;
+  width: 55%;
+}
