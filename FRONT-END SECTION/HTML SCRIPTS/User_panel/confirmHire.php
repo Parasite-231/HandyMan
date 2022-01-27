@@ -100,110 +100,119 @@ if (isset($_POST['cancel'])) {
 ?>
 
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>vConfirm Hire</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
+        <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+    
+        <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/Hireme.css">
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/confirmHire.css">
-    <title>Confirm Hire</title>
-</head>
+    <body>
+        <div class="main">
 
-<body>
-    <header>
-        <div class="main-page">
-            <div class="company-logo">
-                <!--<img src="hANDYman.png">-->
-            </div>
-            <!--<ul>
-               <li class="active-mode" ><a href="#">Home</a> </li>
-               <li><a href="#">Abou us</a> </li>
-               <li><a href="#">Contact us</a> </li>
-               <li><a href="#">Help</a> </li>
-               
-               </ul>-->
-        </div>
-        <div class="Confirm-section">
-            <!--<h2>Platform Selection</h2>-->
-            <div <?php echo $css ?>>
-                <p><?php echo $msg ?></p>
-            </div>
-            <div class="Confirming-form">
+        <div class="wrapper">
+            <div class="inner" style="padding: 8px;">
+                <div class="image-holder">
+                    <img src="../../UI-UX Designs/wr.jpg" height="500px" width="700px" alt="">
+                </div>
+                <div <?php echo $css ?>>
+                    <p><?php echo $msg ?></p>
+                </div>
                 <form method="POST">
-                    <label for="name">Worker Name</label>
-                    <img src="../../ICONS/workerprofile.png" style="float: right;">
-                    <input disabled type="text" id="name" name="name" value="<?php echo $e_name ?>">
-                    <!-- <label for="name">Worker Category:</label>
-                  <img src="worker88.png" style="margin-left: 3px;">
-                  <input type="text" id="name" name="name" > -->
+                    <h3>Confirm Hire</h3>
+                    <div class="form-row">
 
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">Worker Name</label>
+                            <input disabled type="text" id="name" name="name" class="form-control" placeholder="Enter worker Name" value="<?php echo $e_name ?>">
+                            
+                        </div>
+                
+                    
+                    </div>
+                    <div class="form-row" style="margin-top: -20px;">
 
-                    <label for="phonenumber">Worker Contact</label>
-                    <img src="../../ICONS/callme.png" style="float: right;">
-                    <input disabled type="text" id="phonenumber" name="phonenumber" value="<?php echo $e_number ?>">
-
-                    <label for="upazilla">Thana</label><span class="required">*</span>
-                    <img src="../../ICONS/askmap.png" style="float: right;">
-                    <select id="upazilla" name="thana">
-                        <option value="Azimpur">Azimpur</option>
-                        <option value="Badda">Badda</option>
-                        <option value="Banani">Banani</option>
-                        <option value="Bashundhara">Bashundhara</option>
-                        <option value="Cantonment">Cantonment</option>
-                        <option value="ChaowkBazar">ChaowkBazar</option>
-                        <option value="Demra">Demra</option>
-                        <option value="Dhanmondi">Dhanmondi</option>
-                        <option value="Gulshan">Gulshan</option>
-                        <option value="Hazaribagh">Hazaribagh</option>
-                        <option value="Jatrabari">Jatrabari</option>
-                        <option value="Kadamtali">Kadamtali</option>
-                        <option value="Kafrul">Kafrul</option>
-                        <option value="Kalabagan">Kalabagan</option>
-                        <option value="Khilgaon">Khilgaon</option>
-                        <option value="Khilkhet">Khilkhet</option>
-                        <option value="Lalbagh">Lalbagh</option>
-                        <option value="Malibagh">Malibagh</option>
-                        <option value="Mirpur">Mirpur</option>
-                        <option value="Mohammadpur">Mohammadpur</option>
-                        <option value="Motijheel">Motijheel</option>
-                        <option value="Mughda">Mughda</option>
-                        <option value="Paltan">Paltan</option>
-                        <option value="Panthapath">Panthapath</option>
-                        <option value="Ramna">Ramna</option>
-                        <option value="Rampura">Rampura</option>
-                        <option value="Shabujbagh">Shabujbagh</option>
-                        <option value="Shahjahanpur">Shahjahanpur</option>
-                        <option value="Shahbagh">Shahbagh</option>
-                        <option value="Tejgaon">Tejgaon</option>
-                        <option value="Uttara">Uttara</option>
-                        <option value="Wari">Wari</option>
-                    </select>
-
-                    <label for="address">Your Address</label><span class="required">*</span>
-                    <img src="../../ICONS/asklocation.png" style="float: right;">
-                    <textarea id="address" name="address" style="height:70px"
-                        placeholder="Write your address..."></textarea>
-
-                    <label for="payment">Total Payment</label>
-                    <img src="../../ICONS/paymecash.png" style="float: right;">
-                    <input disabled type="text" id="payment" name="payment" value="৳ <?php echo $e_fee ?>">
-
-                    <input type='hidden' name='date' value='<?php echo $date ?>'>
-                    <input type='hidden' name='shift' value='<?php echo $shift ?>'>
-                    <input type='hidden' name='e_id' value='<?php echo $emp_id ?>'>
-                    <input type='hidden' name='o_id' value='<?php echo $o_id ?>'>
-                    <input type='hidden' name='payment' value='<?php echo $e_fee ?>'>
-
-                    <input type="submit" name="confirm" value=" Confirm Hire">
-                    <input type="submit" name="cancel" value=" Cancel">
-
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">Worker Contact</label>
+                            <input disabled type="text" id="phonenumber" name="phonenumber" class="form-control" placeholder="Enter worker Name" value="<?php echo $e_number ?>">
+                            
+                        </div>
+                
+                    
+                    </div>
+                    <div class="form-row" style="margin-top: -20px;">  
+                        <select id="upazilla" name="thana" class="form-control" style=" color: #999;" required>
+                            <option value="" disabled selected>Choose Your Thana</option>
+                            <option value="Azimpur">Azimpur</option>
+                            <option value="Badda">Badda</option>
+                            <option value="Banani">Banani</option>
+                            <option value="Bashundhara">Bashundhara</option>
+                            <option value="Cantonment">Cantonment</option>
+                            <option value="ChaowkBazar">ChaowkBazar</option>
+                            <option value="Demra">Demra</option>
+                            <option value="Dhanmondi">Dhanmondi</option>
+                            <option value="Gulshan">Gulshan</option>
+                            <option value="Hazaribagh">Hazaribagh</option>
+                            <option value="Jatrabari">Jatrabari</option>
+                            <option value="Kadamtali">Kadamtali</option>
+                            <option value="Kafrul">Kafrul</option>
+                            <option value="Kalabagan">Kalabagan</option>
+                            <option value="Khilgaon">Khilgaon</option>
+                            <option value="Khilkhet">Khilkhet</option>
+                            <option value="Lalbagh">Lalbagh</option>
+                            <option value="Malibagh">Malibagh</option>
+                            <option value="Mirpur">Mirpur</option>
+                            <option value="Mohammadpur">Mohammadpur</option>
+                            <option value="Motijheel">Motijheel</option>
+                            <option value="Mughda">Mughda</option>
+                            <option value="Paltan">Paltan</option>
+                            <option value="Panthapath">Panthapath</option>
+                            <option value="Ramna">Ramna</option>
+                            <option value="Rampura">Rampura</option>
+                            <option value="Shabujbagh">Shabujbagh</option>
+                            <option value="Shahjahanpur">Shahjahanpur</option>
+                            <option value="Shahbagh">Shahbagh</option>
+                            <option value="Tejgaon">Tejgaon</option>
+                            <option value="Uttara">Uttara</option>
+                            <option value="Wari">Wari</option>
+                            
+                        </select>
+        
+                    </div>
+                    <textarea id="address" name="address"  placeholder="Your Present Address" class="form-control" style="height: 130px;" required></textarea>
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Total Payment</label>
+                        <input disabled type="text" id="payment" name="payment" value="৳ <?php echo $e_fee ?>">
+                        <input type='hidden' name='date' value='<?php echo $date ?>'>
+                        <input type='hidden' name='shift' value='<?php echo $shift ?>'>
+                        <input type='hidden' name='e_id' value='<?php echo $emp_id ?>'>
+                        <input type='hidden' name='o_id' value='<?php echo $o_id ?>'>
+                        <input type='hidden' name='payment' value='<?php echo $e_fee ?>'>
+                    </div>
+                    <div class="form-row">
+                        <button type="submit" name="confirm" value=" Confirm Hire">Confirm Hire
+                
+                        </button>
+                         <button type="submit" name="cancel" value=" Cancel">Cancel
+                    
+                        </button>
+                        
+                    </div>
+                
+                    
+                </form>
+                
             </div>
         </div>
-    </header>
-</body>
+    </div>
 
+    
+    </body>
 </html>
