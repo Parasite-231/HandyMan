@@ -120,58 +120,75 @@ if (isset($_POST['final'])) {
 
 ?>
 
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
+        <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Worker Rating</title>
+        <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/RateDesign.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    </head>
+    <body>
+  
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <!-- The image half -->
+                <div class="col-md-7 d-none d-md-flex bg-image"></div>
+                <!-- The content half -->
+                <div class="col-md-5 bg-light">
+                    <div class="login d-flex align-items-center py-5">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="../../ICONS/worker.png">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="../../CSS SCRIPTS/user_panel/RateByUserDesign.css">
-    <title>Rate your worker</title>
-</head>
-
-<body>
-    <header>
-        <div class="container">
-
-            <div class="card">
-                <div class="image">
-                    <img src="../../UI-UX Designs/star.webp">
-                </div>
-                <form action="" method="POST">
-                    <div class="position" style="margin-top: 25px;">
-                        <div class="star-widget">
-                            <input type="hidden" name="e_id" value="<?php echo $e_id ?>">
-                            <input type="hidden" name="o_id" value="<?php echo $o_id ?>">
-                            <input type="radio" name="rate" id="rate-1" value="5">
-                            <label for="rate-1" class="fas fa-star"></label>
-                            <input type="radio" name="rate" id="rate-2" value="4">
-                            <label for="rate-2" class="fas fa-star"></label>
-                            <input type="radio" name="rate" id="rate-3" value="3">
-                            <label for="rate-3" class="fas fa-star"></label>
-                            <input type="radio" name="rate" id="rate-4" value="2">
-                            <label for="rate-4" class="fas fa-star"></label>
-                            <input type="radio" name="rate" id="rate-5" value="1">
-                            <label for="rate-5" class="fas fa-star"></label>
+                        <!-- Demo content-->
+                
+                        <div class="container">
+                            <h5 class="display-6" style="color: goldenrod;">Hello dear Customer !</h5>
+                            <div class="post">
+                                
+                                <div class="text">Thanks for rating our Worker!</div>
+                                <div class="edit"><a href="index.html" style="color: goldenrod;">Go back</a></div>
+                            </div>
+                            <div class="star-widget">
+                                <input type="hidden" name="e_id" value="<?php echo $e_id ?>">
+                                <input type="hidden" name="o_id" value="<?php echo $o_id ?>">
+                                <input type="radio" name="rate" id="rate-5">
+                                <label for="rate-5" class="fas fa-star"></label>
+                                <input type="radio" name="rate" id="rate-4">
+                                <label for="rate-4" class="fas fa-star"></label>
+                                <input type="radio" name="rate" id="rate-3">
+                                <label for="rate-3" class="fas fa-star"></label>
+                                <input type="radio" name="rate" id="rate-2">
+                                <label for="rate-2" class="fas fa-star"></label>
+                                <input type="radio" name="rate" id="rate-1">
+                                <label for="rate-1" class="fas fa-star"></label>
+                                <form action="#">
+                                    <header></header>
+                                    <div class="textarea">
+                                        <textarea cols="30" placeholder="Your suggestions are highly appreciated..."></textarea>
+                                    </div>
+                                    <div class="btn">
+                                        <button type="submit" name="final" onclick="gratitudeMessage()">Rate</button>
+                                        <form action="./userOrderHistoryPage.php">
+                                            <button >Cancel</button>
+                                        </form>
+                                    </div>
+                                </form>
+                            </div>
+                        
                         </div>
+                        <!-- End -->
                     </div>
-                    <div class="description">
-                        <p>Please provide us your honest opinion as it helps us to improve our service.</p>
-                        <h3>👷</h3>
-                        <button type="submit" name="final" onclick="gratitudeMessage()">Rate</button>
-                        <form action="./userOrderHistoryPage.php">
-                            <button style="margin-top: 3px;">Cancel</button>
-                        </form>
-                    </div>
-                </form>
+                </div>
+                <!-- End -->
             </div>
         </div>
-        <script src="PostRateByUser.js"></script>
-    </header>
-</body>
 
+
+    <script src="RateByUserBot.js"></script>
+  </body>
 </html>
